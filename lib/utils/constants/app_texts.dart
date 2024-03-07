@@ -1,10 +1,20 @@
-
 class AppTexts {
   AppTexts._();
 
+//onboard screen texts
   static const skip = 'skip';
   static const login = 'login';
   static const getStarted = 'Get Started';
+  static const onboardFirstTitle =
+      'Find and relay the narratives that resonate with you';
+  static const onboardFirstDescription =
+      'Discover and pass on the stories that deeply connect with your emotions and beliefs, allowing others to experience the same resonance.';
+  static const onboardSecondTitle =
+      'Explore and share stories that hold significance to you';
+  static const onboardSecondDescription =
+      'Embark on a journey to uncover and pass along the stories that carry personal meaning and importance to you, spreading their significance to others';
+
+// login and signup screen texts
   static const joinNewsup = 'Join Newsup.';
   static const welcomeBackToNewsup = 'Welcome back to Newsup.';
   static const orSignUpWith = 'Or sign up with';
@@ -17,4 +27,20 @@ class AppTexts {
   static const signUp = 'Sign up';
   static const alreadyHaveAnAccount = 'Already have an account?';
   static const dontHaveAnAccount = 'Don\'t have an account?';
+
+// verify screen texts
+  static const verifyYourIdentity = 'Verify your identity';
+  static const verifyHelpDescription =
+      'To help protect from fraud and identity theft, and to comply with federal regulation.';
+  static const email = 'Email';
+  static const withYourEmail = 'with your email';
+  static const phoneNumber = 'Phone Number';
+  static const withYourPhoneNumber = 'with your phone number';
+  static const continuee = 'Continue';
+  static const whatsYourPhoneNumber = 'What’s your phone number?';
+  static const sendVerifyCodePhoneSubtitle =
+      'We will send a verification code to your phone number';
+  static const whatsYourEmail = 'What’s your email?';
+  static const sendVerifyCodeEmailSubtitle =
+      'We will send a verification code to your email.';
 }
