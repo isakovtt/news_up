@@ -1,5 +1,5 @@
 class AppTexts {
-  AppTexts._();
+ const AppTexts._();
 
 //onboard screen texts
   static const skip = 'skip';
@@ -21,7 +21,6 @@ class AppTexts {
   static const orSignInWith = 'Or sign in with';
   static const signInWithGoogle = 'Sign in with Google';
   static const signInWithApple = 'Sign in with Apple';
-  static const forgotPassword = 'Forgot password?';
   static const rememberMe = 'Remember me';
   static const signIn = 'Sign in';
   static const signUp = 'Sign up';
@@ -43,4 +42,30 @@ class AppTexts {
   static const whatsYourEmail = 'What’s your email?';
   static const sendVerifyCodeEmailSubtitle =
       'We will send a verification code to your email.';
+
+//forgot password and new password screens texts
+  static const forgotPassword = 'Forgot password?';
+  static const forgotPasswordSubtitle =
+      'Please enter your email address to request a password reset.';
+  static const resetPassword = 'Reset password';
+  static const resetPasswordSubtitle =
+      'Your password must be different from previous password.';
+  static const createNewPassword = 'Create New Password';
+
+//Pick Topic screen texts
+  static const whatsInterestYou = 'What’s interest you?';
+  static const whatsInterestSubtitle =
+      'Follow Topic to influence the stories you see';
+  static const finance = 'Finance';
+  static const gaming = 'Gaming';
+  static const sport = 'Sport';
+  static const crypto = 'Crypto';
+  static const health = 'Health';
+  static const technology = 'Technology';
+  static const science = 'Science';
+  static const fitness = 'Fitness';
+  static const travel = 'Travel';
+  static const design = 'Design';
+  static const business = 'Business';
+  static const lifestyle = 'Lifestyle';
 }
