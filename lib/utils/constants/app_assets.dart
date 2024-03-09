@@ -1,11 +1,12 @@
 class AppAssets {
   const AppAssets._();
-  static const String _svg = 'assets/svg';
-  // static const String _png = 'assets/png';
+  static const String _svg = 'assets/icons';
+  static const String _png = 'assets/images';
 
 //svg strings
   static const String analysis = '$_svg/analysis.svg';
-  static const String antDesignAppleFilled = '$_svg/ant_design_apple_filled.svg';
+  static const String antDesignAppleFilled =
+      '$_svg/ant_design_apple_filled.svg';
   static const String archive = '$_svg/archive.svg';
   static const String arrowNarrowDown = '$_svg/arrow_narrow_down.svg';
   static const String arrowNarrowLeft = '$_svg/arrow_narrow_left.svg';
@@ -37,7 +38,8 @@ class AppAssets {
   static const String finance = '$_svg/finance.svg';
   static const String fitness = '$_svg/fitness.svg';
   static const String flash = '$_svg/flash.svg';
-  static const String flatColorIconsGoogle = '$_svg/flat_color_icons_google.svg';
+  static const String flatColorIconsGoogle =
+      '$_svg/flat_color_icons_google.svg';
   static const String follow = '$_svg/follow.svg';
   static const String frFrance = '$_svg/fr_france.svg';
   static const String frame = '$_svg/frame.svg';
@@ -48,7 +50,7 @@ class AppAssets {
   static const String heart_1 = '$_svg/heart_1.svg';
   static const String heart = '$_svg/heart.svg';
   static const String home_2_1 = '$_svg/home_2_1.svg';
-  static const String home_2= '$_svg/home_2.svg';
+  static const String home_2 = '$_svg/home_2.svg';
   static const String idIndonesia = '$_svg/id_indonesia.svg';
   static const String info_1 = '$_svg/info_1.svg';
   static const String itItaly = '$_svg/it_italy.svg';
@@ -90,11 +92,8 @@ class AppAssets {
   static const String userAvatar = '$_svg/user_avatar.svg';
   static const String user = '$_svg/user.svg';
   static const String x = '$_svg/x.svg';
-  
-
 
   //png strings
-
-
-
+  static const String onboardList = '$_png/onboard_list.png';
+  static const String onboardList_2 = '$_png/onboard_list_2.png';
 }

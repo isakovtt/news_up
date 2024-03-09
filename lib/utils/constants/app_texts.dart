@@ -1,8 +1,8 @@
 class AppTexts {
- const AppTexts._();
+  const AppTexts._();
 
 //onboard screen texts
-  static const skip = 'skip';
+  static const skip = 'Skip';
   static const login = 'login';
   static const getStarted = 'Get Started';
   static const onboardFirstTitle =
