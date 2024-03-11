@@ -92,8 +92,11 @@ class AppAssets {
   static const String userAvatar = '$_svg/user_avatar.svg';
   static const String user = '$_svg/user.svg';
   static const String x = '$_svg/x.svg';
+  static const String onboard_1 = '$_svg/onboard_1.svg';
+  static const String onboard_2 = '$_svg/onboard_2.svg';
 
   //png strings
-  static const String onboardList = '$_png/onboard_list.png';
-  static const String onboardList_2 = '$_png/onboard_list_2.png';
+  static const String onboardPicture_1 = '$_png/onboard_picture_1.png';
+  static const String onboardPicture_2 = '$_png/onboard_picture_2.png';
+  static const String onboardPicture_3 = '$_png/onboard_picture_3.png';
 }
