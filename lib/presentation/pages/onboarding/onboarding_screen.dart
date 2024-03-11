@@ -36,7 +36,7 @@ class OnboardingScreen extends StatelessWidget {
           ),
           32.verticalSpace,
           Padding(
-            padding: AppPaddings.lr24,
+            padding: AppPaddings.h24,
             child: RichText(
               textAlign: TextAlign.center,
               text: TextSpan(
@@ -53,7 +53,7 @@ class OnboardingScreen extends StatelessWidget {
           ),
           12.verticalSpace,
           Padding(
-            padding: AppPaddings.lr24,
+            padding: AppPaddings.h24,
             child: Text(
               textAlign: TextAlign.center,
               AppTexts.onboardFirstDescription,
@@ -62,7 +62,7 @@ class OnboardingScreen extends StatelessWidget {
           ),
           40.verticalSpace,
           Padding(
-            padding: AppPaddings.lr22,
+            padding: AppPaddings.h22,
             child: Row(
               children: [
                 const OnboardLoginButton(),
