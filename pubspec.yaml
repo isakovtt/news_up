@@ -98,8 +98,6 @@ flutter:
           weight: 600
         - asset: assets/fonts/inter/Inter-Thin.ttf
           weight: 100
-        - asset: assets/fonts/inter/Inter-VariableFont_slnt,wght.ttf
-          # style: italic
     
   
   # For details regarding fonts from package dependencies,

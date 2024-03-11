@@ -3,14 +3,16 @@ class AppTexts {
 
 //onboard screen texts
   static const skip = 'Skip';
-  static const login = 'login';
+  static const login = 'Login';
   static const getStarted = 'Get Started';
+  static const findAndRelay = 'Find and relay';
   static const onboardFirstTitle =
-      'Find and relay the narratives that resonate with you';
+      ' the narratives that resonate with you';
   static const onboardFirstDescription =
       'Discover and pass on the stories that deeply connect with your emotions and beliefs, allowing others to experience the same resonance.';
+  static const exploreAndShare = 'Explore and share';
   static const onboardSecondTitle =
-      'Explore and share stories that hold significance to you';
+      ' stories that hold significance to you';
   static const onboardSecondDescription =
       'Embark on a journey to uncover and pass along the stories that carry personal meaning and importance to you, spreading their significance to others';
 
