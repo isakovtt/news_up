@@ -21,6 +21,7 @@ class OnboardAppBar extends StatelessWidget implements PreferredSizeWidget {
             const GlobalPageIndicator(),
             const Spacer(),
             GestureDetector(
+              // skip duymesi isledi
               onTap: () {
                 Navigate.navigateReplacePush(context,const LoginScreen());
               },
