@@ -66,6 +66,7 @@ class OnboardingScreen extends StatelessWidget {
             child: Row(
               children: [
                 const OnboardLoginButton(),
+                //horizontal 
                 12.horizontalSpace,
                 const OnboardGetStartedButton(),
               ],
