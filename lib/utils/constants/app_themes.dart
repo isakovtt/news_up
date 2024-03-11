@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:newsup_app/utils/constants/app_colors.dart';
-import 'package:newsup_app/utils/extensions/color_extensions.dart';
-import 'package:newsup_app/utils/helpers/configs.dart';
+import 'app_colors.dart';
+import '../extensions/color_extensions.dart';
+import '../helpers/configs.dart';
 
 class AppThemes {
   const AppThemes._();

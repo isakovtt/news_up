@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:newsup_app/presentation/pages/login/login_screen.dart';
-import 'package:newsup_app/presentation/widgets/global_page_indicator.dart';
+import '../../login/login_screen.dart';
+import '../../../widgets/global_page_indicator.dart';
 
 import '../../../../utils/constants/app_colors.dart';
 import '../../../../utils/constants/app_texts.dart';

@@ -3,22 +3,21 @@ class AppTexts {
 
 //onboard screen texts
   static const skip = 'Skip';
+  static const newsUp = 'Newsup';
   static const login = 'Login';
   static const getStarted = 'Get Started';
   static const findAndRelay = 'Find and relay';
-  static const onboardFirstTitle =
-      ' the narratives that resonate with you';
+  static const onboardFirstTitle = ' the narratives that resonate with you';
   static const onboardFirstDescription =
       'Discover and pass on the stories that deeply connect with your emotions and beliefs, allowing others to experience the same resonance.';
   static const exploreAndShare = 'Explore and share';
-  static const onboardSecondTitle =
-      ' stories that hold significance to you';
+  static const onboardSecondTitle = ' stories that hold significance to you';
   static const onboardSecondDescription =
       'Embark on a journey to uncover and pass along the stories that carry personal meaning and importance to you, spreading their significance to others';
 
 // login and signup screen texts
   static const joinNewsup = 'Join Newsup.';
-  static const welcomeBackToNewsup = 'Welcome back to Newsup.';
+  static const welcomeBackTo = 'Welcome back to';
   static const orSignUpWith = 'Or sign up with';
   static const orSignInWith = 'Or sign in with';
   static const signInWithGoogle = 'Sign in with Google';
@@ -70,4 +69,7 @@ class AppTexts {
   static const design = 'Design';
   static const business = 'Business';
   static const lifestyle = 'Lifestyle';
+  static const yourName = 'Your Name';
+  static const password = 'Password';
+
 }

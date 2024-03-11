@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:newsup_app/utils/constants/app_colors.dart';
+
+import 'app_colors.dart';
 
 class AppTextStyles {
   const AppTextStyles._();
@@ -11,11 +12,23 @@ class AppTextStyles {
         fontSize: 24.sp,
         fontWeight: FontWeight.w700);
   }
+  static TextStyle get primaryBaseS14W700 {
+    return TextStyle(
+        color: AppColors.primaryBase,
+        fontSize: 14.sp,
+        fontWeight: FontWeight.w700);
+  }
 
   static TextStyle get greyScale900s24W700 {
     return TextStyle(
         fontSize: 24.sp,
         fontWeight: FontWeight.w700,
+        color: AppColors.greyScale_900);
+  }
+  static TextStyle get greyScale900s14W500 {
+    return TextStyle(
+        fontSize: 14.sp,
+        fontWeight: FontWeight.w500,
         color: AppColors.greyScale_900);
   }
 

@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:newsup_app/presentation/widgets/global_button.dart';
-import 'package:newsup_app/utils/constants/app_colors.dart';
-import 'package:newsup_app/utils/constants/app_texts.dart';
+import '../../../widgets/global_button.dart';
+import '../../../../utils/constants/app_colors.dart';
+import '../../../../utils/constants/app_texts.dart';
 
 class OnboardGetStartedButton extends StatelessWidget {
   const OnboardGetStartedButton({super.key});

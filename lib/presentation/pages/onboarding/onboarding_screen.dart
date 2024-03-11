@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:newsup_app/utils/constants/app_paddings.dart';
+import '../../../utils/constants/app_paddings.dart';
 
 import '../../../utils/constants/app_assets.dart';
 import '../../../utils/constants/app_text_styles.dart';
