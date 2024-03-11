@@ -62,10 +62,11 @@ class OnboardingScreen extends StatelessWidget {
           ),
           40.verticalSpace,
           Padding(
-            padding: AppPaddings.lr24,
+            padding: AppPaddings.lr22,
             child: Row(
               children: [
                 const OnboardLoginButton(),
+                //horizontal 
                 12.horizontalSpace,
                 const OnboardGetStartedButton(),
               ],
