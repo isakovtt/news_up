@@ -1,9 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:newsup_app/presentation/pages/login/login_screen.dart';
 import 'package:newsup_app/presentation/widgets/global_page_indicator.dart';
 
 import '../../../../utils/constants/app_colors.dart';
 import '../../../../utils/constants/app_texts.dart';
+import '../../../../utils/helpers/navigate.dart';
 
 class OnboardAppBar extends StatelessWidget implements PreferredSizeWidget {
   const OnboardAppBar({super.key});
@@ -18,12 +20,17 @@ class OnboardAppBar extends StatelessWidget implements PreferredSizeWidget {
           children: [
             const GlobalPageIndicator(),
             const Spacer(),
-            Text(
-              AppTexts.skip,
-              style: TextStyle(
-                fontSize: 16.sp,
-                color: AppColors.secondary_200,
-                fontWeight: FontWeight.w500,
+            GestureDetector(
+              onTap: () {
+                Navigate.navigateReplacePush(context,const LoginScreen());
+              },
+              child: Text(
+                AppTexts.skip,
+                style: TextStyle(
+                  fontSize: 16.sp,
+                  color: AppColors.secondary_200,
+                  fontWeight: FontWeight.w500,
+                ),
               ),
             )
           ],
