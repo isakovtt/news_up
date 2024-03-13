@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:newsup_app/presentation/pages/home/widgets/home_cotegory_view.dart';
+import 'widgets/home_cotegory_view.dart';
 
 import '../../../utils/constants/app_paddings.dart';
 import 'widgets/home_app_bar.dart';
