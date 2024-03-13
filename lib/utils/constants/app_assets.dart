@@ -26,6 +26,7 @@ class AppAssets {
   static const String chevronUp = '$_svg/chevron_up.svg';
   static const String cog = '$_svg/cog.svg';
   static const String component_2 = '$_svg/component_2.svg';
+  static const String component_4 = '$_svg/component_4.svg';
   static const String crypto = '$_svg/crypto.svg';
   static const String deGermany = '$_svg/de_germany.svg';
   static const String design = '$_svg/design.svg';
@@ -94,9 +95,13 @@ class AppAssets {
   static const String x = '$_svg/x.svg';
   static const String onboard_1 = '$_svg/onboard_1.svg';
   static const String onboard_2 = '$_svg/onboard_2.svg';
+  static const String cnnVector = '$_svg/cnn_vector.svg';
+  static const String nbcVector = '$_svg/nbc_vector.svg';
+
 
   //png strings
   static const String onboardPicture_1 = '$_png/onboard_picture_1.png';
   static const String onboardPicture_2 = '$_png/onboard_picture_2.png';
   static const String onboardPicture_3 = '$_png/onboard_picture_3.png';
+  static const String homeLivePicture = '$_png/home_live_picture.png';
 }
