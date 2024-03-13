@@ -1,9 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:newsup_app/utils/constants/app_colors.dart';
+import '../../password_restore/forgot_password_screen.dart';
+import '../../../../../utils/constants/app_colors.dart';
+import '../../../../../utils/helpers/navigate.dart';
 
-import '../../../../utils/constants/app_text_styles.dart';
-import '../../../../utils/constants/app_texts.dart';
+import '../../../../../utils/constants/app_text_styles.dart';
+import '../../../../../utils/constants/app_texts.dart';
 
 class ForgotPasswordButton extends StatelessWidget {
   const ForgotPasswordButton({super.key});
@@ -30,6 +32,9 @@ class ForgotPasswordButton extends StatelessWidget {
         ),
         const Spacer(),
         GestureDetector(
+          onTap: () {
+            Navigate.navigateReplacePush(context, const ForgotPasswordScreen());
+          },
           child: Text(
             AppTexts.forgotPassword,
             style: AppTextStyles.primaryBaseS14W700,

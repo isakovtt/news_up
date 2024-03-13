@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
-import '../../../../utils/constants/app_colors.dart';
-import '../../../../utils/constants/app_texts.dart';
-import '../../../widgets/global_input.dart';
+import '../../../../../utils/constants/app_colors.dart';
+import '../../../../../utils/constants/app_texts.dart';
+import '../../../../widgets/global_input.dart';
 
-class LoginInputs extends StatelessWidget {
-  const LoginInputs({super.key});
+class RegisterInputs extends StatelessWidget {
+  const RegisterInputs({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -14,6 +14,10 @@ class LoginInputs extends StatelessWidget {
       children: [
         const GlobalInput(
           text: AppTexts.yourName,
+        ),
+        14.verticalSpace,
+        const GlobalInput(
+          text: AppTexts.yourMail,
         ),
         14.verticalSpace,
         const GlobalInput(
