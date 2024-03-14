@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:newsup_app/utils/constants/app_assets.dart';
+import 'package:newsup_app/utils/constants/app_colors.dart';
 import 'package:newsup_app/utils/constants/app_text_styles.dart';
 
 class NewsHeadlineTimeAndComment extends StatelessWidget {
@@ -14,7 +15,7 @@ class NewsHeadlineTimeAndComment extends StatelessWidget {
   Widget build(BuildContext context) {
     return Row(
       children: [
-        SvgPicture.asset(AppAssets.clock),
+        SvgPicture.asset(AppAssets.clockVector),
         4.horizontalSpace,
         SizedBox(
           child: Text(
@@ -23,7 +24,13 @@ class NewsHeadlineTimeAndComment extends StatelessWidget {
           ),
         ),
         16.horizontalSpace,
-        SvgPicture.asset(AppAssets.messageCircleGrey),
+        SvgPicture.asset(height: 16.h,width: 16.w,
+          AppAssets.messageCircle,
+          colorFilter: const ColorFilter.mode(
+            AppColors.greyScale_400,
+            BlendMode.srcIn,
+          ),
+        ),
         4.horizontalSpace,
         Text(
           commentCountText,

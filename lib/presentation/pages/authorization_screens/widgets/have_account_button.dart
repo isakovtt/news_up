@@ -19,7 +19,8 @@ class HaveAccountButton extends StatelessWidget {
         children: [
           Text(
             text,
-            style: AppTextStyles.greyScale900s14W400,
+            style: AppTextStyles.greyScale900s14W500
+                .copyWith(fontWeight: FontWeight.w400,),
           ),
           Text(
             title,

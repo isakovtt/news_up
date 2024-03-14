@@ -23,7 +23,7 @@ class NewsHeadlineCotegoryAndDots extends StatelessWidget {
         ),
         21.horizontalSpace,
         SvgPicture.asset(
-          AppAssets.dotsVerticalGrey,
+          AppAssets.dotsGrey,
         ),
       ],
     );
