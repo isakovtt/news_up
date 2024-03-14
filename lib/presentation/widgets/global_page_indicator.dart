@@ -7,10 +7,10 @@ class GlobalPageIndicator extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final _pageController = PageController();
+    final pageController = PageController();
 
     return SmoothPageIndicator(
-      controller: _pageController,
+      controller: pageController,
       count: 2,
       effect: ExpandingDotsEffect(
         dotHeight: 4.h,

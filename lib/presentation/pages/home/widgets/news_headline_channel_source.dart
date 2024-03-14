@@ -30,11 +30,13 @@ class NewsHeadlineChannelSource extends StatelessWidget {
           ),
         ),
         4.horizontalSpace,
-        Text(
-          text,
-          maxLines: 1,
-          overflow: TextOverflow.ellipsis,
-          style: AppTextStyles.greyScale400s12W400,
+        SizedBox(width: 96,
+          child: Text(
+            text,
+            maxLines: 1,
+            overflow: TextOverflow.ellipsis,
+            style: AppTextStyles.greyScale400s12W400,
+          ),
         ),
       ],
     );

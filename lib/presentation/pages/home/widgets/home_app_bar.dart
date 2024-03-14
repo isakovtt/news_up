@@ -17,7 +17,7 @@ class HomeAppBar extends StatelessWidget implements PreferredSizeWidget {
         Padding(
           padding: AppPaddings.h24,
           child: SizedBox(
-            height: 56,
+            height: 53,
             child: Center(
               child: Row(
                 children: [
