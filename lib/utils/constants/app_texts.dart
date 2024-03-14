@@ -16,7 +16,7 @@ class AppTexts {
       'Embark on a journey to uncover and pass along the stories that carry personal meaning and importance to you, spreading their significance to others';
 
 // login and signup screen texts
-  static const joinNewsup = 'Join Newsup.';
+  static const join = 'Join';
   static const welcomeBackTo = 'Welcome back to';
   static const orSignUpWith = 'Or sign up with';
   static const orSignInWith = 'Or sign in with';
@@ -27,6 +27,8 @@ class AppTexts {
   static const signUp = 'Sign up';
   static const alreadyHaveAnAccount = 'Already have an account?';
   static const dontHaveAnAccount = 'Don\'t have an account?';
+  static const oldPassword = 'Old password';
+  static const newPassword = 'New password';
 
 // verify screen texts
   static const verifyYourIdentity = 'Verify your identity';
@@ -70,6 +72,7 @@ class AppTexts {
   static const business = 'Business';
   static const lifestyle = 'Lifestyle';
   static const yourName = 'Your Name';
+  static const yourMail = 'Your Mail';
   static const password = 'Password';
 
   //home screen texts

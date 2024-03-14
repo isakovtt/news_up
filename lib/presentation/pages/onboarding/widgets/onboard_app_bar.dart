@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import '../../login/login_screen.dart';
+import '../../authorization_screens/login/login_screen.dart';
 import '../../../widgets/global_page_indicator.dart';
 
 import '../../../../utils/constants/app_colors.dart';
@@ -22,7 +22,7 @@ class OnboardAppBar extends StatelessWidget implements PreferredSizeWidget {
             const Spacer(),
             GestureDetector(
               onTap: () {
-                Navigate.navigateReplacePush(context, const LoginScreen());
+                Navigate.navigatePush(context, const LoginScreen());
               },
               child: Text(
                 AppTexts.skip,

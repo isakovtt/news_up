@@ -40,6 +40,12 @@ class AppTextStyles {
         fontWeight: FontWeight.w400,
         color: AppColors.greyScale_400);
   }
+  static TextStyle get greyScale400s16W400 {
+    return TextStyle(
+        fontSize: 16.sp,
+        fontWeight: FontWeight.w400,
+        color: AppColors.greyScale_400);
+  }
 
   static TextStyle get greyScale900s16W700 {
     return TextStyle(
@@ -80,5 +86,4 @@ class AppTextStyles {
         fontSize: 12.sp,
         fontWeight: FontWeight.w500);
   }
-  
-}
+
