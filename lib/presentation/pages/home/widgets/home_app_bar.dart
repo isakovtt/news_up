@@ -17,22 +17,26 @@ class HomeAppBar extends StatelessWidget implements PreferredSizeWidget {
         Padding(
           padding: AppPaddings.h24,
           child: SizedBox(
-            height: kToolbarHeight,
-            child: Row(
-              children: [
-                SvgPicture.asset(
-                  AppAssets.component_4,
-                  height: 32.h,
-                ),
-                const Spacer(),
-                SvgPicture.asset(
-                  AppAssets.bell,
-                  height: 24.h,
-                  width: 24.w,
-                  colorFilter: const ColorFilter.mode(
-                      AppColors.greyScale_400, BlendMode.srcIn),
-                )
-              ],
+            height: 56,
+            child: Center(
+              child: Row(
+                children: [
+                  SvgPicture.asset(
+                    AppAssets.component_4,
+                    height: 32.h,
+                  ),
+                  const Spacer(),
+                  SvgPicture.asset(
+                    AppAssets.bell,
+                    height: 24.h,
+                    width: 24.w,
+                    colorFilter: const ColorFilter.mode(
+                      AppColors.greyScale_400,
+                      BlendMode.srcIn,
+                    ),
+                  )
+                ],
+              ),
             ),
           ),
         ),
@@ -41,5 +45,5 @@ class HomeAppBar extends StatelessWidget implements PreferredSizeWidget {
   }
 
   @override
-  Size get preferredSize => const Size.fromHeight(kToolbarHeight);
+  Size get preferredSize => const Size.fromHeight(56);
 }
