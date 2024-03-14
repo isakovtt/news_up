@@ -60,5 +60,25 @@ class AppTextStyles {
         color: AppColors.secondaryBase,
         fontSize: 16.sp,
         fontWeight: FontWeight.w500);
+
   }
+  static TextStyle get greyScale400s12W400 {
+    return TextStyle(
+        color: AppColors.greyScale_400,
+        fontSize: 12.sp,
+        fontWeight: FontWeight.w400);
+  }
+  static TextStyle get greyScale900s14W700 {
+    return TextStyle(
+        color: AppColors.greyScale_900,
+        fontSize: 14.sp,
+        fontWeight: FontWeight.w700);
+  }
+  static TextStyle get primaryBaseS12W500 {
+    return TextStyle(
+        color: AppColors.primaryBase,
+        fontSize: 12.sp,
+        fontWeight: FontWeight.w500);
+  }
+  
 }
