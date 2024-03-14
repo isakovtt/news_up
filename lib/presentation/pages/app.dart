@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:newsup_app/presentation/pages/home/home_screen.dart';
 
 import '../../utils/constants/app_themes.dart';
 import '../../utils/helpers/configs.dart';
@@ -17,7 +18,7 @@ class MyApp extends StatelessWidget {
           debugShowCheckedModeBanner: false,
           title: Configs.appName,
           theme: AppThemes.appTheme,
-          home: const SplashScreen(),
+          home: const HomeScreen(),
         );
       },
     );

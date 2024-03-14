@@ -99,6 +99,7 @@ class AppAssets {
   static const String nbcVector = '$_svg/nbc_vector.svg';
   static const String clockVector = '$_svg/clock.svg';
   static const String dotsGrey = '$_svg/dots_grey.svg';
+  static const String liveVector = '$_svg/live_vector.svg';
 
 
 

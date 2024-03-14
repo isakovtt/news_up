@@ -9,7 +9,6 @@ import 'package:newsup_app/presentation/pages/home/widgets/news_headline_time_an
 import '../../../../data/models/news_headline_model.dart';
 import '../../../../utils/constants/app_paddings.dart';
 
-
 class HomeNewsItemView extends StatelessWidget {
   const HomeNewsItemView({super.key});
 
@@ -43,7 +42,7 @@ class HomeNewsItemView extends StatelessWidget {
                         icon: headline.sourceIcon,
                         text: headline.sourceText,
                       ),
-                      29.horizontalSpace,
+                      // 29.horizontalSpace,
                       NewsHeadlineTimeAndComment(
                         commentCountText: headline.comentText,
                         clockText: headline.timeText,

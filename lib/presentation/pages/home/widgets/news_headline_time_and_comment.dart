@@ -13,18 +13,20 @@ class NewsHeadlineTimeAndComment extends StatelessWidget {
   final String commentCountText;
   @override
   Widget build(BuildContext context) {
-    return Row(
+    return Row(mainAxisAlignment: MainAxisAlignment.end,
       children: [
         SvgPicture.asset(AppAssets.clockVector),
         4.horizontalSpace,
         SizedBox(
+          width: 73,
           child: Text(
             clockText,
             style: AppTextStyles.greyScale400s12W400,
           ),
         ),
-        16.horizontalSpace,
-        SvgPicture.asset(height: 16.h,width: 16.w,
+        SvgPicture.asset(
+          height: 16.h,
+          width: 16.w,
           AppAssets.messageCircle,
           colorFilter: const ColorFilter.mode(
             AppColors.greyScale_400,

@@ -81,6 +81,8 @@ class AppTexts {
   static const tranding = 'Tranding';
   static const politics = 'Politics';
   static const international = 'International';
-
-
+  static const home = 'Home';
+  static const explore = 'Explore';
+  static const list = 'List';
+  static const profile = 'Profile';
 }
