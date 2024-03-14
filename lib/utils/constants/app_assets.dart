@@ -97,6 +97,8 @@ class AppAssets {
   static const String onboard_2 = '$_svg/onboard_2.svg';
   static const String cnnVector = '$_svg/cnn_vector.svg';
   static const String nbcVector = '$_svg/nbc_vector.svg';
+  static const String clockVector = '$_svg/clock.svg';
+  static const String dotsGrey = '$_svg/dots_grey.svg';
 
 
 

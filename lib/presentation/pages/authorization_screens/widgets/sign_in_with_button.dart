@@ -25,7 +25,7 @@ class SignInWithButton extends StatelessWidget {
                 children: [
                   23.horizontalSpace,
                   SvgPicture.asset(
-                    AppAssets.googleIcon,
+                    AppAssets.flatColorIconsGoogle,
                   ),
                   60.horizontalSpace,
                   Text(
@@ -47,7 +47,7 @@ class SignInWithButton extends StatelessWidget {
                 children: [
                   23.horizontalSpace,
                   SvgPicture.asset(
-                    AppAssets.appleIcon,
+                    AppAssets.antDesignAppleFilled,
                   ),
                   60.horizontalSpace,
                   Text(
