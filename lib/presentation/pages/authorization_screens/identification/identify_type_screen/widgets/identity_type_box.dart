@@ -6,7 +6,6 @@ import '../../../../../../utils/constants/app_assets.dart';
 import '../../../../../../utils/constants/app_colors.dart';
 import '../../../../../../utils/constants/app_paddings.dart';
 import '../../../../../../utils/constants/app_text_styles.dart';
-import '../../../../../../utils/constants/app_texts.dart';
 
 class IdentityTypeBox extends StatelessWidget {
   const IdentityTypeBox(
