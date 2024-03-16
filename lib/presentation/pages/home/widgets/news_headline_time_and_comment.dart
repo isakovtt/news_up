@@ -13,10 +13,11 @@ class NewsHeadlineTimeAndComment extends StatelessWidget {
   final String commentCountText;
   @override
   Widget build(BuildContext context) {
-    return Row(mainAxisAlignment: MainAxisAlignment.end,
+    return Row(
+      mainAxisAlignment: MainAxisAlignment.spaceBetween,
       children: [
         SvgPicture.asset(AppAssets.clockVector),
-        4.horizontalSpace,
+        // 4.horizontalSpace,
         SizedBox(
           width: 73,
           child: Text(
@@ -33,7 +34,7 @@ class NewsHeadlineTimeAndComment extends StatelessWidget {
             BlendMode.srcIn,
           ),
         ),
-        4.horizontalSpace,
+        // 4.horizontalSpace,
         Text(
           commentCountText,
           style: AppTextStyles.greyScale400s12W400,
