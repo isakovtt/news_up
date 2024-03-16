@@ -35,6 +35,7 @@ class AppAssets {
   static const String esSpain = '$_svg/es_spain.svg';
   static const String eyeOff = '$_svg/eye_off.svg';
   static const String eye = '$_svg/eye.svg';
+  static const String email = '$_svg/email_icon.svg';
   static const String filter = '$_svg/filter.svg';
   static const String finance = '$_svg/finance.svg';
   static const String fitness = '$_svg/fitness.svg';
@@ -65,6 +66,7 @@ class AppAssets {
   static const String messageCircle = '$_svg/message_circle.svg';
   static const String microphone_01 = '$_svg/microphone_01.svg';
   static const String mobile = '$_svg/mobile.svg';
+  static const String phoneCalling = '$_svg/phone_calling_icon.svg';
   static const String moon = '$_svg/moon.svg';
   static const String openBook = '$_svg/open_book.svg';
   static const String pencil = '$_svg/pencil.svg';
