@@ -11,15 +11,13 @@ class AuthHeaders extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Column(crossAxisAlignment: CrossAxisAlignment.start,
+    return Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
+      mainAxisAlignment: MainAxisAlignment.start,
       children: [
-        Row(
-          children: [
-            Text(
-              title,
-              style: AppTextStyles.greyScale900s24W700,
-            ),
-          ],
+        Text(
+          title,
+          style: AppTextStyles.greyScale900s24W700,
         ),
         8.verticalSpace,
         Text(
