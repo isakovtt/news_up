@@ -17,7 +17,7 @@ class SignInUpButton extends StatelessWidget {
         color: AppColors.greyScale_900,
         child: Center(
           child: Padding(
-            padding: AppPaddings.v17,
+            padding: AppPaddings.v20,
             child: Text(
               text,
               style: AppTextStyles.greyScale900s14W700

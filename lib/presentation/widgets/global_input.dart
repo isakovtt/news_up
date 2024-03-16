@@ -11,6 +11,7 @@ class GlobalInput extends StatelessWidget {
     this.prefixIcon,
     this.inputBorderColor,
     this.suffixIcon,
+    this.obscureText,
   });
 
   final String text;
@@ -19,10 +20,12 @@ class GlobalInput extends StatelessWidget {
   final Widget? suffixIcon;
   final Color? inputBorderColor;
   final Color focusedColor = AppColors.primaryBase;
+  final bool? obscureText;
 
   @override
   Widget build(BuildContext context) {
     return TextFormField(
+      obscureText: obscureText ?? false,
       controller: controller,
       style: AppTextStyles.greyScale900s14W500,
       decoration: InputDecoration(
@@ -35,7 +38,6 @@ class GlobalInput extends StatelessWidget {
         enabledBorder: OutlineInputBorder(
           borderSide: const BorderSide(
             color: AppColors.greyScale_50,
-            // Set non-active border color to black
           ),
           borderRadius: BorderRadius.circular(12),
         ),
@@ -46,6 +48,7 @@ class GlobalInput extends StatelessWidget {
         prefixIcon: prefixIcon,
         suffixIcon: suffixIcon,
         focusColor: AppColors.primaryBase,
+        
         counterStyle: const TextStyle(color: AppColors.primaryBase),
       ),
     );

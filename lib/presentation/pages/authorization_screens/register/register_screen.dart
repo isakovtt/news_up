@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import '../identification/identify_type_screen/identify_type_screen.dart';
 import '../login/login_screen.dart';
 import 'widgets/register_greeting_text.dart';
 import 'widgets/register_inputs.dart';
@@ -39,7 +40,13 @@ class RegisterScreen extends StatelessWidget {
               24.verticalSpace,
               const SignInWithButton(),
               32.verticalSpace,
-              const SignInUpButton(text: AppTexts.signUp),
+              SignInUpButton(
+                text: AppTexts.signUp,
+                onTap: () {
+                  Navigate.navigateReplacePush(
+                      context, const IdentifyTypeScreen());
+                },
+              ),
               110.verticalSpace,
               HaveAccountButton(
                   text: AppTexts.alreadyHaveAnAccount,
