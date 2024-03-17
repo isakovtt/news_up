@@ -1,10 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:newsup_app/presentation/pages/home/home_screen.dart';
 
 import '../../utils/constants/app_themes.dart';
 import '../../utils/helpers/configs.dart';
-import 'splash/splash_screen.dart';
+import 'detail/detail_news_screen.dart';
 
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
@@ -18,7 +17,7 @@ class MyApp extends StatelessWidget {
           debugShowCheckedModeBanner: false,
           title: Configs.appName,
           theme: AppThemes.appTheme,
-          home: const HomeScreen(),
+          home: const DetailNewsScreen(),
         );
       },
     );

@@ -21,6 +21,7 @@ class Channels extends StatelessWidget {
                   final item = contents[index];
                   return SizedBox(
                     width: 48.r,
+                    height: 48.r,
                     child: DecoratedBox(
                       decoration: const BoxDecoration(
                         color: AppColors.greyScale_100,
