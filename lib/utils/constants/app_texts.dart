@@ -85,4 +85,7 @@ class AppTexts {
   static const explore = 'Explore';
   static const list = 'List';
   static const profile = 'Profile';
+
+  //detail screen texts
+  static const follow ='Follow';
 }
