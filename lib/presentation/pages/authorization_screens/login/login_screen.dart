@@ -19,13 +19,11 @@ class LoginScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: const Text(''),
-      ),
       body: Padding(
         padding: AppPaddings.h24,
-        child: Column(
+        child: ListView(
           children: [
+            24.verticalSpace,
             const LoginGreetingText(),
             40.verticalSpace,
             const LoginInputs(),
@@ -42,7 +40,7 @@ class LoginScreen extends StatelessWidget {
                 Navigate.navigateReplacePush(context, const HomeScreen());
               },
             ),
-            110.verticalSpace,
+            64.verticalSpace,
             HaveAccountButton(
               text: AppTexts.dontHaveAnAccount,
               title: AppTexts.signUp,

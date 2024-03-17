@@ -28,7 +28,7 @@ class RegisterScreen extends StatelessWidget {
         ),
         body: Padding(
           padding: AppPaddings.h24,
-          child: Column(
+          child: ListView(
             children: [
               const RegisterGreetingText(),
               40.verticalSpace,
@@ -47,13 +47,14 @@ class RegisterScreen extends StatelessWidget {
                       context, const IdentifyTypeScreen());
                 },
               ),
-              110.verticalSpace,
+              64.verticalSpace,
               HaveAccountButton(
-                  text: AppTexts.alreadyHaveAnAccount,
-                  title: AppTexts.signIn,
-                  onTap: () {
-                    Navigate.navigateReplacePush(context, const LoginScreen());
-                  })
+                text: AppTexts.alreadyHaveAnAccount,
+                title: AppTexts.signIn,
+                onTap: () {
+                  Navigate.navigateReplacePush(context, const LoginScreen());
+                },
+              ),
             ],
           ),
         ));
