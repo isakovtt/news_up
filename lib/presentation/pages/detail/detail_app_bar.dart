@@ -10,7 +10,7 @@ class DetailAppBar extends StatelessWidget implements PreferredSizeWidget {
 
   @override
   Widget build(BuildContext context) {
-    return AppBar(
+    return AppBar(scrolledUnderElevation: 0,
       leading: Padding(
         padding: AppPaddings.l24,
         child: Center(
