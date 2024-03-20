@@ -114,5 +114,6 @@ class AppAssets {
   static const String cryptoImage = '$_png/crypto_image.png';
   static const String innovationPicture = '$_png/innovation_picture.png'; 
   static const String detailImage_1 = '$_png/detail_image_1.png'; 
+  static const String commentPicture_1 = '$_png/comment_picture_1.png'; 
 
 }
