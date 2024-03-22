@@ -86,8 +86,9 @@ class AppTexts {
   static const list = 'List';
   static const profile = 'Profile';
 
-  //detail screen texts
+  //detail and comments screen texts
   static const follow = 'Follow';
   static const writeComment = 'Write comment';
   static const comment = 'Comment';
+  static const typeYourComment = 'Type your comment...';
 }

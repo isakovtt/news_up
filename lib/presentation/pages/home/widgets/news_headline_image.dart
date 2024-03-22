@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:newsup_app/utils/constants/app_box_decorations.dart';
 
 class NewsHeadlineImage extends StatelessWidget {
   const NewsHeadlineImage({super.key, required this.image});
@@ -8,13 +9,11 @@ class NewsHeadlineImage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       clipBehavior: Clip.antiAlias,
-      decoration: const BoxDecoration(
-        borderRadius: BorderRadius.all(Radius.circular(18)),
-      ),
+      decoration: AppBoxDecorations.circular18,
       child: Image.asset(
+        image,
         width: 80.r,
         height: 80.r,
-        image,
         fit: BoxFit.cover,
       ),
     );

@@ -7,7 +7,7 @@ class NewsHeadlineModel {
   String headlineText;
   String sourceText;
   String timeText;
-  String comentText;
+  String commentText;
 
   NewsHeadlineModel({
     required this.categoryText,
@@ -16,7 +16,7 @@ class NewsHeadlineModel {
     required this.headlineText,
     required this.sourceText,
     required this.timeText,
-    required this.comentText,
+    required this.commentText,
   });
 }
 
@@ -25,7 +25,7 @@ List<NewsHeadlineModel> newsheadline = [
     image: AppAssets.unnamed_1,
     categoryText: 'Technology',
     headlineText: 'Innovations in Business: The Future of Commerce',
-    comentText: '23',
+    commentText: '23',
     timeText: '14h ago',
     sourceText: 'CNN News',
     sourceIcon: AppAssets.cnnVector,
@@ -34,7 +34,7 @@ List<NewsHeadlineModel> newsheadline = [
     image: AppAssets.cryptoImage,
     categoryText: 'Crypto',
     headlineText: 'Exploring the Latest in Cryptocurrency Trends',
-    comentText: '16',
+    commentText: '16',
     timeText: '5h ago',
     sourceText: 'NBC News',
     sourceIcon: AppAssets.nbcVector,
@@ -43,7 +43,7 @@ List<NewsHeadlineModel> newsheadline = [
     image: AppAssets.homeLivePicture,
     categoryText: 'Earth',
     headlineText: 'Occupied Ukraine forced to vote in Putins election',
-    comentText: '38',
+    commentText: '38',
     timeText: '9h ago',
     sourceText: 'CNN News',
     sourceIcon: AppAssets.cnnVector,
@@ -52,7 +52,7 @@ List<NewsHeadlineModel> newsheadline = [
     image: AppAssets.unnamed_1,
     categoryText: 'Technology',
     headlineText: 'Innovations in Business: The Future of Commerce',
-    comentText: '23',
+    commentText: '23',
     timeText: '14h ago',
     sourceText: 'CNN News',
     sourceIcon: AppAssets.cnnVector,
@@ -61,7 +61,7 @@ List<NewsHeadlineModel> newsheadline = [
     image: AppAssets.innovationPicture,
     categoryText: 'Innovation',
     headlineText: 'Talking on the Moon: The quest to establish lunar wi-fi',
-    comentText: '32',
+    commentText: '32',
     timeText: '2h ago',
     sourceText: 'DNV News',
     sourceIcon: AppAssets.esSpain,
@@ -70,7 +70,7 @@ List<NewsHeadlineModel> newsheadline = [
     image: AppAssets.cryptoImage,
     categoryText: 'Crypto',
     headlineText: 'Exploring the Latest in Cryptocurrency Trends',
-    comentText: '3',
+    commentText: '3',
     timeText: '5h ago',
     sourceText: 'NBC News',
     sourceIcon: AppAssets.nbcVector,
@@ -79,7 +79,7 @@ List<NewsHeadlineModel> newsheadline = [
     image: AppAssets.homeLivePicture,
     categoryText: 'Culture',
     headlineText: 'Occupied Ukraine forced to vote in Putins election',
-    comentText: '38',
+    commentText: '38',
     timeText: '1h ago',
     sourceText: 'Kontan News',
     sourceIcon: AppAssets.deGermany,
