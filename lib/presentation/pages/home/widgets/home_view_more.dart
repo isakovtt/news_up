@@ -8,21 +8,21 @@ class HomeViewMore extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Row(
-      children: [
-        Text(
-          AppTexts.breakingNews,
-          style: AppTextStyles.greyScale900s16W700,
-        ),
-        const Spacer(),
-        Padding(
-          padding: AppPaddings.r24,
-          child: Text(
+    return Padding(
+      padding: AppPaddings.h24,
+      child: Row(
+        children: [
+          Text(
+            AppTexts.breakingNews,
+            style: AppTextStyles.greyScale900s16W700,
+          ),
+          const Spacer(),
+          Text(
             AppTexts.viewMore,
             style: AppTextStyles.primaryBaseS14W500,
           ),
-        ),
-      ],
+        ],
+      ),
     );
   }
 }

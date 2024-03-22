@@ -15,9 +15,17 @@ class AppBoxDecorations {
 
   static BoxDecoration get greyScale50R1000 {
     return const BoxDecoration(
-      color: AppColors.greyScale_500,
+      color: AppColors.greyScale_50,
       borderRadius: BorderRadius.all(
         Radius.circular(1000),
+      ),
+    );
+  }
+
+  static BoxDecoration get circular18 {
+    return const BoxDecoration(
+      borderRadius: BorderRadius.all(
+        Radius.circular(18),
       ),
     );
   }

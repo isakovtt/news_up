@@ -11,35 +11,36 @@ class HomeAppBar extends StatelessWidget implements PreferredSizeWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Column(
-      children: [
-        24.verticalSpace,
+    return AppBar(
+      titleSpacing: 24,
+      scrolledUnderElevation: 0,
+      title: SvgPicture.asset(
+        AppAssets.component_4,
+        height: 32.h,
+      ),
+      actions: [
         Padding(
           padding: AppPaddings.h24,
-          child: SizedBox(
-            height: 53,
-            child: Center(
-              child: Row(
-                children: [
-                  SvgPicture.asset(
-                    AppAssets.component_4,
-                    height: 32.h,
-                  ),
-                  const Spacer(),
-                  SvgPicture.asset(
-                    AppAssets.bell,
-                    height: 24.h,
-                    width: 24.w,
-                    colorFilter: const ColorFilter.mode(
-                      AppColors.greyScale_400,
-                      BlendMode.srcIn,
-                    ),
-                  )
-                ],
+          child: Stack(
+            children: [
+              SvgPicture.asset(
+                AppAssets.bell,
+                height: 24.h,
+                width: 24.w,
+                colorFilter: const ColorFilter.mode(
+                  AppColors.greyScale_400,
+                  BlendMode.srcIn,
+                ),
               ),
-            ),
+              const Positioned(
+                  left: 13,
+                  child: CircleAvatar(
+                    radius: 4,
+                    backgroundColor: AppColors.errorBase,
+                  ))
+            ],
           ),
-        ),
+        )
       ],
     );
   }

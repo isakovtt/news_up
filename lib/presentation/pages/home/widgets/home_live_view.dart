@@ -1,9 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-import 'package:newsup_app/utils/constants/app_colors.dart';
+
 import '../../../../utils/constants/app_assets.dart';
+import '../../../../utils/constants/app_box_decorations.dart';
 import '../../../../utils/constants/app_paddings.dart';
+import '../../../../utils/constants/app_text_styles.dart';
 
 class HomeLiveView extends StatelessWidget {
   const HomeLiveView({super.key});
@@ -11,16 +13,12 @@ class HomeLiveView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: AppPaddings.r24,
+      padding: AppPaddings.h24,
       child: Container(
         width: 327.w,
         height: 208.h,
         clipBehavior: Clip.antiAlias,
-        decoration: const BoxDecoration(
-          borderRadius: BorderRadius.all(
-            Radius.circular(18),
-          ),
-        ),
+        decoration: AppBoxDecorations.circular18,
         child: Stack(
           alignment: Alignment.center,
           fit: StackFit.expand,
@@ -36,14 +34,11 @@ class HomeLiveView extends StatelessWidget {
               child: SizedBox(
                 width: 279.w,
                 height: 52.h,
-                child: const Text(
+                child: Text(
                   'Ukraine conflict: Kyiv brace for a Russian assault',
                   maxLines: 3,
                   overflow: TextOverflow.ellipsis,
-                  style: TextStyle(
-                      color: AppColors.white,
-                      fontSize: 16,
-                      fontWeight: FontWeight.w700),
+                  style: AppTextStyles.whiteS16W700,
                 ),
               ),
             ),
