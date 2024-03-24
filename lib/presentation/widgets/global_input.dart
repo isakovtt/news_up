@@ -6,21 +6,23 @@ import '../../utils/constants/app_text_styles.dart';
 class GlobalInput extends StatelessWidget {
   const GlobalInput({
     super.key,
-    required this.text,
+    this.text,
     this.controller,
     this.prefixIcon,
     this.inputBorderColor,
     this.suffixIcon,
     this.obscureText,
+    this.prefixText,
   });
 
-  final String text;
+  final String? text;
   final TextEditingController? controller;
   final Widget? prefixIcon;
   final Widget? suffixIcon;
   final Color? inputBorderColor;
   final Color focusedColor = AppColors.primaryBase;
   final bool? obscureText;
+  final String? prefixText;
 
   @override
   Widget build(BuildContext context) {
@@ -48,7 +50,7 @@ class GlobalInput extends StatelessWidget {
         prefixIcon: prefixIcon,
         suffixIcon: suffixIcon,
         focusColor: AppColors.primaryBase,
-        
+        prefixText: prefixText,
         counterStyle: const TextStyle(color: AppColors.primaryBase),
       ),
     );

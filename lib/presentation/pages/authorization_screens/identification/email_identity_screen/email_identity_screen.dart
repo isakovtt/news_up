@@ -5,6 +5,8 @@ import 'package:newsup_app/presentation/widgets/global_input.dart';
 import 'package:newsup_app/utils/constants/app_paddings.dart';
 
 import '../../../../../utils/constants/app_texts.dart';
+import '../../../../../utils/helpers/navigate.dart';
+import '../../news_types_chip/news_types_chip.dart';
 import '../../widgets/sign_in_up_button.dart';
 
 class EmailIdentityScreen extends StatelessWidget {
@@ -31,10 +33,14 @@ class EmailIdentityScreen extends StatelessWidget {
               text: AppTexts.email,
             ),
             const Spacer(),
-            const SignInUpButton(
-              text: AppTexts.continuee,
-              // onTap: Navigate.navigatePush(context, page),
-            ),
+            SignInUpButton(
+                text: AppTexts.continuee,
+                onTap: () {
+                  Navigate.navigateReplacePush(
+                    context,
+                    const NewsTypesChip(),
+                  );
+                }),
             32.verticalSpace,
           ],
         ),
