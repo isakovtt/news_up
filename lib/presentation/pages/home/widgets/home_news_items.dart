@@ -1,10 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:newsup_app/presentation/pages/home/widgets/news_headline_channel_source.dart';
-import 'package:newsup_app/presentation/pages/home/widgets/news_headline_cotegory_and_dots.dart';
-import 'package:newsup_app/presentation/pages/home/widgets/news_headline_image.dart';
-import 'package:newsup_app/presentation/pages/home/widgets/news_headline_text.dart';
-import 'package:newsup_app/presentation/pages/home/widgets/news_headline_time_and_comment.dart';
+import '../../detail/detail_news_screen.dart';
+import 'horizontal_dots.dart';
+import '../../../../utils/helpers/navigate.dart';
+import 'news_headline_cotegory_and_dots.dart';
+import 'news_headline_image.dart';
+import 'news_headline_text.dart';
+import 'news_headline_time_and_comment.dart';
 
 import '../../../../data/models/news_headline_model.dart';
 import '../../../../utils/constants/app_paddings.dart';
@@ -15,12 +17,12 @@ class HomeNewsItemView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: AppPaddings.r24,
+      padding: AppPaddings.h24,
       child: ListView.separated(
-        cacheExtent: 22,
+        padding: AppPaddings.b16,
+        shrinkWrap: true,
         scrollDirection: Axis.vertical,
         itemCount: newsheadline.length,
-        shrinkWrap: true,
         physics: const NeverScrollableScrollPhysics(),
         separatorBuilder: (context, index) => 16.verticalSpace,
         itemBuilder: (context, index) {
@@ -32,25 +34,32 @@ class HomeNewsItemView extends StatelessWidget {
               Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  NewsHeadlineCotegoryAndDots(text: headline.categoryText),
-                  4.verticalSpace,
-                  NewsHeadlineText(text: headline.headlineText),
-                  12.verticalSpace,
                   Row(
                     children: [
-                      NewsHeadlineChannelSource(
-                        icon: headline.sourceIcon,
-                        text: headline.sourceText,
-                      ),
-                      // 29.horizontalSpace,
-                      NewsHeadlineTimeAndComment(
-                        commentCountText: headline.comentText,
-                        clockText: headline.timeText,
-                      ),
+                      NewsHeadlineCotegory(text: headline.categoryText),
+                      20.horizontalSpace,
+                      const HorizontalDots(),
                     ],
-                  )
+                  ),
+                  6.verticalSpace,
+                  GestureDetector(
+                    onTap: () {
+                      Navigate.navigatePush(
+                        context,
+                        const DetailNewsScreen(),
+                      );
+                    },
+                    child: NewsHeadlineText(text: headline.headlineText),
+                  ),
+                  12.verticalSpace,
+                  NewsHeadlineTimeAndComment(
+                    icon: headline.sourceIcon,
+                    text: headline.sourceText,
+                    clockText: headline.timeText,
+                    commentCountText: headline.commentText,
+                  ),
                 ],
-              )
+              ),
             ],
           );
         },

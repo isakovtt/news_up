@@ -102,6 +102,7 @@ class AppAssets {
   static const String clockVector = '$_svg/clock.svg';
   static const String dotsGrey = '$_svg/dots_grey.svg';
   static const String liveVector = '$_svg/live_vector.svg';
+  static const String sendCommentIcon = '$_svg/send_comment_icon.svg';
 
 
 
@@ -114,5 +115,9 @@ class AppAssets {
   static const String cryptoImage = '$_png/crypto_image.png';
   static const String innovationPicture = '$_png/innovation_picture.png'; 
   static const String detailImage_1 = '$_png/detail_image_1.png'; 
+  static const String commentPicture_1 = '$_png/comment_picture_1.png'; 
+  static const String commentPicture_2 = '$_png/comment_picture_2.png'; 
+  static const String commentPicture_3 = '$_png/comment_picture_3.png'; 
+  static const String commentPicture_4 = '$_png/comment_picture_4.png'; 
 
 }

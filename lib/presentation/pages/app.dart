@@ -6,8 +6,6 @@ import '../../utils/helpers/configs.dart';
 import 'authorization_screens/login/login_screen.dart';
 
 
-
-
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
 
@@ -20,10 +18,7 @@ class MyApp extends StatelessWidget {
           debugShowCheckedModeBanner: false,
           title: Configs.appName,
           theme: AppThemes.appTheme,
-
-
           home: const LoginScreen(),
-
         );
       },
     );
