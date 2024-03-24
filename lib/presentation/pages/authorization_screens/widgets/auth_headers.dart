@@ -4,16 +4,23 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import '../../../../utils/constants/app_text_styles.dart';
 
 class AuthHeaders extends StatelessWidget {
-  const AuthHeaders({super.key, required this.title, required this.subtitle});
+  const AuthHeaders(
+      {super.key,
+      required this.title,
+      required this.subtitle,
+      this.crossAxisAlignment,
+      this.mainAxisAlignment});
 
   final String title;
   final String subtitle;
+  final CrossAxisAlignment? crossAxisAlignment;
+  final MainAxisAlignment? mainAxisAlignment;
 
   @override
   Widget build(BuildContext context) {
     return Column(
-      crossAxisAlignment: CrossAxisAlignment.start,
-      mainAxisAlignment: MainAxisAlignment.start,
+      crossAxisAlignment: crossAxisAlignment ?? CrossAxisAlignment.start,
+      mainAxisAlignment: mainAxisAlignment ?? MainAxisAlignment.start,
       children: [
         Text(
           title,

@@ -5,6 +5,7 @@ import '../../utils/constants/app_themes.dart';
 import '../../utils/helpers/configs.dart';
 import 'authorization_screens/login/login_screen.dart';
 
+
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
 
