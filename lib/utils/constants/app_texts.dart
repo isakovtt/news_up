@@ -91,4 +91,7 @@ class AppTexts {
   static const writeComment = 'Write comment';
   static const comment = 'Comment';
   static const typeYourComment = 'Type your comment...';
+
+  // draft screen texts
+  static const yourStories = 'Your Stories';
 }
