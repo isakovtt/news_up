@@ -70,6 +70,7 @@ class AppAssets {
   static const String moon = '$_svg/moon.svg';
   static const String openBook = '$_svg/open_book.svg';
   static const String pencil = '$_svg/pencil.svg';
+  static const String pencilWeigh = '$_svg/pencil_weigh.svg';
   static const String phoneCall = '$_svg/phone_call.svg';
   static const String photo = '$_svg/photo.svg';
   static const String plus = '$_svg/plus.svg';
@@ -104,8 +105,6 @@ class AppAssets {
   static const String liveVector = '$_svg/live_vector.svg';
   static const String sendCommentIcon = '$_svg/send_comment_icon.svg';
 
-
-
   //png strings
   static const String onboardPicture_1 = '$_png/onboard_picture_1.png';
   static const String onboardPicture_2 = '$_png/onboard_picture_2.png';
@@ -113,11 +112,16 @@ class AppAssets {
   static const String homeLivePicture = '$_png/home_live_picture.png';
   static const String unnamed_1 = '$_png/unnamed_1.png';
   static const String cryptoImage = '$_png/crypto_image.png';
-  static const String innovationPicture = '$_png/innovation_picture.png'; 
-  static const String detailImage_1 = '$_png/detail_image_1.png'; 
-  static const String commentPicture_1 = '$_png/comment_picture_1.png'; 
-  static const String commentPicture_2 = '$_png/comment_picture_2.png'; 
-  static const String commentPicture_3 = '$_png/comment_picture_3.png'; 
-  static const String commentPicture_4 = '$_png/comment_picture_4.png'; 
-
+  static const String innovationPicture = '$_png/innovation_picture.png';
+  static const String detailImage_1 = '$_png/detail_image_1.png';
+  static const String commentPicture_1 = '$_png/comment_picture_1.png';
+  static const String commentPicture_2 = '$_png/comment_picture_2.png';
+  static const String commentPicture_3 = '$_png/comment_picture_3.png';
+  static const String commentPicture_4 = '$_png/comment_picture_4.png';
+  static const String draftImage_1 = '$_png/draft_image_1.png';
+  static const String draftImage_2 = '$_png/draft_image_2.png';
+  static const String draftImage_3 = '$_png/draft_image_3.png';
+  static const String draftImage_4 = '$_png/draft_image_4.png';
+  static const String draftImage_5 = '$_png/draft_image_5.png';
+  static const String draftImage_6 = '$_png/draft_image_6.png';
 }

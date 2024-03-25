@@ -29,4 +29,19 @@ class AppBoxDecorations {
       ),
     );
   }
+
+  static BoxDecoration get circular12 {
+    return const BoxDecoration(
+      borderRadius: BorderRadius.all(
+        Radius.circular(12),
+      ),
+    );
+  }
+
+  static BoxDecoration get greyScale100R12 {
+    return BoxDecoration(
+      color: AppColors.greyScale_100,
+      borderRadius: BorderRadius.circular(12),
+    );
+  }
 }

@@ -4,6 +4,7 @@ class AppPaddings {
   const AppPaddings._();
 
   static EdgeInsets get h24 => const EdgeInsets.symmetric(horizontal: 24);
+  static EdgeInsets get h25 => const EdgeInsets.symmetric(horizontal: 25);
   static EdgeInsets get h22 => const EdgeInsets.symmetric(horizontal: 22);
   static EdgeInsets get h12 => const EdgeInsets.symmetric(horizontal: 12);
   static EdgeInsets get v12 => const EdgeInsets.symmetric(vertical: 12);
