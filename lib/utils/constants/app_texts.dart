@@ -94,4 +94,10 @@ class AppTexts {
 
   // draft screen texts
   static const yourStories = 'Your Stories';
+  static const draft = 'Draft';
+  static const publish = 'Publish';
+
+  // search screen text
+  static const String hotNews= 'Hot News';
+
 }

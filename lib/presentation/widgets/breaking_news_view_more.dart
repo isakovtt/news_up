@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
-import '../../../../utils/constants/app_paddings.dart';
-import '../../../../utils/constants/app_text_styles.dart';
-import '../../../../utils/constants/app_texts.dart';
+import '../../utils/constants/app_paddings.dart';
+import '../../utils/constants/app_text_styles.dart';
+import '../../utils/constants/app_texts.dart';
 
-class HomeViewMore extends StatelessWidget {
-  const HomeViewMore({super.key});
+class BreakingNewsViewMore extends StatelessWidget {
+  const BreakingNewsViewMore({super.key});
 
   @override
   Widget build(BuildContext context) {

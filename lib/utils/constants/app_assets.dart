@@ -124,4 +124,10 @@ class AppAssets {
   static const String draftImage_4 = '$_png/draft_image_4.png';
   static const String draftImage_5 = '$_png/draft_image_5.png';
   static const String draftImage_6 = '$_png/draft_image_6.png';
+  static const String girdViewImage_1 = '$_png/gridview_image_1.png';
+  static const String girdViewImage_2 = '$_png/gridview_image_2.png';
+  static const String girdViewImage_3 = '$_png/gridview_image_3.png';
+  static const String girdViewImage_4 = '$_png/gridview_image_4.png';
+  static const String girdViewImage_5 = '$_png/gridview_image_5.png';
+  static const String girdViewImage_6 = '$_png/gridview_image_6.png';
 }
