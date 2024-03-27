@@ -5,9 +5,10 @@ import 'package:newsup_app/utils/constants/app_assets.dart';
 import 'package:newsup_app/utils/constants/app_colors.dart';
 import 'package:newsup_app/utils/constants/app_paddings.dart';
 import 'package:newsup_app/utils/constants/app_text_styles.dart';
+import 'package:newsup_app/utils/constants/app_texts.dart';
 
-class DraftLayouts extends StatelessWidget {
-  const DraftLayouts({super.key});
+class SearchLayouts extends StatelessWidget {
+  const SearchLayouts({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -15,12 +16,15 @@ class DraftLayouts extends StatelessWidget {
       padding: AppPaddings.h24,
       child: Row(
         children: [
-           Text('6 Files Draft',style: AppTextStyles.greyScale400s14W400,),
+          Text(
+            AppTexts.hotNews,
+            style: AppTextStyles.greyScale900s16W700,
+          ),
           const Spacer(),
           SvgPicture.asset(
             AppAssets.layoutGrid,
             colorFilter: const ColorFilter.mode(
-              AppColors.greyScale_400,
+              AppColors.primaryBase,
               BlendMode.srcIn,
             ),
           ),
@@ -28,7 +32,7 @@ class DraftLayouts extends StatelessWidget {
           SvgPicture.asset(
             AppAssets.ayoutList,
             colorFilter: const ColorFilter.mode(
-              AppColors.primaryBase,
+              AppColors.greyScale_900,
               BlendMode.srcIn,
             ),
           ),

@@ -7,7 +7,7 @@ import 'widgets/home_app_bar.dart';
 import 'widgets/home_cotegory_view.dart';
 import 'widgets/home_live_view.dart';
 import 'widgets/home_news_items.dart';
-import 'widgets/home_view_more.dart';
+import '../../widgets/breaking_news_view_more.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});
@@ -22,7 +22,7 @@ class HomeScreen extends StatelessWidget {
             4.verticalSpace,
             const Channels(),
             24.verticalSpace,
-            const HomeViewMore(),
+            const BreakingNewsViewMore(),
             24.verticalSpace,
             const HomeLiveView(),
             32.verticalSpace,

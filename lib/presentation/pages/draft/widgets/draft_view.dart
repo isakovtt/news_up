@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:newsup_app/data/models/draft_model.dart';
-import 'package:newsup_app/presentation/pages/draft/draft_list_tile.dart';
+
+import '../../../../data/models/draft_model.dart';
+import 'draft_list_tile.dart';
 
 class DraftView extends StatelessWidget {
   const DraftView({super.key});
@@ -17,6 +18,7 @@ class DraftView extends StatelessWidget {
       itemBuilder: (context, index) {
         final draft = drafts[index];
         return DraftListTile(
+          verticalDots: true,
           image: draft.image,
           editTimeText: draft.editTime,
           headlinaText: draft.headline,

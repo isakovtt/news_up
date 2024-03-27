@@ -1,13 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/svg.dart';
-import '../../../utils/constants/app_assets.dart';
-import '../../../utils/constants/app_paddings.dart';
-import '../../../utils/constants/app_text_styles.dart';
-import '../../../utils/constants/app_texts.dart';
 
-class DraftAppBar extends StatelessWidget implements PreferredSizeWidget {
-  const DraftAppBar({super.key});
+import '../../../../utils/constants/app_assets.dart';
+import '../../../../utils/constants/app_paddings.dart';
+import '../../../../utils/constants/app_text_styles.dart';
+import '../../../../utils/constants/app_texts.dart';
+
+class SearchAppBar extends StatelessWidget implements PreferredSizeWidget {
+  const SearchAppBar({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -25,20 +26,20 @@ class DraftAppBar extends StatelessWidget implements PreferredSizeWidget {
         ),
       ),
       title: Text(
-        AppTexts.yourStories,
+        AppTexts.explore,
         style: AppTextStyles.greyScale900s16W700,
       ),
       actions: [
         Padding(
           padding: AppPaddings.h24,
           child: SvgPicture.asset(
-            AppAssets.pencil,
+            AppAssets.search,
           ),
         )
       ],
     );
   }
-  
+
   @override
   Size get preferredSize => const Size.fromHeight(kToolbarHeight);
 }

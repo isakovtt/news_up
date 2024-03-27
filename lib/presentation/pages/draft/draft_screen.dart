@@ -4,10 +4,13 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import '../../../utils/constants/app_box_decorations.dart';
 import '../../../utils/constants/app_colors.dart';
-import '../../../utils/constants/app_text_styles.dart';
-import 'draft_app_bar.dart';
-import 'draft_layouts.dart';
-import 'draft_view.dart';
+import '../../../utils/constants/app_paddings.dart';
+import '../../../utils/constants/app_texts.dart';
+import '../../widgets/custom_tab_box.dart';
+import 'widgets/draft_app_bar.dart';
+import 'widgets/draft_layouts.dart';
+import 'widgets/draft_view.dart';
+import 'widgets/publish_view.dart';
 
 class DraftScreen extends StatefulWidget {
   const DraftScreen({super.key});
@@ -22,7 +25,7 @@ class _DraftScreenState extends State<DraftScreen> {
     return Scaffold(
       appBar: const DraftAppBar(),
       body: PreferredSize(
-        preferredSize: const Size.fromHeight(40),
+        preferredSize: Size.fromHeight(40.h),
         child: SafeArea(
           child: DefaultTabController(
             length: 2,
@@ -31,37 +34,22 @@ class _DraftScreenState extends State<DraftScreen> {
                 DecoratedBox(
                   decoration: AppBoxDecorations.greyScale100R12,
                   child: Padding(
-                    padding: const EdgeInsets.all(3.0),
+                    padding: AppPaddings.all3,
                     child: ButtonsTabBar(
-                      height: 40,
-                      contentPadding: const EdgeInsets.symmetric(horizontal: 5),
+                      height: 40.h,
+                      contentPadding: AppPaddings.h5,
                       backgroundColor: AppColors.white,
                       unselectedBackgroundColor: AppColors.greyScale_100,
-                      tabs: [
+                      tabs: const [
                         Tab(
-                          child: Container(
-                            height: 32.h,
-                            width: 155,
-                            decoration: AppBoxDecorations.circular12,
-                            child: Center(
-                              child: Text('Draft',
-                                  style: AppTextStyles.greyScale900s14W700),
-                            ),
+                          child: CustomTabBox(
+                            text: AppTexts.draft,
                           ),
                         ),
                         Tab(
-                          child: Container(
-                            decoration: AppBoxDecorations.circular12,
-                            height: 32.h,
-                            width: 155,
-                            child: Center(
-                              child: Text(
-                                'Publish',
-                                style: AppTextStyles.greyScale900s14W700,
-                              ),
-                            ),
-                          ),
-                        ),
+                            child: CustomTabBox(
+                          text: AppTexts.publish,
+                        )),
                       ],
                     ),
                   ),
@@ -73,14 +61,20 @@ class _DraftScreenState extends State<DraftScreen> {
                       SingleChildScrollView(
                         child: Column(
                           children: [
-                            const DraftLayouts(),
+                            const DraftLayouts(draftText: true),
                             24.verticalSpace,
-                            const DraftView()
+                            const DraftView(),
                           ],
                         ),
                       ),
-                      const Center(
-                        child: Icon(Icons.directions_transit),
+                      SingleChildScrollView(
+                        child: Column(
+                          children: [
+                            const DraftLayouts(publishText: true),
+                            24.verticalSpace,
+                            const PublishView(),
+                          ],
+                        ),
                       ),
                     ],
                   ),

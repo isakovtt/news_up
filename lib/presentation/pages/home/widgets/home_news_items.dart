@@ -3,7 +3,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import '../../detail/detail_news_screen.dart';
 import 'horizontal_dots.dart';
 import '../../../../utils/helpers/navigate.dart';
-import 'news_headline_cotegory_and_dots.dart';
+import 'news_headline_cotegory.dart';
 import 'news_headline_image.dart';
 import 'news_headline_text.dart';
 import 'news_headline_time_and_comment.dart';
