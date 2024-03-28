@@ -15,25 +15,22 @@ class GlobalCommentInput extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Padding(
-      padding: AppPaddings.lr24b12t13,
-      child: SizedBox(
-        height: height ?? 40.h,
-        child: TextFormField(
-          style: AppTextStyles.greyScale900s14W700,
-          decoration: InputDecoration(
-            suffixIcon: suffixIcon,
-            filled: true,
-            fillColor: AppColors.greyScale_50,
-            border: const OutlineInputBorder(
-              borderSide: BorderSide.none,
-              borderRadius: BorderRadius.all(
-                Radius.circular(1000),
-              ),
+    return SizedBox(
+      height: height ?? 40.h,
+      child: TextFormField(
+        style: AppTextStyles.greyScale900s14W700,
+        decoration: InputDecoration(
+          suffixIcon: suffixIcon,
+          filled: true,
+          fillColor: AppColors.greyScale_50,
+          border: const OutlineInputBorder(
+            borderSide: BorderSide.none,
+            borderRadius: BorderRadius.all(
+              Radius.circular(1000),
             ),
-            hintText: hintText ?? AppTexts.writeComment,
-            hintStyle: AppTextStyles.greyScale400s12W400,
           ),
+          hintText: hintText ?? AppTexts.writeComment,
+          hintStyle: AppTextStyles.greyScale400s12W400,
         ),
       ),
     );

@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 
-import '../../widgets/global_comment_input.dart';
 import 'channel_list_tile.dart';
 import 'detail_app_bar.dart';
+import 'detail_footer.dart';
 import 'detail_news_description.dart';
 import 'detail_news_headline.dart';
 import 'detail_news_image.dart';
@@ -24,10 +24,7 @@ class DetailNewsScreen extends StatelessWidget {
           ],
         ),
       ),
-      bottomNavigationBar: GlobalCommentInput(),
-      resizeToAvoidBottomInset: false,
-      
-
+      bottomNavigationBar: DetailFooter(),
     );
   }
 }

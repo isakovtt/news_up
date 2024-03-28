@@ -11,8 +11,8 @@ import 'news_headline_time_and_comment.dart';
 import '../../../../data/models/news_headline_model.dart';
 import '../../../../utils/constants/app_paddings.dart';
 
-class HomeNewsItemView extends StatelessWidget {
-  const HomeNewsItemView({super.key});
+class NewsItemListView extends StatelessWidget {
+  const NewsItemListView({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -53,8 +53,8 @@ class HomeNewsItemView extends StatelessWidget {
                   ),
                   12.verticalSpace,
                   NewsHeadlineTimeAndComment(
-                    icon: headline.sourceIcon,
-                    text: headline.sourceText,
+                    sourceIcon: headline.sourceIcon,
+                    sourceName: headline.sourceName,
                     clockText: headline.timeText,
                     commentCountText: headline.commentText,
                   ),

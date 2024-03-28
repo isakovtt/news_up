@@ -5,8 +5,8 @@ import 'package:newsup_app/utils/constants/app_paddings.dart';
 import '../../../../data/models/cotegory_model.dart';
 import '../../../../utils/constants/app_text_styles.dart';
 
-class HomeCotegoryView extends StatelessWidget {
-  const HomeCotegoryView({super.key});
+class HomeCotegoryListView extends StatelessWidget {
+  const HomeCotegoryListView({super.key});
 
   @override
   Widget build(BuildContext context) {

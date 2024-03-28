@@ -1,16 +1,37 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:newsup_app/utils/constants/app_colors.dart';
+
+import '../../utils/constants/app_colors.dart';
 
 class GlobalDot extends StatelessWidget {
-  const GlobalDot({super.key});
+  const GlobalDot.min({
+    super.key,
+    this.radius = 3,
+    this.backgroundColor = AppColors.white,
+    this.child,
+  });
+  const GlobalDot.max({
+    super.key,
+    this.radius = 4,
+    this.backgroundColor = AppColors.greyScale_200,
+    this.child,
+  });
+  const GlobalDot.notification({
+    super.key,
+    this.radius = 5.5,
+    this.backgroundColor = AppColors.errorBase,
+    this.child,
+  });
+
+  final double? radius;
+  final Color? backgroundColor;
+  final Widget? child;
 
   @override
   Widget build(BuildContext context) {
     return CircleAvatar(
-      maxRadius: 4.r,
-      minRadius: 4.r,
-      backgroundColor: AppColors.greyScale_200,
+      radius: radius,
+      backgroundColor: backgroundColor,
+      child: child,
     );
   }
 }
