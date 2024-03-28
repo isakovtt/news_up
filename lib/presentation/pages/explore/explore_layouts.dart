@@ -7,8 +7,8 @@ import 'package:newsup_app/utils/constants/app_paddings.dart';
 import 'package:newsup_app/utils/constants/app_text_styles.dart';
 import 'package:newsup_app/utils/constants/app_texts.dart';
 
-class SearchLayouts extends StatelessWidget {
-  const SearchLayouts({super.key});
+class ExploreLayouts extends StatelessWidget {
+  const ExploreLayouts({super.key});
 
   @override
   Widget build(BuildContext context) {

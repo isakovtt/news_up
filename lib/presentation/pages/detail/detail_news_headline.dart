@@ -30,7 +30,7 @@ class DetailNewsHeadline extends StatelessWidget {
                 style: AppTextStyles.primaryBaseS14W500,
               ),
               8.horizontalSpace,
-              const GlobalDot(),
+              const GlobalDot.max(),
               8.horizontalSpace,
               Text(
                 '10m ago',

@@ -7,8 +7,8 @@ import '../../../../utils/constants/app_paddings.dart';
 import '../../../../utils/constants/app_text_styles.dart';
 import '../../../../utils/constants/app_texts.dart';
 
-class SearchAppBar extends StatelessWidget implements PreferredSizeWidget {
-  const SearchAppBar({super.key});
+class ExploreAppBar extends StatelessWidget implements PreferredSizeWidget {
+  const ExploreAppBar({super.key});
 
   @override
   Widget build(BuildContext context) {
