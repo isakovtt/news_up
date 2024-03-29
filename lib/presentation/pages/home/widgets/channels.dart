@@ -14,39 +14,41 @@ class Channels extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return SizedBox(
-      height: channelName ? 73.h : 48.h,
-      child: ListView.separated(
-        padding: AppPaddings.h24,
-        scrollDirection: Axis.horizontal,
-        itemCount: contents.length,
-        separatorBuilder: (context, index) => 16.horizontalSpace,
-        itemBuilder: (context, index) {
-          final item = contents[index];
-          return Column(
-            children: [
-              SizedBox(
-                width: 48.r,
-                height: 48.r,
-                child: DecoratedBox(
-                  decoration: AppBoxDecorations.greyScale100R1000,
-                  child: Center(
-                    child: SvgPicture.asset(
-                      item.icon,
+    return SafeArea(
+      child: SizedBox(
+        height: channelName ? 73.h : 48.h,
+        child: ListView.separated(
+          padding: AppPaddings.h24,
+          scrollDirection: Axis.horizontal,
+          itemCount: contents.length,
+          separatorBuilder: (context, index) => 16.horizontalSpace,
+          itemBuilder: (context, index) {
+            final item = contents[index];
+            return Column(
+              children: [
+                SizedBox(
+                  width: 48.r,
+                  height: 48.r,
+                  child: DecoratedBox(
+                    decoration: AppBoxDecorations.greyScale100R1000,
+                    child: Center(
+                      child: SvgPicture.asset(
+                        item.icon,
+                      ),
                     ),
                   ),
                 ),
-              ),
-              6.verticalSpace,
-              if (channelName == true) ...[
-                Text(
-                  item.channelName,
-                  style: AppTextStyles.greyScale400s12W400,
-                ),
-              ]
-            ],
-          );
-        },
+                if (channelName == true) ...[
+                  6.verticalSpace,
+                  Text(
+                    item.channelName,
+                    style: AppTextStyles.greyScale400s12W400,
+                  ),
+                ]
+              ],
+            );
+          },
+        ),
       ),
     );
   }

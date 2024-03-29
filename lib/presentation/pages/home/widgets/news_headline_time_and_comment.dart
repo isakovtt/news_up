@@ -33,7 +33,7 @@ class NewsHeadlineTimeAndComment extends StatelessWidget {
         SvgPicture.asset(AppAssets.clockVector),
         4.horizontalSpace,
         SizedBox(
-          width: 73.w,
+          width: 70.w,
           child: Text(
             clockText,
             style: AppTextStyles.greyScale400s12W400,

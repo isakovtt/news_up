@@ -9,7 +9,7 @@ import '../../../utils/constants/app_texts.dart';
 import '../../widgets/custom_tab_box.dart';
 import 'widgets/draft_app_bar.dart';
 import 'widgets/draft_layouts.dart';
-import 'widgets/draft_view.dart';
+import 'widgets/draft_list_view.dart';
 import 'widgets/publish_view.dart';
 
 class DraftScreen extends StatefulWidget {
@@ -63,7 +63,7 @@ class _DraftScreenState extends State<DraftScreen> {
                           children: [
                             const DraftLayouts(draftText: true),
                             24.verticalSpace,
-                            const DraftView(),
+                            const DraftListView(),
                           ],
                         ),
                       ),

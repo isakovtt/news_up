@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:newsup_app/utils/constants/app_colors.dart';
-import 'package:newsup_app/utils/constants/app_paddings.dart';
-import 'package:newsup_app/utils/constants/app_text_styles.dart';
-import 'package:newsup_app/utils/constants/app_texts.dart';
+
+import '../../utils/constants/app_colors.dart';
+import '../../utils/constants/app_text_styles.dart';
+import '../../utils/constants/app_texts.dart';
 
 class GlobalCommentInput extends StatelessWidget {
   const GlobalCommentInput(
