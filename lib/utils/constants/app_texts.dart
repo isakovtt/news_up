@@ -97,7 +97,14 @@ class AppTexts {
   static const draft = 'Draft';
   static const publish = 'Publish';
 
-  // search screen text
+  // search explore screens text
   static const String hotNews= 'Hot News';
+  static const String topics= 'Topics';
+  static const String author= 'Author';
+  static const String stories= 'Stories';
+  static const String allTopic= 'All Topic';
+  static const String topAuthor= 'Top Author';
+  static const String recomendation = 'Recomendation';
+
 
 }

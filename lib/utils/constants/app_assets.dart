@@ -130,4 +130,17 @@ class AppAssets {
   static const String girdViewImage_4 = '$_png/gridview_image_4.png';
   static const String girdViewImage_5 = '$_png/gridview_image_5.png';
   static const String girdViewImage_6 = '$_png/gridview_image_6.png';
+  static const String topicImage_1 = '$_png/topic_image_1.png';
+  static const String topicImage_2 = '$_png/topic_image_2.png';
+  static const String topicImage_3 = '$_png/topic_image_3.png';
+  static const String topicImage_4 = '$_png/topic_image_4.png';
+  static const String topicImage_5 = '$_png/topic_image_5.png';
+  static const String topicImage_6 = '$_png/topic_image_6.png';
+  static const String topicImage_7 = '$_png/topic_image_7.png';
+  static const String authorImage_1 = '$_png/author_image_1.png';
+  static const String authorImage_2 = '$_png/author_image_2.png';
+  static const String authorImage_3 = '$_png/author_image_3.png';
+  static const String authorImage_4 = '$_png/author_image_4.png';
+  static const String authorImage_5 = '$_png/author_image_5.png';
+  static const String authorImage_6 = '$_png/author_image_6.png';
 }

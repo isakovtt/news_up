@@ -4,8 +4,8 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import '../../../../data/models/draft_model.dart';
 import 'draft_list_tile.dart';
 
-class DraftView extends StatelessWidget {
-  const DraftView({super.key});
+class DraftListView extends StatelessWidget {
+  const DraftListView({super.key});
 
   @override
   Widget build(BuildContext context) {

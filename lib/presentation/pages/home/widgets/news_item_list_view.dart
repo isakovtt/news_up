@@ -27,40 +27,45 @@ class NewsItemListView extends StatelessWidget {
         separatorBuilder: (context, index) => 16.verticalSpace,
         itemBuilder: (context, index) {
           final headline = newsheadline[index];
-          return Row(
-            children: [
-              NewsHeadlineImage(image: headline.image),
-              16.horizontalSpace,
-              Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  Row(
-                    children: [
-                      NewsHeadlineCotegory(text: headline.categoryText),
-                      20.horizontalSpace,
-                      const HorizontalDots(),
-                    ],
-                  ),
-                  6.verticalSpace,
-                  GestureDetector(
-                    onTap: () {
-                      Navigate.navigatePush(
-                        context,
-                        const DetailNewsScreen(),
-                      );
-                    },
-                    child: NewsHeadlineText(text: headline.headlineText),
-                  ),
-                  12.verticalSpace,
-                  NewsHeadlineTimeAndComment(
-                    sourceIcon: headline.sourceIcon,
-                    sourceName: headline.sourceName,
-                    clockText: headline.timeText,
-                    commentCountText: headline.commentText,
-                  ),
-                ],
-              ),
-            ],
+          return ListTile(
+            minVerticalPadding: 0,
+            contentPadding: AppPaddings.all0,
+            minLeadingWidth: 0,
+            title: Row(
+              children: [
+                NewsHeadlineImage(image: headline.image),
+                16.horizontalSpace,
+                Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Row(
+                      children: [
+                        NewsHeadlineCotegory(text: headline.categoryText),
+                        20.horizontalSpace,
+                        const HorizontalDots(),
+                      ],
+                    ),
+                    6.verticalSpace,
+                    GestureDetector(
+                      onTap: () {
+                        Navigate.navigatePush(
+                          context,
+                          const DetailNewsScreen(),
+                        );
+                      },
+                      child: NewsHeadlineText(text: headline.headlineText),
+                    ),
+                    12.verticalSpace,
+                    NewsHeadlineTimeAndComment(
+                      sourceIcon: headline.sourceIcon,
+                      sourceName: headline.sourceName,
+                      clockText: headline.timeText,
+                      commentCountText: headline.commentText,
+                    ),
+                  ],
+                ),
+              ],
+            ),
           );
         },
       ),
