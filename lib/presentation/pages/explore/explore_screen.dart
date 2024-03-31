@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:newsup_app/utils/constants/app_texts.dart';
 
-import '../../widgets/breaking_news_view_more.dart';
+import '../../widgets/global_view_more.dart';
 import '../../widgets/global_live_news.dart';
 import '../home/widgets/channels.dart';
 import 'explore_app_bar.dart';
@@ -21,7 +22,7 @@ class ExploreScreen extends StatelessWidget {
           16.verticalSpace,
           const ExploreChips(),
           24.verticalSpace,
-          const BreakingNewsViewMore(),
+          const GlobalViewMore(text: AppTexts.breakingNews),
           24.verticalSpace,
           const GlobalLiveNews(),
           32.verticalSpace,

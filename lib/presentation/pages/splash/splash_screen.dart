@@ -4,7 +4,7 @@ import 'package:flutter/material.dart';
 
 import '../../../utils/helpers/navigate.dart';
 import '../../widgets/global_app_logo.dart';
-import '../onboarding/onboarding_screen.dart';
+import '../onboarding/widgets/onboard_first_screen.dart';
 
 class SplashScreen extends StatefulWidget {
   const SplashScreen({super.key});
@@ -21,7 +21,7 @@ class _SplashScreenState extends State<SplashScreen> {
       () {
         Navigate.navigateReplacePush(
           context,
-          const OnboardingScreen(),
+          const OnboardFirstScreen(),
         );
       },
     );

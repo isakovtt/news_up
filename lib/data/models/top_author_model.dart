@@ -20,7 +20,7 @@ List<TopAuthorModel> topAuthors = [
   ),
   TopAuthorModel(
     profileIcon: AppAssets.authorImage_2,
-    name: 'Leonardo de Vinci ',
+    name: 'Leonardo de Vinci',
     username: '@leode_vi123',
   ),
   TopAuthorModel(

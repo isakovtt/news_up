@@ -14,11 +14,13 @@ class AuthorTile extends StatelessWidget {
       {super.key,
       required this.name,
       required this.username,
-      required this.profileIcon});
+      required this.profileIcon,
+      this.hasVerifiedIcon = false});
 
   final String name;
   final String username;
   final String profileIcon;
+  final bool hasVerifiedIcon;
 
   @override
   Widget build(BuildContext context) {
@@ -41,7 +43,8 @@ class AuthorTile extends StatelessWidget {
             style: AppTextStyles.greyScale900s14W700,
           ),
           5.horizontalSpace,
-          SvgPicture.asset(AppAssets.checkVerified_02)
+          if (hasVerifiedIcon == true)
+            SvgPicture.asset(AppAssets.checkVerified_02),
         ],
       ),
       subtitle: Text(

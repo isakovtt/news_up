@@ -27,7 +27,7 @@ class TopicListView extends StatelessWidget {
             scrollDirection: Axis.vertical,
             shrinkWrap: true,
             physics: const NeverScrollableScrollPhysics(),
-            separatorBuilder: (context, index) => 12.verticalSpace,
+            separatorBuilder: (context, index) => 4.verticalSpace,
             itemBuilder: (context, index) {
               final topic = topics[index];
               return TopicTile(
