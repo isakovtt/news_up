@@ -98,13 +98,17 @@ class AppTexts {
   static const publish = 'Publish';
 
   // search explore screens text
-  static const String hotNews= 'Hot News';
-  static const String topics= 'Topics';
-  static const String author= 'Author';
-  static const String stories= 'Stories';
-  static const String allTopic= 'All Topic';
-  static const String topAuthor= 'Top Author';
+  static const String hotNews = 'Hot News';
+  static const String topics = 'Topics';
+  static const String author = 'Author';
+  static const String stories = 'Stories';
+  static const String allTopic = 'All Topic';
+  static const String topAuthor = 'Top Author';
   static const String recomendation = 'Recomendation';
 
-
+  // Edit profile text
+  static const String editProfile = 'Edit Profile';
+  static const String change = 'Change';
+  static const String save = 'Save';
+  static const String fullName = 'Full name';
 }

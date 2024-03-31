@@ -103,6 +103,11 @@ class AppTextStyles {
       fontWeight: FontWeight.w500,
       color: AppColors.greyScale_500);
 
+  static TextStyle get greyScale400s14W700 => TextStyle(
+      fontSize: 14.sp,
+      fontWeight: FontWeight.w700,
+      color: AppColors.greyScale_400);
+
   static TextStyle get whiteS16W700 => const TextStyle(
       color: AppColors.white, fontSize: 16, fontWeight: FontWeight.w700);
 

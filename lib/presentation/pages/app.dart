@@ -1,9 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:newsup_app/presentation/pages/edit_profile/edit_profile_screen.dart';
 
 import '../../utils/constants/app_themes.dart';
 import '../../utils/helpers/configs.dart';
-import 'explore/topic/topic_screen.dart';
+
 
 
 class MyApp extends StatelessWidget {
@@ -18,7 +19,7 @@ class MyApp extends StatelessWidget {
           debugShowCheckedModeBanner: false,
           title: Configs.appName,
           theme: AppThemes.appTheme,
-          home: const TopicScreen(),
+          home: const EditProfileScreen(),
         );
       },
     );
