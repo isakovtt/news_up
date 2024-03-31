@@ -107,7 +107,9 @@ class AppAssets {
   static const String editProfileAvatar = '$_svg/profile_edit_avatar.svg';
   static const String generalSettingIcon = '$_svg/general_setting_icon.svg';
   static const String configureSettingIcon = '$_svg/configure_setting_icon.svg';
+  static const String ukFlag = '$_svg/uk_flag.svg';
   static const String arrowForward = '$_svg/arrow_forward.svg';
+  static const String searchIcon = '$_svg/search_language_icon.svg';
   static const String aboutSettingIcon = '$_svg/about_setting_icon.svg';
 
   //png strings
