@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:newsup_app/utils/constants/app_colors.dart';
+
+import 'app_colors.dart';
 
 class AppColorFilters {
   AppColorFilters._();
@@ -7,6 +8,13 @@ class AppColorFilters {
   static ColorFilter get greyScale400SrcIn {
     return const ColorFilter.mode(
       AppColors.greyScale_400,
+      BlendMode.srcIn,
+    );
+  }
+
+  static ColorFilter get primaryBaseSrcIn {
+    return const ColorFilter.mode(
+      AppColors.primaryBase,
       BlendMode.srcIn,
     );
   }

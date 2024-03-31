@@ -3,8 +3,10 @@ import '../../utils/constants/app_paddings.dart';
 import '../../utils/constants/app_text_styles.dart';
 import '../../utils/constants/app_texts.dart';
 
-class BreakingNewsViewMore extends StatelessWidget {
-  const BreakingNewsViewMore({super.key});
+class GlobalViewMore extends StatelessWidget {
+  const GlobalViewMore({super.key, required this.text});
+
+  final String text;
 
   @override
   Widget build(BuildContext context) {
@@ -13,7 +15,7 @@ class BreakingNewsViewMore extends StatelessWidget {
       child: Row(
         children: [
           Text(
-            AppTexts.breakingNews,
+            text,
             style: AppTextStyles.greyScale900s16W700,
           ),
           const Spacer(),

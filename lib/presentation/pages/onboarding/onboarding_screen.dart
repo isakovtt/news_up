@@ -1,78 +1,76 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
-import '../../../utils/constants/app_assets.dart';
-import '../../../utils/constants/app_paddings.dart';
-import '../../../utils/constants/app_text_styles.dart';
-import '../../../utils/constants/app_texts.dart';
+import '../../../utils/helpers/navigate.dart';
+import '../authorization_screens/login/login_screen.dart';
+import '../authorization_screens/register/register_screen.dart';
+import 'widgets/onboard_first_screen.dart';
 import 'widgets/onboard_app_bar.dart';
 import 'widgets/onboard_get_started_button.dart';
 import 'widgets/onboard_login_button.dart';
+import 'widgets/onboard_second_screen.dart';
 
-class OnboardingScreen extends StatelessWidget {
+class OnboardingScreen extends StatefulWidget {
   const OnboardingScreen({super.key});
+
+  @override
+  State<OnboardingScreen> createState() => _OnboardingScreenState();
+}
+
+class _OnboardingScreenState extends State<OnboardingScreen> {
+  late PageController _controller;
+  final List onboardScreens = const [
+    OnboardFirstScreen(),
+    OnboardSecondScreen(),
+  ];
+
+  @override
+  void initState() {
+    _controller = PageController(initialPage: 0);
+    super.initState();
+  }
+
+  @override
+  void dispose() {
+    _controller.dispose();
+    super.dispose();
+  }
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: const OnboardAppBar(),
-      body: Column(
-            children: [
-              14.verticalSpace,
-              Image.asset(
-                AppAssets.onboardPicture_2,
-                width: 632.w,
-                height: 200.h,
-                fit: BoxFit.fitWidth,
-                filterQuality: FilterQuality.high,
+      appBar: OnboardAppBar(controller: _controller),
+      body: PageView.builder(
+        controller: _controller,
+        itemCount: onboardScreens.length,
+        itemBuilder: (context, index) {
+          return onboardScreens[index];
+        },
+      ),
+      floatingActionButton: Padding(
+        padding: const EdgeInsets.only(left: 25, bottom: 16, right: 25),
+        child: Row(
+          crossAxisAlignment: CrossAxisAlignment.end,
+          children: [
+            GestureDetector(
+              onTap: () => Navigate.navigatePush(
+                context,
+                const LoginScreen(),
               ),
-              16.verticalSpace,
-              Image.asset(
-                AppAssets.onboardPicture_2,
-                width: 632.w,
-                height: 200.h,
-                fit: BoxFit.fitWidth,
-                filterQuality: FilterQuality.high,
+              child: const OnboardLoginButton(),
+            ),
+            12.horizontalSpace,
+            GestureDetector(
+              onTap: () => Navigate.navigatePush(
+                context,
+                const RegisterScreen(),
               ),
-              32.verticalSpace,
-              Padding(
-                padding: AppPaddings.h24,
-                child: RichText(
-                  textAlign: TextAlign.center,
-                  text: TextSpan(
-                    text: AppTexts.findAndRelay,
-                    style: AppTextStyles.primaryBaseS24W700,
-                    children: <TextSpan>[
-                      TextSpan(
-                        text: AppTexts.onboardFirstTitle,
-                        style: AppTextStyles.greyScale900s24W700,
-                      ),
-                    ],
-                  ),
-                ),
-              ),
-              12.verticalSpace,
-              Padding(
-                padding: AppPaddings.h24,
-                child: Text(
-                  textAlign: TextAlign.center,
-                  AppTexts.onboardFirstDescription,
-                  style: AppTextStyles.greyScale400s14W400,
-                ),
-              ),
-              40.verticalSpace,
-              Padding(
-                padding: AppPaddings.h22,
-                child: Row(
-                  children: [
-                    const OnboardLoginButton(),
-                    12.horizontalSpace,
-                    const OnboardGetStartedButton(),
-                  ],
-                ),
-              )
-            ],
-          ),
+              child: const OnboardGetStartedButton(),
+            ),
+          ],
+        ),
+      ),
+      floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
     );
   }
 }

@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+
 import '../../utils/constants/app_themes.dart';
 import '../../utils/helpers/configs.dart';
+import 'explore/topic/topic_screen.dart';
 
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
@@ -15,6 +17,9 @@ class MyApp extends StatelessWidget {
           debugShowCheckedModeBanner: false,
           title: Configs.appName,
           theme: AppThemes.appTheme,
+
+          home: const TopicScreen(),
+
         );
       },
     );

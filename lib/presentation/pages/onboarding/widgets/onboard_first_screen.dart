@@ -1,0 +1,75 @@
+import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
+
+import '../../../../utils/constants/app_assets.dart';
+import '../../../../utils/constants/app_paddings.dart';
+import '../../../../utils/constants/app_text_styles.dart';
+import '../../../../utils/constants/app_texts.dart';
+
+class OnboardFirstScreen extends StatelessWidget {
+  const OnboardFirstScreen({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      body: Column(
+        children: [
+          14.verticalSpace,
+          Image.asset(
+            AppAssets.onboardPicture_1,
+            width: 632.w,
+            height: 200.h,
+            fit: BoxFit.fitWidth,
+            filterQuality: FilterQuality.high,
+          ),
+          16.verticalSpace,
+          Image.asset(
+            AppAssets.onboardPicture_2,
+            width: 632.w,
+            height: 200.h,
+            fit: BoxFit.fitWidth,
+            filterQuality: FilterQuality.high,
+          ),
+          32.verticalSpace,
+          Padding(
+            padding: AppPaddings.h24,
+            child: RichText(
+              textAlign: TextAlign.center,
+              text: TextSpan(
+                text: AppTexts.findAndRelay,
+                style: AppTextStyles.primaryBaseS24W700,
+                children: <TextSpan>[
+                  TextSpan(
+                    text: AppTexts.onboardFirstTitle,
+                    style: AppTextStyles.greyScale900s24W700,
+                  ),
+                ],
+              ),
+            ),
+          ),
+          12.verticalSpace,
+          Padding(
+            padding: AppPaddings.h24,
+            child: Text(
+              textAlign: TextAlign.center,
+              AppTexts.onboardFirstDescription,
+              style: AppTextStyles.greyScale400s14W400,
+            ),
+          ),
+        ],
+      ),
+      // floatingActionButton: Padding(
+      //   padding: const EdgeInsets.only(left: 25, bottom: 16, right: 25),
+      //   child: Row(
+      //     crossAxisAlignment: CrossAxisAlignment.end,
+      //     children: [
+      //       const OnboardLoginButton(),
+      //       12.horizontalSpace,
+      //       const OnboardGetStartedButton(),
+      //     ],
+      //   ),
+      // ),
+      // floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
+    );
+  }
+}

@@ -6,22 +6,27 @@ import '../../../../utils/constants/app_texts.dart';
 import '../../../widgets/global_button.dart';
 
 class OnboardLoginButton extends StatelessWidget {
-  const OnboardLoginButton({super.key});
+  const OnboardLoginButton({super.key, this.onTap});
+
+ final Function()? onTap;
 
   @override
   Widget build(BuildContext context) {
-    return GlobalButton(
-      height: 56.h,
-      width: 157.5.w,
-      color: AppColors.white,
-      border: Border.all(color: AppColors.primaryBase, width: 1),
-      child: Center(
-        child: Text(
-          AppTexts.login,
-          style: TextStyle(
-              fontSize: 14.sp,
-              fontWeight: FontWeight.w700,
-              color: AppColors.primaryBase),
+    return GestureDetector(
+      onTap: onTap,
+      child: GlobalButton(
+        height: 56.h,
+        width: 157.5.w,
+        color: AppColors.white,
+        border: Border.all(color: AppColors.primaryBase, width: 1),
+        child: Center(
+          child: Text(
+            AppTexts.login,
+            style: TextStyle(
+                fontSize: 14.sp,
+                fontWeight: FontWeight.w700,
+                color: AppColors.primaryBase),
+          ),
         ),
       ),
     );

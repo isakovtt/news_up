@@ -1,15 +1,15 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import '../../authorization_screens/login/login_screen.dart';
-import '../../../widgets/global_page_indicator.dart';
 
 import '../../../../utils/constants/app_colors.dart';
 import '../../../../utils/constants/app_texts.dart';
 import '../../../../utils/helpers/navigate.dart';
+import '../../../widgets/global_page_indicator.dart';
+import '../../authorization_screens/login/login_screen.dart';
 
 class OnboardAppBar extends StatelessWidget implements PreferredSizeWidget {
-  const OnboardAppBar({super.key});
-
+  const OnboardAppBar({super.key, required this.controller});
+  final PageController controller;
   @override
   Widget build(BuildContext context) {
     return Padding(
@@ -18,7 +18,7 @@ class OnboardAppBar extends StatelessWidget implements PreferredSizeWidget {
         height: kToolbarHeight,
         child: Row(
           children: [
-            const GlobalPageIndicator(),
+            GlobalPageIndicator(controller: controller),
             const Spacer(),
             GestureDetector(
               onTap: () {

@@ -25,17 +25,22 @@ class _NavigationScreenState extends State<NavigationScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: screens[_selectedIndex],
-      bottomNavigationBar: NewsNavigationBar(
-        selectedIndex: _selectedIndex,
-        onIndexChanged: (index) {
-          setState(
-            () {
-              _selectedIndex = index; // Update the selected index
+        body: screens[_selectedIndex],
+        bottomNavigationBar: Theme(
+          data: ThemeData(
+            splashColor: Colors.transparent,
+            highlightColor: Colors.transparent,
+          ),
+          child: NewsNavigationBar(
+            selectedIndex: _selectedIndex,
+            onIndexChanged: (index) {
+              setState(
+                () {
+                  _selectedIndex = index; // Update the selected index
+                },
+              );
             },
-          );
-        },
-      ),
-    );
+          ),
+        ));
   }
 }
