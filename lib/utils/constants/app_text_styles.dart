@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-
 import 'app_colors.dart';
 
 class AppTextStyles {
@@ -19,6 +18,11 @@ class AppTextStyles {
   static TextStyle get greyScale900s24W700 => TextStyle(
       fontSize: 24.sp,
       fontWeight: FontWeight.w700,
+      color: AppColors.greyScale_900);
+
+  static TextStyle get greyScale900s16W400 => TextStyle(
+      fontSize: 16.sp,
+      fontWeight: FontWeight.w400,
       color: AppColors.greyScale_900);
 
   static TextStyle get greyScale900s20W700 => TextStyle(
