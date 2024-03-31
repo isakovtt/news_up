@@ -105,8 +105,12 @@ class AppAssets {
   static const String liveVector = '$_svg/live_vector.svg';
   static const String sendCommentIcon = '$_svg/send_comment_icon.svg';
   static const String editProfileAvatar = '$_svg/profile_edit_avatar.svg';
+  static const String generalSettingIcon = '$_svg/general_setting_icon.svg';
+  static const String configureSettingIcon = '$_svg/configure_setting_icon.svg';
+  static const String aboutSettingIcon = '$_svg/about_setting_icon.svg';
 
   //png strings
+    static const String generalSettingPng = '$_png/general_setting_icon.png';
   static const String onboardPicture_1 = '$_png/onboard_picture_1.png';
   static const String onboardPicture_2 = '$_png/onboard_picture_2.png';
   static const String onboardPicture_3 = '$_png/onboard_picture_3.png';

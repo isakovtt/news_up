@@ -111,4 +111,20 @@ class AppTexts {
   static const String change = 'Change';
   static const String save = 'Save';
   static const String fullName = 'Full name';
+
+  // Setting screen texts
+  static const String setting = 'Setting';
+  static const String general = 'General';
+  static const String myAccount = 'My Account';
+  static const String statistic = 'Statistic';
+  static const String language = 'Language';
+  static const String configure = 'Configure';
+  static const String interest = 'Interest';
+  static const String notifications = 'Notifications';
+  static const String emailNotifications = 'Email Notifications';
+  static const String darkMode = 'Dark Mode';
+  static const String about = 'About';
+  static const String getHelp = 'Get Help';
+  static const String termofService = 'Term of Service';
+  static const String privacyPolicy = 'Privacy Policy';
 }
