@@ -5,7 +5,11 @@ import '../../../../utils/constants/app_text_styles.dart';
 import '../../../widgets/global_button.dart';
 
 class SignInUpButton extends StatelessWidget {
-  const SignInUpButton({super.key, required this.text, this.onTap});
+  const SignInUpButton({
+    super.key,
+    required this.text,
+    this.onTap,
+  });
 
   final void Function()? onTap;
   final String text;

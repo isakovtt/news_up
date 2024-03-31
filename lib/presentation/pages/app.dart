@@ -17,7 +17,9 @@ class MyApp extends StatelessWidget {
           debugShowCheckedModeBanner: false,
           title: Configs.appName,
           theme: AppThemes.appTheme,
+
           home: const TopicScreen(),
+
         );
       },
     );

@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/svg.dart';
-import 'package:newsup_app/presentation/pages/edit_profile/widgets/edit_profile_app_bar.dart';
+import 'package:newsup_app/presentation/pages/edit_profile/widgets/global_app_bar.dart';
 import 'package:newsup_app/utils/constants/app_assets.dart';
 import 'package:newsup_app/utils/constants/app_paddings.dart';
 import '../../../utils/constants/app_texts.dart';
@@ -14,7 +14,7 @@ class EditProfileScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: const EditProfileAppBar(),
+      appBar: const GlobalAppBar(text: AppTexts.editProfile,),
       body: Padding(
         padding: AppPaddings.h24,
         child: ListView(
