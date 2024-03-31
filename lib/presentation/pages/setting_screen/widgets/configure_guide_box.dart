@@ -24,6 +24,7 @@ class ConfigureGuideBox extends StatelessWidget {
               style: AppTextStyles.greyScale900s14W700,
             )
           ],
+          
         ),
         12.verticalSpace,
         const GuideBox(text: AppTexts.interest),
