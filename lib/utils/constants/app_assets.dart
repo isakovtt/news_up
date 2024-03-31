@@ -104,6 +104,7 @@ class AppAssets {
   static const String dotsGrey = '$_svg/dots_grey.svg';
   static const String liveVector = '$_svg/live_vector.svg';
   static const String sendCommentIcon = '$_svg/send_comment_icon.svg';
+  static const String editProfileAvatar = '$_svg/profile_edit_avatar.svg';
 
   //png strings
   static const String onboardPicture_1 = '$_png/onboard_picture_1.png';
