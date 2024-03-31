@@ -29,6 +29,7 @@ class LanguageBox extends StatelessWidget {
               style: AppTextStyles.greyScale900s16W400,
             ),
             const Spacer(),
+            
             SizedBox(
               height: 24,
               width: 24,
