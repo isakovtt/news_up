@@ -3,7 +3,6 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:newsup_app/presentation/widgets/global_input.dart';
 
 import '../../../../utils/constants/app_text_styles.dart';
-import '../../../../utils/constants/app_texts.dart';
 
 class EditProfileInput extends StatelessWidget {
   const EditProfileInput({super.key, required this.text,  this.prefixText});
