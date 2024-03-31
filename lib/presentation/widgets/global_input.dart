@@ -12,7 +12,7 @@ class GlobalInput extends StatelessWidget {
     this.inputBorderColor,
     this.suffixIcon,
     this.obscureText,
-    this.prefixText,
+    this.prefixText, this.suffixText,
   });
 
   final String? text;
@@ -23,6 +23,7 @@ class GlobalInput extends StatelessWidget {
   final Color focusedColor = AppColors.primaryBase;
   final bool? obscureText;
   final String? prefixText;
+  final String? suffixText;
 
   @override
   Widget build(BuildContext context) {
@@ -48,6 +49,7 @@ class GlobalInput extends StatelessWidget {
         filled: true,
         errorStyle: const TextStyle(height: 0),
         prefixIcon: prefixIcon,
+        suffixText: suffixText,
         suffixIcon: suffixIcon,
         focusColor: AppColors.primaryBase,
         prefixText: prefixText,

@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:newsup_app/presentation/pages/setting_screen/setting_screen.dart';
-
+import 'package:newsup_app/presentation/pages/language_change_screen/language_changing_Screen.dart';
 import '../../utils/constants/app_themes.dart';
 import '../../utils/helpers/configs.dart';
 
@@ -17,7 +16,7 @@ class MyApp extends StatelessWidget {
           debugShowCheckedModeBanner: false,
           title: Configs.appName,
           theme: AppThemes.appTheme,
-          home: const SettingScreen(),
+          home: const LanguageChangingScreen(),
         );
       },
     );

@@ -127,4 +127,12 @@ class AppTexts {
   static const String getHelp = 'Get Help';
   static const String termofService = 'Term of Service';
   static const String privacyPolicy = 'Privacy Policy';
+
+  //select language texts
+  static const String selectLanguage = 'Select language';
+  static const String azerbaijan = 'Azerbaijan (AZ)';
+  static const String english = 'English (UK)';
+  static const String russian = 'Russian (Ru)';
+  static const String searchLanguage = 'Search Language...';
+  static const String select = 'Select';
 }
