@@ -4,14 +4,15 @@ import '../../utils/constants/app_text_styles.dart';
 import '../../utils/constants/app_texts.dart';
 
 class GlobalViewMore extends StatelessWidget {
-  const GlobalViewMore({super.key, required this.text});
+  const GlobalViewMore({super.key, required this.text, this.padding});
 
   final String text;
+  final EdgeInsetsGeometry? padding;
 
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: AppPaddings.h24,
+      padding: padding ?? AppPaddings.h24,
       child: Row(
         children: [
           Text(

@@ -135,4 +135,13 @@ class AppTexts {
   static const String russian = 'Russian (Ru)';
   static const String searchLanguage = 'Search Language...';
   static const String select = 'Select';
+
+  // list screen texts
+  static const String saved = 'Saved';
+  static const String recent = 'Recent';
+  static const String highlight = 'Highlight';
+
+
+  //profile screen
+  static const String addStory = 'Add Story';
 }

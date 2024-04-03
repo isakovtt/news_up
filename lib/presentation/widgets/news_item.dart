@@ -3,7 +3,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import '../../utils/constants/app_box_decorations.dart';
 import '../../utils/constants/app_text_styles.dart';
-import '../pages/home/widgets/horizontal_dots.dart';
+import 'horizontal_dots.dart';
 import 'news_cotegory_and_shared_time.dart';
 import 'news_source_icon_and_name.dart';
 

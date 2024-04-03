@@ -2,8 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:newsup_app/utils/constants/app_box_decorations.dart';
 
-class NewsHeadlineImage extends StatelessWidget {
-  const NewsHeadlineImage({super.key, required this.image});
+class ListTileImage extends StatelessWidget {
+  const ListTileImage({super.key, required this.image});
   final String image;
   @override
   Widget build(BuildContext context) {

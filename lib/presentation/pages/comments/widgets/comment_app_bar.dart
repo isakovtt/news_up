@@ -18,10 +18,12 @@ class CommentAppBar extends StatelessWidget implements PreferredSizeWidget {
       leading: Padding(
         padding: AppPaddings.l24,
         child: Center(
-          child: SvgPicture.asset(
-            AppAssets.arrowNarrowLeft,
-            height: 32.h,
-            width: 32.w,
+          child: GestureDetector(
+            child: SvgPicture.asset(
+              AppAssets.arrowNarrowLeft,
+              height: 32.h,
+              width: 32.w,
+            ),
           ),
         ),
       ),

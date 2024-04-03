@@ -5,22 +5,26 @@ import '../../../../utils/constants/app_colors.dart';
 import '../../../../utils/constants/app_texts.dart';
 import '../../../widgets/global_button.dart';
 
-class OnboardLoginButton extends StatelessWidget {
-  const OnboardLoginButton({super.key, this.onTap});
+class InnerColorlessButton extends StatelessWidget {
+  const InnerColorlessButton({super.key, this.onTap, this.height, this.width,  this.text});
 
  final Function()? onTap;
+ final double? height;
+ final double? width;
+ final String? text;
 
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
       onTap: onTap,
       child: GlobalButton(
-        height: 56.h,
-        width: 157.5.w,
+        height: height ?? 56.h,
+        width: width?? 157.5.w,
         color: AppColors.white,
         border: Border.all(color: AppColors.primaryBase, width: 1),
         child: Center(
           child: Text(
+            text??
             AppTexts.login,
             style: TextStyle(
                 fontSize: 14.sp,

@@ -104,13 +104,14 @@ class AppAssets {
   static const String dotsGrey = '$_svg/dots_grey.svg';
   static const String liveVector = '$_svg/live_vector.svg';
   static const String sendCommentIcon = '$_svg/send_comment_icon.svg';
-  static const String editProfileAvatar = '$_svg/profile_edit_avatar.svg';
+  static const String editProfileAvatar = '$_png/profile_edit_avatar.svg';
   static const String generalSettingIcon = '$_svg/general_setting_icon.svg';
   static const String configureSettingIcon = '$_svg/configure_setting_icon.svg';
   static const String ukFlag = '$_svg/uk_flag.svg';
   static const String arrowForward = '$_svg/arrow_forward.svg';
   static const String searchIcon = '$_svg/search_language_icon.svg';
   static const String aboutSettingIcon = '$_svg/about_setting_icon.svg';
+  static const String lockVector = '$_svg/lock_vector.svg';
 
   //png strings
   static const String generalSettingPng = '$_png/general_setting_icon.png';
@@ -157,4 +158,17 @@ class AppAssets {
       '$_png/recomended_author_image_1.png';
   static const String recomendedAuthorImage_2 =
       '$_png/recomended_author_image_2.png';
+  static const String savedListImage_1 = '$_png/saved_list_image_1.png';
+  static const String savedListImage_2 = '$_png/saved_list_image_2.png';
+  static const String listDetailImage_1 = '$_png/list_detail_image_1.png';
+  static const String listDetailImage_2 = '$_png/list_detail_image_2.png';
+  static const String listDetailImage_3 = '$_png/list_detail_image_3.png';
+  static const String listDetailImage_4 = '$_png/list_detail_image_4.png';
+  static const String listDetailImage_5 = '$_png/list_detail_image_5.png';
+  static const String profileStoriesImage_1 =
+      '$_png/profile_stories_image_1.png';
+  static const String profileStoriesImage_2 =
+      '$_png/profile_stories_image_2.png';
+  static const String profileStoriesImage_3 =
+      '$_png/profile_stories_image_3.png';
 }
