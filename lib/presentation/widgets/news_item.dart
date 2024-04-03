@@ -16,6 +16,7 @@ class NewsItem extends StatelessWidget {
     required this.headlineText,
     required this.sourceName,
     required this.sharedTimeText,
+    this.onTapDots,
   });
 
   final String image;
@@ -24,6 +25,7 @@ class NewsItem extends StatelessWidget {
   final String headlineText;
   final String sourceName;
   final String sharedTimeText;
+  final Function()? onTapDots;
 
   @override
   Widget build(BuildContext context) {
@@ -52,7 +54,7 @@ class NewsItem extends StatelessWidget {
                 sourceName: sourceName,
               ),
               const Spacer(),
-              const HorizontalDots(),
+              HorizontalDots(onTap: onTapDots),
             ],
           ),
           6.verticalSpace,

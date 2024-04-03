@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
-import '../../../../utils/constants/app_colors.dart';
-import '../../../../utils/constants/app_texts.dart';
-import '../../../widgets/global_button.dart';
+import '../../utils/constants/app_colors.dart';
+import '../../utils/constants/app_texts.dart';
+import 'global_button.dart';
 
 class InnerColorlessButton extends StatelessWidget {
   const InnerColorlessButton({super.key, this.onTap, this.height, this.width,  this.text});

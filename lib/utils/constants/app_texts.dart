@@ -141,7 +141,15 @@ class AppTexts {
   static const String recent = 'Recent';
   static const String highlight = 'Highlight';
 
-
   //profile screen
   static const String addStory = 'Add Story';
+  static const String followers = 'Followers';
+  static const String following = 'Following';
+
+  //author detail screen
+  static const String message = 'Message';
+  static const String recentStories = 'Recent Stories';
+
+  // detail topic screen
+  static const String latest = 'Latest';
 }

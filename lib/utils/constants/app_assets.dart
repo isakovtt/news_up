@@ -171,4 +171,11 @@ class AppAssets {
       '$_png/profile_stories_image_2.png';
   static const String profileStoriesImage_3 =
       '$_png/profile_stories_image_3.png';
+  static const String detailAuthorImage_1 = '$_png/detail_author_image_1.png';
+  static const String detailAuthorImage_2 = '$_png/detail_author_image_2.png';
+  static const String detailAuthorImage_3 = '$_png/detail_author_image_3.png';
+  static const String topicNewsImage_1 = '$_png/topic_news_image_1.png';
+  static const String topicNewsImage_2 = '$_png/topic_news_image_2.png';
+  static const String topicNewsImage_3 = '$_png/topic_news_image_3.png';
+  static const String topicNewsImage_4 = '$_png/topic_news_image_4.png';
 }

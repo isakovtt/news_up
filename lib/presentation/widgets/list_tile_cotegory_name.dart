@@ -4,9 +4,14 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import '../../../utils/constants/app_text_styles.dart';
 
 class ListTileCotegoryName extends StatelessWidget {
-  const ListTileCotegoryName({super.key, required this.text});
+  const ListTileCotegoryName({
+    super.key,
+    required this.text,
+    this.style,
+  });
 
   final String text;
+  final TextStyle? style;
 
   @override
   Widget build(BuildContext context) {
@@ -16,7 +21,7 @@ class ListTileCotegoryName extends StatelessWidget {
         text,
         maxLines: 1,
         overflow: TextOverflow.ellipsis,
-        style: AppTextStyles.primaryBaseS12W500,
+        style: style ?? AppTextStyles.primaryBaseS12W500,
       ),
     );
   }

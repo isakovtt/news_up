@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:newsup_app/presentation/pages/explore/author/author_list_view.dart';
-import 'package:newsup_app/utils/constants/app_paddings.dart';
 
-import '../../home/widgets/news_item_list_view.dart';
+import '../../../../utils/constants/app_paddings.dart';
+import '../author/author_list_view.dart';
+import '../stories/explore_stories_list_view.dart';
 import '../topic/topic_list_view.dart';
 
 class ExploreTabbarView extends StatelessWidget {
@@ -16,7 +16,7 @@ class ExploreTabbarView extends StatelessWidget {
           SingleChildScrollView(
             child: Padding(
               padding: AppPaddings.t10,
-              child: const NewsItemListView(),
+              child: const ExploreStoriesListView(),
             ),
           ),
           const SingleChildScrollView(

@@ -6,7 +6,7 @@ import '../../widgets/global_divider.dart';
 import '../../widgets/horizontal_dots.dart';
 import '../../widgets/list_tile_cotegory_name.dart';
 import '../../widgets/list_tile_image.dart';
-import '../../widgets/list_tile_time_and_comment.dart';
+import '../../widgets/time_and_comment.dart';
 import '../../widgets/list_tile_title.dart';
 
 class ListDetailItem extends StatelessWidget {
@@ -49,7 +49,7 @@ class ListDetailItem extends StatelessWidget {
                   4.verticalSpace,
                   ListTileTitle(text: title),
                   12.verticalSpace,
-                  ListTileTimeAndComment(
+                  TimeAndComment(
                     clockText: timeCount,
                     commentCountText: commentCount,
                   )
