@@ -25,6 +25,11 @@ class AppTextStyles {
       fontWeight: FontWeight.w400,
       color: AppColors.greyScale_900);
 
+  static TextStyle get greyScale900s16W500 => TextStyle(
+      fontSize: 16.sp,
+      fontWeight: FontWeight.w500,
+      color: AppColors.greyScale_900);
+
   static TextStyle get greyScale900s20W700 => TextStyle(
       fontSize: 20.sp,
       fontWeight: FontWeight.w700,

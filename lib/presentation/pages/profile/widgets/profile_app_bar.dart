@@ -1,14 +1,16 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/svg.dart';
+import 'package:newsup_app/presentation/pages/setting_screen/setting_screen.dart';
+import 'package:newsup_app/utils/helpers/navigate.dart';
 
-import '../../../utils/constants/app_assets.dart';
-import '../../../utils/constants/app_paddings.dart';
-import '../../../utils/constants/app_text_styles.dart';
-import '../../../utils/constants/app_texts.dart';
+import '../../../../utils/constants/app_assets.dart';
+import '../../../../utils/constants/app_paddings.dart';
+import '../../../../utils/constants/app_text_styles.dart';
+import '../../../../utils/constants/app_texts.dart';
 
-class ProfilAppBar extends StatelessWidget implements PreferredSizeWidget {
-  const ProfilAppBar({super.key});
+class ProfileAppBar extends StatelessWidget implements PreferredSizeWidget {
+  const ProfileAppBar({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -30,8 +32,14 @@ class ProfilAppBar extends StatelessWidget implements PreferredSizeWidget {
       actions: [
         Padding(
           padding: AppPaddings.h24,
-          child: SvgPicture.asset(
-            AppAssets.settings,
+          child: GestureDetector(
+            onTap: () => Navigate.navigatePush(
+              context,
+              const SettingScreen(),
+            ),
+            child: SvgPicture.asset(
+              AppAssets.settings,
+            ),
           ),
         )
       ],

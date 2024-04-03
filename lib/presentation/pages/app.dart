@@ -3,7 +3,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import '../../utils/constants/app_themes.dart';
 import '../../utils/helpers/configs.dart';
-import 'home/navigation_screen.dart';
+import 'detail_topic/detail_topic_screen.dart';
 
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
@@ -17,9 +17,7 @@ class MyApp extends StatelessWidget {
           debugShowCheckedModeBanner: false,
           title: Configs.appName,
           theme: AppThemes.appTheme,
-
-          home: const NavigationScreen(),
-
+          home: const DetailTopicScreen(),
         );
       },
     );

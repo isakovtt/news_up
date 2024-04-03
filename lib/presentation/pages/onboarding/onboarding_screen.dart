@@ -6,8 +6,8 @@ import '../authorization_screens/login/login_screen.dart';
 import '../authorization_screens/register/register_screen.dart';
 import 'widgets/onboard_first_screen.dart';
 import 'widgets/onboard_app_bar.dart';
-import 'widgets/onboard_get_started_button.dart';
-import 'widgets/onboard_login_button.dart';
+import '../../widgets/inside_colored_button.dart';
+import '../../widgets/inner_colorless_button.dart';
 import 'widgets/onboard_second_screen.dart';
 
 class OnboardingScreen extends StatefulWidget {

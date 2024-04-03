@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/svg.dart';
+import 'package:newsup_app/utils/constants/app_colors.dart';
 
 import '../../utils/constants/app_assets.dart';
 import '../../utils/constants/app_color_filters.dart';
@@ -9,20 +10,22 @@ import '../../utils/helpers/navigate.dart';
 import '../pages/comments/comments_screen.dart';
 import 'news_source_icon_and_name.dart';
 
-class ListTileTimeAndComment extends StatelessWidget {
-  const ListTileTimeAndComment(
+class TimeAndComment extends StatelessWidget {
+  const TimeAndComment(
       {super.key,
       required this.clockText,
       required this.commentCountText,
       this.sourceIcon,
       this.sourceName,
-      this.hasSource = false});
+      this.hasSource = false,
+      this.hasDot = false});
 
   final String clockText;
   final String? sourceIcon;
   final String? sourceName;
   final String commentCountText;
   final bool hasSource;
+  final bool hasDot;
 
   @override
   Widget build(BuildContext context) {
@@ -35,13 +38,17 @@ class ListTileTimeAndComment extends StatelessWidget {
           ),
         SvgPicture.asset(AppAssets.clockVector),
         4.horizontalSpace,
-        SizedBox(
-          child: Text(
-            clockText,
-            style: AppTextStyles.greyScale400s12W400,
-          ),
+        Text(
+          clockText,
+          style: AppTextStyles.greyScale400s12W400,
         ),
-        16.horizontalSpace,
+        8.horizontalSpace,
+        if (hasDot == true)
+          const CircleAvatar(
+            radius: 3,
+            backgroundColor: AppColors.greyScale_300,
+          ),
+        8.horizontalSpace,
         GestureDetector(
           onTap: () => Navigate.navigatePush(
             context,
