@@ -34,10 +34,12 @@ class _DraftScreenState extends State<DraftScreen> {
                 DecoratedBox(
                   decoration: AppBoxDecorations.greyScale100R12,
                   child: Padding(
-                    padding: AppPaddings.all3,
+                    padding: AppPaddings.all1,
                     child: ButtonsTabBar(
                       height: 40.h,
-                      contentPadding: AppPaddings.h5,
+                      radius: 12,
+                      splashColor: AppColors.white,
+                      contentPadding: AppPaddings.h8,
                       backgroundColor: AppColors.white,
                       unselectedBackgroundColor: AppColors.greyScale_100,
                       tabs: const [

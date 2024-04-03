@@ -1,22 +1,22 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:newsup_app/utils/constants/app_text_styles.dart';
 
-import '../../../../../utils/constants/app_text_styles.dart';
-
-class NewsHeadlineCotegory extends StatelessWidget {
-  const NewsHeadlineCotegory({super.key, required this.text});
+class ListTileTitle extends StatelessWidget {
+  const ListTileTitle({super.key, required this.text});
 
   final String text;
 
   @override
   Widget build(BuildContext context) {
     return SizedBox(
-      width: 200.w,
+      // height: 44.h,
+      width:  231.w,
       child: Text(
         text,
-        maxLines: 1,
+        maxLines: 2,
         overflow: TextOverflow.ellipsis,
-        style: AppTextStyles.primaryBaseS12W500,
+        style: AppTextStyles.greyScale900s14W700,
       ),
     );
   }

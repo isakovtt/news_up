@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import '../../detail/detail_news_screen.dart';
-import 'horizontal_dots.dart';
+import '../../../widgets/horizontal_dots.dart';
 import '../../../../utils/helpers/navigate.dart';
-import 'news_headline_cotegory.dart';
-import 'news_headline_image.dart';
-import 'news_headline_text.dart';
-import 'news_headline_time_and_comment.dart';
+import '../../../widgets/list_tile_cotegory_name.dart';
+import '../../../widgets/list_tile_image.dart';
+import '../../../widgets/list_tile_title.dart';
+import '../../../widgets/list_tile_time_and_comment.dart';
 
 import '../../../../data/models/news_headline_model.dart';
 import '../../../../utils/constants/app_paddings.dart';
@@ -33,14 +33,14 @@ class NewsItemListView extends StatelessWidget {
             minLeadingWidth: 0,
             title: Row(
               children: [
-                NewsHeadlineImage(image: headline.image),
+                ListTileImage(image: headline.image),
                 16.horizontalSpace,
                 Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     Row(
                       children: [
-                        NewsHeadlineCotegory(text: headline.categoryText),
+                        ListTileCotegoryName(text: headline.categoryText),
                         20.horizontalSpace,
                         const HorizontalDots(),
                       ],
@@ -53,10 +53,11 @@ class NewsItemListView extends StatelessWidget {
                           const DetailNewsScreen(),
                         );
                       },
-                      child: NewsHeadlineText(text: headline.headlineText),
+                      child: ListTileTitle(text: headline.headlineText),
                     ),
                     12.verticalSpace,
-                    NewsHeadlineTimeAndComment(
+                    ListTileTimeAndComment(
+                      hasSource: true,
                       sourceIcon: headline.sourceIcon,
                       sourceName: headline.sourceName,
                       clockText: headline.timeText,

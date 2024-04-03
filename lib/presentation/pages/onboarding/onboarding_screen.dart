@@ -57,7 +57,7 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
                 context,
                 const LoginScreen(),
               ),
-              child: const OnboardLoginButton(),
+              child: const InnerColorlessButton(),
             ),
             12.horizontalSpace,
             GestureDetector(
@@ -65,7 +65,7 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
                 context,
                 const RegisterScreen(),
               ),
-              child: const OnboardGetStartedButton(),
+              child: const InsideColoredButton(),
             ),
           ],
         ),

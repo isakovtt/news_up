@@ -1,9 +1,10 @@
 import 'package:flutter/material.dart';
-import 'package:newsup_app/presentation/pages/edit_profile/edit_profile_screen.dart';
-import 'package:newsup_app/presentation/pages/explore/explore_screen.dart';
-import 'package:newsup_app/presentation/pages/explore/topic/topic_screen.dart';
-import 'package:newsup_app/presentation/pages/home/home_screen.dart';
-import 'package:newsup_app/presentation/pages/home/news_navigation_bar.dart';
+
+import '../explore/explore_screen.dart';
+import '../list/list_screen.dart';
+import '../profil/profil_screen.dart';
+import 'home_screen.dart';
+import 'news_navigation_bar.dart';
 
 class NavigationScreen extends StatefulWidget {
   const NavigationScreen({super.key});
@@ -18,8 +19,8 @@ class _NavigationScreenState extends State<NavigationScreen> {
   final List screens = const [
     HomeScreen(),
     ExploreScreen(),
-    TopicScreen(),
-    EditProfileScreen(),
+    ListScreen(),
+    ProfilScreen(),
   ];
 
   @override

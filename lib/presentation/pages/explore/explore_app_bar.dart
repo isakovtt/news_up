@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/svg.dart';
+import 'package:newsup_app/presentation/pages/explore/explore_screen.dart';
+import 'package:newsup_app/presentation/pages/explore/topic/topic_screen.dart';
+import 'package:newsup_app/utils/helpers/navigate.dart';
 
 import '../../../../utils/constants/app_assets.dart';
 import '../../../../utils/constants/app_paddings.dart';
@@ -18,10 +21,16 @@ class ExploreAppBar extends StatelessWidget implements PreferredSizeWidget {
       leading: Padding(
         padding: AppPaddings.l24,
         child: Center(
-          child: SvgPicture.asset(
-            AppAssets.arrowNarrowLeft,
-            height: 32.h,
-            width: 32.w,
+          child: GestureDetector(
+            onTap: () => Navigate.navigatePop(
+              context,
+              const ExploreScreen(),
+            ),
+            child: SvgPicture.asset(
+              AppAssets.arrowNarrowLeft,
+              height: 32.h,
+              width: 32.w,
+            ),
           ),
         ),
       ),
@@ -32,8 +41,14 @@ class ExploreAppBar extends StatelessWidget implements PreferredSizeWidget {
       actions: [
         Padding(
           padding: AppPaddings.h24,
-          child: SvgPicture.asset(
-            AppAssets.search,
+          child: GestureDetector(
+            onTap: () => Navigate.navigatePush(
+              context,
+              const TopicScreen(),
+            ),
+            child: SvgPicture.asset(
+              AppAssets.search,
+            ),
           ),
         )
       ],

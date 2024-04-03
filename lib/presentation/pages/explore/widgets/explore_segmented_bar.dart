@@ -20,12 +20,14 @@ class ExploreSegmentedBar extends StatelessWidget {
         DecoratedBox(
           decoration: AppBoxDecorations.greyScale100R12,
           child: Padding(
-            padding: AppPaddings.all3,
+            padding: AppPaddings.all1,
             child: ButtonsTabBar(
               height: 40.h,
-              contentPadding: AppPaddings.h4,
+              radius: 12,
+              contentPadding: AppPaddings.h6,
               backgroundColor: AppColors.white,
               unselectedBackgroundColor: AppColors.greyScale_100,
+              splashColor: AppColors.white,
               tabs: const [
                 Tab(
                   child: CustomTabBox(
