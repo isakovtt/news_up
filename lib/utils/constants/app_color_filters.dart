@@ -18,4 +18,11 @@ class AppColorFilters {
       BlendMode.srcIn,
     );
   }
+
+  static ColorFilter get whiteSrcIn {
+    return const ColorFilter.mode(
+      AppColors.white,
+      BlendMode.srcIn,
+    );
+  }
 }

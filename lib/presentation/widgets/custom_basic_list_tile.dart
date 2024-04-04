@@ -39,44 +39,44 @@ class GlobalBasicListTile extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return ListTile(
-      minVerticalPadding: 0,
-      contentPadding: AppPaddings.all0,
-      minLeadingWidth: 0,
-      title: Row(
-        children: [
-          ListTileImage(image: image),
-          16.horizontalSpace,
-          Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              Row(
-                children: [
-                  ListTileCotegoryName(
-                    text: categoryName,
-                    style: style,
-                  ),
-                  20.horizontalSpace,
-                  const HorizontalDots(),
-                ],
-              ),
-              6.verticalSpace,
-              GestureDetector(
-                onTap: onTap,
-                child: ListTileTitle(text: title,titleStyle: titleStyle,),
-              ),
-              12.verticalSpace,
-              TimeAndComment(
-                hasDot: hasDot,
-                hasSource: hasSource,
-                sourceIcon: sourceIcon,
-                sourceName: sourceName,
-                clockText: timeText,
-                commentCountText: commentText,
-              ),
-            ],
-          ),
-        ],
+    return GestureDetector(
+      onTap: onTap,
+      child: ListTile(
+        minVerticalPadding: 0,
+        contentPadding: AppPaddings.all0,
+        minLeadingWidth: 0,
+        title: Row(
+          children: [
+            ListTileImage(image: image),
+            16.horizontalSpace,
+            Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Row(
+                  children: [
+                    ListTileCotegoryName(
+                      text: categoryName,
+                      style: style,
+                    ),
+                    20.horizontalSpace,
+                    const HorizontalDots(),
+                  ],
+                ),
+                6.verticalSpace,
+                ListTileTitle(text: title,titleStyle: titleStyle,),
+                12.verticalSpace,
+                TimeAndComment(
+                  hasDot: hasDot,
+                  hasSource: hasSource,
+                  sourceIcon: sourceIcon,
+                  sourceName: sourceName,
+                  clockText: timeText,
+                  commentCountText: commentText,
+                ),
+              ],
+            ),
+          ],
+        ),
       ),
     );
   }

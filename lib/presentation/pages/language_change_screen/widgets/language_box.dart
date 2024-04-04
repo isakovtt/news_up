@@ -6,7 +6,6 @@ import '../../../../utils/constants/app_colors.dart';
 import '../../../../utils/constants/app_paddings.dart';
 import '../../../../utils/constants/app_text_styles.dart';
 
-
 class LanguageBox extends StatelessWidget {
   const LanguageBox({super.key, required this.text});
 
@@ -29,7 +28,6 @@ class LanguageBox extends StatelessWidget {
               style: AppTextStyles.greyScale900s16W400,
             ),
             const Spacer(),
-            
             SizedBox(
               height: 24,
               width: 24,

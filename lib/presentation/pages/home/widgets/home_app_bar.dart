@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/svg.dart';
+import 'package:newsup_app/presentation/pages/notification/notification_screen.dart';
+import 'package:newsup_app/utils/helpers/navigate.dart';
 
 import '../../../../../utils/constants/app_colors.dart';
 import '../../../../utils/constants/app_assets.dart';
@@ -23,13 +25,19 @@ class HomeAppBar extends StatelessWidget implements PreferredSizeWidget {
           padding: AppPaddings.h24,
           child: Stack(
             children: [
-              SvgPicture.asset(
-                AppAssets.bell,
-                height: 24.h,
-                width: 24.w,
-                colorFilter: const ColorFilter.mode(
-                  AppColors.greyScale_400,
-                  BlendMode.srcIn,
+              GestureDetector(
+                onTap: () => Navigate.navigatePush(
+                  context,
+                  const NotificationScreen(),
+                ),
+                child: SvgPicture.asset(
+                  AppAssets.bell,
+                  height: 24.h,
+                  width: 24.w,
+                  colorFilter: const ColorFilter.mode(
+                    AppColors.greyScale_400,
+                    BlendMode.srcIn,
+                  ),
                 ),
               ),
               const Positioned(

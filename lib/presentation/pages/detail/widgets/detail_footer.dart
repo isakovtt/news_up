@@ -2,12 +2,12 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/svg.dart';
 
-import '../../../utils/constants/app_assets.dart';
-import '../../../utils/constants/app_color_filters.dart';
-import '../../../utils/constants/app_paddings.dart';
-import '../../../utils/constants/app_text_styles.dart';
-import '../../widgets/global_comment_input.dart';
-import '../../widgets/global_dot.dart';
+import '../../../../utils/constants/app_assets.dart';
+import '../../../../utils/constants/app_color_filters.dart';
+import '../../../../utils/constants/app_paddings.dart';
+import '../../../../utils/constants/app_text_styles.dart';
+import '../../../widgets/global_comment_input.dart';
+import '../../../widgets/global_dot.dart';
 
 class DetailFooter extends StatelessWidget {
   const DetailFooter({super.key});

@@ -1,23 +1,32 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/svg.dart';
+import 'package:newsup_app/presentation/pages/home/home_screen.dart';
 import 'package:newsup_app/utils/constants/app_assets.dart';
 import 'package:newsup_app/utils/constants/app_colors.dart';
 import 'package:newsup_app/utils/constants/app_paddings.dart';
+import 'package:newsup_app/utils/helpers/navigate.dart';
 
 class DetailAppBar extends StatelessWidget implements PreferredSizeWidget {
   const DetailAppBar({super.key});
 
   @override
   Widget build(BuildContext context) {
-    return AppBar(scrolledUnderElevation: 0,
+    return AppBar(
+      scrolledUnderElevation: 0,
       leading: Padding(
         padding: AppPaddings.l24,
         child: Center(
-          child: SvgPicture.asset(
-            AppAssets.arrowNarrowLeft,
-            height: 32.h,
-            width: 32.w,
+          child: GestureDetector(
+            onTap: () => Navigate.navigatePop(
+              context,
+              const HomeScreen(),
+            ),
+            child: SvgPicture.asset(
+              AppAssets.arrowNarrowLeft,
+              height: 32.h,
+              width: 32.w,
+            ),
           ),
         ),
       ),
@@ -41,6 +50,5 @@ class DetailAppBar extends StatelessWidget implements PreferredSizeWidget {
   }
 
   @override
-  
   Size get preferredSize => const Size.fromHeight(kToolbarHeight);
 }

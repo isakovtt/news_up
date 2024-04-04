@@ -152,4 +152,20 @@ class AppTexts {
 
   // detail topic screen
   static const String latest = 'Latest';
+  static const String cancel = 'Cancel';
+  static const String apply = 'Apply';
+  static const String sortBy = 'Sort by';
+  static const String recentlyPublished = 'Recently Published';
+  static const String shortestReadingTime = 'Shortest Reading Time';
+  static const String recentlyAdded = 'Recently Added';
+
+  //write news screen
+  static const String writeNews = 'Write News';
+  static const String next = 'Next';
+
+  //notification screen
+  static const String notification = 'Notification';
+  static const String accept = 'Accept';
+  static const String decline = 'Decline';
+
 }

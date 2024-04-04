@@ -112,6 +112,7 @@ class AppAssets {
   static const String searchIcon = '$_svg/search_language_icon.svg';
   static const String aboutSettingIcon = '$_svg/about_setting_icon.svg';
   static const String lockVector = '$_svg/lock_vector.svg';
+  static const String indicatorVector = '$_svg/indicator_vector.svg';
 
   //png strings
   static const String generalSettingPng = '$_png/general_setting_icon.png';

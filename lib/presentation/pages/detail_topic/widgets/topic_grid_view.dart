@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:newsup_app/presentation/widgets/global_sheet.dart';
 
 import '../../../../data/models/topic_news_model.dart';
 import '../../../../utils/constants/app_paddings.dart';
+import '../../../widgets/global_sheet.dart';
 import '../../../widgets/news_item.dart';
 
 class TopicGridView extends StatelessWidget {
