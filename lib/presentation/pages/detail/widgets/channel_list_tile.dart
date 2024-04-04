@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/svg.dart';
-import 'package:newsup_app/presentation/pages/detail/global_circle_box.dart';
+import 'package:newsup_app/presentation/widgets/global_circle_box.dart';
 import 'package:newsup_app/presentation/widgets/global_button.dart';
 import 'package:newsup_app/utils/constants/app_assets.dart';
 import 'package:newsup_app/utils/constants/app_colors.dart';

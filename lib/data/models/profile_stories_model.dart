@@ -26,7 +26,7 @@ List<ProfileStoriesModel> profileStories = [
     categoryText: 'Technology',
     headlineText: 'How Technology is Revolutionizing Business',
     commentText: '3',
-    timeText: '1 day ago',
+    timeText: '1day ago',
     sourceName: 'NBC News',
     sourceIcon: AppAssets.nbcVector,
   ),

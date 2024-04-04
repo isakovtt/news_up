@@ -42,13 +42,15 @@ class TimeAndComment extends StatelessWidget {
           clockText,
           style: AppTextStyles.greyScale400s12W400,
         ),
-        8.horizontalSpace,
-        if (hasDot == true)
+        if (hasDot == true) 6.horizontalSpace,
+        if (hasDot == true) ...[
           const CircleAvatar(
             radius: 3,
             backgroundColor: AppColors.greyScale_300,
           ),
-        8.horizontalSpace,
+          6.horizontalSpace,
+        ],
+        if (hasDot == false) 16.horizontalSpace,
         GestureDetector(
           onTap: () => Navigate.navigatePush(
             context,

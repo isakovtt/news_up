@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/svg.dart';
+import 'package:newsup_app/presentation/pages/home/home_screen.dart';
+import 'package:newsup_app/utils/helpers/navigate.dart';
 
 import '../../../../utils/constants/app_assets.dart';
 import '../../../../utils/constants/app_paddings.dart';
@@ -19,10 +21,16 @@ class CommentAppBar extends StatelessWidget implements PreferredSizeWidget {
         padding: AppPaddings.l24,
         child: Center(
           child: GestureDetector(
-            child: SvgPicture.asset(
-              AppAssets.arrowNarrowLeft,
-              height: 32.h,
-              width: 32.w,
+            child: GestureDetector(
+              onTap: () => Navigate.navigatePop(
+                context,
+                const HomeScreen(),
+              ),
+              child: SvgPicture.asset(
+                AppAssets.arrowNarrowLeft,
+                height: 32.h,
+                width: 32.w,
+              ),
             ),
           ),
         ),

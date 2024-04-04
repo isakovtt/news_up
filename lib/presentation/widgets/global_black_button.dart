@@ -5,9 +5,18 @@ import '../../utils/constants/app_colors.dart';
 import '../../utils/constants/app_text_styles.dart';
 
 class GlobalBlackButton extends StatelessWidget {
-  const GlobalBlackButton({super.key, required this.text});
+  const GlobalBlackButton({
+    super.key,
+    required this.text,
+    this.color,
+    this.border,
+    this.style,
+  });
 
   final String text;
+  final Color? color;
+  final BoxBorder? border;
+  final TextStyle? style;
 
   @override
   Widget build(BuildContext context) {
@@ -15,7 +24,8 @@ class GlobalBlackButton extends StatelessWidget {
       width: 74.w,
       height: 32.h,
       decoration: BoxDecoration(
-        color: AppColors.greyScale_900,
+        border: border,
+        color: color ?? AppColors.greyScale_900,
         borderRadius: BorderRadius.circular(
           1000,
         ),
@@ -23,7 +33,7 @@ class GlobalBlackButton extends StatelessWidget {
       child: Center(
         child: Text(
           text,
-          style: AppTextStyles.whiteS12W400,
+          style: style ?? AppTextStyles.whiteS12W400,
         ),
       ),
     );
