@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/svg.dart';
+import 'package:newsup_app/presentation/pages/preview/preview_screen.dart';
+import 'package:newsup_app/utils/helpers/navigate.dart';
 
 import '../../utils/constants/app_assets.dart';
 import '../../utils/constants/app_box_decorations.dart';
@@ -14,27 +16,33 @@ class GlobalNextButton extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      height: 40.h,
-      width: 83.w,
-      decoration: AppBoxDecorations.greyScale900R12,
-      child: Row(
-        mainAxisAlignment: MainAxisAlignment.center,
-        crossAxisAlignment: CrossAxisAlignment.center,
-        children: [
-          Padding(
-            padding: AppPaddings.l7,
-            child: Text(
-              AppTexts.next,
-              style: AppTextStyles.whiteS16W500,
+    return GestureDetector(
+      onTap: () => Navigate.navigatePush(
+        context,
+        const PreviewScreen(),
+      ),
+      child: Container(
+        height: 40.h,
+        width: 83.w,
+        decoration: AppBoxDecorations.greyScale900R12,
+        child: Row(
+          mainAxisAlignment: MainAxisAlignment.center,
+          crossAxisAlignment: CrossAxisAlignment.center,
+          children: [
+            Padding(
+              padding: AppPaddings.l7,
+              child: Text(
+                AppTexts.next,
+                style: AppTextStyles.whiteS16W500,
+              ),
             ),
-          ),
-          2.horizontalSpace,
-          SvgPicture.asset(
-            AppAssets.chevronRight,
-            colorFilter: AppColorFilters.whiteSrcIn,
-          ),
-        ],
+            2.horizontalSpace,
+            SvgPicture.asset(
+              AppAssets.chevronRight,
+              colorFilter: AppColorFilters.whiteSrcIn,
+            ),
+          ],
+        ),
       ),
     );
   }
