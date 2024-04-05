@@ -168,4 +168,17 @@ class AppTexts {
   static const String accept = 'Accept';
   static const String decline = 'Decline';
 
+
+  // preview screen
+  static const String preview = 'Preview';
+  static const String addTags = 'Add tags';
+  static const String categories = 'Categories';
+  static const String selectItem = 'Select Item';
+
+  // statistic screen
+  static const String response = 'Response';
+  static const String dailyVisits = 'Daily visits';
+  static const String browser = 'Browser';
+  static const String mobile = 'Mobile';
+
 }

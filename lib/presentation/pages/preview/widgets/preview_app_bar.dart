@@ -7,11 +7,11 @@ import '../../../../utils/constants/app_paddings.dart';
 import '../../../../utils/constants/app_text_styles.dart';
 import '../../../../utils/constants/app_texts.dart';
 import '../../../../utils/helpers/navigate.dart';
-import '../../../widgets/global_divider.dart';
-import '../../profile/profile_screen.dart';
+import '../../setting_screen/setting_screen.dart';
+import '../../write_news/write_news_screen.dart';
 
-class WriteNewsAppBar extends StatelessWidget implements PreferredSizeWidget {
-  const WriteNewsAppBar({super.key});
+class PreviewAppBar extends StatelessWidget implements PreferredSizeWidget {
+  const PreviewAppBar({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -23,7 +23,7 @@ class WriteNewsAppBar extends StatelessWidget implements PreferredSizeWidget {
         child: GestureDetector(
           onTap: () => Navigate.navigatePop(
             context,
-            const ProfileScreen(),
+            const WriteNewsScreen(),
           ),
           child: SvgPicture.asset(
             AppAssets.arrowNarrowLeft,
@@ -33,24 +33,23 @@ class WriteNewsAppBar extends StatelessWidget implements PreferredSizeWidget {
         ),
       ),
       title: Text(
-        AppTexts.writeNews,
+        AppTexts.preview,
         style: AppTextStyles.greyScale900s16W700,
       ),
       actions: [
         Padding(
           padding: AppPaddings.h24,
           child: GestureDetector(
-            onTap: () {},
+            onTap: () => Navigate.navigatePush(
+              context,
+              const SettingScreen(),
+            ),
             child: SvgPicture.asset(
               AppAssets.dotsVertical,
             ),
           ),
         ),
       ],
-      bottom: PreferredSize(
-        preferredSize: Size.fromHeight(1.h),
-        child: const GlobalDivider(),
-      ),
     );
   }
 

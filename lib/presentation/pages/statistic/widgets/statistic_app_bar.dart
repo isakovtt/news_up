@@ -7,11 +7,10 @@ import '../../../../utils/constants/app_paddings.dart';
 import '../../../../utils/constants/app_text_styles.dart';
 import '../../../../utils/constants/app_texts.dart';
 import '../../../../utils/helpers/navigate.dart';
-import '../../../widgets/global_divider.dart';
 import '../../profile/profile_screen.dart';
 
-class WriteNewsAppBar extends StatelessWidget implements PreferredSizeWidget {
-  const WriteNewsAppBar({super.key});
+class StatisticAppBar extends StatelessWidget implements PreferredSizeWidget {
+  const StatisticAppBar({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -33,7 +32,7 @@ class WriteNewsAppBar extends StatelessWidget implements PreferredSizeWidget {
         ),
       ),
       title: Text(
-        AppTexts.writeNews,
+        AppTexts.statistic,
         style: AppTextStyles.greyScale900s16W700,
       ),
       actions: [
@@ -47,10 +46,6 @@ class WriteNewsAppBar extends StatelessWidget implements PreferredSizeWidget {
           ),
         ),
       ],
-      bottom: PreferredSize(
-        preferredSize: Size.fromHeight(1.h),
-        child: const GlobalDivider(),
-      ),
     );
   }
 

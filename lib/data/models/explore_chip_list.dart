@@ -1,5 +1,5 @@
-class ChipListModel {
-  ChipListModel._();
+class ExploreChipListModel {
+  ExploreChipListModel._();
   static List<String> dogeNames = [
     '#news',
     '#today',
