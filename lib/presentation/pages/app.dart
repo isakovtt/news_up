@@ -1,9 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-
+import 'package:newsup_app/presentation/pages/faq/faq_screen.dart';
 import '../../utils/constants/app_themes.dart';
 import '../../utils/helpers/configs.dart';
-import 'statistic/statistic_screen.dart';
 
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
@@ -17,7 +16,7 @@ class MyApp extends StatelessWidget {
           debugShowCheckedModeBanner: false,
           title: Configs.appName,
           theme: AppThemes.appTheme,
-          home: const StatisticScreen(),
+          home: const FaqScreen(),
         );
       },
     );

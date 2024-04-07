@@ -114,7 +114,8 @@ class AppAssets {
   static const String lockVector = '$_svg/lock_vector.svg';
   static const String indicatorVector = '$_svg/indicator_vector.svg';
   static const String flashVector = '$_svg/flash_vector.svg';
-
+  static const String becomeMemberIcon = '$_svg/become_member.svg';
+  static const String microphoneIcon = '$_svg/microphone_icon.svg';
 
   //png strings
   static const String generalSettingPng = '$_png/general_setting_icon.png';
@@ -182,4 +183,5 @@ class AppAssets {
   static const String topicNewsImage_3 = '$_png/topic_news_image_3.png';
   static const String topicNewsImage_4 = '$_png/topic_news_image_4.png';
   static const String previewImage = '$_png/preview_image.png';
+  static const String usingNewsupIcon = '$_png/using_newsup_icon.png';
 }

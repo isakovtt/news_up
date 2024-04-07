@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:newsup_app/presentation/pages/faq/faq_screen.dart';
+import 'package:newsup_app/utils/helpers/navigate.dart';
 import '../../../../utils/constants/app_assets.dart';
 import '../../../../utils/constants/app_text_styles.dart';
 import '../../../../utils/constants/app_texts.dart';
@@ -26,7 +28,12 @@ class AboutGuideBox extends StatelessWidget {
           ],
         ),
         12.verticalSpace,
-        const GuideBox(text: AppTexts.getHelp),
+        GestureDetector(
+          child: const GuideBox(text: AppTexts.getHelp),
+          onTap: () {
+            Navigate.navigatePush(context, const FaqScreen());
+          },
+        ),
         8.verticalSpace,
         const GuideBox(text: AppTexts.termofService),
         8.verticalSpace,
