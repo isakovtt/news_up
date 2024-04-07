@@ -195,4 +195,13 @@ class AppTexts {
   static const String popularQuestion = 'Popular question';
   static const String searchTitle = 'Search Title';
   static const String faqDescription = 'Question? We’ve got instant answer';
+
+  // Email notifications screen
+  static const String emailfromNewsup = 'Email from Newsup';
+  static const String weekly = 'Weekly';
+  static const String off = 'Off';
+  static const String daily = 'Daily';
+  static const String emailsfromPublications = ' Emails from Publications';
+  static const String emailsfromWriters = ' Emails from Writers';
+  static const String recomendedReading = 'Recomended Reading';
 }

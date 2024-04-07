@@ -43,6 +43,7 @@ class LoginScreen extends StatelessWidget {
             64.verticalSpace,
             HaveAccountButton(
               text: AppTexts.dontHaveAnAccount,
+              
               title: AppTexts.signUp,
               onTap: () {
                 Navigate.navigatePush(context, const RegisterScreen());

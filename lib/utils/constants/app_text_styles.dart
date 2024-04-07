@@ -14,6 +14,10 @@ class AppTextStyles {
       color: AppColors.primaryBase,
       fontSize: 14.sp,
       fontWeight: FontWeight.w700);
+  static TextStyle get othersBlackS14W700 => TextStyle(
+      color: AppColors.othersBlack,
+      fontSize: 14.sp,
+      fontWeight: FontWeight.w700);
 
   static TextStyle get greyScale900s24W700 => TextStyle(
       fontSize: 24.sp,

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import '../../../../utils/constants/app_text_styles.dart';
 
@@ -19,9 +20,9 @@ class HaveAccountButton extends StatelessWidget {
         children: [
           Text(
             text,
-            style: AppTextStyles.greyScale900s14W500
-                .copyWith(fontWeight: FontWeight.w400,),
+            style: AppTextStyles.greyScale900s14W500,
           ),
+          2.horizontalSpace,
           Text(
             title,
             style: AppTextStyles.primaryBaseS14W700,
