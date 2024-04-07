@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:syncfusion_flutter_charts/charts.dart';
 
 class StatisticChart extends StatelessWidget {
@@ -18,7 +19,7 @@ class StatisticChart extends StatelessWidget {
         child: SfCartesianChart(
           series: <CartesianSeries>[
             SplineSeries<ChartData, int>(
-              width: 2,
+              width: 2.w,
               dataSource: chartData,
               splineType: SplineType.cardinal,
               cardinalSplineTension: 0.9,
@@ -26,7 +27,7 @@ class StatisticChart extends StatelessWidget {
               yValueMapper: (ChartData data, _) => data.y,
             ),
             SplineSeries<ChartData, int>(
-              width: 2,
+              width: 2.w,
               dataSource: chartData,
               splineType: SplineType.monotonic,
               cardinalSplineTension: 0.5,

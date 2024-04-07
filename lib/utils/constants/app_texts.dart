@@ -179,6 +179,9 @@ class AppTexts {
   static const String dailyVisits = 'Daily visits';
   static const String browser = 'Browser';
   static const String mobile = 'Mobile';
+  static const String views = 'Views';
+  static const String readers = 'Readers';
+  static const String ratio = 'Ratio';
 
   // FAQ screen
   static const String faq = 'FAQ';
