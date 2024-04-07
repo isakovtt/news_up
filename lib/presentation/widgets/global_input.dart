@@ -12,7 +12,9 @@ class GlobalInput extends StatelessWidget {
     this.inputBorderColor,
     this.suffixIcon,
     this.obscureText,
-    this.prefixText, this.suffixText,
+    this.prefixText,
+    this.suffixText,
+    this.borderRadius,
   });
 
   final String? text;
@@ -24,6 +26,7 @@ class GlobalInput extends StatelessWidget {
   final bool? obscureText;
   final String? prefixText;
   final String? suffixText;
+  final double? borderRadius;
 
   @override
   Widget build(BuildContext context) {
@@ -42,7 +45,7 @@ class GlobalInput extends StatelessWidget {
           borderSide: const BorderSide(
             color: AppColors.greyScale_50,
           ),
-          borderRadius: BorderRadius.circular(12),
+          borderRadius: BorderRadius.circular(borderRadius ?? 12),
         ),
         hintStyle: AppTextStyles.greyScale400s14W400,
         fillColor: AppColors.greyScale_50,

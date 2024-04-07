@@ -168,7 +168,6 @@ class AppTexts {
   static const String accept = 'Accept';
   static const String decline = 'Decline';
 
-
   // preview screen
   static const String preview = 'Preview';
   static const String addTags = 'Add tags';
@@ -181,4 +180,19 @@ class AppTexts {
   static const String browser = 'Browser';
   static const String mobile = 'Mobile';
 
+  // FAQ screen
+  static const String faq = 'FAQ';
+  static const String becomeAMember = 'Become a Member';
+  static const String becomeAMemberTitle =
+      'Paid Newsup subscriber. You can tell that someone is a subscriber if they have a green halo around their profile picture.';
+  static const String becomeAMemberSubTitle =
+      'Becoming a member lets you read paywalled stories from your favorite writers and support their work.';
+  static const String usingNewsupSubTitle =
+      'You can read stories from thousands of authors, and interact with them by clapping on their articles, leaving meaningful responses, and highlighting your favorite passages.';
+  static const String usingNewsupTitle =
+      'Newsup is a publishing platform where people can read important, insightful stories on the topics that matter most to them and share ideas with the world.';
+  static const String usingNewsup = 'Using Newsup';
+  static const String popularQuestion = 'Popular question';
+  static const String searchTitle = 'Search Title';
+  static const String faqDescription = 'Question? We’ve got instant answer';
 }

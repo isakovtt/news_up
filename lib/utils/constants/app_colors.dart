@@ -10,6 +10,7 @@ class AppColors {
   static const primary_200 = Color(0xffC8D8FA);
   static const primary_300 = Color(0xff92B1F5);
   static const primary_400 = Color(0xff5C8AF0);
+  static const primary_500 = Color(0xff4277FF);
   static const primaryBase = Color(0xff2563EB);
 
   //secondary colors
@@ -17,6 +18,7 @@ class AppColors {
   static const secondary_200 = Color(0xff8495B9);
   static const secondary_300 = Color(0xff4C5C7E);
   static const secondary_400 = Color(0xff222D44);
+  static const secondary_500 = Color(0xff6B7280);
   static const secondaryBase = Color(0xff111827);
 
   //greyScale colors

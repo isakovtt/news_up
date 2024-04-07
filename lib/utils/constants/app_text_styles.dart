@@ -84,6 +84,12 @@ class AppTextStyles {
       color: AppColors.secondaryBase,
       fontSize: 16.sp,
       fontWeight: FontWeight.w500);
+
+  static TextStyle get secondBase500S14W700 => TextStyle(
+      color: AppColors.secondary_500,
+      fontSize: 14.sp,
+      fontWeight: FontWeight.w700);
+
   static TextStyle get secondBaseS12W400 => TextStyle(
       color: AppColors.secondaryBase,
       fontSize: 12.sp,
@@ -145,6 +151,11 @@ class AppTextStyles {
       fontSize: 14.sp,
       fontWeight: FontWeight.w500,
       color: AppColors.greyScale_500);
+      
+  static TextStyle get greyScale500s12W400 => TextStyle(
+      fontSize: 12.sp,
+      fontWeight: FontWeight.w400,
+      color: AppColors.greyScale_500);
 
   static TextStyle get greyScale400s14W700 => TextStyle(
       fontSize: 14.sp,
@@ -153,6 +164,8 @@ class AppTextStyles {
 
   static TextStyle get whiteS16W700 => const TextStyle(
       color: AppColors.white, fontSize: 16, fontWeight: FontWeight.w700);
+  static TextStyle get whiteS24W700 => const TextStyle(
+      color: AppColors.white, fontSize: 24, fontWeight: FontWeight.w700);
 
   static TextStyle get whiteS7W500 => TextStyle(
       fontSize: 7.sp, fontWeight: FontWeight.w500, color: AppColors.white);
