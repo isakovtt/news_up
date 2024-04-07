@@ -184,4 +184,8 @@ class AppAssets {
   static const String topicNewsImage_4 = '$_png/topic_news_image_4.png';
   static const String previewImage = '$_png/preview_image.png';
   static const String usingNewsupIcon = '$_png/using_newsup_icon.png';
+  static const String openBookImage = '$_png/open_book_image.png';
+  static const String ratioImage = '$_png/ratio_image.png';
+  static const String followImage = '$_png/follow_image.png';
+  static const String analysisImage = '$_png/analysis_image.png';
 }
