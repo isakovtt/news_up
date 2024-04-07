@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:newsup_app/presentation/widgets/global_switch.dart';
 import 'package:newsup_app/utils/constants/app_assets.dart';
 import '../../../../utils/constants/app_colors.dart';
 import '../../../../utils/constants/app_text_styles.dart';
@@ -31,13 +32,7 @@ class GuideBox extends StatelessWidget {
               SvgPicture.asset(AppAssets.arrowForward)
             ],
             if (hasSwitch == true) ...[
-              Switch(
-                value: isSwitched,
-                onChanged: (value) {},
-                activeColor: AppColors.successLight,
-                inactiveThumbColor: AppColors.white,
-                inactiveTrackColor: AppColors.greyScale_200,
-              )
+              const GlobalSwitch()
             ]
           ],
         ),

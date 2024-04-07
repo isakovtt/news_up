@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:newsup_app/presentation/pages/email_notification/email_notification_screen.dart';
+import 'package:newsup_app/utils/helpers/navigate.dart';
 import '../../../../utils/constants/app_assets.dart';
 import '../../../../utils/constants/app_text_styles.dart';
 import '../../../../utils/constants/app_texts.dart';
@@ -24,14 +26,18 @@ class ConfigureGuideBox extends StatelessWidget {
               style: AppTextStyles.greyScale900s14W700,
             )
           ],
-          
         ),
         12.verticalSpace,
         const GuideBox(text: AppTexts.interest),
         8.verticalSpace,
         const GuideBox(text: AppTexts.notifications),
         8.verticalSpace,
-        const GuideBox(text: AppTexts.emailNotifications),
+        GestureDetector(
+          child: const GuideBox(text: AppTexts.emailNotifications),
+          onTap: () {
+            Navigate.navigatePush(context, const EmailNotificationScreen());
+          },
+        ),
         8.verticalSpace,
         const GuideBox(
           text: AppTexts.darkMode,
