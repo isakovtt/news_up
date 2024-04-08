@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import '../../widgets/global_view.dart';
-import '../explore/explore_app_bar.dart';
+import '../explore/widgets/explore_app_bar.dart';
 import 'widgets/topic_account_info.dart';
 import 'widgets/topic_all_header_statistics.dart';
 import 'widgets/topic_button.dart';

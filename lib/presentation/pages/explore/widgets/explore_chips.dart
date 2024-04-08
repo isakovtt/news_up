@@ -1,8 +1,8 @@
 import 'package:chip_list/chip_list.dart';
 import 'package:flutter/material.dart';
 
-import '../../../data/models/explore_chip_list.dart';
-import '../../../utils/constants/app_colors.dart';
+import '../../../../data/models/explore_chip_list.dart';
+import '../../../../utils/constants/app_colors.dart';
 
 class ExploreChips extends StatelessWidget {
   const ExploreChips({super.key});

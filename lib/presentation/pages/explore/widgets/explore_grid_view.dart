@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
-import '../../../data/models/hot_news_model.dart';
-import '../../../utils/constants/app_paddings.dart';
-import '../../widgets/news_item.dart';
+import '../../../../data/models/hot_news_model.dart';
+import '../../../../utils/constants/app_paddings.dart';
+import '../../../widgets/news_item.dart';
 
 class ExploreGridView extends StatelessWidget {
   const ExploreGridView({super.key});

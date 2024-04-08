@@ -2,13 +2,13 @@ import 'package:animated_segmented_tab_control/animated_segmented_tab_control.da
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
-import '../../../utils/constants/app_colors.dart';
-import '../../../utils/constants/app_paddings.dart';
-import '../../../utils/constants/app_text_styles.dart';
-import '../../../utils/constants/app_texts.dart';
+import '../../../../utils/constants/app_colors.dart';
+import '../../../../utils/constants/app_paddings.dart';
+import '../../../../utils/constants/app_text_styles.dart';
+import '../../../../utils/constants/app_texts.dart';
 
-class ListPageSegmentedBar extends StatelessWidget {
-  const ListPageSegmentedBar({super.key});
+class DraftSegmentedBar extends StatelessWidget {
+  const DraftSegmentedBar({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -28,17 +28,12 @@ class ListPageSegmentedBar extends StatelessWidget {
           splashColor: AppColors.white,
           tabs: const [
             SegmentTab(
-              label: AppTexts.saved,
+              label: AppTexts.draft,
               textColor: AppColors.greyScale_400,
               selectedTextColor: AppColors.greyScale_900,
             ),
             SegmentTab(
-              label: AppTexts.recent,
-              textColor: AppColors.greyScale_400,
-              selectedTextColor: AppColors.greyScale_900,
-            ),
-            SegmentTab(
-              label: AppTexts.highlight,
+              label: AppTexts.publish,
               textColor: AppColors.greyScale_400,
               selectedTextColor: AppColors.greyScale_900,
             ),

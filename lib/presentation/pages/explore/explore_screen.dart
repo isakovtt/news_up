@@ -6,9 +6,9 @@ import '../../widgets/global_layouts.dart';
 import '../../widgets/global_live_news.dart';
 import '../../widgets/global_view_more.dart';
 import '../home/widgets/channels.dart';
-import 'explore_app_bar.dart';
-import 'explore_chips.dart';
-import 'explore_grid_view.dart';
+import 'search/search_app_bar.dart';
+import 'widgets/explore_chips.dart';
+import 'widgets/explore_grid_view.dart';
 
 class ExploreScreen extends StatelessWidget {
   const ExploreScreen({super.key});
@@ -16,7 +16,7 @@ class ExploreScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: const ExploreAppBar(),
+      appBar: const SearchAppBar(),
       body: SingleChildScrollView(
         child: Column(children: [
           16.verticalSpace,
