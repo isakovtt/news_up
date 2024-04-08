@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:newsup_app/presentation/pages/authorization_screens/widgets/sign_in_up_button.dart';
 import 'package:newsup_app/presentation/pages/edit_profile/widgets/global_app_bar.dart';
-import 'package:newsup_app/presentation/pages/language_change_screen/widgets/language_boxes.dart';
+import 'package:newsup_app/presentation/pages/language_change/widgets/language_boxes.dart';
 import 'package:newsup_app/presentation/widgets/global_input.dart';
 import 'package:newsup_app/utils/constants/app_paddings.dart';
 import '../../../utils/constants/app_colors.dart';

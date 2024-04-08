@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import '../explore/explore_screen.dart';
 import '../list/list_screen.dart';
 import '../profile/profile_screen.dart';
-import 'home_screen.dart';
+import '../home/home_screen.dart';
 import 'news_navigation_bar.dart';
 
 class NavigationScreen extends StatefulWidget {

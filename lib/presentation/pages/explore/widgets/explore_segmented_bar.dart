@@ -1,13 +1,11 @@
-import 'package:buttons_tabbar/buttons_tabbar.dart';
+import 'package:animated_segmented_tab_control/animated_segmented_tab_control.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
-import '../../../../utils/constants/app_box_decorations.dart';
 import '../../../../utils/constants/app_colors.dart';
 import '../../../../utils/constants/app_paddings.dart';
+import '../../../../utils/constants/app_text_styles.dart';
 import '../../../../utils/constants/app_texts.dart';
-import '../../../widgets/custom_tab_box.dart';
-import 'explore_tabbar_view.dart';
 
 class ExploreSegmentedBar extends StatelessWidget {
   const ExploreSegmentedBar({super.key});
@@ -17,42 +15,40 @@ class ExploreSegmentedBar extends StatelessWidget {
     return Column(
       children: <Widget>[
         8.verticalSpace,
-        DecoratedBox(
-          decoration: AppBoxDecorations.greyScale100R12,
+        SafeArea(
           child: Padding(
-            padding: AppPaddings.all1,
-            child: ButtonsTabBar(
+            padding: AppPaddings.h24,
+            child: SegmentedTabControl(
+              textStyle: AppTextStyles.greyScale400s12W500,
+              selectedTextStyle: AppTextStyles.greyScale900s12W700,
               height: 40.h,
-              radius: 12,
-              contentPadding: AppPaddings.h6,
-              backgroundColor: AppColors.white,
-              unselectedBackgroundColor: AppColors.greyScale_100,
+              radius: const Radius.circular(12),
+              backgroundColor: AppColors.greyScale_100,
+              indicatorPadding: AppPaddings.all4,
+              indicatorColor: AppColors.white,
+              tabTextColor: Colors.black45,
+              selectedTabTextColor: Colors.white,
               splashColor: AppColors.white,
               tabs: const [
-                Tab(
-                  child: CustomTabBox(
-                    width: 101,
-                    text: AppTexts.stories,
-                  ),
+                SegmentTab(
+                  label: AppTexts.stories,
+                  textColor: AppColors.greyScale_400,
+                  selectedTextColor: AppColors.greyScale_900,
                 ),
-                Tab(
-                  child: CustomTabBox(
-                    width: 101,
-                    text: AppTexts.topics,
-                  ),
+                SegmentTab(
+                  label: AppTexts.topics,
+                  textColor: AppColors.greyScale_400,
+                  selectedTextColor: AppColors.greyScale_900,
                 ),
-                Tab(
-                  child: CustomTabBox(
-                    width: 101,
-                    text: AppTexts.author,
-                  ),
+                SegmentTab(
+                  label: AppTexts.author,
+                  textColor: AppColors.greyScale_400,
+                  selectedTextColor: AppColors.greyScale_900,
                 ),
               ],
             ),
           ),
         ),
-        24.verticalSpace,
-        const ExploreTabbarView(),
       ],
     );
   }
