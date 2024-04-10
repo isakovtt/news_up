@@ -34,7 +34,7 @@ class AuthorTile extends StatelessWidget {
       horizontalTitleGap: 11.w,
       leading: CircleAvatar(
         backgroundColor: AppColors.greyScale_100,
-        child: Image.asset(profileIcon),
+        child: Image.network(profileIcon)
       ),
       title: Row(
         children: [

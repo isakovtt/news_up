@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "7679515479",
+    "project_id": "newsup-843ba",
+    "storage_bucket": "newsup-843ba.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:7679515479:android:ca22d61e380c64fc13fc12",
+        "android_client_info": {
+          "package_name": "com.newsup.app"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA8kXeYgHryEFnzi3QOk0qEokRcocOp3mk"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
