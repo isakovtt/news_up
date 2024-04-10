@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
-import '../../../../data/models/top_author_model.dart';
+import '../../../../cubits/users/users_cubit.dart';
 import '../../../../utils/constants/app_paddings.dart';
 import 'author_tile.dart';
 
@@ -10,22 +11,42 @@ class TopAuthorListView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return ListView.separated(
-      padding: AppPaddings.h24,
-      itemCount: topAuthors.length,
-      scrollDirection: Axis.vertical,
-      shrinkWrap: true,
-      physics: const NeverScrollableScrollPhysics(),
-      separatorBuilder: (context, index) => 12.verticalSpace,
-      itemBuilder: (context, index) {
-        final author = topAuthors[index];
-        return AuthorTile(
-          hasVerifiedIcon: true,
-          profileIcon: author.profileIcon,
-          name: author.name,
-          username: author.username,
-        );
-      },
-    );
+    final cubit = context.read<UsersCubit>();
+    return StreamBuilder(
+        stream: cubit.getUsers(),
+        builder: (context, snapshot) {
+          if (!snapshot.hasData) {
+            return Center(
+              child: SizedBox(
+                height: 24.h,
+                width: 24.w,
+                child: const CircularProgressIndicator.adaptive(),
+              ),
+            );
+          }
+          final data = snapshot.data;
+          return ListView.separated(
+            padding: AppPaddings.h24,
+            // itemCount: topAuthors.length,
+            itemCount: data?.docs.length ?? 0,
+            scrollDirection: Axis.vertical,
+            shrinkWrap: true,
+            physics: const NeverScrollableScrollPhysics(),
+            separatorBuilder: (context, index) => 12.verticalSpace,
+            itemBuilder: (context, index) {
+              // final author = topAuthors[index];
+              final document = data!.docs[index].data();
+              return AuthorTile(
+                hasVerifiedIcon: true,
+                // profileIcon: author.profileIcon,
+                profileIcon: document['profilePicture'],
+                // name: author.name,
+                name: document['name'],
+                // username: author.username,
+                username: document['username'],
+              );
+            },
+          );
+        });
   }
 }
