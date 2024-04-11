@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:newsup_app/cubits/register/register_cubit.dart';
+import 'package:newsup_app/presentation/pages/authorization_screens/register/register_screen.dart';
 
 import '../../cubits/users/users_cubit.dart';
 import '../../utils/constants/app_themes.dart';
@@ -16,12 +18,12 @@ class MyApp extends StatelessWidget {
       designSize: const Size(375, 812),
       builder: (context, _) {
         return BlocProvider(
-          create: (context) => UsersCubit(),
+          create: (context) => RegisterCubit(),
           child: MaterialApp(
             debugShowCheckedModeBanner: false,
             title: Configs.appName,
             theme: AppThemes.appTheme,
-            home: const NavigationScreen(),
+            home: const RegisterScreen(),
           ),
         );
       },
