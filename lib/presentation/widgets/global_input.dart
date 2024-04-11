@@ -15,6 +15,7 @@ class GlobalInput extends StatelessWidget {
     this.prefixText,
     this.suffixText,
     this.borderRadius,
+    this.validator, this.onSaved,
   });
 
   final String? text;
@@ -27,10 +28,13 @@ class GlobalInput extends StatelessWidget {
   final String? prefixText;
   final String? suffixText;
   final double? borderRadius;
+  final String? Function(String?)? validator;
+  final Function(String?)? onSaved;
 
   @override
   Widget build(BuildContext context) {
-    return TextFormField(
+    return TextFormField(onSaved: onSaved,
+      validator: validator,
       obscureText: obscureText ?? false,
       controller: controller,
       style: AppTextStyles.greyScale900s14W500,

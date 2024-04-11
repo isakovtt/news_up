@@ -1,26 +1,30 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import '../identification/identify_type_screen/identify_type_screen.dart';
+
+import '../../../../cubits/register/register_cubit.dart';
+import '../../../../utils/constants/app_paddings.dart';
+import '../../../../utils/constants/app_text_styles.dart';
+import '../../../../utils/constants/app_texts.dart';
+import '../../../../utils/helpers/navigate.dart';
+import '../../bottom_navigation/navigation_screen.dart';
 import '../login/login_screen.dart';
-import 'widgets/register_greeting_text.dart';
-import 'widgets/register_inputs.dart';
 import '../widgets/have_account_button.dart';
 import '../widgets/sign_in_up_button.dart';
 import '../widgets/sign_in_up_with_button.dart';
 import '../widgets/sign_in_with_button.dart';
-import '../../../../utils/constants/app_paddings.dart';
-import '../../../../utils/constants/app_text_styles.dart';
-
-import '../../../../utils/constants/app_texts.dart';
-import '../../../../utils/helpers/navigate.dart';
+import 'widgets/register_greeting_text.dart';
+import 'widgets/register_inputs.dart';
 
 class RegisterScreen extends StatelessWidget {
   const RegisterScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
+    final cubit = context.read<RegisterCubit>();
     return Scaffold(
         appBar: AppBar(
+          centerTitle: true,
           title: Text(
             AppTexts.getStarted,
             style: AppTextStyles.greyScale900s16W700,
@@ -40,11 +44,20 @@ class RegisterScreen extends StatelessWidget {
               24.verticalSpace,
               const SignInWithButton(),
               32.verticalSpace,
-              SignInUpButton(
-                text: AppTexts.signUp,
-                onTap: () {
-                  Navigate.navigateReplacePush(
-                      context, const IdentifyTypeScreen());
+              BlocBuilder<RegisterCubit, RegisterState>(
+                builder: (context, state) {
+                  return SignInUpButton(
+                    text: AppTexts.signUp,
+                    onTap: () {
+                      cubit.validateRegister();
+                      if (state is RegisterSuccess) {
+                        Navigate.navigateReplacePush(
+                          context,
+                          const NavigationScreen(),
+                        );
+                      }
+                    },
+                  );
                 },
               ),
               64.verticalSpace,
