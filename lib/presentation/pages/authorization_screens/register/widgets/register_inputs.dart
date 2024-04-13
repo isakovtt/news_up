@@ -13,34 +13,25 @@ class RegisterInputs extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final cubit = context.read<RegisterCubit>();
-
-    return Column(
-      children: [
-        Form(
-          key: cubit.formKeyName,
-          child: GlobalInput(
+    return Form(
+      key: cubit.formKey,
+      child: Column(
+        children: [
+          GlobalInput(
             controller: cubit.nameController,
-            validator: (p0) {
-              return cubit.validateName();
-            },
+            validator: (v) => cubit.validateName,
             text: AppTexts.yourName,
           ),
-        ),
-        14.verticalSpace,
-        Form(
-          key: cubit.formKeyEmail,
-          child: GlobalInput(
+          14.verticalSpace,
+          GlobalInput(
             controller: cubit.emailController,
-            validator: (p0) => cubit.validateEmail(),
+            validator: (v) => cubit.validateEmail,
             text: AppTexts.yourMail,
           ),
-        ),
-        14.verticalSpace,
-        Form(
-          key: cubit.formKeyPassword,
-          child: GlobalInput(
+          14.verticalSpace,
+          GlobalInput(
             controller: cubit.passwordController,
-            validator: (p0) => cubit.validatePassword(),
+            validator: (v) => cubit.validatePassword,
             text: AppTexts.password,
             suffixIcon: const Icon(
               Icons.remove_red_eye_outlined,
@@ -48,8 +39,8 @@ class RegisterInputs extends StatelessWidget {
               size: 20,
             ),
           ),
-        ),
-      ],
+        ],
+      ),
     );
   }
 }

@@ -8,7 +8,7 @@ final class RegisterInitial extends RegisterState {}
 final class RegisterLoading extends RegisterState {}
 
 final class RegisterSuccess extends RegisterState {
-  final User? user;
+  final UserCredential user;
 
    RegisterSuccess(this.user);
 }

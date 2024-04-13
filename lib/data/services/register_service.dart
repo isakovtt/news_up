@@ -3,13 +3,15 @@ import 'package:firebase_auth/firebase_auth.dart';
 class RegisterService {
   final _firebaseAuth = FirebaseAuth.instance;
 
-  Future<User?> userRegister(String email, String password) async {
+  Future<UserCredential?> userRegister(String email, String password) async {
     try {
-      UserCredential credential = await _firebaseAuth
-          .createUserWithEmailAndPassword(email: email, password: password);
-      return credential.user;
+      final credential = await _firebaseAuth.createUserWithEmailAndPassword(
+          email: email, password: password);
+      print('register success');
+      print(credential.user!.uid);
+      return credential;
     } catch (e) {
-      print('Some error occured');
+      print('Register error occured');
       return null;
     }
   }

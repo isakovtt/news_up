@@ -1,13 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:newsup_app/cubits/register/register_cubit.dart';
-import 'package:newsup_app/presentation/pages/authorization_screens/register/register_screen.dart';
 
+import '../../cubits/login/login_cubit.dart';
+import '../../cubits/register/register_cubit.dart';
 import '../../cubits/users/users_cubit.dart';
 import '../../utils/constants/app_themes.dart';
 import '../../utils/helpers/configs.dart';
-import 'bottom_navigation/navigation_screen.dart';
+import 'onboarding/onboarding_screen.dart';
 
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
@@ -17,13 +17,23 @@ class MyApp extends StatelessWidget {
     return ScreenUtilInit(
       designSize: const Size(375, 812),
       builder: (context, _) {
-        return BlocProvider(
-          create: (context) => RegisterCubit(),
+        return MultiBlocProvider(
+          providers: [
+            BlocProvider(
+              create: (context) => LoginCubit(),
+            ),
+            BlocProvider(
+              create: (context) => RegisterCubit(),
+            ),
+            BlocProvider(
+              create: (context) => UsersCubit(),
+            )
+          ],
           child: MaterialApp(
             debugShowCheckedModeBanner: false,
             title: Configs.appName,
             theme: AppThemes.appTheme,
-            home: const RegisterScreen(),
+            home: const OnboardingScreen(),
           ),
         );
       },

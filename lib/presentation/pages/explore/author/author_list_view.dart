@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:newsup_app/presentation/pages/explore/author/recomended_author_list_view.dart';
 
 import '../../../../utils/constants/app_texts.dart';
 import '../../../widgets/global_view_more.dart';
@@ -21,7 +22,7 @@ class AuthorListView extends StatelessWidget {
         24.verticalSpace,
         const GlobalViewMore(text: AppTexts.recomendation),
         16.verticalSpace,
-        // const RecomendedAuthorListView(),
+        const RecomendedAuthorListView(),
       ],
     );
   }
