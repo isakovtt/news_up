@@ -12,20 +12,15 @@ class RegisterCubit extends Cubit<RegisterState> {
   late final nameController = TextEditingController();
   late final emailController = TextEditingController();
   late final passwordController = TextEditingController();
-  final GlobalKey<FormState> formKeyPassword = GlobalKey();
-  final GlobalKey<FormState> formKeyName = GlobalKey();
-  final GlobalKey<FormState> formKeyEmail = GlobalKey();
+  final GlobalKey<FormState> formKey = GlobalKey();
 
   final registerService = RegisterService();
 
-  final firebaseAuth = FirebaseAuth.instance;
   Future<void> getRegister() async {
     emit(RegisterLoading());
-    final result = 
-    await registerService.userRegister(
+    final result = await registerService.userRegister(
         emailController.text, passwordController.text);
-    emit(RegisterSuccess(result));
-
+    emit(RegisterSuccess(result!));
   }
 
   @override
@@ -36,25 +31,20 @@ class RegisterCubit extends Cubit<RegisterState> {
     return super.close();
   }
 
-  Future<void> validateRegister() async {
-    if (formKeyName.currentState != null &&
-        formKeyName.currentState!.validate() &&
-        formKeyEmail.currentState != null &&
-        formKeyEmail.currentState!.validate() &&
-        formKeyPassword.currentState != null &&
-        formKeyPassword.currentState!.validate()) {
-      getRegister();
+  Future<void> get validateRegister async {
+    if (formKey.currentState != null && formKey.currentState!.validate()) {
+      await getRegister();
     }
   }
 
-  String? validateName() {
+  String? get validateName {
     if (nameController.text.isEmpty) {
       return 'Full name is required';
     }
     return null;
   }
 
-  String? validatePassword() {
+  String?get validatePassword {
     if (passwordController.text.isEmpty) {
       return 'Password is required';
     } else if (passwordController.text.length < 6) {
@@ -63,7 +53,7 @@ class RegisterCubit extends Cubit<RegisterState> {
     return null;
   }
 
-  String? validateEmail() {
+  String? get validateEmail {
     if (emailController.text.isEmpty) {
       return 'Email is required';
     } else if (!RegExp(r'^.+@[a-zA-Z]+\.{1}[a-zA-Z]+(\.{0,1}[a-zA-Z]+)$')

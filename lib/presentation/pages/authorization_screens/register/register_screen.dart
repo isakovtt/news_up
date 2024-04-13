@@ -38,24 +38,24 @@ class RegisterScreen extends StatelessWidget {
               40.verticalSpace,
               const RegisterInputs(),
               24.verticalSpace,
-              const SignInUpWithButton(
-                text: AppTexts.orSignUpWith,
-              ),
+              const SignInUpWithButton(text: AppTexts.orSignUpWith),
               24.verticalSpace,
               const SignInWithButton(),
               32.verticalSpace,
-              BlocBuilder<RegisterCubit, RegisterState>(
+              BlocConsumer<RegisterCubit, RegisterState>(
+                listener: (context, state) {
+                  if (state is RegisterSuccess) {
+                    Navigate.navigateReplacePush(
+                      context,
+                      const NavigationScreen(),
+                    );
+                  }
+                },
                 builder: (context, state) {
                   return SignInUpButton(
                     text: AppTexts.signUp,
                     onTap: () {
-                      cubit.validateRegister();
-                      if (state is RegisterSuccess) {
-                        Navigate.navigateReplacePush(
-                          context,
-                          const NavigationScreen(),
-                        );
-                      }
+                      cubit.validateRegister;
                     },
                   );
                 },
@@ -65,7 +65,10 @@ class RegisterScreen extends StatelessWidget {
                 text: AppTexts.alreadyHaveAnAccount,
                 title: AppTexts.signIn,
                 onTap: () {
-                  Navigate.navigateReplacePush(context, const LoginScreen());
+                  Navigate.navigateReplacePush(
+                    context,
+                    const LoginScreen(),
+                  );
                 },
               ),
             ],
