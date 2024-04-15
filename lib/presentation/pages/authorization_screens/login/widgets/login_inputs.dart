@@ -7,8 +7,15 @@ import '../../../../../utils/constants/app_colors.dart';
 import '../../../../../utils/constants/app_texts.dart';
 import '../../../../widgets/global_input.dart';
 
-class LoginInputs extends StatelessWidget {
+class LoginInputs extends StatefulWidget {
   const LoginInputs({super.key});
+
+  @override
+  State<LoginInputs> createState() => _LoginInputsState();
+}
+
+class _LoginInputsState extends State<LoginInputs> {
+  bool isSecureText = true;
 
   @override
   Widget build(BuildContext context) {
@@ -17,18 +24,29 @@ class LoginInputs extends StatelessWidget {
       key: cubit.formKey,
       child: Column(
         children: [
-          GlobalInput(controller: cubit.emailController,
+          GlobalInput(
+            controller: cubit.emailController,
             validator: (v) => cubit.validateEmail,
             text: AppTexts.yourMail,
           ),
           14.verticalSpace,
-          GlobalInput(controller: cubit.passwordController,
+          GlobalInput(
+            obscureText: isSecureText,
+            controller: cubit.passwordController,
             validator: (v) => cubit.validatePassword,
             text: AppTexts.password,
-            suffixIcon: const Icon(
-              Icons.visibility_off_outlined,
-              color: AppColors.greyScale_500,
-              size: 20,
+            suffixIcon: IconButton(
+              onPressed: () {
+                isSecureText = !isSecureText;
+                setState(() {});
+              },
+              icon: Icon(
+                isSecureText
+                    ? Icons.visibility_off_outlined
+                    : Icons.visibility_outlined,
+                color: AppColors.greyScale_500,
+                size: 20,
+              ),
             ),
           ),
         ],
