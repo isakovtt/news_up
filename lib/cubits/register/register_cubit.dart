@@ -15,6 +15,7 @@ class RegisterCubit extends Cubit<RegisterState> {
   final GlobalKey<FormState> formKey = GlobalKey();
 
   final registerService = RegisterService();
+  
 
   Future<void> getRegister() async {
     emit(RegisterLoading());

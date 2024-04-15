@@ -7,9 +7,15 @@ import '../../../../../utils/constants/app_colors.dart';
 import '../../../../../utils/constants/app_texts.dart';
 import '../../../../widgets/global_input.dart';
 
-class RegisterInputs extends StatelessWidget {
+class RegisterInputs extends StatefulWidget {
   const RegisterInputs({super.key});
 
+  @override
+  State<RegisterInputs> createState() => _RegisterInputsState();
+}
+
+class _RegisterInputsState extends State<RegisterInputs> {
+  bool isSecureText = true;
   @override
   Widget build(BuildContext context) {
     final cubit = context.read<RegisterCubit>();
@@ -30,13 +36,22 @@ class RegisterInputs extends StatelessWidget {
           ),
           14.verticalSpace,
           GlobalInput(
+            obscureText: isSecureText,
             controller: cubit.passwordController,
             validator: (v) => cubit.validatePassword,
             text: AppTexts.password,
-            suffixIcon: const Icon(
-              Icons.remove_red_eye_outlined,
-              color: AppColors.greyScale_500,
-              size: 20,
+            suffixIcon: GestureDetector(
+              onTap: () {
+                isSecureText = !isSecureText;
+                setState(() {});
+              },
+              child: Icon(
+                isSecureText
+                    ? Icons.visibility_outlined
+                    : Icons.visibility_off_outlined,
+                color: AppColors.greyScale_500,
+                size: 20,
+              ),
             ),
           ),
         ],
