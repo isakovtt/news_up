@@ -15,12 +15,14 @@ class RegisterCubit extends Cubit<RegisterState> {
   final GlobalKey<FormState> formKey = GlobalKey();
 
   final registerService = RegisterService();
-  
 
   Future<void> getRegister() async {
     emit(RegisterLoading());
-    final result = await registerService.userRegister(
-        emailController.text, passwordController.text);
+    final result = await registerService.signUp(
+      nameController.text,
+      emailController.text,
+      passwordController.text,
+    );
     emit(RegisterSuccess(result!));
   }
 
@@ -45,7 +47,7 @@ class RegisterCubit extends Cubit<RegisterState> {
     return null;
   }
 
-  String?get validatePassword {
+  String? get validatePassword {
     if (passwordController.text.isEmpty) {
       return 'Password is required';
     } else if (passwordController.text.length < 6) {
