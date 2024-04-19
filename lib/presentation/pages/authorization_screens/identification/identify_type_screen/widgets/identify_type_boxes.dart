@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
+import '../../../../../../cubits/email_verify/email_verify_cubit.dart';
 import '../../../../../../utils/constants/app_assets.dart';
 import '../../../../../../utils/constants/app_colors.dart';
 import '../../../../../../utils/constants/app_texts.dart';
@@ -47,7 +49,7 @@ class _IdentifyTypeBoxesState extends State<IdentifyTypeBoxes> {
         16.verticalSpace,
         IdentityTypeBox(
           onTap: () {
-            continueEmail = false;
+            continueEmail = true;
             chekedPhone = AppColors.primaryBase;
             chekedEmail = AppColors.greyScale_50;
             setState(() {});
@@ -63,13 +65,21 @@ class _IdentifyTypeBoxesState extends State<IdentifyTypeBoxes> {
             if (continueEmail == true) {
               Navigate.navigatePush(
                 context,
-                const EmailIdentityScreen(),
+                BlocProvider(
+                  create: (context) => EmailVerifyCubit(),
+                  child: const EmailIdentityScreen(),
+                ),
               );
-            } else {
+            }
+            if (continuePhone == true) {
               Navigate.navigatePush(
                 context,
                 const PhoneIdentityScreen(),
               );
+            } else if (continueEmail == false && continuePhone == false) {
+              ScaffoldMessenger.of(context).showSnackBar(const SnackBar(
+                content: Text('Choose email or phone'),
+              ));
             }
           },
           text: AppTexts.continuee,

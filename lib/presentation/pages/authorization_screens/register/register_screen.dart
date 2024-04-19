@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
-import '../../../../cubits/email_verify/email_verify_cubit.dart';
 import '../../../../cubits/register/register_cubit.dart';
 import '../../../../utils/constants/app_paddings.dart';
 import '../../../../utils/constants/app_text_styles.dart';
@@ -48,10 +47,7 @@ class RegisterScreen extends StatelessWidget {
                   if (state is RegisterSuccess) {
                     Navigate.navigateReplacePush(
                       context,
-                      BlocProvider(
-                        create: (context) => EmailVerifyCubit(),
-                        child: const IdentifyTypeScreen(),
-                      ),
+                      const IdentifyTypeScreen(),
                     );
                   }
                 },
