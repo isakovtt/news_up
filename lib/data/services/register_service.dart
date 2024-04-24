@@ -4,7 +4,7 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 
 class RegisterService {
-  final _userCCollection = FirebaseFirestore.instance.collection('users');
+  final _userCollection = FirebaseFirestore.instance.collection('users');
   final _firebaseAuth = FirebaseAuth.instance;
 
   Future<UserCredential?> signUp(
@@ -28,7 +28,7 @@ class RegisterService {
   }
 
   Future<void> _registerUser(String name, String email, String password) async {
-    final users = await _userCCollection.doc().set({
+    final users = await _userCollection.doc().set({
       "name": name,
       "email": email,
       "password": password,

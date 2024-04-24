@@ -1,12 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:newsup_app/cubits/phone_verfiy/phone_verify_cubit.dart';
 
+import '../../../../../cubits/phone_verfiy/phone_verify_cubit.dart';
 import '../../../../../utils/constants/app_paddings.dart';
 import '../../../../../utils/constants/app_texts.dart';
-import '../../../../../utils/helpers/navigate.dart';
-import '../../news_types_chip/news_types_chip.dart';
 import '../../widgets/auth_headers.dart';
 import '../../widgets/sign_in_up_button.dart';
 import 'country_picker_and_phone.dart';
@@ -35,14 +33,16 @@ class PhoneIdentityScreen extends StatelessWidget {
             const CountryPickerAndPhone(),
             const Spacer(),
             SignInUpButton(
-              
               text: AppTexts.continuee,
               onTap: () {
-                cubit.signInWithPhone();
-                Navigate.navigateReplacePush(
-                  context,
-                  const NewsTypesChip(),
-                );
+                cubit.signWithPhone(context);
+                // Navigate.navigateReplacePush(
+                //   context,
+                //   BlocProvider(
+                //     create: (context) => PhoneVerifyCubit()..signWithPhone(context),
+                //     child: const PhoneVerifyPinputScreen(),
+                //   ),
+                // );
               },
             ),
             32.verticalSpace,

@@ -2,9 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
+import '../../cubits/google_auth/google_auth_cubit.dart';
 import '../../cubits/login/login_cubit.dart';
 import '../../cubits/register/register_cubit.dart';
-import '../../cubits/users/users_cubit.dart';
 import '../../utils/constants/app_themes.dart';
 import '../../utils/helpers/configs.dart';
 import 'onboarding/onboarding_screen.dart';
@@ -26,8 +26,8 @@ class MyApp extends StatelessWidget {
               create: (context) => RegisterCubit(),
             ),
             BlocProvider(
-              create: (context) => UsersCubit(),
-            )
+              create: (context) => GoogleAuthCubit(),
+            ),
           ],
           child: MaterialApp(
             debugShowCheckedModeBanner: false,

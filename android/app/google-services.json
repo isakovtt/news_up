@@ -14,7 +14,15 @@
       },
       "oauth_client": [
         {
-          "client_id": "7679515479-5vnt7sqgs6d7bdgt9404bv659dehqqfm.apps.googleusercontent.com",
+          "client_id": "7679515479-ct279nk3ad80j6jdkcat1lobp5hm1m00.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.newsup.app",
+            "certificate_hash": "020586c8201430a43aa6b1713c8a98db3217afea"
+          }
+        },
+        {
+          "client_id": "7679515479-ida7li39psk5t0jjn7qt4q4fb7s9s2ku.apps.googleusercontent.com",
           "client_type": 3
         }
       ],
