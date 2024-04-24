@@ -27,14 +27,14 @@ class _LoginInputsState extends State<LoginInputs> {
           GlobalInput(
             controller: cubit.emailController,
             validator: (v) => cubit.validateEmail,
-            text: AppTexts.yourMail,
+            hintText: AppTexts.yourMail,
           ),
           14.verticalSpace,
           GlobalInput(
             obscureText: isSecureText,
             controller: cubit.passwordController,
             validator: (v) => cubit.validatePassword,
-            text: AppTexts.password,
+            hintText: AppTexts.password,
             suffixIcon: IconButton(
               onPressed: () {
                 isSecureText = !isSecureText;

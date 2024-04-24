@@ -12,7 +12,12 @@
           "package_name": "com.newsup.app"
         }
       },
-      "oauth_client": [],
+      "oauth_client": [
+        {
+          "client_id": "7679515479-5vnt7sqgs6d7bdgt9404bv659dehqqfm.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
       "api_key": [
         {
           "current_key": "AIzaSyA8kXeYgHryEFnzi3QOk0qEokRcocOp3mk"
@@ -20,7 +25,12 @@
       ],
       "services": {
         "appinvite_service": {
-          "other_platform_oauth_client": []
+          "other_platform_oauth_client": [
+            {
+              "client_id": "7679515479-5vnt7sqgs6d7bdgt9404bv659dehqqfm.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
         }
       }
     }

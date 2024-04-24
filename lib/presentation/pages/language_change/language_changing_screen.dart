@@ -26,7 +26,7 @@ class LanguageChangingScreen extends StatelessWidget {
                   Icons.search_outlined,
                   color: AppColors.greyScale_300,
                 ),
-                text: AppTexts.searchLanguage,
+                hintText: AppTexts.searchLanguage,
               ),
               const LanguageBoxes(),
               48.verticalSpace,

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 
 import '../../utils/constants/app_colors.dart';
 import '../../utils/constants/app_text_styles.dart';
@@ -6,7 +7,7 @@ import '../../utils/constants/app_text_styles.dart';
 class GlobalInput extends StatelessWidget {
   const GlobalInput({
     super.key,
-    this.text,
+    this.hintText,
     this.controller,
     this.prefixIcon,
     this.inputBorderColor,
@@ -15,31 +16,43 @@ class GlobalInput extends StatelessWidget {
     this.prefixText,
     this.suffixText,
     this.borderRadius,
-    this.validator, this.onSaved,
+    this.validator,
+    this.onSaved,
+    this.prefix,
+    this.helperText,
+    this.keyboardType,
+    this.inputFormatters,
   });
 
-  final String? text;
+  final String? hintText;
+  final String? helperText;
   final TextEditingController? controller;
   final Widget? prefixIcon;
   final Widget? suffixIcon;
   final Color? inputBorderColor;
   final Color focusedColor = AppColors.primaryBase;
   final bool? obscureText;
+  final Widget? prefix;
   final String? prefixText;
   final String? suffixText;
   final double? borderRadius;
+  final TextInputType? keyboardType;
+  final List<TextInputFormatter>? inputFormatters;
   final String? Function(String?)? validator;
   final Function(String?)? onSaved;
 
   @override
   Widget build(BuildContext context) {
-    return TextFormField(onSaved: onSaved,
+    return TextFormField(
+      onSaved: onSaved,
       validator: validator,
+      keyboardType: keyboardType,
+      inputFormatters: inputFormatters,
       obscureText: obscureText ?? false,
       controller: controller,
       style: AppTextStyles.greyScale900s14W500,
       decoration: InputDecoration(
-        hintText: text,
+        hintText: hintText,
         focusedBorder: const OutlineInputBorder(
           borderSide: BorderSide(
             color: AppColors.primaryBase,
@@ -54,12 +67,14 @@ class GlobalInput extends StatelessWidget {
         hintStyle: AppTextStyles.greyScale400s14W400,
         fillColor: AppColors.greyScale_50,
         filled: true,
+        helperText: helperText,
         errorStyle: const TextStyle(height: 0),
         prefixIcon: prefixIcon,
         suffixText: suffixText,
         suffixIcon: suffixIcon,
         focusColor: AppColors.primaryBase,
         prefixText: prefixText,
+        prefix: prefix,
         counterStyle: const TextStyle(color: AppColors.primaryBase),
       ),
     );

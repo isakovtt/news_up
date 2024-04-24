@@ -14,7 +14,7 @@ class IdentifyTypeScreen extends StatelessWidget {
     
     return Scaffold(
         appBar: AppBar(
-          title: const Text(''),
+          automaticallyImplyLeading: false,
         ),
         body: Padding(
           padding: AppPaddings.h24,

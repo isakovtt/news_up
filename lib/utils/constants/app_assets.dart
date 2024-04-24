@@ -2,6 +2,10 @@ class AppAssets {
   const AppAssets._();
   static const String _svg = 'assets/icons';
   static const String _png = 'assets/images';
+  static const _json = 'assets/json';
+
+  //json
+  static const phoneLocales = '$_json/phone_locales.json';
 
 //svg strings
   static const String analysis = '$_svg/analysis.svg';

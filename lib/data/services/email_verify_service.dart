@@ -2,12 +2,17 @@ import 'dart:developer';
 
 import 'package:firebase_auth/firebase_auth.dart';
 
-class EmailVerifyService {
-  final _emailVerify = FirebaseAuth.instance;
+class SendEmailVerifyService {
+  final _sendEmailVerify = FirebaseAuth.instance;
 
-  Future<void> getEmailVerify(String email) async {
+  Future<void> sendEmailVerify() async {
     try {
-      await _emailVerify.currentUser?.sendEmailVerification();
+      await _sendEmailVerify.currentUser?.sendEmailVerification();
+
+    //  if (_emailVerify.currentUser!.emailVerified == true) {
+      
+       
+    //  }
 
       log('servis isledi');
     } on FirebaseAuthException catch (e) {

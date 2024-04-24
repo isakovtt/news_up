@@ -29,7 +29,7 @@ class ForgotPasswordScreen extends StatelessWidget {
               ),
               32.verticalSpace,
               const GlobalInput(
-                text: AppTexts.email,
+                hintText: AppTexts.email,
               ),
               138.verticalSpace,
               SignInUpButton(

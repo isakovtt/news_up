@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:newsup_app/cubits/phone_verfiy/phone_verify_cubit.dart';
 
 import '../../../../../../cubits/email_verify/email_verify_cubit.dart';
 import '../../../../../../utils/constants/app_assets.dart';
@@ -49,7 +50,7 @@ class _IdentifyTypeBoxesState extends State<IdentifyTypeBoxes> {
         16.verticalSpace,
         IdentityTypeBox(
           onTap: () {
-            continueEmail = true;
+            continuePhone = true;
             chekedPhone = AppColors.primaryBase;
             chekedEmail = AppColors.greyScale_50;
             setState(() {});
@@ -66,7 +67,7 @@ class _IdentifyTypeBoxesState extends State<IdentifyTypeBoxes> {
               Navigate.navigatePush(
                 context,
                 BlocProvider(
-                  create: (context) => EmailVerifyCubit(),
+                  create: (context) => SendEmailVerifyCubit(),
                   child: const EmailIdentityScreen(),
                 ),
               );
@@ -74,7 +75,10 @@ class _IdentifyTypeBoxesState extends State<IdentifyTypeBoxes> {
             if (continuePhone == true) {
               Navigate.navigatePush(
                 context,
-                const PhoneIdentityScreen(),
+                BlocProvider(
+                  create: (context) => PhoneVerifyCubit()..getCountries(),
+                  child: const PhoneIdentityScreen(),
+                ),
               );
             } else if (continueEmail == false && continuePhone == false) {
               ScaffoldMessenger.of(context).showSnackBar(const SnackBar(

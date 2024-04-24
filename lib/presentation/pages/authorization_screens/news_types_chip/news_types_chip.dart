@@ -1,14 +1,20 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:newsup_app/presentation/pages/authorization_screens/widgets/auth_headers.dart';
-import 'package:newsup_app/utils/constants/app_colors.dart';
-import 'package:newsup_app/utils/constants/app_paddings.dart';
 
+import '../../../../utils/constants/app_paddings.dart';
 import '../../../../utils/constants/app_texts.dart';
+import '../../../widgets/inside_colored_button.dart';
+import '../widgets/auth_headers.dart';
+import 'interest_filter_chip.dart';
 
-class NewsTypesChip extends StatelessWidget {
+class NewsTypesChip extends StatefulWidget {
   const NewsTypesChip({super.key});
 
+  @override
+  State<NewsTypesChip> createState() => _NewsTypesChipState();
+}
+
+class _NewsTypesChipState extends State<NewsTypesChip> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -19,20 +25,27 @@ class NewsTypesChip extends StatelessWidget {
         padding: AppPaddings.h24,
         child: ListView(
           children: [
-            const AuthHeaders(
-              mainAxisAlignment: MainAxisAlignment.center,
-              crossAxisAlignment: CrossAxisAlignment.center,
-              title: AppTexts.whatsInterestYou,
-              subtitle: AppTexts.whatsInterestSubtitle,
+            Column(
+              children: [
+                const AuthHeaders(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  crossAxisAlignment: CrossAxisAlignment.center,
+                  title: AppTexts.whatsInterestYou,
+                  subtitle: AppTexts.whatsInterestSubtitle,
+                ),
+                40.verticalSpace,
+                const InterestFilterChip(),
+              ],
             ),
-            40.verticalSpace,
-            FilterChip(
-              label: const Text('data'),
-              onSelected: (value) {},
-              backgroundColor: AppColors.primaryBase,
-              
-            )
           ],
+        ),
+      ),
+      floatingActionButtonLocation: FloatingActionButtonLocation.centerFloat,
+      floatingActionButton: Padding(
+        padding: AppPaddings.h24,
+        child: const InsideColoredButton(
+          text: AppTexts.buildMyFeed,
+          width: double.infinity,
         ),
       ),
     );

@@ -47,6 +47,7 @@ class AppTexts {
       'We will send a verification code to your email.';
 
 //forgot password and new password screens texts
+
   static const forgotPassword = 'Forgot password?';
   static const forgotPasswordSubtitle =
       'Please enter your email address to request a password reset.';
@@ -54,6 +55,7 @@ class AppTexts {
   static const resetPasswordSubtitle =
       'Your password must be different from previous password.';
   static const createNewPassword = 'Create New Password';
+  static const buildMyFeed = 'Build My Feed';
 
 //Pick Topic screen texts
   static const whatsInterestYou = 'What’s interest you?';

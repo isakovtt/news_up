@@ -32,7 +32,7 @@ class FaqDescription extends StatelessWidget {
                 width: 20,
                 height: 20,
               ),
-              text: AppTexts.searchTitle,
+              hintText: AppTexts.searchTitle,
               suffixIcon: SvgPicture.asset(
                 AppAssets.microphoneIcon,
               ),
