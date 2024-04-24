@@ -82,6 +82,7 @@ class CountryPickerAndPhone extends StatelessWidget {
                   child: SizedBox(
                     height: 56,
                     child: GlobalInput(
+                      controller: cubit.phoneController,
                       hintText: AppTexts.phoneNumber,
                       keyboardType: TextInputType.phone,
                       inputFormatters: <TextInputFormatter>[
