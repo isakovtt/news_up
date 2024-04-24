@@ -14,6 +14,7 @@ class HomeAppBar extends StatelessWidget implements PreferredSizeWidget {
   @override
   Widget build(BuildContext context) {
     return AppBar(
+      automaticallyImplyLeading: false,
       titleSpacing: 24,
       scrolledUnderElevation: 0,
       title: SvgPicture.asset(

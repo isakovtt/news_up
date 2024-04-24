@@ -1,17 +1,17 @@
 part of 'email_verify_cubit.dart';
 
 @immutable
-sealed class EmailVerifyState {}
+sealed class SendEmailVerifyState {}
 
-final class EmailVerifyInitial extends EmailVerifyState {}
+final class SendEmailVerifyInitial extends SendEmailVerifyState {}
 
-final class EmailVerifyLoading extends EmailVerifyState {}
+final class SendEmailVerifyLoading extends SendEmailVerifyState {}
 
-final class EmailVerifySucces extends EmailVerifyState {
+final class SendEmailVerifySucces extends SendEmailVerifyState {
 
  final void verify;
 
-  EmailVerifySucces({required this.verify});
+  SendEmailVerifySucces({required this.verify});
 }
 
-final class EmailVerifyError extends EmailVerifyState {}
+final class SendEmailVerifyError extends SendEmailVerifyState {}

@@ -1,8 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:flutter_svg/svg.dart';
 
 import '../../../../../cubits/email_verify/email_verify_cubit.dart';
+import '../../../../../cubits/register/register_cubit.dart';
+import '../../../../../utils/constants/app_assets.dart';
 import '../../../../../utils/constants/app_paddings.dart';
 import '../../../../../utils/constants/app_texts.dart';
 import '../../../../../utils/helpers/navigate.dart';
@@ -10,16 +13,37 @@ import '../../../../widgets/global_input.dart';
 import '../../../bottom_navigation/navigation_screen.dart';
 import '../../widgets/auth_headers.dart';
 import '../../widgets/sign_in_up_button.dart';
+import '../identify_type_screen/identify_type_screen.dart';
 
-class EmailIdentityScreen extends StatelessWidget {
+class EmailIdentityScreen extends StatefulWidget {
   const EmailIdentityScreen({super.key});
 
   @override
+  State<EmailIdentityScreen> createState() => _EmailIdentityScreenState();
+}
+
+class _EmailIdentityScreenState extends State<EmailIdentityScreen> {
+  @override
   Widget build(BuildContext context) {
-    final cubit = context.read<EmailVerifyCubit>();
+    final cubit = context.read<SendEmailVerifyCubit>();
+    final registerCubit = context.read<RegisterCubit>();
     return Scaffold(
       appBar: AppBar(
-        title: const Text(''),
+        leading: Center(
+          child: GestureDetector(
+            onTap: () {
+              Navigate.navigateReplacePush(
+                context,
+                const IdentifyTypeScreen(),
+              );
+            },
+            child: SvgPicture.asset(
+              AppAssets.arrowNarrowLeft,
+              height: 32.h,
+            ),
+          ),
+        ),
+        automaticallyImplyLeading: false,
       ),
       body: Padding(
         padding: AppPaddings.h24,
@@ -33,13 +57,25 @@ class EmailIdentityScreen extends StatelessWidget {
                 subtitle: AppTexts.sendVerifyCodeEmailSubtitle),
             32.verticalSpace,
             GlobalInput(
-              controller: cubit.emailController,
-              text: AppTexts.email,
+              controller: registerCubit.emailController,
+              hintText: AppTexts.email,
             ),
             const Spacer(),
-            BlocConsumer<EmailVerifyCubit, EmailVerifyState>(
+            BlocConsumer<SendEmailVerifyCubit, SendEmailVerifyState>(
               listener: (context, state) {
-                if (state is EmailVerifySucces) {
+                // if (FirebaseAuth.instance.currentUser!.emailVerified == true) {
+                //   Navigate.navigateReplacePush(context, const NavigationScreen());
+                // }
+
+                // if (FirebaseAuth.instance.currentUser!.emailVerified == false) {
+                //   ScaffoldMessenger.of(context).showSnackBar(
+                //     const SnackBar(
+                //       content: Text('Please Email Verified'),
+                //     ),
+                //   );
+                // }
+
+                if (state is SendEmailVerifySucces) {
                   Navigate.navigateReplacePush(
                     context,
                     const NavigationScreen(),

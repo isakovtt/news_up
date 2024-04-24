@@ -26,20 +26,20 @@ class _RegisterInputsState extends State<RegisterInputs> {
           GlobalInput(
             controller: cubit.nameController,
             validator: (v) => cubit.validateName,
-            text: AppTexts.yourName,
+            hintText: AppTexts.yourName,
           ),
           14.verticalSpace,
           GlobalInput(
             controller: cubit.emailController,
             validator: (v) => cubit.validateEmail,
-            text: AppTexts.yourMail,
+            hintText: AppTexts.yourMail,
           ),
           14.verticalSpace,
           GlobalInput(
             obscureText: isSecureText,
             controller: cubit.passwordController,
             validator: (v) => cubit.validatePassword,
-            text: AppTexts.password,
+            hintText: AppTexts.password,
             suffixIcon: GestureDetector(
               onTap: () {
                 isSecureText = !isSecureText;

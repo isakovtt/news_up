@@ -28,7 +28,7 @@ class ResetPasswordScreen extends StatelessWidget {
             32.verticalSpace,
             const GlobalInput(
               obscureText: true,
-              text: AppTexts.oldPassword,
+              hintText: AppTexts.oldPassword,
               suffixIcon: Icon(
                 Icons.remove_red_eye_outlined,
                 color: AppColors.greyScale_500,
@@ -37,7 +37,7 @@ class ResetPasswordScreen extends StatelessWidget {
             24.verticalSpace,
             const GlobalInput(
               obscureText: true,
-              text: AppTexts.newPassword,
+              hintText: AppTexts.newPassword,
               suffixIcon: Icon(
                 Icons.remove_red_eye_outlined,
                 color: AppColors.greyScale_500,
