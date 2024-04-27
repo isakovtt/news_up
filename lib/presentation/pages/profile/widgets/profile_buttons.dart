@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:newsup_app/cubits/write_news/write_news_cubit.dart';
 import 'package:newsup_app/presentation/pages/edit_profile/edit_profile_screen.dart';
 import 'package:newsup_app/presentation/pages/write_news/write_news_screen.dart';
 import 'package:newsup_app/presentation/widgets/inner_colorless_button.dart';
@@ -33,7 +35,10 @@ class ProfileButtons extends StatelessWidget {
           InsideColoredButton(
             onTap: () => Navigate.navigatePush(
               context,
-              const WriteNewsScreen(),
+              BlocProvider(
+                create: (context) => WriteNewsCubit(),
+                child: const WriteNewsScreen(),
+              ),
             ),
             height: 48.h,
             width: 159.w,

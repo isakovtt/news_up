@@ -1,9 +1,17 @@
-import 'package:flutter/material.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'dart:io';
 
+import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:image_picker/image_picker.dart';
+
+import '../../../../cubits/write_news/write_news_cubit.dart';
 import '../../../../utils/constants/app_assets.dart';
 import '../../../../utils/constants/app_paddings.dart';
+import '../../../../utils/helpers/navigate.dart';
 import '../../../widgets/global_next_button.dart';
+import '../../draft/draft_screen.dart';
+import '../../preview/preview_screen.dart';
 import 'write_news_bottom_item.dart';
 
 class WriteNewsFooter extends StatelessWidget {
@@ -11,6 +19,7 @@ class WriteNewsFooter extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final cubit = context.read<WriteNewsCubit>();
     return Padding(
       padding: AppPaddings.lr24b12,
       child: Row(
@@ -19,15 +28,37 @@ class WriteNewsFooter extends StatelessWidget {
             icon: AppAssets.letterCase,
           ),
           8.horizontalSpace,
-          const WriteNewsBottomItem(
+          WriteNewsBottomItem(
             icon: AppAssets.list,
+            onTap: () {
+              Navigate.navigatePush(
+                context,
+                const DraftScreen(),
+              );
+            },
           ),
           8.horizontalSpace,
-          const WriteNewsBottomItem(
+          WriteNewsBottomItem(
             icon: AppAssets.photo,
+            onTap: () async {
+              final XFile? xFile = await ImagePicker().pickImage(
+                source: ImageSource.gallery,
+              );
+              cubit.loadImage(File(xFile!.path));
+            },
           ),
           const Spacer(),
-          const GlobalNextButton()
+          GlobalNextButton(
+            onTap: () {
+              Navigate.navigatePush(
+                context,
+                BlocProvider(
+                  create: (context) => WriteNewsCubit(),
+                  child: const PreviewScreen(),
+                ),
+              );
+            },
+          ),
         ],
       ),
     );

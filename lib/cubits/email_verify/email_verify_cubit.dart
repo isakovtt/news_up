@@ -1,5 +1,3 @@
-import 'dart:developer';
-
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
@@ -17,17 +15,10 @@ class SendEmailVerifyCubit extends Cubit<SendEmailVerifyState> {
     emit(SendEmailVerifyLoading());
 
     final verify = sendEmailVerifyService.sendEmailVerify();
-    log('cubit isledi');
     emit(SendEmailVerifySucces(verify: verify));
 
     return verify;
   }
-
-  // Future<void> sendEmailVerify() async {
-  //   final verify = emailVerifyService.getEmailVerify();
-  //   log('cubit isledi');
-  //   return verify;
-  // }
 
   @override
   close() async {

@@ -17,6 +17,7 @@ class NewsItem extends StatelessWidget {
     required this.sourceName,
     required this.sharedTimeText,
     this.onTapDots,
+    this.onTap,
   });
 
   final String image;
@@ -26,50 +27,55 @@ class NewsItem extends StatelessWidget {
   final String sourceName;
   final String sharedTimeText;
   final Function()? onTapDots;
+  final Function()? onTap;
 
   @override
   Widget build(BuildContext context) {
-    return SizedBox(
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.center,
-        children: [
-          Container(
-            height: 80.h,
-            clipBehavior: Clip.antiAlias,
-            decoration: AppBoxDecorations.circular18,
-            child: Image.asset(
-              image,
-              fit: BoxFit.cover,
+    return GestureDetector(
+      onTap: onTap,
+      child: SizedBox(
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.center,
+          children: [
+            Container(
               height: 80.h,
-              width: double.infinity,
-              filterQuality: FilterQuality.high,
-            ),
-          ),
-          16.verticalSpace,
-          Row(
-            mainAxisAlignment: MainAxisAlignment.start,
-            children: [
-              NewsSourceIconAndName(
-                sourceIcon: sourceIcon,
-                sourceName: sourceName,
+              clipBehavior: Clip.antiAlias,
+              decoration: AppBoxDecorations.circular18,
+              child: Image.asset(
+                image,
+                fit: BoxFit.cover,
+                height: 80.h,
+                width: double.infinity,
+                filterQuality: FilterQuality.high,
               ),
-              const Spacer(),
-              HorizontalDots(onTap: onTapDots),
-            ],
-          ),
-          6.verticalSpace,
-          Text(
-            headlineText,
-            style: AppTextStyles.greyScale900s14W500.copyWith(fontSize: 13.sp),
-            overflow: TextOverflow.ellipsis,
-            maxLines: 2,
-          ),
-          12.verticalSpace,
-          NewsCotegoryAndSharedTime(
-            cotegoryText: categoryText,
-            sharedTimeText: sharedTimeText,
-          ),
-        ],
+            ),
+            16.verticalSpace,
+            Row(
+              mainAxisAlignment: MainAxisAlignment.start,
+              children: [
+                NewsSourceIconAndName(
+                  sourceIcon: sourceIcon,
+                  sourceName: sourceName,
+                ),
+                const Spacer(),
+                HorizontalDots(onTap: onTapDots),
+              ],
+            ),
+            6.verticalSpace,
+            Text(
+              headlineText,
+              style:
+                  AppTextStyles.greyScale900s14W500.copyWith(fontSize: 13.sp),
+              overflow: TextOverflow.ellipsis,
+              maxLines: 2,
+            ),
+            12.verticalSpace,
+            NewsCotegoryAndSharedTime(
+              cotegoryText: categoryText,
+              sharedTimeText: sharedTimeText,
+            ),
+          ],
+        ),
       ),
     );
   }

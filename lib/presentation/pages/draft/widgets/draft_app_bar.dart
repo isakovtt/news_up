@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/svg.dart';
+
 import '../../../../utils/constants/app_assets.dart';
 import '../../../../utils/constants/app_paddings.dart';
 import '../../../../utils/constants/app_text_styles.dart';
@@ -17,10 +18,13 @@ class DraftAppBar extends StatelessWidget implements PreferredSizeWidget {
       leading: Padding(
         padding: AppPaddings.l24,
         child: Center(
-          child: SvgPicture.asset(
-            AppAssets.arrowNarrowLeft,
-            height: 32.h,
-            width: 32.w,
+          child: GestureDetector(
+            onTap: () {},
+            child: SvgPicture.asset(
+              AppAssets.arrowNarrowLeft,
+              height: 32.h,
+              width: 32.w,
+            ),
           ),
         ),
       ),
@@ -38,7 +42,7 @@ class DraftAppBar extends StatelessWidget implements PreferredSizeWidget {
       ],
     );
   }
-  
+
   @override
   Size get preferredSize => const Size.fromHeight(kToolbarHeight);
 }

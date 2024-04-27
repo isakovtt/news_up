@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:newsup_app/presentation/pages/detail/detail_news_screen.dart';
+import 'package:newsup_app/utils/helpers/navigate.dart';
 
 import '../../../../data/models/hot_news_model.dart';
 import '../../../../utils/constants/app_paddings.dart';
@@ -32,6 +34,10 @@ class ExploreGridView extends StatelessWidget {
             sourceName: news.sourceName,
             categoryText: news.categoryText,
             sharedTimeText: news.sharedTimeText,
+            onTap: () => Navigate.navigatePush(
+              context,
+              const DetailNewsScreen(),
+            ),
           );
         },
       ),

@@ -23,13 +23,14 @@ class _PreviewScreenState extends State<PreviewScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        appBar: const PreviewAppBar(),
-        body: Padding(
-          padding: AppPaddings.h24,
-          child: GlobalView(children: [
+      appBar: const PreviewAppBar(),
+      body: Padding(
+        padding: AppPaddings.h24,
+        child: GlobalView(
+          children: [
             12.verticalSpace,
             const PreviewCardItems(),
-            32.verticalSpace,
+            36.verticalSpace,
             const PreviewChipTagsTitle(),
             16.verticalSpace,
             const PreviewCips(),
@@ -41,9 +42,14 @@ class _PreviewScreenState extends State<PreviewScreen> {
                 () => DropdownMenuList.selectedValue = value,
               ),
             ),
-            28.verticalSpace,
-            const PreviewPublishButton(),
-          ]),
-        ));
+          ],
+        ),
+      ),
+      floatingActionButton: Padding(
+        padding: AppPaddings.h24,
+        child: const PreviewPublishButton(),
+      ),
+      floatingActionButtonLocation: FloatingActionButtonLocation.centerFloat,
+    );
   }
 }

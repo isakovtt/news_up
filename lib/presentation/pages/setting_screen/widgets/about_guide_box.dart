@@ -1,6 +1,11 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:newsup_app/cubits/login/login_cubit.dart';
+import 'package:newsup_app/presentation/pages/authorization_screens/login/login_screen.dart';
 import 'package:newsup_app/presentation/pages/faq/faq_screen.dart';
+import 'package:newsup_app/presentation/widgets/inside_colored_button.dart';
+import 'package:newsup_app/utils/constants/app_colors.dart';
 import 'package:newsup_app/utils/helpers/navigate.dart';
 import '../../../../utils/constants/app_assets.dart';
 import '../../../../utils/constants/app_text_styles.dart';
@@ -12,33 +17,58 @@ class AboutGuideBox extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Column(
-      children: [
-        Row(
-          children: [
-            60.verticalSpace,
-            Image.asset(
-              AppAssets.aboutSetting,
+    final cubit = context.read<LoginCubit>();
+    return SingleChildScrollView(
+      child: Column(
+        children: [
+          Row(
+            children: [
+              60.verticalSpace,
+              Image.asset(
+                AppAssets.aboutSetting,
+              ),
+              8.horizontalSpace,
+              Text(
+                AppTexts.about,
+                style: AppTextStyles.greyScale900s14W700,
+              )
+            ],
+          ),
+          12.verticalSpace,
+          GestureDetector(
+            child: const GuideBox(text: AppTexts.getHelp),
+            onTap: () {
+              Navigate.navigatePush(context, const FaqScreen());
+            },
+          ),
+          8.verticalSpace,
+          const GuideBox(text: AppTexts.termofService),
+          8.verticalSpace,
+          const GuideBox(text: AppTexts.privacyPolicy),
+          18.verticalSpace,
+          BlocListener<LoginCubit, LoginState>(
+            listener: (context, state) {
+              Navigate.navigatePush(
+                context,
+                const LoginScreen(),
+              );
+            },
+            child: InsideColoredButton(
+              onTap: () async {
+                cubit.clearBoxAndLogOut();
+                await Navigate.navigateReplacePush(
+                  context,
+                  const LoginScreen(),
+                );
+              },
+              color: AppColors.primary_300,
+              height: 46,
+              width: 80,
+              text: 'Log out',
             ),
-            8.horizontalSpace,
-            Text(
-              AppTexts.about,
-              style: AppTextStyles.greyScale900s14W700,
-            )
-          ],
-        ),
-        12.verticalSpace,
-        GestureDetector(
-          child: const GuideBox(text: AppTexts.getHelp),
-          onTap: () {
-            Navigate.navigatePush(context, const FaqScreen());
-          },
-        ),
-        8.verticalSpace,
-        const GuideBox(text: AppTexts.termofService),
-        8.verticalSpace,
-        const GuideBox(text: AppTexts.privacyPolicy),
-      ],
+          )
+        ],
+      ),
     );
   }
 }

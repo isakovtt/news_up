@@ -4,13 +4,14 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:newsup_app/cubits/users/users_cubit.dart';
-import 'package:newsup_app/presentation/pages/authorization_screens/identification/phone_identification_screen/phone_verify__pinput_screen.dart';
-import 'package:newsup_app/presentation/pages/bottom_navigation/navigation_screen.dart';
 import 'package:rxdart/rxdart.dart';
 
 import '../../data/models/country_model.dart';
 import '../../data/services/local/phone_locale_service.dart';
+import '../../presentation/pages/authorization_screens/identification/phone_identification_screen/phone_verify__pinput_screen.dart';
+import '../../presentation/pages/authorization_screens/news_types_chip/news_types_chip.dart';
+import '../../presentation/pages/bottom_navigation/navigation_screen.dart';
+import '../users/users_cubit.dart';
 
 part 'phone_verify_state.dart';
 
@@ -32,6 +33,7 @@ class PhoneVerifyCubit extends Cubit<PhoneVerifyState> {
   Stream<List<PhoneLocaleModel>> get countriesStream => countriesSubject.stream;
   Stream<PhoneLocaleModel> get countryStream => countrySubject.stream;
   String? _verificationId;
+  String uid = FirebaseAuth.instance.currentUser!.uid;
 
   void getCountries() async {
     List<PhoneLocaleModel> countries =
@@ -62,7 +64,6 @@ class PhoneVerifyCubit extends Cubit<PhoneVerifyState> {
           ),
           (route) => route.isCurrent,
         );
-       
       },
       verificationFailed: (FirebaseAuthException e) => log(e.toString()),
       codeSent: (String verificationId, int? resendToken) {
@@ -89,7 +90,6 @@ class PhoneVerifyCubit extends Cubit<PhoneVerifyState> {
 
     await _auth.signInWithCredential(credential).then((userInfo) {
       final User currentUser = userInfo.user!;
-
       _firestore.collection('users').doc(currentUser.uid).set(
         {
           'id': currentUser.uid,
@@ -102,7 +102,7 @@ class PhoneVerifyCubit extends Cubit<PhoneVerifyState> {
         MaterialPageRoute(
           builder: (context) => BlocProvider(
             create: (context) => UsersCubit(),
-            child: const NavigationScreen(),
+            child: const NewsTypesChip(),
           ),
         ),
         (route) => route.isCurrent,
@@ -110,7 +110,21 @@ class PhoneVerifyCubit extends Cubit<PhoneVerifyState> {
     });
   }
 
- 
+  // void getDocumentUid() async {
+  //   CollectionReference usersCollection =
+  //       FirebaseFirestore.instance.collection('users');
+
+  //   QuerySnapshot snapshot =
+  //       await usersCollection.where('uid', isEqualTo: uid).get();
+
+  //   DocumentSnapshot document = snapshot.docs.first;
+  //   if (document.exists) {
+  //     String documentUid = document.id;
+  //     log(documentUid);
+  //   } else {
+  //     log('error document uid');
+  //   }
+  // }
 
   @override
   Future<void> close() {
