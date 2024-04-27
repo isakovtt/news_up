@@ -1,6 +1,7 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:hive_flutter/hive_flutter.dart';
 
 import '../../data/services/register_service.dart';
 
@@ -13,6 +14,7 @@ class RegisterCubit extends Cubit<RegisterState> {
   late final emailController = TextEditingController();
   late final passwordController = TextEditingController();
   final GlobalKey<FormState> formKey = GlobalKey();
+  final box = Hive.box('login');
 
   final registerService = RegisterService();
 
@@ -23,7 +25,10 @@ class RegisterCubit extends Cubit<RegisterState> {
       emailController.text,
       passwordController.text,
     );
-    emit(RegisterSuccess(result!));
+    if (result is UserCredential) {
+      emit(RegisterSuccess(result));
+      box.put('loginId', result.user!.uid);
+    }
   }
 
   @override

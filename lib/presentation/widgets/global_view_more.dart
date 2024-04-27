@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+
 import '../../utils/constants/app_paddings.dart';
 import '../../utils/constants/app_text_styles.dart';
 import '../../utils/constants/app_texts.dart';
@@ -20,9 +21,12 @@ class GlobalViewMore extends StatelessWidget {
             style: AppTextStyles.greyScale900s16W700,
           ),
           const Spacer(),
-          Text(
-            AppTexts.viewMore,
-            style: AppTextStyles.primaryBaseS14W500,
+          GestureDetector(
+            onTap: () {},
+            child: Text(
+              AppTexts.viewMore,
+              style: AppTextStyles.primaryBaseS14W500,
+            ),
           ),
         ],
       ),

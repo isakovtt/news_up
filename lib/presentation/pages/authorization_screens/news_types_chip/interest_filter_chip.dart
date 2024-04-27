@@ -3,28 +3,9 @@ import 'package:flutter/material.dart';
 import 'package:newsup_app/utils/constants/app_colors.dart';
 import 'package:newsup_app/utils/constants/app_text_styles.dart';
 
-class InterestFilterChip extends StatefulWidget {
+class InterestFilterChip extends StatelessWidget {
   const InterestFilterChip({super.key});
 
-  @override
-  State<InterestFilterChip> createState() => _InterestFilterChipState();
-}
-
-final List<String> _dogeNames = [
-  'Finance',
-  'Gaming',
-  'Sport',
-  'Crypto',
-  'Health',
-  'Technology',
-  'Design',
-  'Travel',
-  'Business',
-];
-
-int _currentIndex = 0;
-
-class _InterestFilterChipState extends State<InterestFilterChip> {
   @override
   Widget build(BuildContext context) {
     return ChipList(
@@ -44,6 +25,21 @@ class _InterestFilterChipState extends State<InterestFilterChip> {
       activeTextColorList: const [AppColors.primaryBase],
       inactiveTextColorList: [Theme.of(context).primaryColor],
       listOfChipIndicesCurrentlySeclected: [0, 4, 6],
+      
     );
   }
 }
+
+final List<String> _dogeNames = [
+  'Finance',
+  'Gaming',
+  'Sport',
+  'Crypto',
+  'Health',
+  'Technology',
+  'Design',
+  'Travel',
+  'Business',
+];
+
+int _currentIndex = 0;

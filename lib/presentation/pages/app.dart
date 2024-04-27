@@ -7,7 +7,7 @@ import '../../cubits/login/login_cubit.dart';
 import '../../cubits/register/register_cubit.dart';
 import '../../utils/constants/app_themes.dart';
 import '../../utils/helpers/configs.dart';
-import 'onboarding/onboarding_screen.dart';
+import 'splash/splash_screen.dart';
 
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
@@ -33,7 +33,7 @@ class MyApp extends StatelessWidget {
             debugShowCheckedModeBanner: false,
             title: Configs.appName,
             theme: AppThemes.appTheme,
-            home: const OnboardingScreen(),
+            home: const SplashScreen(),
           ),
         );
       },

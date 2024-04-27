@@ -174,7 +174,7 @@ class AppTexts {
   static const String preview = 'Preview';
   static const String addTags = 'Add tags';
   static const String categories = 'Categories';
-  static const String selectItem = 'Select Item';
+  static const String selectCategory = 'Select category';
 
   // statistic screen
   static const String response = 'Response';

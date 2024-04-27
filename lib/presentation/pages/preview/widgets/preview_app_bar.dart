@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/svg.dart';
+import 'package:hive_flutter/hive_flutter.dart';
 
 import '../../../../utils/constants/app_assets.dart';
 import '../../../../utils/constants/app_paddings.dart';
@@ -21,10 +22,14 @@ class PreviewAppBar extends StatelessWidget implements PreferredSizeWidget {
       leadingWidth: 76.w,
       leading: Center(
         child: GestureDetector(
-          onTap: () => Navigate.navigatePop(
-            context,
-            const WriteNewsScreen(),
-          ),
+          onTap: () {
+            Hive.box('writeNews').clear();
+
+            Navigate.navigatePop(
+              context,
+              const WriteNewsScreen(),
+            );
+          },
           child: SvgPicture.asset(
             AppAssets.arrowNarrowLeft,
             height: 32.h,

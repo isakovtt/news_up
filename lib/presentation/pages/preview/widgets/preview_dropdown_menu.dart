@@ -10,7 +10,7 @@ import '../../../../utils/constants/app_texts.dart';
 class PreviewDropdownMenu extends StatelessWidget {
   const PreviewDropdownMenu({super.key, this.onChanged});
 
- final Function(String?)? onChanged;
+  final Function(String?)? onChanged;
 
   @override
   Widget build(BuildContext context) {
@@ -19,7 +19,7 @@ class PreviewDropdownMenu extends StatelessWidget {
         child: DropdownButton2<String>(
           isExpanded: true,
           hint: Text(
-            AppTexts.selectItem,
+            AppTexts.selectCategory,
             style: AppTextStyles.greyScale900s14W500,
           ),
           items: DropdownMenuList.items
@@ -47,5 +47,3 @@ class PreviewDropdownMenu extends StatelessWidget {
     );
   }
 }
-
-

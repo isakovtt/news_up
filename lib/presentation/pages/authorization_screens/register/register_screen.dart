@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:newsup_app/cubits/login/login_cubit.dart';
 
 import '../../../../cubits/register/register_cubit.dart';
 import '../../../../utils/constants/app_paddings.dart';
@@ -67,7 +68,10 @@ class RegisterScreen extends StatelessWidget {
                 onTap: () {
                   Navigate.navigateReplacePush(
                     context,
-                    const LoginScreen(),
+                    BlocProvider(
+                      create: (context) => LoginCubit(),
+                      child: const LoginScreen(),
+                    ),
                   );
                 },
               ),

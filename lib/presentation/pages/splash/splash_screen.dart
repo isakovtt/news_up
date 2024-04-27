@@ -4,7 +4,7 @@ import 'package:flutter/material.dart';
 
 import '../../../utils/helpers/navigate.dart';
 import '../../widgets/global_app_logo.dart';
-import '../onboarding/widgets/onboard_first_screen.dart';
+import '../onboarding/onboarding_screen.dart';
 
 class SplashScreen extends StatefulWidget {
   const SplashScreen({super.key});
@@ -12,6 +12,8 @@ class SplashScreen extends StatefulWidget {
   @override
   State<SplashScreen> createState() => _SplashScreenState();
 }
+
+// final box = Hive.box('splash');
 
 class _SplashScreenState extends State<SplashScreen> {
   @override
@@ -21,7 +23,9 @@ class _SplashScreenState extends State<SplashScreen> {
       () {
         Navigate.navigateReplacePush(
           context,
-          const OnboardFirstScreen(),
+          // box.isEmpty ?
+           const OnboardingScreen() 
+          //  : const NavigationScreen(),
         );
       },
     );

@@ -15,10 +15,14 @@ class RegisterService {
         password: password,
       );
       if (userCredential.user != null) {
-        _registerUser(name, email, password);
+        _registerUser(
+          name,
+          email,
+          password,
+          userCredential.user!.uid,
+
+        );
       }
-      log('register success');
-      log(userCredential.user!.uid);
       return userCredential;
     } on FirebaseAuthException catch (e) {
       e.message;
@@ -27,11 +31,13 @@ class RegisterService {
     }
   }
 
-  Future<void> _registerUser(String name, String email, String password) async {
+  Future<void> _registerUser(
+      String name, String email, String password, String id) async {
     final users = await _userCollection.doc().set({
       "name": name,
       "email": email,
       "password": password,
+      "id": id,
     });
     return users;
   }

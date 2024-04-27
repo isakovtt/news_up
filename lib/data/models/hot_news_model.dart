@@ -7,6 +7,7 @@ class HotNewsModel {
   String headlineText;
   String sourceName;
   String sharedTimeText;
+  String? commentText;
 
   HotNewsModel({
     required this.categoryText,
@@ -15,6 +16,7 @@ class HotNewsModel {
     required this.headlineText,
     required this.sourceName,
     required this.sharedTimeText,
+     this.commentText,
   });
 }
 
@@ -26,6 +28,7 @@ List<HotNewsModel> hotNews = [
     sharedTimeText: '10 min',
     sourceName: 'CNN News',
     sourceIcon: AppAssets.cnnVector,
+    commentText: '19'
   ),
   HotNewsModel(
     image: AppAssets.girdViewImage_2,
@@ -34,6 +37,8 @@ List<HotNewsModel> hotNews = [
     sharedTimeText: '17 min',
     sourceName: 'NBC News',
     sourceIcon: AppAssets.nbcVector,
+    commentText: '11'
+
   ),
   HotNewsModel(
     image: AppAssets.girdViewImage_3,
@@ -42,6 +47,8 @@ List<HotNewsModel> hotNews = [
     sharedTimeText: '24 min',
     sourceName: 'CNN News',
     sourceIcon: AppAssets.cnnVector,
+    commentText: '74'
+
   ),
   HotNewsModel(
     image: AppAssets.girdViewImage_4,
@@ -50,6 +57,8 @@ List<HotNewsModel> hotNews = [
     sharedTimeText: '33 min',
     sourceName: 'CNN News',
     sourceIcon: AppAssets.nbcVector,
+    commentText: '4'
+
   ),
   HotNewsModel(
     image: AppAssets.girdViewImage_5,
@@ -58,6 +67,8 @@ List<HotNewsModel> hotNews = [
     sharedTimeText: '1h ago',
     sourceName: 'DNV News',
     sourceIcon: AppAssets.esSpain,
+    commentText: '16'
+
   ),
   HotNewsModel(
     image: AppAssets.girdViewImage_6,
@@ -66,6 +77,8 @@ List<HotNewsModel> hotNews = [
     sharedTimeText: '5h ago',
     sourceName: 'NBC News',
     sourceIcon: AppAssets.nbcVector,
+    commentText: '1'
+
   ),
   HotNewsModel(
     image: AppAssets.detailImage_1,
@@ -74,6 +87,8 @@ List<HotNewsModel> hotNews = [
     sharedTimeText: '1h ago',
     sourceName: 'Kontan News',
     sourceIcon: AppAssets.deGermany,
+    commentText: '83'
+
   ),
   HotNewsModel(
     image: AppAssets.cryptoImage,
@@ -82,5 +97,7 @@ List<HotNewsModel> hotNews = [
     sharedTimeText: '1h ago',
     sourceName: 'Kontan News',
     sourceIcon: AppAssets.deGermany,
+    commentText: '10'
+
   ),
 ];

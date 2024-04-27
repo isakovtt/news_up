@@ -1,3 +1,5 @@
+import 'dart:developer';
+
 import 'package:firebase_auth/firebase_auth.dart';
 
 class LoginService {
@@ -7,11 +9,11 @@ class LoginService {
     try {
       final credential = await _firebaseAuth.signInWithEmailAndPassword(
           email: email, password: password);
-      print(credential.user!.email.toString());
-      print(credential.user!.uid.toString());
+      log(credential.user!.email.toString());
+      log(credential.user!.uid.toString());
       return credential;
     } catch (e) {
-      print('Login Error occured');
+      log('Login Error occured');
       return null;
     }
   }

@@ -10,7 +10,7 @@ import '../../../../../utils/constants/app_paddings.dart';
 import '../../../../../utils/constants/app_texts.dart';
 import '../../../../../utils/helpers/navigate.dart';
 import '../../../../widgets/global_input.dart';
-import '../../../bottom_navigation/navigation_screen.dart';
+import '../../news_types_chip/news_types_chip.dart';
 import '../../widgets/auth_headers.dart';
 import '../../widgets/sign_in_up_button.dart';
 import '../identify_type_screen/identify_type_screen.dart';
@@ -78,7 +78,7 @@ class _EmailIdentityScreenState extends State<EmailIdentityScreen> {
                 if (state is SendEmailVerifySucces) {
                   Navigate.navigateReplacePush(
                     context,
-                    const NavigationScreen(),
+                    const NewsTypesChip(),
                   );
                 }
               },
