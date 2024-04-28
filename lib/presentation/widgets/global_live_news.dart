@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:youtube_player_flutter/youtube_player_flutter.dart';
 
 import '../../utils/constants/app_assets.dart';
 import '../../utils/constants/app_box_decorations.dart';
@@ -9,9 +10,22 @@ import '../../utils/constants/app_text_styles.dart';
 import 'global_dot.dart';
 import 'news_source_icon_and_name.dart';
 
-class GlobalLiveNews extends StatelessWidget {
+class GlobalLiveNews extends StatefulWidget {
   const GlobalLiveNews({super.key});
 
+  @override
+  State<GlobalLiveNews> createState() => _GlobalLiveNewsState();
+}
+
+YoutubePlayerController _controller = YoutubePlayerController(
+  initialVideoId: 'gN0PZCe-kwQ',
+  flags: const YoutubePlayerFlags(
+    isLive: true,
+    autoPlay: false,
+  ),
+);
+
+class _GlobalLiveNewsState extends State<GlobalLiveNews> {
   @override
   Widget build(BuildContext context) {
     return Padding(
@@ -25,25 +39,24 @@ class GlobalLiveNews extends StatelessWidget {
           alignment: Alignment.center,
           fit: StackFit.expand,
           children: [
-            Image.asset(
-              AppAssets.homeLivePicture,
-              fit: BoxFit.cover,
-              filterQuality: FilterQuality.high,
+            YoutubePlayer(
+              controller: _controller,
+              liveUIColor: Colors.amber,
             ),
-            Positioned(
-              left: 24,
-              bottom: 43,
-              child: SizedBox(
-                width: 279.w,
-                height: 52.h,
-                child: Text(
-                  'Ukraine conflict: Kyiv brace for a Russian assault',
-                  maxLines: 3,
-                  overflow: TextOverflow.ellipsis,
-                  style: AppTextStyles.whiteS16W700,
-                ),
-              ),
-            ),
+            // Positioned(
+            //   left: 24,
+            //   bottom: 43,
+            //   child: SizedBox(
+            //     width: 279.w,
+            //     height: 52.h,
+            //     child: Text(
+            //       'Ukraine conflict: Kyiv brace for a Russian assault',
+            //       maxLines: 3,
+            //       overflow: TextOverflow.ellipsis,
+            //       style: AppTextStyles.whiteS16W700,
+            //     ),
+            //   ),
+            // ),
             Positioned(
               left: 16,
               top: 16,
@@ -53,6 +66,7 @@ class GlobalLiveNews extends StatelessWidget {
                 AppAssets.liveVector,
               ),
             ),
+
             Positioned(
               bottom: 12,
               right: 24,
@@ -68,7 +82,8 @@ class GlobalLiveNews extends StatelessWidget {
                 children: [
                   NewsSourceIconAndName(
                     sourceIcon: AppAssets.cnnVector,
-                    sourceName: 'CNN News',
+                    sourceName: 'ABC News',
+                    liveIcon: true,
                     style: AppTextStyles.whiteS12W500,
                     width: 68,
                   ),

@@ -31,7 +31,8 @@ if (flutterVersionName == null) {
 
 android {
     namespace "com.newsup.app"
-    compileSdkVersion flutter.compileSdkVersion
+    // compileSdkVersion flutter.compileSdkVersion
+    compileSdkVersion 34
     ndkVersion flutter.ndkVersion
 
     defaultConfig {
