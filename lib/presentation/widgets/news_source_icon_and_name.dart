@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/svg.dart';
+import 'package:newsup_app/utils/constants/app_colors.dart';
 
 import '../../utils/constants/app_box_decorations.dart';
 import '../../utils/constants/app_text_styles.dart';
@@ -11,12 +12,14 @@ class NewsSourceIconAndName extends StatelessWidget {
       required this.sourceIcon,
       required this.sourceName,
       this.style,
-      this.width});
+      this.width,
+      this.liveIcon = false});
 
   final String sourceIcon;
   final String sourceName;
   final TextStyle? style;
   final double? width;
+  final bool? liveIcon;
 
   @override
   Widget build(BuildContext context) {
@@ -28,14 +31,30 @@ class NewsSourceIconAndName extends StatelessWidget {
           child: DecoratedBox(
             decoration: AppBoxDecorations.greyScale100R1000,
             child: Center(
-              child: SvgPicture.asset(
-                sourceIcon,
-                width: 11.67.w,
+              child: Row(
+                children: [
+                  if (liveIcon == false) ...[
+                    SvgPicture.asset(
+                      sourceIcon,
+                      width: 11.67.w,
+                    ),
+                  ],
+                  if (liveIcon == true) ...[
+                    CircleAvatar(
+                      radius: 10.r,
+                      backgroundColor: AppColors.greyScale_50,
+                      child: const Icon(
+                        Icons.abc,
+                        color: AppColors.errorLight,
+                      ),
+                    ),
+                  ],
+                ],
               ),
             ),
           ),
         ),
-        4.horizontalSpace,
+        6.horizontalSpace,
         SizedBox(
           width: width ?? 90.w,
           child: Text(

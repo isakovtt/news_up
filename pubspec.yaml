@@ -59,7 +59,8 @@ dependencies:
   hive_flutter: ^1.1.0
   flutter_chip_tags: ^2.0.2
   dotted_border: ^2.1.0
-
+  youtube_player_flutter: ^9.0.1
+  
   # pinput: ^4.0.0
   
 

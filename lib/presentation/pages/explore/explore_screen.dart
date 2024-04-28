@@ -6,8 +6,8 @@ import '../../../utils/constants/app_texts.dart';
 import '../../widgets/global_layouts.dart';
 import '../../widgets/global_live_news.dart';
 import '../../widgets/global_view_more.dart';
-import '../home/widgets/channels.dart';
 import 'search/search_app_bar.dart';
+import 'widgets/explore_channels.dart';
 import 'widgets/explore_chips.dart';
 import 'widgets/explore_grid_view.dart';
 import 'widgets/explore_list_view.dart';
@@ -36,7 +36,7 @@ class _ExploreScreenState extends State<ExploreScreen> {
             24.verticalSpace,
             const GlobalLiveNews(),
             32.verticalSpace,
-            // const Channels(channelName: true),
+            const ExploreChannels(),
             18.verticalSpace,
             GlobalLayouts(
               text: AppTexts.hotNews,

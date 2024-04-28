@@ -9,18 +9,6 @@ class SearchScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: const SearchAppBar(),
-      // body: SafeArea(
-      //   child: DefaultTabController(
-      //     length: 3,
-      //     child: Column(
-      //       children: [
-      //         const ExploreSegmentedBar(),
-      //         24.verticalSpace,
-      //         const ExploreTabbarView(),
-      //       ],
-      //     ),
-      //   ),
-      // ),
     );
   }
 }
