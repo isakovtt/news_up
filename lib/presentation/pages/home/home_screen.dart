@@ -1,3 +1,4 @@
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:newsup_app/utils/constants/app_texts.dart';
@@ -20,7 +21,19 @@ class HomeScreen extends StatelessWidget {
         child: Column(
           children: [
             4.verticalSpace,
-            const Channels(),
+            StreamBuilder(
+                stream: FirebaseFirestore.instance
+                    .collection('channels')
+                    .snapshots(),
+                builder: (context, snapshot) {
+                  if (!snapshot.hasData) {
+                    return const SizedBox.shrink();
+                  }
+                  final channels = snapshot.data!.docs;
+                  return Channels(
+                    channels: channels,
+                  );
+                }),
             24.verticalSpace,
             const GlobalViewMore(text: AppTexts.breakingNews),
             24.verticalSpace,
