@@ -36,7 +36,7 @@ class _ExploreScreenState extends State<ExploreScreen> {
             24.verticalSpace,
             const GlobalLiveNews(),
             32.verticalSpace,
-            const Channels(channelName: true),
+            // const Channels(channelName: true),
             18.verticalSpace,
             GlobalLayouts(
               text: AppTexts.hotNews,

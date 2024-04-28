@@ -32,11 +32,15 @@ class WriteNewsCubit extends Cubit<WriteNewsState> {
   final FirebaseFirestore _firestore = FirebaseFirestore.instance;
 
   void sendData() {
-    _firestore.collection('userPosts').add({
+    _firestore.collection('posts').add({
       'uid': uid,
+      'postId' : '',
       'newsPhoto': box.get('photo'),
       'newsTitle': box.get('title'),
       'newsSubtitle': box.get('subtitle'),
+      'channel': '',
+      'category' : '',
+      'commentsCount' : 0,
     }).then((value) {
       log('Data sent successfully!');
     }).catchError((error) {
@@ -46,7 +50,7 @@ class WriteNewsCubit extends Cubit<WriteNewsState> {
 
   void getDocumentUid() async {
     CollectionReference usersCollection =
-        FirebaseFirestore.instance.collection('userPosts');
+        FirebaseFirestore.instance.collection('posts');
 
     QuerySnapshot snapshot =
         await usersCollection.where('uid', isEqualTo: uid).get();
