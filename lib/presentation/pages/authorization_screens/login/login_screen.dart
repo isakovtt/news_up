@@ -45,14 +45,6 @@ class LoginScreen extends StatelessWidget {
                     context,
                     const NavigationScreen(),
                   );
-                } else {
-                  ScaffoldMessenger.of(context).showSnackBar(
-                    const SnackBar(
-                      content: Text(
-                        'Login In failed.Please try again',
-                      ),
-                    ),
-                  );
                 }
               },
               builder: (context, state) {
