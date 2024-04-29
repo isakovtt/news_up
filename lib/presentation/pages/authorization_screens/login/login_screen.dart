@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:newsup_app/presentation/widgets/global_progress_indicator.dart';
 
 import '../../../../cubits/login/login_cubit.dart';
 import '../../../../utils/constants/app_paddings.dart';
@@ -48,10 +49,16 @@ class LoginScreen extends StatelessWidget {
                 }
               },
               builder: (context, state) {
-                return SignInUpButton(
-                  text: AppTexts.signIn,
-                  onTap: () => cubit.validateLogin,
-                );
+                if (state is LoginLoading) {
+                  return const GlobalProgressIndicator();
+                } else {
+                  return SignInUpButton(
+                    text: AppTexts.signIn,
+                    onTap: () {
+                      cubit.validateLogin;
+                    },
+                  );
+                }
               },
             ),
             64.verticalSpace,

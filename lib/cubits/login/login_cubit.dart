@@ -40,7 +40,9 @@ class LoginCubit extends Cubit<LoginState> {
   @override
   Future<void> close() async {
     emailController.dispose();
+    emailController.clear();
     passwordController.dispose();
+    passwordController.clear();
     return super.close();
   }
 

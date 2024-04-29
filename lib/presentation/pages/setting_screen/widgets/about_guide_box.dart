@@ -48,17 +48,19 @@ class AboutGuideBox extends StatelessWidget {
           18.verticalSpace,
           BlocListener<LoginCubit, LoginState>(
             listener: (context, state) {
-              Navigate.navigatePush(
+              Navigator.pushAndRemoveUntil(
                 context,
-                const LoginScreen(),
+                MaterialPageRoute(builder: (context) => const LoginScreen()),
+                (route) => false,
               );
             },
             child: InsideColoredButton(
               onTap: () async {
                 cubit.clearBoxAndLogOut();
-                await Navigate.navigateReplacePush(
+                await Navigator.pushAndRemoveUntil(
                   context,
-                  const LoginScreen(),
+                  MaterialPageRoute(builder: (context) => const LoginScreen()),
+                  (route) => false,
                 );
               },
               color: AppColors.primary_300,
