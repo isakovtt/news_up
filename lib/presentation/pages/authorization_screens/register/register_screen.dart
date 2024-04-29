@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:newsup_app/cubits/login/login_cubit.dart';
+import 'package:newsup_app/presentation/widgets/global_progress_indicator.dart';
 
 import '../../../../cubits/register/register_cubit.dart';
 import '../../../../utils/constants/app_paddings.dart';
@@ -53,12 +54,16 @@ class RegisterScreen extends StatelessWidget {
                   }
                 },
                 builder: (context, state) {
-                  return SignInUpButton(
-                    text: AppTexts.signUp,
-                    onTap: () {
-                      cubit.validateRegister;
-                    },
-                  );
+                  if (state is RegisterLoading) {
+                    return const GlobalProgressIndicator();
+                  } else {
+                    return SignInUpButton(
+                      text: AppTexts.signUp,
+                      onTap: () {
+                        cubit.validateRegister;
+                      },
+                    );
+                  }
                 },
               ),
               64.verticalSpace,

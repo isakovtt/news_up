@@ -20,7 +20,6 @@ class RegisterService {
           email,
           password,
           userCredential.user!.uid,
-
         );
       }
       return userCredential;
