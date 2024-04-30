@@ -4,12 +4,12 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import '../../utils/constants/app_paddings.dart';
 import '../../utils/helpers/navigate.dart';
 import '../pages/detail/detail_news_screen.dart';
+import '../pages/profile/widgets/profile_stories_image.dart';
 import 'global_divider.dart';
 import 'horizontal_dots.dart';
 import 'list_tile_cotegory_name.dart';
-import 'list_tile_image.dart';
-import 'time_and_comment.dart';
 import 'list_tile_title.dart';
+import 'time_and_comment.dart';
 
 class StoriesListTile extends StatelessWidget {
   const StoriesListTile(
@@ -40,7 +40,7 @@ class StoriesListTile extends StatelessWidget {
         children: [
           Row(
             children: [
-              ListTileImage(image: image),
+              ProfileStoriesImage(image: image),
               16.horizontalSpace,
               Column(
                 crossAxisAlignment: CrossAxisAlignment.start,

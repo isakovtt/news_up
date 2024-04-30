@@ -14,15 +14,18 @@ class WriteNewsTitleInput extends StatelessWidget {
 
     return Padding(
       padding: AppPaddings.h24,
-      child: TextFormField(
-        maxLines: 2,
-        controller: cubit.titleController,
-        style: AppTextStyles.greyScale900s20W700,
-        cursorHeight: 32.h,
-        autocorrect: false,
-        decoration: InputDecoration.collapsed(
-          hintText: 'Title goes here',
-          hintStyle: AppTextStyles.greyScale300s20W700,
+      child: Form(
+        child: TextFormField(
+          validator: (value) => cubit.validateTitle,
+          maxLines: 2,
+          controller: cubit.titleController,
+          style: AppTextStyles.greyScale900s20W700,
+          cursorHeight: 32.h,
+          autocorrect: false,
+          decoration: InputDecoration.collapsed(
+            hintText: 'Title goes here',
+            hintStyle: AppTextStyles.greyScale300s20W700,
+          ),
         ),
       ),
     );

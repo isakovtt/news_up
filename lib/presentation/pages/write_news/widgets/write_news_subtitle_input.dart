@@ -13,13 +13,16 @@ class WriteNewsSubtitleInput extends StatelessWidget {
 
     return Padding(
       padding: AppPaddings.h24,
-      child: TextFormField(
-        maxLines: 12,
-        controller: cubit.subtitleController,
-        style: AppTextStyles.greyScale500s14W500,
-        decoration: InputDecoration.collapsed(
-          hintText: 'Tap here to continue...',
-          hintStyle: AppTextStyles.greyScale300s14W400,
+      child: Form(
+        child: TextFormField(
+          validator: (value) => cubit.validateSubtitle,
+          maxLines: 12,
+          controller: cubit.subtitleController,
+          style: AppTextStyles.greyScale500s14W500,
+          decoration: InputDecoration.collapsed(
+            hintText: 'Tap here to continue...',
+            hintStyle: AppTextStyles.greyScale300s14W400,
+          ),
         ),
       ),
     );

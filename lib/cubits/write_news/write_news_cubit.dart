@@ -15,6 +15,7 @@ class WriteNewsCubit extends Cubit<WriteNewsState> {
 
   final titleController = TextEditingController();
   final subtitleController = TextEditingController();
+  final GlobalKey<FormState> formKey = GlobalKey();
   final box = Hive.box('writeNews');
 
   final BehaviorSubject<File> subjectImage = BehaviorSubject<File>();
@@ -28,24 +29,51 @@ class WriteNewsCubit extends Cubit<WriteNewsState> {
     box.put('subtitle', subtitleController.text);
   }
 
+  Future<void> dataLoadValidate() async {
+    if (formKey.currentState?.validate() ?? false) {
+      return log('validateSuccess');
+    }
+  }
+
+  String? get validateTitle {
+    if (titleController.text.isEmpty) {
+      log('validate');
+      return 'Fill all blanks';
+    }
+    return null;
+  }
+
+  String? get validateSubtitle {
+    if (subtitleController.text.isEmpty) {
+      return 'Fill all blanks';
+    }
+    return null;
+  }
+
   String uid = FirebaseAuth.instance.currentUser!.uid;
   final FirebaseFirestore _firestore = FirebaseFirestore.instance;
 
   void sendData() {
+    DateTime now = DateTime.now();
+
     _firestore.collection('posts').add({
       'uid': uid,
-      'postId' : '',
+      'postId': '',
       'newsPhoto': box.get('photo'),
       'newsTitle': box.get('title'),
       'newsSubtitle': box.get('subtitle'),
       'channel': '',
-      'category' : '',
-      'commentsCount' : 0,
+      'category': '',
+      'commentsCount': 0,
+      'time': now.millisecondsSinceEpoch
     }).then((value) {
       log('Data sent successfully!');
+      box.clear();
     }).catchError((error) {
       log('Failed to send data: $error');
     });
+
+    log('error');
   }
 
   void getDocumentUid() async {

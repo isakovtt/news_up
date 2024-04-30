@@ -1,3 +1,4 @@
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
@@ -10,25 +11,35 @@ class ProfileStoriesListView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return ListView.separated(
-      padding: AppPaddings.h24,
-      shrinkWrap: true,
-      scrollDirection: Axis.vertical,
-      itemCount: profileStories.length,
-      physics: const NeverScrollableScrollPhysics(),
-      separatorBuilder: (context, index) => 16.verticalSpace,
-      itemBuilder: (context, index) {
-        final stories = profileStories[index];
-        return StoriesListTile(
-          image: stories.image,
-          cotegoryName: stories.categoryText,
-          sourceIcon: stories.sourceIcon,
-          sourceName: stories.sourceName,
-          commentText: stories.commentText,
-          headlineText: stories.headlineText,
-          timeText: stories.timeText,
-        );
-      },
-    );
+    return StreamBuilder(
+        stream: FirebaseFirestore.instance.collection('posts').snapshots(),
+        builder: (context, snapshot) {
+          if (!snapshot.hasData) {
+            return const SizedBox.shrink();
+          }
+          final posts = snapshot.data!.docs;
+
+          return ListView.separated(
+            padding: AppPaddings.h24,
+            shrinkWrap: true,
+            scrollDirection: Axis.vertical,
+            itemCount: posts.length,
+            physics: const NeverScrollableScrollPhysics(),
+            separatorBuilder: (context, index) => 16.verticalSpace,
+            itemBuilder: (context, index) {
+              final stories = profileStories[index];
+              final post = posts[index];
+              return StoriesListTile(
+                image: post['newsPhoto'],
+                cotegoryName: stories.categoryText,
+                sourceIcon: stories.sourceIcon,
+                sourceName: stories.sourceName,
+                commentText: stories.commentText,
+                headlineText: post['newsTitle'],
+                timeText: stories.timeText,
+              );
+            },
+          );
+        });
   }
 }
