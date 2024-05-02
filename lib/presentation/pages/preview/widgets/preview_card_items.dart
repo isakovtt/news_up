@@ -20,10 +20,13 @@ class PreviewCardItems extends StatelessWidget {
         children: [
           Padding(
             padding: AppPaddings.lrt16,
-            child: Image.file(
-              filterQuality: FilterQuality.high,
-              File(
-                box.get('photo'),
+            child: ClipRRect(
+              borderRadius: BorderRadius.circular(16),
+              child: Image.file(
+                filterQuality: FilterQuality.high,
+                File(
+                  box.get('photo'),
+                ),
               ),
             ),
           ),

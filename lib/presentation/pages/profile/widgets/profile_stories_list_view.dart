@@ -31,12 +31,12 @@ class ProfileStoriesListView extends StatelessWidget {
               final post = posts[index];
               return StoriesListTile(
                 image: post['newsPhoto'],
-                cotegoryName: stories.categoryText,
+                cotegoryName: post['category'],
                 sourceIcon: stories.sourceIcon,
-                sourceName: stories.sourceName,
+                sourceName: post['channel'],
                 commentText: stories.commentText,
                 headlineText: post['newsTitle'],
-                timeText: stories.timeText,
+                timeText: '1h ago',
               );
             },
           );

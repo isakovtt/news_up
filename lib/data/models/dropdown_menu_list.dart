@@ -1,11 +1,26 @@
 class DropdownMenuList {
   DropdownMenuList._();
 
-  static List<String> items = [
+  static List<String> categoriesItems = [
     'NFT',
     'Technology',
     'Crypto',
-    'Investment',
+    'Sport',
+    'Health',
+    'Business',
+    'Design',
   ];
-  static String? selectedValue;
+  static String? selectedCategoriesValue;
+
+  static List<String> channelsItems = [
+    'NBC News',
+    'BBC News',
+    'CNN News',
+    'Euro News',
+    'FOX News',
+    'Kontan News',
+    'ABC News',
+    'Breitbart',
+  ];
+  static String? selectedChannelsValue;
 }

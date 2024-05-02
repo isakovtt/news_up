@@ -56,27 +56,31 @@ class WriteNewsCubit extends Cubit<WriteNewsState> {
   void sendData() {
     DateTime now = DateTime.now();
 
-    _firestore.collection('posts').add({
-      'uid': uid,
-      'postId': '',
-      'newsPhoto': box.get('photo'),
-      'newsTitle': box.get('title'),
-      'newsSubtitle': box.get('subtitle'),
-      'channel': '',
-      'category': '',
-      'commentsCount': 0,
-      'time': now.millisecondsSinceEpoch
-    }).then((value) {
-      log('Data sent successfully!');
-      box.clear();
-    }).catchError((error) {
-      log('Failed to send data: $error');
-    });
-
-    log('error');
+    try {
+      _firestore.collection('posts').add({
+        'uid': uid,
+        'postId': '',
+        'newsPhoto': box.get('photo'),
+        'newsTitle': box.get('title'),
+        'newsSubtitle': box.get('subtitle'),
+        'tags': box.get('tags'),
+        'category': box.get('category'),
+        'channel': box.get('channel'),
+        'commentsCount': 0,
+        'time': now
+      }).then((value) async {
+        log('Data sent successfully!');
+        await box.clear();
+        log('Box is empty ${box.isEmpty.toString()}');
+      }).catchError((error) {
+        log('Failed to send data: $error');
+      });
+    } catch (error) {
+      log('Error sending data: $error');
+    }
   }
 
-  void getDocumentUid() async {
+  Future getDocumentUid() async {
     CollectionReference usersCollection =
         FirebaseFirestore.instance.collection('posts');
 
@@ -84,6 +88,7 @@ class WriteNewsCubit extends Cubit<WriteNewsState> {
         await usersCollection.where('uid', isEqualTo: uid).get();
 
     DocumentSnapshot document = snapshot.docs.first;
+
     if (document.exists) {
       String documentUid = document.id;
       log(documentUid);

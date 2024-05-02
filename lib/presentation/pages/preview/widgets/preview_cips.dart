@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:hive_flutter/hive_flutter.dart';
 
 import '../../../../utils/constants/app_colors.dart';
 
@@ -62,6 +63,7 @@ class _PreviewCipsState extends State<PreviewCips> {
               },
               onSelected: (selectedValue) {
                 chipList.add(selectedValue);
+
                 setState(() {});
               },
             );
@@ -78,6 +80,7 @@ class _PreviewCipsState extends State<PreviewCips> {
               (selectedValue) {
                 if (selectedValue != null) {
                   myChips.add(selectedValue);
+                  Hive.box('writeNews').put('tags', myChips);
                   chipList.remove(selectedValue);
                   setState(() {});
                 }
@@ -87,6 +90,11 @@ class _PreviewCipsState extends State<PreviewCips> {
         ),
       ],
     );
+  }
+  @override
+  void dispose() {
+    // TODO: implement dispose
+    super.dispose();
   }
 }
 

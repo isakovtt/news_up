@@ -1,14 +1,13 @@
 import 'package:dropdown_button2/dropdown_button2.dart';
 import 'package:flutter/material.dart';
-import 'package:newsup_app/data/models/dropdown_menu_list.dart';
 
+import '../../../../data/models/dropdown_menu_list.dart';
 import '../../../../utils/constants/app_box_decorations.dart';
 import '../../../../utils/constants/app_paddings.dart';
 import '../../../../utils/constants/app_text_styles.dart';
-import '../../../../utils/constants/app_texts.dart';
 
-class PreviewCategoriesDropdownMenu extends StatelessWidget {
-  const PreviewCategoriesDropdownMenu({super.key, this.onChanged});
+class PreviewChannelsDropdownMenu extends StatelessWidget {
+  const PreviewChannelsDropdownMenu({super.key, this.onChanged});
 
   final Function(String?)? onChanged;
 
@@ -19,10 +18,10 @@ class PreviewCategoriesDropdownMenu extends StatelessWidget {
         child: DropdownButton2<String>(
           isExpanded: true,
           hint: Text(
-            AppTexts.selectCategory,
+            'Select channels',
             style: AppTextStyles.greyScale900s14W500,
           ),
-          items: DropdownMenuList.categoriesItems
+          items: DropdownMenuList.channelsItems
               .map((String item) => DropdownMenuItem<String>(
                     value: item,
                     child: Text(
@@ -31,7 +30,7 @@ class PreviewCategoriesDropdownMenu extends StatelessWidget {
                     ),
                   ))
               .toList(),
-          value: DropdownMenuList.selectedCategoriesValue,
+          value: DropdownMenuList.selectedChannelsValue,
           onChanged: onChanged,
           buttonStyleData: ButtonStyleData(
             decoration: AppBoxDecorations.greyScale50R1000,
