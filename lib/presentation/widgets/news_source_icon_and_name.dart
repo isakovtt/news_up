@@ -32,6 +32,8 @@ class NewsSourceIconAndName extends StatelessWidget {
             decoration: AppBoxDecorations.greyScale100R1000,
             child: Center(
               child: Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                crossAxisAlignment: CrossAxisAlignment.center,
                 children: [
                   if (liveIcon == false) ...[
                     SvgPicture.asset(

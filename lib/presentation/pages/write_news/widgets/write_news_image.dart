@@ -26,12 +26,15 @@ class WriteNewsImage extends StatelessWidget {
               padding: AppPaddings.h24,
               child: Stack(
                 children: [
-                  Image(
-                    fit: BoxFit.cover,
-                    width: double.maxFinite,
-                    filterQuality: FilterQuality.high,
-                    image: FileImage(
-                      snapshot.data!,
+                  ClipRRect(
+                    borderRadius: BorderRadius.circular(16),
+                    child: Image(
+                      fit: BoxFit.cover,
+                      width: double.maxFinite,
+                      filterQuality: FilterQuality.high,
+                      image: FileImage(
+                        snapshot.data!,
+                      ),
                     ),
                   ),
                   const Positioned(
