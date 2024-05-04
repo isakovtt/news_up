@@ -2,8 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import '../../utils/constants/app_paddings.dart';
-import '../../utils/helpers/navigate.dart';
-import '../pages/detail/detail_news_screen.dart';
 import '../pages/profile/widgets/profile_stories_image.dart';
 import 'global_divider.dart';
 import 'horizontal_dots.dart';
@@ -53,15 +51,7 @@ class StoriesListTile extends StatelessWidget {
                     ],
                   ),
                   6.verticalSpace,
-                  GestureDetector(
-                    onTap: () {
-                      Navigate.navigatePush(
-                        context,
-                        const DetailNewsScreen(),
-                      );
-                    },
-                    child: ListTileTitle(text: headlineText),
-                  ),
+                  ListTileTitle(text: headlineText),
                   12.verticalSpace,
                   TimeAndComment(
                     hasSource: true,

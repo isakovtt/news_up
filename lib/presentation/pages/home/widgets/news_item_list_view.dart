@@ -33,10 +33,10 @@ class NewsItemListView extends StatelessWidget {
             commentText: headline.commentText,
             hasSource: true,
             onTap: () {
-              Navigate.navigatePush(
-                context,
-                const DetailNewsScreen(),
-              );
+              // Navigate.navigatePush(
+              //   context,
+              //   const DetailNewsScreen(),
+              // );
             },
           );
         },

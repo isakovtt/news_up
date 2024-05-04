@@ -33,10 +33,10 @@ class ExploreListView extends StatelessWidget {
             commentText: news.commentText!,
             hasSource: true,
             onTap: () {
-              Navigate.navigatePush(
-                context,
-                const DetailNewsScreen(),
-              );
+              // Navigate.navigatePush(
+              //   context,
+              //   const DetailNewsScreen(),
+              // );
             },
           );
         },

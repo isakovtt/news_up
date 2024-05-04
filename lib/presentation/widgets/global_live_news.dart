@@ -39,9 +39,12 @@ class _GlobalLiveNewsState extends State<GlobalLiveNews> {
           alignment: Alignment.center,
           fit: StackFit.expand,
           children: [
-            YoutubePlayer(
-              controller: _controller,
-              liveUIColor: Colors.amber,
+            ClipRRect(
+              borderRadius: BorderRadius.circular(16),
+              child: YoutubePlayer(
+                controller: _controller,
+                liveUIColor: Colors.amber,
+              ),
             ),
             // Positioned(
             //   left: 24,
