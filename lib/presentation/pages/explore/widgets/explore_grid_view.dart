@@ -34,10 +34,12 @@ class ExploreGridView extends StatelessWidget {
             sourceName: news.sourceName,
             categoryText: news.categoryText,
             sharedTimeText: news.sharedTimeText,
-            onTap: () => Navigate.navigatePush(
-              context,
-              const DetailNewsScreen(),
-            ),
+            onTap: () {
+            //   return Navigate.navigatePush(
+            //   context,
+            //   const DetailNewsScreen(),
+            // );
+            },
           );
         },
       ),
