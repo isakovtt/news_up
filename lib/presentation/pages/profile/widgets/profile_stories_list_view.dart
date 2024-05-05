@@ -45,14 +45,14 @@ class ProfileStoriesListView extends StatelessWidget {
                 ),
                 onTap: () {
                   // context.read<WriteNewsCubit>().getData(post.id);
+                  print(post.id);
                   Navigate.navigatePush(
                     context,
                     BlocProvider(
                       create: (context) {
-                        
                         return WriteNewsCubit();
                       },
-                      child:  const DetailNewsScreen(),
+                      child: DetailNewsScreen(postId: post.id),
                     ),
                   );
                 },

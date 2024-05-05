@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:newsup_app/utils/constants/app_paddings.dart';
 
+import '../../../../utils/constants/app_paddings.dart';
 import '../../../widgets/account_information.dart';
 
 class ProfileAccountInfo extends StatelessWidget {

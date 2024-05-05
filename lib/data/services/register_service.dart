@@ -31,13 +31,42 @@ class RegisterService {
   }
 
   Future<void> _registerUser(
-      String name, String email, String password, String id) async {
-    final users = await _userCollection.doc().set({
+    String name,
+    String email,
+    String password,
+    String id,
+  ) async {
+    // final users = await _userCollection.doc().set({
+    //   "name": name,
+    //   "email": email,
+    //   "password": password,
+    //   "id": id,
+    // });
+
+    DocumentReference documentReference = _userCollection.doc(id);
+
+    await documentReference.set({
       "name": name,
       "email": email,
       "password": password,
-      "id": id,
+      "uid": id,
+      // "id": id,
     });
-    return users;
+    await documentReference.update({
+      "documentUid": documentReference.id,
+    });
+  }
+
+  Future<String?> addDocumentAndGetId(
+      String collectionName, Map<String, dynamic> data) async {
+    try {
+      DocumentReference documentReference =
+          await FirebaseFirestore.instance.collection(collectionName).add(data);
+      log(documentReference.id);
+      return documentReference.id;
+    } catch (e) {
+      log("An error occurred: $e");
+      return null;
+    }
   }
 }
