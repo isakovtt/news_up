@@ -100,32 +100,24 @@ class WriteNewsCubit extends Cubit<WriteNewsState> {
   }
 //zzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzz
 
-  Future<void> getData(String postId) async {
-    
-  try {
-    DocumentSnapshot documentSnapshot = await FirebaseFirestore.instance
-        .collection('posts')
-        .doc(postId)
-        .get();
+  // Future<void> getData(String postId) async {
+  //   try {
+  //     DocumentSnapshot documentSnapshot = await FirebaseFirestore.instance
+  //         .collection('posts')
+  //         .doc(postId)
+  //         .get();
 
-    if (documentSnapshot.exists) {
-      // Belge verilerini al
-      Map<String, dynamic> postData = documentSnapshot.data() as Map<String, dynamic>;
-
-      // Post verilerini kullan
-      String newsPhoto = postData['newsPhoto'];
-      String newsTitle = postData['newsTitle'];
-      String newsSubtitle = postData['newsSubtitle'];
-    
-
-     
-    } else {
-      print('Belge bulunamadı.');
-    }
-  } catch (error) {
-    print('Hata oluştu: $error');
-  }
-}
+  //     if (documentSnapshot.exists) {
+  //       // Belge verilerini al
+  //       Map<String, dynamic> postData =
+  //           documentSnapshot.data() as Map<String, dynamic>;
+  //     } else {
+  //       log('Belge bulunamadı.');
+  //     }
+  //   } catch (error) {
+  //     log('Hata oluştu: $error');
+  //   }
+  // }
 
   //kohne metod zzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzz
   //   try {

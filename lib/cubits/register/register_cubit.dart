@@ -23,7 +23,7 @@ class RegisterCubit extends Cubit<RegisterState> {
     final result = await registerService.signUp(
       nameController.text,
       emailController.text,
-      passwordController.text,
+      passwordController.text, 
     );
     if (result is UserCredential) {
       emit(RegisterSuccess(result));
