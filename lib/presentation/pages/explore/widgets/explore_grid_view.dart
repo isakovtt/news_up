@@ -1,3 +1,4 @@
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:newsup_app/presentation/pages/detail/detail_news_screen.dart';
@@ -12,37 +13,57 @@ class ExploreGridView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Padding(
-      padding: AppPaddings.h24,
-      child: GridView.builder(
-        physics: const NeverScrollableScrollPhysics(),
-        shrinkWrap: true,
-        itemCount: hotNews.length,
-        scrollDirection: Axis.vertical,
-        gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-          mainAxisExtent: 200.h,
-          crossAxisCount: 2,
-          crossAxisSpacing: 16,
-          mainAxisSpacing: 16,
-        ),
-        itemBuilder: (context, index) {
-          final news = hotNews[index];
-          return NewsItem(
-            image: news.image,
-            headlineText: news.headlineText,
-            sourceIcon: news.sourceIcon,
-            sourceName: news.sourceName,
-            categoryText: news.categoryText,
-            sharedTimeText: news.sharedTimeText,
-            onTap: () {
-            //   return Navigate.navigatePush(
-            //   context,
-            //   const DetailNewsScreen(),
-            // );
-            },
+    return StreamBuilder(
+        stream: FirebaseFirestore.instance.collection('posts').snapshots(),
+        builder: (context, snapshot) {
+          if (!snapshot.hasData) {
+            return const SizedBox.shrink();
+          }
+          final posts = snapshot.data!.docs;
+          return Padding(
+            padding: AppPaddings.h24,
+            child: GridView.builder(
+              physics: const NeverScrollableScrollPhysics(),
+              shrinkWrap: true,
+              itemCount: posts.length,
+              scrollDirection: Axis.vertical,
+              gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+                mainAxisExtent: 200.h,
+                crossAxisCount: 2,
+                crossAxisSpacing: 16,
+                mainAxisSpacing: 16,
+              ),
+              itemBuilder: (context, index) {
+                final news = hotNews[index];
+                final post = posts[index];
+
+                return StreamBuilder(
+                    stream: FirebaseFirestore.instance
+                        .collection('channels')
+                        .snapshots(),
+                    builder: (context, snapshot) {
+                      if (!snapshot.hasData) {
+                        return const SizedBox.shrink();
+                      }
+                      final channels = snapshot.data!.docs[index];
+                      return NewsItem(
+                        image: post['newsPhoto'],
+                        headlineText: post['newsTitle'],
+                        sourceIcon: channels['logo'],
+                        sourceName: post['channel'],
+                        categoryText: post['category'],
+                        sharedTimeText: news.sharedTimeText,
+                        onTap: () {
+                            return Navigate.navigatePush(
+                            context,
+                             DetailNewsScreen(postId: post.id),
+                          );
+                        },
+                      );
+                    });
+              },
+            ),
           );
-        },
-      ),
-    );
+        });
   }
 }

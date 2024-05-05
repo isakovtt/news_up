@@ -1,3 +1,5 @@
+import 'dart:io';
+
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
@@ -41,8 +43,8 @@ class NewsItem extends StatelessWidget {
               height: 80.h,
               clipBehavior: Clip.antiAlias,
               decoration: AppBoxDecorations.circular18,
-              child: Image.asset(
-                image,
+              child: Image.file(
+                File(image),
                 fit: BoxFit.cover,
                 height: 80.h,
                 width: double.infinity,

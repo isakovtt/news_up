@@ -1,3 +1,5 @@
+import 'dart:io';
+
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
@@ -21,8 +23,8 @@ class ListTileImage extends StatelessWidget {
     return Container(
       clipBehavior: Clip.antiAlias,
       decoration: decoration ?? AppBoxDecorations.circular18,
-      child: Image.asset(
-        image,
+      child: Image.file(
+        File(image),
         width: width ?? 80.r,
         height: height ?? 80.r,
         fit: BoxFit.cover,
