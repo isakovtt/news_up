@@ -1,9 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:flutter_svg/svg.dart';
-import 'package:newsup_app/utils/constants/app_colors.dart';
 
 import '../../utils/constants/app_box_decorations.dart';
+import '../../utils/constants/app_colors.dart';
 import '../../utils/constants/app_text_styles.dart';
 
 class NewsSourceIconAndName extends StatelessWidget {
@@ -36,9 +35,13 @@ class NewsSourceIconAndName extends StatelessWidget {
                 crossAxisAlignment: CrossAxisAlignment.center,
                 children: [
                   if (liveIcon == false) ...[
-                    SvgPicture.asset(
-                      sourceIcon,
-                      width: 11.67.w,
+                    ClipOval(
+                      child: Image.network(
+                        sourceIcon,
+                        width: 13.w,
+                        height: 13.h,
+                        fit: BoxFit.cover,
+                      ),
                     ),
                   ],
                   if (liveIcon == true) ...[

@@ -4,12 +4,12 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:newsup_app/presentation/pages/detail/detail_news_screen.dart';
 import 'package:newsup_app/utils/helpers/navigate.dart';
 
-import '../../../../data/models/hot_news_model.dart';
+import '../../../../data/models/news_headline_model.dart';
 import '../../../../utils/constants/app_paddings.dart';
 import '../../../widgets/custom_basic_list_tile.dart';
 
-class ExploreListView extends StatelessWidget {
-  const ExploreListView({super.key});
+class HomeNewsItemListView extends StatelessWidget {
+  const HomeNewsItemListView({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -31,35 +31,33 @@ class ExploreListView extends StatelessWidget {
               separatorBuilder: (context, index) => 16.verticalSpace,
               itemBuilder: (context, index) {
                 final post = posts[index];
-
-                final news = hotNews[index];
+                final headline = newsheadline[index];
                 return StreamBuilder(
-                  stream: FirebaseFirestore.instance
+                    stream: FirebaseFirestore.instance
                         .collection('channels')
                         .snapshots(),
-                  builder: (context, snapshot) {
-                    if (!snapshot.hasData) {
+                    builder: (context, snapshot) {
+                      if (!snapshot.hasData) {
                         return const SizedBox.shrink();
                       }
                       final channels = snapshot.data!.docs[index];
-                    return GlobalBasicListTile(
-                      image: post['newsPhoto'],
-                      title:  post['newsTitle'],
-                      sourceIcon: channels['logo'],
-                      sourceName: post['channel'],
-                      categoryName: post['category'],
-                      timeText: news.sharedTimeText,
-                      commentText: post['commentsCount'].toString(),
-                      hasSource: true,
-                      onTap: () {
-                        Navigate.navigatePush(
-                          context,
-                           DetailNewsScreen(postId: post.id),
-                        );
-                      },
-                    );
-                  }
-                );
+                      return GlobalBasicListTile(
+                        image: post['newsPhoto'],
+                        categoryName: post['category'],
+                        title: post['newsTitle'],
+                        sourceIcon: channels['logo'],
+                        sourceName: post['channel'],
+                        timeText: headline.timeText,
+                        commentText: post['commentsCount'].toString(),
+                        hasSource: true,
+                        onTap: () {
+                          Navigate.navigatePush(
+                            context,
+                             DetailNewsScreen(postId: post.id),
+                          );
+                        },
+                      );
+                    });
               },
             ),
           );
