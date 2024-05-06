@@ -1,4 +1,5 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -36,22 +37,26 @@ class ProfileStoriesListView extends StatelessWidget {
               child: StreamBuilder(
                   stream: FirebaseFirestore.instance
                       .collection('channels')
-                      .snapshots(),
+                      .where('channel', isEqualTo: post['channel'])
+                    .snapshots(),
                   builder: (context, snapshot) {
                     if (!snapshot.hasData) {
                       return const SizedBox.shrink();
                     }
-                    final channels = snapshot.data!.docs[index];
+                    final channels = snapshot.data!.docs.first.data();
 
-                    return StoriesListTile(
-                      image: post['newsPhoto'],
-                      cotegoryName: post['category'],
-                      sourceIcon: channels['logo'],
-                      sourceName: post['channel'],
-                      commentText: post['commentsCount'].toString(),
-                      headlineText: post['newsTitle'],
-                      timeText: '1h ago',
-                    );
+                    if (post['uid'] == FirebaseAuth.instance.currentUser!.uid ) {
+                      return StoriesListTile(
+                        image: post['newsPhoto'],
+                        cotegoryName: post['category'],
+                        sourceIcon: channels['logo'],
+                        sourceName: post['channel'] + ' News',
+                        commentText: post['commentsCount'].toString(),
+                        headlineText: post['newsTitle'],
+                        timeText: '1h ago',
+                      );
+                    }
+                    return const SizedBox.shrink();
                   }),
               onTap: () {
                 Navigate.navigatePush(
