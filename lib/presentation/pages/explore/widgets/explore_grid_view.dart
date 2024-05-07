@@ -40,12 +40,15 @@ class ExploreGridView extends StatelessWidget {
                 return StreamBuilder(
                     stream: FirebaseFirestore.instance
                         .collection('channels')
+                        .where('channel', isEqualTo: post['channel'])
                         .snapshots(),
                     builder: (context, snapshot) {
                       if (!snapshot.hasData) {
                         return const SizedBox.shrink();
                       }
-                      final channels = snapshot.data!.docs[index];
+                      // final channels = snapshot.data!.docs[index];
+                      final channels = snapshot.data!.docs.first.data();
+
                       return NewsItem(
                         image: post['newsPhoto'],
                         headlineText: post['newsTitle'],
@@ -54,9 +57,9 @@ class ExploreGridView extends StatelessWidget {
                         categoryText: post['category'],
                         sharedTimeText: news.sharedTimeText,
                         onTap: () {
-                            return Navigate.navigatePush(
+                          return Navigate.navigatePush(
                             context,
-                             DetailNewsScreen(postId: post.id),
+                            DetailNewsScreen(postId: post.id),
                           );
                         },
                       );

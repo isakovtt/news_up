@@ -37,6 +37,8 @@ class EditProfileInputs extends StatelessWidget {
           text: AppTexts.phoneNumber,
           prefixText: '+994',
         ),
+        12.verticalSpace,
+        const EditProfileInput(text: 'About')
       ],
     );
   }

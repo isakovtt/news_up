@@ -35,18 +35,21 @@ class ExploreListView extends StatelessWidget {
                 final news = hotNews[index];
                 return StreamBuilder(
                   stream: FirebaseFirestore.instance
-                        .collection('channels')
-                        .snapshots(),
+                      .collection('channels')
+                      .where('channel', isEqualTo: post['channel'])
+                    .snapshots(),
                   builder: (context, snapshot) {
                     if (!snapshot.hasData) {
                         return const SizedBox.shrink();
                       }
-                      final channels = snapshot.data!.docs[index];
+                      // final channels = snapshot.data!.docs[index];
+                    final channels = snapshot.data!.docs.first.data();
+
                     return GlobalBasicListTile(
                       image: post['newsPhoto'],
                       title:  post['newsTitle'],
                       sourceIcon: channels['logo'],
-                      sourceName: post['channel'],
+                      sourceName: post['channel'] + ' News',
                       categoryName: post['category'],
                       timeText: news.sharedTimeText,
                       commentText: post['commentsCount'].toString(),

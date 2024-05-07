@@ -3,6 +3,7 @@ import 'dart:io';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:hive_flutter/hive_flutter.dart';
 import 'package:image_picker/image_picker.dart';
 
 import '../../../../cubits/write_news/write_news_cubit.dart';
@@ -50,13 +51,23 @@ class WriteNewsFooter extends StatelessWidget {
           const Spacer(),
           GlobalNextButton(
             onTap: () {
-              Navigate.navigatePush(
-                context,
-                BlocProvider(
-                  create: (context) => WriteNewsCubit(),
-                  child: const PreviewScreen(),
-                ),
-              );
+              if (Hive.box('writeNews').isNotEmpty) {
+                Navigate.navigatePush(
+                  context,
+                  BlocProvider(
+                    create: (context) => WriteNewsCubit(),
+                    child: const PreviewScreen(),
+                  ),
+                );
+              } else {
+                ScaffoldMessenger.of(context).showSnackBar(
+                  const SnackBar(
+                    content: Text(
+                      'Add parameters',
+                    ),
+                  ),
+                );
+              }
             },
           ),
         ],
