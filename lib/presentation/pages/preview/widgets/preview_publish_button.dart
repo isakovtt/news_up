@@ -6,7 +6,7 @@ import '../../../../utils/constants/app_texts.dart';
 import '../../../../utils/helpers/navigate.dart';
 import '../../../widgets/global_progress_indicator.dart';
 import '../../../widgets/inside_colored_button.dart';
-import '../../profile/profile_screen.dart';
+import '../../bottom_navigation/navigation_screen.dart';
 
 class PreviewPublishButton extends StatelessWidget {
   const PreviewPublishButton({super.key});
@@ -27,7 +27,7 @@ class PreviewPublishButton extends StatelessWidget {
               cubit.sendData();
               Navigate.navigateReplacePush(
                 context,
-                const ProfileScreen(),
+                const NavigationScreen(),
               );
             },
           );

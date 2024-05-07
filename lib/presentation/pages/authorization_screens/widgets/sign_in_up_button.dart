@@ -8,16 +8,17 @@ class SignInUpButton extends StatelessWidget {
   const SignInUpButton({
     super.key,
     required this.text,
-    this.onTap,
+    this.onTap, this.height,
   });
 
   final void Function()? onTap;
   final String text;
+  final double? height;
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
       onTap: onTap,
-      child: GlobalButton(
+      child: GlobalButton(height: height,
         color: AppColors.greyScale_900,
         child: Center(
           child: Padding(

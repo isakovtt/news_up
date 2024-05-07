@@ -50,7 +50,7 @@ class ProfileStoriesListView extends StatelessWidget {
                         image: post['newsPhoto'],
                         cotegoryName: post['category'],
                         sourceIcon: channels['logo'],
-                        sourceName: post['channel'] + ' News',
+                        sourceName: post['channel'] + ' News', 
                         commentText: post['commentsCount'].toString(),
                         headlineText: post['newsTitle'],
                         timeText: '1h ago',

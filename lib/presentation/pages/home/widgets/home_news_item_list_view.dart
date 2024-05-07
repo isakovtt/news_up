@@ -34,19 +34,22 @@ class HomeNewsItemListView extends StatelessWidget {
                 final headline = newsheadline[index];
                 return StreamBuilder(
                     stream: FirebaseFirestore.instance
-                        .collection('channels')
-                        .snapshots(),
+                      .collection('channels')
+                      .where('channel', isEqualTo: post['channel'])
+                    .snapshots(),
                     builder: (context, snapshot) {
                       if (!snapshot.hasData) {
                         return const SizedBox.shrink();
                       }
-                      final channels = snapshot.data!.docs[index];
+                    final channels = snapshot.data!.docs.first.data();
+
+                      // final channels = snapshot.data!.docs[index];
                       return GlobalBasicListTile(
                         image: post['newsPhoto'],
                         categoryName: post['category'],
                         title: post['newsTitle'],
                         sourceIcon: channels['logo'],
-                        sourceName: post['channel'],
+                        sourceName: post['channel'] + ' News',
                         timeText: headline.timeText,
                         commentText: post['commentsCount'].toString(),
                         hasSource: true,

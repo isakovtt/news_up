@@ -18,7 +18,7 @@ class DropdownMenuList {
     'NBC',
     'BBC',
     'CNN',
-    'EuroNews',
+    'Euro',
     'FOX',
     'Kontan',
     'ABC',

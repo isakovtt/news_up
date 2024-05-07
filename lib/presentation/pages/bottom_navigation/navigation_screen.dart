@@ -14,7 +14,7 @@ class NavigationScreen extends StatefulWidget {
 }
 
 class _NavigationScreenState extends State<NavigationScreen> {
-  int _selectedIndex = 0;
+  int selectedIndex = 0;
 
   final List screens = const [
     HomeScreen(),
@@ -26,22 +26,23 @@ class _NavigationScreenState extends State<NavigationScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        body: screens[_selectedIndex],
-        bottomNavigationBar: Theme(
-          data: ThemeData(
-            splashColor: Colors.transparent,
-            highlightColor: Colors.transparent,
-          ),
-          child: NewsNavigationBar(
-            selectedIndex: _selectedIndex,
-            onIndexChanged: (index) {
-              setState(
-                () {
-                  _selectedIndex = index; // Update the selected index
-                },
-              );
-            },
-          ),
-        ));
+      body: screens[selectedIndex],
+      bottomNavigationBar: Theme(
+        data: ThemeData(
+          splashColor: Colors.transparent,
+          highlightColor: Colors.transparent,
+        ),
+        child: NewsNavigationBar(
+          selectedIndex: selectedIndex,
+          onIndexChanged: (index) {
+            setState(
+              () {
+                selectedIndex = index; // Update the selected index
+              },
+            );
+          },
+        ),
+      ),
+    );
   }
 }
