@@ -10,18 +10,19 @@ class GlobalBlackButton extends StatelessWidget {
     required this.text,
     this.color,
     this.border,
-    this.style,
+    this.style, this.width,
   });
 
   final String text;
   final Color? color;
   final BoxBorder? border;
   final TextStyle? style;
+  final double? width;
 
   @override
   Widget build(BuildContext context) {
     return Container(
-      width: 74.w,
+      width: width ?? 74.w,
       height: 32.h,
       decoration: BoxDecoration(
         border: border,
