@@ -5,6 +5,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import '../../cubits/google_auth/google_auth_cubit.dart';
 import '../../cubits/login/login_cubit.dart';
 import '../../cubits/register/register_cubit.dart';
+import '../../cubits/users/users_cubit.dart';
 import '../../utils/constants/app_themes.dart';
 import '../../utils/helpers/configs.dart';
 import 'splash/splash_screen.dart';
@@ -21,6 +22,9 @@ class MyApp extends StatelessWidget {
           providers: [
             BlocProvider(
               create: (context) => LoginCubit(),
+            ),
+             BlocProvider(
+              create: (context) => UsersCubit(),
             ),
             BlocProvider(
               create: (context) => RegisterCubit(),
