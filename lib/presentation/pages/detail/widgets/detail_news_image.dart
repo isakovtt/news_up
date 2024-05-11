@@ -5,7 +5,7 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
-import 'global_shimmer.dart';
+import '../../../widgets/global_shimmer.dart';
 
 class DetailNewsImage extends StatefulWidget {
   const DetailNewsImage({super.key, required this.postId});

@@ -54,8 +54,6 @@ class WriteNewsCubit extends Cubit<WriteNewsState> {
   final FirebaseFirestore _firestore = FirebaseFirestore.instance;
 
   void sendData() async {
-    DateTime now = DateTime.now();
-
     String? postId = await addDocumentAndGetId('posts', {
       'uid': uid,
       'postId': '',
@@ -66,7 +64,7 @@ class WriteNewsCubit extends Cubit<WriteNewsState> {
       'category': box.get('category'),
       'channel': box.get('channel'),
       'commentsCount': 0,
-      'time': now,
+      'time': FieldValue.serverTimestamp(),
     });
 
     if (postId != null) {
