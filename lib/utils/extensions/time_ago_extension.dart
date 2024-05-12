@@ -10,9 +10,9 @@ extension TimeAgoExtension on DateTime {
 
     timeAgo = timeAgo.replaceAll('minutes', 'm');
     timeAgo = timeAgo.replaceAll('seconds', 's');
-    timeAgo = timeAgo.replaceAll('a minute', 'm');
-    timeAgo = timeAgo.replaceAll('an hour', 'h');
-    timeAgo = timeAgo.replaceAll('a day', 'd');
+    timeAgo = timeAgo.replaceAll('aminute', '1m');
+    timeAgo = timeAgo.replaceAll('anhour', '1h');
+    timeAgo = timeAgo.replaceAll('aday', '1d');
 
     return timeAgo;
   }

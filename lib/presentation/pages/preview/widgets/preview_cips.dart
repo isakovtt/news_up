@@ -91,11 +91,6 @@ class _PreviewCipsState extends State<PreviewCips> {
       ],
     );
   }
-  @override
-  void dispose() {
-    // TODO: implement dispose
-    super.dispose();
-  }
 }
 
 final List chipList = [
@@ -103,10 +98,9 @@ final List chipList = [
   'business',
   'art',
   'design',
-  'innovation',
   'technology',
   'NFT',
-  'marketing',
+  'health',
   'sport',
 ];
 final List myChips = [];
