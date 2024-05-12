@@ -1,7 +1,8 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:newsup_app/data/services/users_service.dart';
+
+import '../../data/services/firebase/users_service.dart';
 
 part 'users_state.dart';
 

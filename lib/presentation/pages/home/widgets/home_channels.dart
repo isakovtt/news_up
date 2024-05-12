@@ -6,12 +6,7 @@ import '../../../../utils/constants/app_paddings.dart';
 import '../../../../utils/constants/app_text_styles.dart';
 
 class HomeChannels extends StatelessWidget {
-  const HomeChannels({
-    super.key,
-    this.channelName = false,
-  });
-
-  final bool channelName;
+  const HomeChannels({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -22,15 +17,14 @@ class HomeChannels extends StatelessWidget {
             return const SizedBox.shrink();
           }
           final channels = snapshot.data!.docs;
-
           return SizedBox(
-            height: channelName ? 73.h : 48.h,
+            height: 73.h,
             child: ListView.separated(
               padding: AppPaddings.h24,
               scrollDirection: Axis.horizontal,
               itemCount: channels.length,
               separatorBuilder: (context, index) => 16.horizontalSpace,
-              itemBuilder: (context, index) {
+              itemBuilder: (_, index) {
                 final channel = channels[index];
                 return Column(
                   children: [
@@ -45,13 +39,11 @@ class HomeChannels extends StatelessWidget {
                         ),
                       ),
                     ),
-                    if (channelName == true) ...[
-                      6.verticalSpace,
-                      Text(
-                        channel['channel'],
-                        style: AppTextStyles.greyScale400s12W400,
-                      ),
-                    ]
+                    6.verticalSpace,
+                    Text(
+                      channel['channel'],
+                      style: AppTextStyles.greyScale400s12W400,
+                    ),
                   ],
                 );
               },
