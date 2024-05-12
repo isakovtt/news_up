@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
-import '../../data/services/email_verify_service.dart';
+import '../../data/services/firebase/email_verify_service.dart';
+
 
 part 'email_verify_state.dart';
 

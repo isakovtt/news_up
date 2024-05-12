@@ -9,12 +9,22 @@ import '../../../widgets/custom_basic_list_tile.dart';
 import '../../detail/detail_news_screen.dart';
 
 class HomeNewsItemListView extends StatelessWidget {
-  const HomeNewsItemListView({super.key});
+  const HomeNewsItemListView({
+    super.key,
+    required this.selectedCategory,
+  });
+
+  final String selectedCategory;
 
   @override
   Widget build(BuildContext context) {
     return StreamBuilder(
-      stream: FirebaseFirestore.instance.collection('posts').snapshots(),
+      stream: selectedCategory == 'Trending'
+          ? FirebaseFirestore.instance.collection('posts').snapshots()
+          : FirebaseFirestore.instance
+              .collection('posts')
+              .where('category', isEqualTo: selectedCategory)
+              .snapshots(),
       builder: (context, snapshot) {
         if (!snapshot.hasData) {
           return const SizedBox.shrink();
@@ -41,12 +51,12 @@ class HomeNewsItemListView extends StatelessWidget {
                   if (!snapshot.hasData) {
                     return const SizedBox.shrink();
                   }
-                  final channels = snapshot.data!.docs.first.data();
+                  final channel = snapshot.data!.docs.first.data();
                   return GlobalBasicListTile(
                     image: post['newsPhoto'],
                     categoryName: post['category'],
                     title: post['newsTitle'],
-                    sourceIcon: channels['logo'],
+                    sourceIcon: channel['logo'],
                     sourceName: post['channel'] + ' News',
                     timeText: timestamp.toDate().toTimeAgo(),
                     commentText: post['commentsCount'].toString(),

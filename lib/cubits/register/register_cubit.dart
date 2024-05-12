@@ -3,7 +3,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:hive_flutter/hive_flutter.dart';
 
-import '../../data/services/register_service.dart';
+import '../../data/services/firebase/register_service.dart';
+
 
 part 'register_state.dart';
 

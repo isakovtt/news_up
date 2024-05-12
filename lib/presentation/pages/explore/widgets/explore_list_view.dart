@@ -17,7 +17,7 @@ class ExploreListView extends StatelessWidget {
       stream: FirebaseFirestore.instance.collection('posts').snapshots(),
       builder: (context, snapshot) {
         if (!snapshot.hasData) {
-          return const SizedBox.shrink();
+          return const SizedBox(height: 400,);
         }
         final posts = snapshot.data!.docs;
         return Padding(
