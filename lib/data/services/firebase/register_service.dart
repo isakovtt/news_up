@@ -31,26 +31,17 @@ class RegisterService {
   }
 
   Future<void> _registerUser(
-    String name,
-    String email,
-    String password,
-    String id,
-  ) async {
-    // final users = await _userCollection.doc().set({
-    //   "name": name,
-    //   "email": email,
-    //   "password": password,
-    //   "id": id,
-    // });
-
+      String name, String email, String password, String id) async {
     DocumentReference documentReference = _userCollection.doc(id);
 
     await documentReference.set({
+      "uid": id,
       "name": name,
       "email": email,
       "password": password,
-      "uid": id,
-      // "id": id,
+      'about': null,
+      'phoneNumber': _firebaseAuth.currentUser?.phoneNumber,
+      'profilePicture': _firebaseAuth.currentUser?.photoURL,
     });
     await documentReference.update({
       "documentUid": documentReference.id,

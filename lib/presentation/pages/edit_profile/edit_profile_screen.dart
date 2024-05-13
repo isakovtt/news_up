@@ -1,14 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:flutter_svg/svg.dart';
 
-import '../../../utils/constants/app_assets.dart';
 import '../../../utils/constants/app_paddings.dart';
 import '../../../utils/constants/app_texts.dart';
 import '../../../utils/helpers/navigate.dart';
 import '../authorization_screens/widgets/sign_in_up_button.dart';
 import '../bottom_navigation/navigation_screen.dart';
 import 'widgets/edit_profile_inputs.dart';
+import 'widgets/edit_profile_picture.dart';
 import 'widgets/global_app_bar.dart';
 
 class EditProfileScreen extends StatelessWidget {
@@ -28,9 +27,8 @@ class EditProfileScreen extends StatelessWidget {
         padding: AppPaddings.h24,
         child: ListView(
           children: [
-            SvgPicture.asset(
-              AppAssets.editProfileAvatar,
-            ),
+            6.verticalSpace,
+            const EditProfilePicture(),
             32.verticalSpace,
             Column(
               children: [

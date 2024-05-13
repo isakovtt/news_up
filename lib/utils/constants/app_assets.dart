@@ -192,4 +192,7 @@ class AppAssets {
   static const String ratioImage = '$_png/ratio_image.png';
   static const String followImage = '$_png/follow_image.png';
   static const String analysisImage = '$_png/analysis_image.png';
+
+  static const String netwokProfileAvatar =
+      'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTmHkj6-Tndku8K2387sMaBf2DaiwfBtHQw951-fc9zzA&s';
 }
