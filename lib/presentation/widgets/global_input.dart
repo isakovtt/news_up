@@ -22,6 +22,7 @@ class GlobalInput extends StatelessWidget {
     this.helperText,
     this.keyboardType,
     this.inputFormatters,
+    this.initialValue,
   });
 
   final String? hintText;
@@ -32,6 +33,7 @@ class GlobalInput extends StatelessWidget {
   final Color? inputBorderColor;
   final Color focusedColor = AppColors.primaryBase;
   final bool? obscureText;
+  final String? initialValue;
   final Widget? prefix;
   final String? prefixText;
   final String? suffixText;
@@ -46,6 +48,7 @@ class GlobalInput extends StatelessWidget {
     return TextFormField(
       onSaved: onSaved,
       validator: validator,
+      initialValue: initialValue,
       keyboardType: keyboardType,
       inputFormatters: inputFormatters,
       obscureText: obscureText ?? false,
