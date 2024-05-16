@@ -23,15 +23,13 @@ class ProfileAccountInfo extends StatelessWidget {
           return Padding(
             padding: AppPaddings.h24,
             child: AccountInformation(
-              hasVerified: true,
-              hasUsername: true,
-              name: user['name'],
-              // ignore: prefer_interpolation_to_compose_strings
-              username: '@' +
-                  user['name'].toString().replaceAll(' ', '_').toLowerCase(),
-              bio:
-                  'Design, Productivity, and Creation. Learn everything you need to improve your design skills.',
-            ),
+                hasVerified: true,
+                hasUsername: true,
+                name: user['name'],
+                // ignore: prefer_interpolation_to_compose_strings
+                username: '@' +
+                    user['name'].toString().replaceAll(' ', '_').toLowerCase(),
+                about: user['about'] ?? 'About is Empty'),
           );
         });
   }

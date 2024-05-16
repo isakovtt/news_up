@@ -34,7 +34,7 @@ class WriteNewsImageEditButton extends StatelessWidget {
                 final XFile? xFile = await ImagePicker().pickImage(
                   source: ImageSource.gallery,
                 );
-                cubit.loadImage(File(xFile!.path));
+                cubit.loadImage(File(xFile!.path)); 
               },
             ),
             SvgPicture.asset(

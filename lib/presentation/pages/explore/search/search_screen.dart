@@ -13,46 +13,31 @@ class SearchScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        appBar: AppBar(
-      centerTitle: true,
-      scrolledUnderElevation: 0,
-      automaticallyImplyLeading: false,
-      // leading: Padding(
-      //   padding: AppPaddings.l24,
-      //   child: Center(
-      //     child: GestureDetector(
-      //       onTap: () => Navigate.navigatePop(
-      //         context,
-      //         const ExploreScreen(),
-      //       ),
-      //       child: SvgPicture.asset(
-      //         AppAssets.arrowNarrowLeft,
-      //         height: 32.h,
-      //         width: 32.w,
-      //       ),
-      //     ),
-      //   ),
-      // ),
-      title: Text(
-        AppTexts.explore,
-        style: AppTextStyles.greyScale900s16W700,
-      ),
-      actions: [
-        Padding(
-          padding: AppPaddings.h24,
-          child: GestureDetector(
-            onTap: () {
-              showSearch(
-                context: context,
-                delegate: CustomSearch(),
-              );
-            },
-            child: SvgPicture.asset(
-              AppAssets.search,
+      appBar: AppBar(
+        centerTitle: true,
+        scrolledUnderElevation: 0,
+        automaticallyImplyLeading: false,
+        title: Text(
+          AppTexts.explore,
+          style: AppTextStyles.greyScale900s16W700,
+        ),
+        actions: [
+          Padding(
+            padding: AppPaddings.h24,
+            child: GestureDetector(
+              onTap: () {
+                showSearch(
+                  context: context,
+                  delegate: CustomSearch(),
+                );
+              },
+              child: SvgPicture.asset(
+                AppAssets.search,
+              ),
             ),
           ),
-        ),
-      ],
-    ));
+        ],
+      ),
+    );
   }
 }

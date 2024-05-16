@@ -10,14 +10,14 @@ class AccountInformation extends StatelessWidget {
     super.key,
     required this.name,
     required this.username,
-    required this.bio,
+    required this.about,
     this.hasVerified = false,
     this.hasUsername = false,
   });
 
   final String name;
   final String username;
-  final String bio;
+  final String about;
   final bool hasVerified;
   final bool hasUsername;
 
@@ -50,7 +50,7 @@ class AccountInformation extends StatelessWidget {
         4.verticalSpace,
         Text(
           textAlign: TextAlign.start,
-          bio,
+          about,
           style: AppTextStyles.greyScale400s14W400,
         ),
       ],

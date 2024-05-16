@@ -15,7 +15,7 @@ class TopicAccountInfo extends StatelessWidget {
         hasUsername: false,
         name: 'Business',
         username: '@barkin_michella',
-        bio:
+        about:
             'Business is the foundation that merges innovation, resources, and strategies to create services.',
       ),
     );

@@ -11,11 +11,16 @@ class EditProfileInput extends StatelessWidget {
     this.prefixText,
     this.controller,
     this.hintText,
+    this.initialValue,
+    this.enabled, this.hintStyle,
   });
 
   final String text;
   final String? prefixText;
+  final TextStyle? hintStyle;
   final String? hintText;
+  final bool? enabled;
+  final String? initialValue;
   final TextEditingController? controller;
   @override
   Widget build(BuildContext context) {
@@ -31,9 +36,12 @@ class EditProfileInput extends StatelessWidget {
         ),
         12.verticalSpace,
         GlobalInput(
+          hintStyle:  hintStyle,
+          enabled: enabled,
           hintText: hintText,
           controller: controller,
           prefixText: prefixText,
+          initialValue: initialValue,
         ),
       ],
     );

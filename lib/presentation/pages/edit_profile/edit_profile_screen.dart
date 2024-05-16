@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:newsup_app/presentation/widgets/global_progress_indicator.dart';
 
+import '../../../cubits/edit_profile/edit_profile_cubit.dart';
 import '../../../utils/constants/app_paddings.dart';
 import '../../../utils/constants/app_texts.dart';
 import '../../../utils/helpers/navigate.dart';
@@ -15,6 +18,7 @@ class EditProfileScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final cubit = context.read<EditProfileCubit>();
     return Scaffold(
       appBar: GlobalAppBar(
         text: AppTexts.editProfile,
@@ -25,23 +29,33 @@ class EditProfileScreen extends StatelessWidget {
       ),
       body: Padding(
         padding: AppPaddings.h24,
-        child: ListView(
-          children: [
-            6.verticalSpace,
-            const EditProfilePicture(),
-            32.verticalSpace,
-            Column(
+        child: BlocBuilder<EditProfileCubit, EditProfileState>(
+          builder: (context, state) {
+            if (state is EditProfileLoading) {
+              return const GlobalProgressIndicator();
+            }
+            return ListView(
               children: [
-                const EditProfileInputs(),
-                30.verticalSpace,
+                6.verticalSpace,
+                const EditProfilePicture(),
+                32.verticalSpace,
+                Column(
+                  children: [
+                    const EditProfileInputs(),
+                    30.verticalSpace,
+                  ],
+                ),
               ],
-            ),
-          ],
+            );
+          },
         ),
       ),
       floatingActionButton: Padding(
         padding: AppPaddings.h24,
-        child: const SignInUpButton(
+        child: SignInUpButton(
+          onTap: () {
+            cubit.updateUserProfile();
+          },
           text: AppTexts.save,
           height: 60,
         ),
