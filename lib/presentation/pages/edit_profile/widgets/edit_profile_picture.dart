@@ -6,6 +6,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:image_picker/image_picker.dart';
+import 'package:newsup_app/utils/constants/app_assets.dart';
 
 import '../../../../cubits/edit_profile/edit_profile_cubit.dart';
 import '../../../../utils/constants/app_colors.dart';
@@ -40,8 +41,9 @@ class EditProfilePicture extends StatelessWidget {
                     stream: cubit.getImageStream,
                     builder: (context, snapshot) {
                       if (!snapshot.hasData || snapshot.data == null) {
-                        return Image.file(
-                          File(user['profilePicture']),
+                        return Image.network(
+                          user['profilePicture'] ??
+                              AppAssets.netwokProfileAvatar,
                           width: 88.w,
                           height: 88.h,
                           fit: BoxFit.cover,

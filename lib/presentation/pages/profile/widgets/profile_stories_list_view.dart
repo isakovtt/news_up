@@ -32,7 +32,8 @@ class ProfileStoriesListView extends StatelessWidget {
           separatorBuilder: (context, index) => 16.verticalSpace,
           itemBuilder: (context, index) {
             final post = posts[index];
-            Timestamp timestamp = post['time'];
+            final Timestamp timestamp = post['time'] ?? '0s';
+
             return GestureDetector(
               child: StreamBuilder(
                   stream: FirebaseFirestore.instance
