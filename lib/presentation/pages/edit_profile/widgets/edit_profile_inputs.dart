@@ -1,7 +1,9 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:newsup_app/cubits/edit_profile/edit_profile_cubit.dart';
 import '../../../../utils/constants/app_colors.dart';
 
 import '../../../../utils/constants/app_text_styles.dart';
@@ -14,6 +16,7 @@ class EditProfileInputs extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final cubit = context.read<EditProfileCubit>();
     return StreamBuilder(
         stream: FirebaseFirestore.instance
             .collection('users')
@@ -32,11 +35,13 @@ class EditProfileInputs extends StatelessWidget {
           return Column(
             children: [
               EditProfileInput(
+                controller: cubit.nameController,
                 text: AppTexts.fullName,
-                hintText: user['name'],
+                hintText: user['name'].toString(),
               ),
               16.verticalSpace,
               EditProfileInput(
+                controller: cubit.emailController,
                 text: AppTexts.email,
                 hintText: user['email'],
               ),
@@ -62,11 +67,13 @@ class EditProfileInputs extends StatelessWidget {
               ),
               16.verticalSpace,
               EditProfileInput(
+                controller: cubit.phoneController,
                 hintText: user['phoneNumber'] ?? 'Phone number is not listed',
                 text: AppTexts.phoneNumber,
               ),
               12.verticalSpace,
               EditProfileInput(
+                controller: cubit.aboutController,
                 text: AppTexts.about,
                 hintText: user['about'] ?? 'About is Empty',
               )

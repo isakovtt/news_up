@@ -16,22 +16,6 @@ class SearchAppBar extends StatelessWidget implements PreferredSizeWidget {
       centerTitle: true,
       scrolledUnderElevation: 0,
       automaticallyImplyLeading: false,
-      // leading: Padding(
-      //   padding: AppPaddings.l24,
-      //   child: Center(
-      //     child: GestureDetector(
-      //       onTap: () => Navigate.navigatePop(
-      //         context,
-      //         const ExploreScreen(),
-      //       ),
-      //       child: SvgPicture.asset(
-      //         AppAssets.arrowNarrowLeft,
-      //         height: 32.h,
-      //         width: 32.w,
-      //       ),
-      //     ),
-      //   ),
-      // ),
       title: Text(
         AppTexts.explore,
         style: AppTextStyles.greyScale900s16W700,

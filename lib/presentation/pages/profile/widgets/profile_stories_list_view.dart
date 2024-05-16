@@ -27,7 +27,6 @@ class ProfileStoriesListView extends StatelessWidget {
         return ListView.separated(
           padding: AppPaddings.h24,
           shrinkWrap: true,
-          scrollDirection: Axis.vertical,
           itemCount: posts.length,
           physics: const NeverScrollableScrollPhysics(),
           separatorBuilder: (context, index) => 16.verticalSpace,
