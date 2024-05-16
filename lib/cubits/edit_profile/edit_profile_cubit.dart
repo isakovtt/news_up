@@ -3,6 +3,7 @@ import 'dart:io';
 
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
+import 'package:firebase_storage/firebase_storage.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:rxdart/rxdart.dart';
@@ -14,6 +15,7 @@ class EditProfileCubit extends Cubit<EditProfileState> {
 
   final FirebaseAuth _auth = FirebaseAuth.instance;
   final FirebaseFirestore _firestore = FirebaseFirestore.instance;
+  final FirebaseStorage _storage = FirebaseStorage.instance;
 
   final nameController = TextEditingController();
   final emailController = TextEditingController();
@@ -46,8 +48,18 @@ class EditProfileCubit extends Cubit<EditProfileState> {
         if (phoneController.text.isNotEmpty) {
           updateData['phoneNumber'] = phoneController.text;
         }
-        if (subjectImage.value.path.isNotEmpty) {
+        if (subjectImage.hasValue) {
           updateData['profilePicture'] = subjectImage.value.path;
+        }
+        if (subjectImage.hasValue) {
+          Reference storageRef = _storage
+              .ref()
+              .child('profilePictures')
+              .child('${currentUser.uid}.jpg');
+          UploadTask uploadTask = storageRef.putFile(subjectImage.value);
+          TaskSnapshot storageSnapshot = await uploadTask;
+          String downloadUrl = await storageSnapshot.ref.getDownloadURL();
+          updateData['profilePicture'] = downloadUrl;
         }
 
         if (updateData.isNotEmpty) {
@@ -73,6 +85,8 @@ class EditProfileCubit extends Cubit<EditProfileState> {
     emailController.dispose();
     aboutController.clear();
     aboutController.dispose();
+    subjectImage.close();
+
     return super.close();
   }
 }
