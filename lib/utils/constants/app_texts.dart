@@ -80,6 +80,7 @@ class AppTexts {
   //home screen texts
   static const breakingNews = 'Breaking News';
   static const viewMore = 'View more';
+  static const allNews = 'All News';
   static const tranding = 'Tranding';
   static const politics = 'Politics';
   static const international = 'International';

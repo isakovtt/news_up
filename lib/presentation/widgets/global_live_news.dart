@@ -19,7 +19,7 @@ class GlobalLiveNews extends StatefulWidget {
 
 class _GlobalLiveNewsState extends State<GlobalLiveNews> {
   final YoutubePlayerController _controller = YoutubePlayerController(
-    initialVideoId: 'gN0PZCe-kwQ',
+    initialVideoId: 'gCNeDWCI0vo',
     flags: const YoutubePlayerFlags(
       isLive: true,
       autoPlay: false,
