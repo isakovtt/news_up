@@ -3,7 +3,6 @@ import 'dart:io';
 
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
-import 'package:firebase_storage/firebase_storage.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:hive_flutter/hive_flutter.dart';
@@ -53,10 +52,10 @@ class WriteNewsCubit extends Cubit<WriteNewsState> {
 
   String uid = FirebaseAuth.instance.currentUser!.uid;
   final FirebaseFirestore _firestore = FirebaseFirestore.instance;
-  final FirebaseStorage _storage = FirebaseStorage.instance;
+  // final FirebaseStorage _storage = FirebaseStorage.instance;
 
   void sendData() async {
-    Map<String, dynamic> updateData = {};
+    // Map<String, dynamic> updateData = {};
     String? postId = await addDocumentAndGetId('posts', {
       'uid': uid,
       'postId': '',
@@ -69,14 +68,14 @@ class WriteNewsCubit extends Cubit<WriteNewsState> {
       'commentsCount': 0,
       'time': FieldValue.serverTimestamp(),
     });
-    if (postId != null) {
-      Reference storageRef =
-          _storage.ref().child('newsPhotos').child('$postId.jpg');
-      UploadTask uploadTask = storageRef.putFile(box.get('photo')!);
-      TaskSnapshot storageSnapshot = await uploadTask;
-      String downloadUrl = await storageSnapshot.ref.getDownloadURL();
-      updateData['newsPhoto'] = downloadUrl;
-    }
+    // if (postId != null) {
+    //   Reference storageRef =
+    //       _storage.ref().child('newsPhotos').child('$postId.jpg');
+    //   UploadTask uploadTask = storageRef.putFile(box.get('photo')!);
+    //   TaskSnapshot storageSnapshot = await uploadTask;
+    //   String downloadUrl = await storageSnapshot.ref.getDownloadURL();
+    //   updateData['newsPhoto'] = downloadUrl;
+    // }
 
     if (postId != null) {
       try {
