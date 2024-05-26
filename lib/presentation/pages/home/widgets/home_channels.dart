@@ -1,6 +1,8 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:newsup_app/presentation/pages/channel/channel_screen.dart';
+import 'package:newsup_app/utils/helpers/navigate.dart';
 
 import '../../../../utils/constants/app_paddings.dart';
 import '../../../../utils/constants/app_text_styles.dart';
@@ -32,10 +34,18 @@ class HomeChannels extends StatelessWidget {
                       height: 48.h,
                       width: 48.w,
                       child: ClipOval(
-                        child: Image.network(
-                          channel['logo'],
-                          filterQuality: FilterQuality.high,
-                          fit: BoxFit.cover,
+                        child: GestureDetector(
+                          child: Image.network(
+                            channel['logo'],
+                            filterQuality: FilterQuality.high,
+                            fit: BoxFit.cover,
+                          ),
+                          onTap: () {
+                            Navigate.navigatePush(
+                              context,
+                              const ChannelScreen(),
+                            );
+                          },
                         ),
                       ),
                     ),
