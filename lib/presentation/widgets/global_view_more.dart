@@ -25,7 +25,7 @@ class GlobalViewMore extends StatelessWidget {
           const Spacer(),
           GestureDetector(
             onTap: () {
-              Navigate.navigatePush(
+              Navigate.navigateReplacePush(
                 context,
                 const ViewMoreScreen(),
               );
