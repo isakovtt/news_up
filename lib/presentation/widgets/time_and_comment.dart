@@ -1,13 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/svg.dart';
-import 'package:newsup_app/utils/constants/app_colors.dart';
 
 import '../../utils/constants/app_assets.dart';
 import '../../utils/constants/app_color_filters.dart';
+import '../../utils/constants/app_colors.dart';
 import '../../utils/constants/app_text_styles.dart';
-import '../../utils/helpers/navigate.dart';
-import '../pages/comments/comments_screen.dart';
 import 'news_source_icon_and_name.dart';
 
 class TimeAndComment extends StatelessWidget {
@@ -18,7 +16,7 @@ class TimeAndComment extends StatelessWidget {
       this.sourceIcon,
       this.sourceName,
       this.hasSource = false,
-      this.hasDot = false});
+      this.hasDot = false, this.commentOnTap});
 
   final String clockText;
   final String? sourceIcon;
@@ -26,6 +24,7 @@ class TimeAndComment extends StatelessWidget {
   final String commentCountText;
   final bool hasSource;
   final bool hasDot;
+  final void Function()? commentOnTap;
 
   @override
   Widget build(BuildContext context) {
@@ -52,10 +51,7 @@ class TimeAndComment extends StatelessWidget {
         ],
         if (hasDot == false) 16.horizontalSpace,
         GestureDetector(
-          onTap: () => Navigate.navigatePush(
-            context,
-            const CommentsScreen(),
-          ),
+          onTap: commentOnTap,
           child: SvgPicture.asset(
             height: 16.h,
             width: 16.w,

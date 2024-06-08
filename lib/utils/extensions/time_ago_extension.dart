@@ -13,6 +13,7 @@ extension TimeAgoExtension on DateTime {
     timeAgo = timeAgo.replaceAll('aminute', '1m');
     timeAgo = timeAgo.replaceAll('anhour', '1h');
     timeAgo = timeAgo.replaceAll('aday', '1d');
+    timeAgo = timeAgo.replaceAll('nanoseconds', 's');
 
     return timeAgo;
   }

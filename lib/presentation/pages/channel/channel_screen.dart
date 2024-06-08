@@ -35,19 +35,19 @@ class ChannelScreen extends StatelessWidget {
                   child: StreamBuilder(
                       stream: FirebaseFirestore.instance
                           .collection('posts')
-                          // .where('category', isEqualTo: '')
+                          // .where('channel', isEqualTo: '')
                           .snapshots(),
                       builder: (context, snapshot) {
-                        final posts = snapshot.data!.docs;
-
                         if (!snapshot.hasData) {
                           return const SizedBox.shrink();
                         }
+                        final posts = snapshot.data?.docs;
+
                         return ListView.separated(
                           padding: AppPaddings.b16,
                           shrinkWrap: true,
                           scrollDirection: Axis.vertical,
-                          itemCount: posts.length,
+                          itemCount: posts!.length,
                           physics: const NeverScrollableScrollPhysics(),
                           separatorBuilder: (context, index) =>
                               16.verticalSpace,
@@ -57,7 +57,7 @@ class ChannelScreen extends StatelessWidget {
                             return StreamBuilder(
                               stream: FirebaseFirestore.instance
                                   .collection('channels')
-                                  .where('channel', isEqualTo: post['channel'])
+                                  // .where('channel', isEqualTo: post['channel'])
                                   .snapshots(),
                               builder: (context, snapshot) {
                                 if (!snapshot.hasData) {
@@ -72,7 +72,7 @@ class ChannelScreen extends StatelessWidget {
                                   sourceIcon: channel['logo'],
                                   sourceName: post['channel'] + ' News',
                                   timeText: timestamp.toDate().toTimeAgo(),
-                                  commentText: post['commentsCount'].toString(),
+                                  commentCount: post['commentsCount'].toString(),
                                   hasSource: true,
                                   onTap: () {
                                     Navigate.navigatePush(

@@ -93,7 +93,7 @@ class CustomSearch extends SearchDelegate {
                                   sourceIcon: result['sourceIcon'],
                                   sourceName: result['sourceName'],
                                   timeText: result['timeText'],
-                                  commentText: result['commentText'],
+                                  commentCount: result['commentText'],
                                   titleStyle: AppTextStyles.greyScale400s14W700,
                                   style: AppTextStyles.greyScale400s12W400,
                                   hasSource: true,
@@ -183,7 +183,7 @@ class CustomSearch extends SearchDelegate {
                                       sourceIcon: channel['logo'],
                                       sourceName: post['channel'] + ' News',
                                       timeText: timestamp.toDate().toTimeAgo(),
-                                      commentText:
+                                      commentCount:
                                           post['commentsCount'].toString(),
                                       titleStyle:
                                           AppTextStyles.greyScale400s14W700,

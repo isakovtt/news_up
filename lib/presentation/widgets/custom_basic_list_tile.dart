@@ -17,11 +17,13 @@ class GlobalBasicListTile extends StatelessWidget {
     required this.sourceIcon,
     required this.sourceName,
     required this.timeText,
-    required this.commentText,
+    required this.commentCount,
     this.onTap,
     required this.hasSource,
     this.hasDot = false,
-    this.style, this.titleStyle,
+    this.style,
+    this.titleStyle,
+    this.commentOnTap,
   });
 
   final String image;
@@ -30,8 +32,9 @@ class GlobalBasicListTile extends StatelessWidget {
   final String sourceIcon;
   final String sourceName;
   final String timeText;
-  final String commentText;
+  final String commentCount;
   final Function()? onTap;
+  final Function()? commentOnTap;
   final TextStyle? style;
   final bool hasSource;
   final bool hasDot;
@@ -63,15 +66,19 @@ class GlobalBasicListTile extends StatelessWidget {
                   ],
                 ),
                 6.verticalSpace,
-                ListTileTitle(text: title,titleStyle: titleStyle,),
+                ListTileTitle(
+                  text: title,
+                  titleStyle: titleStyle,
+                ),
                 12.verticalSpace,
                 TimeAndComment(
+                  commentOnTap: commentOnTap,
                   hasDot: hasDot,
                   hasSource: hasSource,
                   sourceIcon: sourceIcon,
                   sourceName: sourceName,
                   clockText: timeText,
-                  commentCountText: commentText,
+                  commentCountText: commentCount,
                 ),
               ],
             ),

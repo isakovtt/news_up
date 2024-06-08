@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:newsup_app/cubits/comment/comment_cubit.dart';
 import 'package:newsup_app/cubits/edit_profile/edit_profile_cubit.dart';
 import 'package:newsup_app/cubits/home/home_cubit.dart';
 
@@ -39,6 +40,9 @@ class MyApp extends StatelessWidget {
             ),
             BlocProvider(
               create: (context) => EditProfileCubit(),
+            ),
+            BlocProvider(
+              create: (context) => CommentCubit(),
             )
           ],
           child: MaterialApp(
