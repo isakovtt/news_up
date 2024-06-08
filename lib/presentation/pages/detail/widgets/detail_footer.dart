@@ -10,7 +10,9 @@ import '../../../widgets/global_comment_input.dart';
 import '../../../widgets/global_dot.dart';
 
 class DetailFooter extends StatelessWidget {
-  const DetailFooter({super.key});
+  const DetailFooter({super.key, required this.postId});
+  final String postId;
+
 
   @override
   Widget build(BuildContext context) {
@@ -21,8 +23,8 @@ class DetailFooter extends StatelessWidget {
         children: [
           Row(
             children: [
-              const Expanded(
-                child: GlobalCommentInput(),
+               Expanded(
+                child: GlobalCommentInput(postId: postId,),
               ),
               12.horizontalSpace,
               Stack(

@@ -1,6 +1,7 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:newsup_app/presentation/pages/comments/comments_screen.dart';
 
 import '../../../../utils/constants/app_paddings.dart';
 import '../../../../utils/extensions/time_ago_extension.dart';
@@ -52,22 +53,43 @@ class HomeNewsItemListView extends StatelessWidget {
                     return const SizedBox.shrink();
                   }
                   final channel = snapshot.data!.docs.first.data();
-                  return GlobalBasicListTile(
-                    image: post['newsPhoto'],
-                    categoryName: post['category'],
-                    title: post['newsTitle'],
-                    sourceIcon: channel['logo'],
-                    sourceName: post['channel'] + ' News',
-                    timeText: timestamp.toDate().toTimeAgo(),
-                    commentText: post['commentsCount'].toString(),
-                    hasSource: true,
-                    onTap: () {
-                      Navigate.navigatePush(
-                        context,
-                        DetailNewsScreen(postId: post.id),
-                      );
-                    },
-                  );
+                  return StreamBuilder(
+                      stream: FirebaseFirestore.instance
+                          .collection('comments')
+                          .doc(post.id)
+                          .collection('postComments')
+                          .snapshots(),
+                      builder: (context, snapshot) {
+                        if (!snapshot.hasData) {
+                          return const SizedBox.shrink();
+                        }
+                        final commentCount = snapshot.data!.docs;
+
+                        return GlobalBasicListTile(
+                          image: post['newsPhoto'],
+                          categoryName: post['category'],
+                          title: post['newsTitle'],
+                          sourceIcon: channel['logo'],
+                          sourceName: post['channel'] + ' News',
+                          timeText: timestamp.toDate().toTimeAgo(),
+                          // commentCount: post['commentsCount'].toString(),
+                          commentCount: commentCount.length.toString(),
+                          hasSource: true,
+                          commentOnTap: () {
+                            Navigate.navigatePush(
+                                context,
+                                CommentsScreen(
+                                  postId: post.id,
+                                ));
+                          },
+                          onTap: () {
+                            Navigate.navigatePush(
+                              context,
+                              DetailNewsScreen(postId: post.id),
+                            );
+                          },
+                        );
+                      });
                 },
               );
             },

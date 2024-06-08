@@ -51,7 +51,7 @@ class ExploreListView extends StatelessWidget {
                     sourceName: post['channel'] + ' News',
                     categoryName: post['category'],
                     timeText: timeAgo,
-                    commentText: post['commentsCount'].toString(),
+                    commentCount: post['commentsCount'].toString(),
                     hasSource: true,
                     onTap: () {
                       Navigate.navigatePush(

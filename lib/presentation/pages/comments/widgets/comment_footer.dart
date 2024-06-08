@@ -13,6 +13,7 @@ class CommentFooter extends StatelessWidget {
     return Padding(
       padding: AppPaddings.lr24b12,
       child: GlobalCommentInput(
+        postId: '',
         height: 56,
         hintText: AppTexts.typeYourComment,
         suffixIcon: Padding(
