@@ -55,7 +55,7 @@ class ExploreScreen extends StatelessWidget {
                       ),
                       16.verticalSpace,
                       viewType == PostViewType.list
-                          ? const ExploreListView()
+                          ? const ExploreListView() 
                           : const ExploreGridView(),
                     ],
                   );

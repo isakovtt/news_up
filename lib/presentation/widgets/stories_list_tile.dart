@@ -16,17 +16,18 @@ class StoriesListTile extends StatelessWidget {
       required this.image,
       required this.cotegoryName,
       required this.headlineText,
-      required this.commentText,
+      required this.commentCountText,
       required this.timeText,
-      required this.sourceName});
+      required this.sourceName, this.commentOnTap});
 
   final String sourceIcon;
   final String image;
   final String cotegoryName;
   final String headlineText;
-  final String commentText;
+  final String commentCountText;
   final String timeText;
   final String sourceName;
+  final void Function()? commentOnTap;
 
   @override
   Widget build(BuildContext context) {
@@ -53,12 +54,12 @@ class StoriesListTile extends StatelessWidget {
                   6.verticalSpace,
                   ListTileTitle(text: headlineText),
                   12.verticalSpace,
-                  TimeAndComment(
+                  TimeAndComment(commentOnTap: commentOnTap,
                     hasSource: true,
                     sourceIcon: sourceIcon,
                     sourceName: sourceName,
                     clockText: timeText,
-                    commentCountText: commentText,
+                    commentCountText: commentCountText,
                   ),
                 ],
               ),

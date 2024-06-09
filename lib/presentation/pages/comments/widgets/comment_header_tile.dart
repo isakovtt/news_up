@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/svg.dart';
 
 import '../../../../utils/constants/app_assets.dart';
@@ -7,7 +8,11 @@ import '../../../../utils/constants/app_paddings.dart';
 import '../../../../utils/constants/app_text_styles.dart';
 
 class CommentHeaderTile extends StatelessWidget {
-  const CommentHeaderTile({super.key, required this.profilePicture, required this.username, required this.timeText});
+  const CommentHeaderTile(
+      {super.key,
+      required this.profilePicture,
+      required this.username,
+      required this.timeText});
 
   final String profilePicture;
   final String username;
@@ -24,9 +29,13 @@ class CommentHeaderTile extends StatelessWidget {
         contentPadding: const EdgeInsets.all(0),
         leading: CircleAvatar(
           backgroundColor: AppColors.greyScale_200,
-          child: Image.asset(
-            profilePicture,
-            fit: BoxFit.cover,
+          child: ClipOval(
+            child: Image.network(
+              profilePicture,
+              fit: BoxFit.cover,
+              height: 42.h,
+              width: 42.w,
+            ),
           ),
         ),
         title: Text(

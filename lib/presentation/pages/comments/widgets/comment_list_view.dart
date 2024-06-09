@@ -2,7 +2,7 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
-import '../../../../data/models/comments_model.dart';
+import '../../../../utils/extensions/time_ago_extension.dart';
 import 'comment_description_text.dart';
 import 'comment_header_tile.dart';
 import 'comment_like_and_reply_buttons.dart';
@@ -19,6 +19,7 @@ class CommentListView extends StatelessWidget {
             .collection('comments')
             .doc(postId)
             .collection('postComments')
+            .orderBy('timestamp', descending: true)
             .snapshots(),
         builder: (context, snapshot) {
           if (!snapshot.hasData) {
@@ -32,25 +33,25 @@ class CommentListView extends StatelessWidget {
             scrollDirection: Axis.vertical,
             separatorBuilder: (context, index) => 24.verticalSpace,
             itemBuilder: (context, index) {
-              final comment = comments[index];
               final com = coms[index];
+              final Timestamp timestamp = com['timestamp'] ?? '0s';
               return Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   CommentHeaderTile(
-                    profilePicture: comment.profileImage!,
-                    username: comment.username!,
-                    timeText: comment.timeText!,
+                    profilePicture: com['commenterPhoto'],
+                    username: com['commenterName'],
+                    timeText: timestamp.toDate().toTimeAgo(),
                   ),
                   CommentDescriptionText(
-                    // commentDescriptionText: comment.commentText!,
                     commentDescriptionText: com['commentText'],
                   ),
                   16.verticalSpace,
                   CommentLikeAndReplyButtons(
-                    likesCount: comment.likesCount!,
-                    repliesCount: comment.repliesCount!,
+                    likesCount: '${com['likeCount']} Likes',
+                    repliesCount: '0 Replies',
                   ),
+                  18.verticalSpace,
                 ],
               );
             },

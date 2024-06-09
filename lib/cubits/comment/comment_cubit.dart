@@ -17,20 +17,30 @@ class CommentCubit extends Cubit<CommentState> {
   Future<void> addComment(String postId) async {
     final auth = FirebaseAuth.instance;
     emit(CommentLoading());
-    try {
-      commentsCollection.doc(postId).collection('postComments').add({
-        'postId': postId,
-        'commenterId': auth.currentUser!.uid,
-        'commenterName': auth.currentUser!.displayName,
-        'commenterPhoto': auth.currentUser!.photoURL,
-        'commentText': commentController.text,
-        'likeCount': 0,
-        'timestamp': DateTime.now(),
-      });
-      emit(CommentSuccess());
-    } catch (e) {
-      emit(CommentError());
-      log('Error adding comment: $e');
+    if (auth.currentUser != null) {
+      final userDoc = await FirebaseFirestore.instance
+          .collection('users')
+          .doc(auth.currentUser!.uid)
+          .get();
+      final userName = userDoc.get('name');
+      final userPhoto = userDoc.get('profilePicture');
+
+      try {
+        commentsCollection.doc(postId).collection('postComments').add({
+          'postId': postId,
+          'commenterId': auth.currentUser!.uid,
+          'commenterName': userName,
+          'commenterPhoto': userPhoto,
+          'commentText': commentController.text,
+          'likeCount': 0,
+          'timestamp': DateTime.now(),
+        });
+        print(auth.currentUser!.displayName);
+        emit(CommentSuccess());
+      } catch (e) {
+        emit(CommentError());
+        log('Error adding comment: $e');
+      }
     }
   }
 

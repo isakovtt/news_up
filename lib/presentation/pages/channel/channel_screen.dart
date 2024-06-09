@@ -12,7 +12,8 @@ import 'widgets/channel_app_bar.dart';
 import 'widgets/channel_logo.dart';
 
 class ChannelScreen extends StatelessWidget {
-  const ChannelScreen({super.key});
+  const ChannelScreen({super.key, required this.channelId});
+  final String channelId;
 
   @override
   Widget build(BuildContext context) {
@@ -25,17 +26,19 @@ class ChannelScreen extends StatelessWidget {
           32.verticalSpace,
           StreamBuilder(
               stream:
-                  FirebaseFirestore.instance.collection('posts').snapshots(),
+                  FirebaseFirestore.instance.collection('channel').snapshots(),
               builder: (context, snapshot) {
                 if (!snapshot.hasData) {
                   return const GlobalProgressIndicator();
                 }
+                final channel = snapshot.data!.docs.first;
+
                 return Padding(
                   padding: AppPaddings.h24,
                   child: StreamBuilder(
                       stream: FirebaseFirestore.instance
                           .collection('posts')
-                          // .where('channel', isEqualTo: '')
+                          // .where('channel', isEqualTo: channel['channel'])
                           .snapshots(),
                       builder: (context, snapshot) {
                         if (!snapshot.hasData) {
@@ -72,7 +75,8 @@ class ChannelScreen extends StatelessWidget {
                                   sourceIcon: channel['logo'],
                                   sourceName: post['channel'] + ' News',
                                   timeText: timestamp.toDate().toTimeAgo(),
-                                  commentCount: post['commentsCount'].toString(),
+                                  commentCount:
+                                      post['commentsCount'].toString(),
                                   hasSource: true,
                                   onTap: () {
                                     Navigate.navigatePush(

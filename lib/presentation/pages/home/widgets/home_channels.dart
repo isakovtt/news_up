@@ -43,7 +43,9 @@ class HomeChannels extends StatelessWidget {
                           onTap: () {
                             Navigate.navigatePush(
                               context,
-                              const ChannelScreen(),
+                              ChannelScreen(
+                                channelId: channel.id,
+                              ),
                             );
                           },
                         ),
