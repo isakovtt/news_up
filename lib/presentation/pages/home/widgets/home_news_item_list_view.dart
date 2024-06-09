@@ -1,12 +1,12 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:newsup_app/presentation/pages/comments/comments_screen.dart';
 
 import '../../../../utils/constants/app_paddings.dart';
 import '../../../../utils/extensions/time_ago_extension.dart';
 import '../../../../utils/helpers/navigate.dart';
 import '../../../widgets/custom_basic_list_tile.dart';
+import '../../comments/comments_screen.dart';
 import '../../detail/detail_news_screen.dart';
 
 class HomeNewsItemListView extends StatelessWidget {
@@ -21,10 +21,14 @@ class HomeNewsItemListView extends StatelessWidget {
   Widget build(BuildContext context) {
     return StreamBuilder(
       stream: selectedCategory == 'Trending'
-          ? FirebaseFirestore.instance.collection('posts').snapshots()
+          ? FirebaseFirestore.instance
+              .collection('posts')
+              .orderBy('time', descending: true)
+              .snapshots()
           : FirebaseFirestore.instance
               .collection('posts')
               .where('category', isEqualTo: selectedCategory)
+              .orderBy('time', descending: true)
               .snapshots(),
       builder: (context, snapshot) {
         if (!snapshot.hasData) {
@@ -72,7 +76,6 @@ class HomeNewsItemListView extends StatelessWidget {
                           sourceIcon: channel['logo'],
                           sourceName: post['channel'] + ' News',
                           timeText: timestamp.toDate().toTimeAgo(),
-                          // commentCount: post['commentsCount'].toString(),
                           commentCount: commentCount.length.toString(),
                           hasSource: true,
                           commentOnTap: () {

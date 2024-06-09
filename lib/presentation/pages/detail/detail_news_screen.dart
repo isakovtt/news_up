@@ -39,7 +39,7 @@ class _DetailNewsScreenState extends State<DetailNewsScreen> {
           return AnimatedContainer(
             duration: const Duration(milliseconds: 0),
             padding: EdgeInsets.only(bottom: keyboardHeight),
-            child:  DetailFooter(postId: widget.postId ),
+            child: DetailFooter(postId: widget.postId),
           );
         },
       ),
