@@ -46,7 +46,7 @@ class HomeNewsItemListView extends StatelessWidget {
             separatorBuilder: (context, index) => 16.verticalSpace,
             itemBuilder: (context, index) {
               final post = posts[index];
-              final Timestamp timestamp = post['time'];
+              final Timestamp timestamp = post['time'] ?? '0';
               return StreamBuilder(
                 stream: FirebaseFirestore.instance
                     .collection('channels')

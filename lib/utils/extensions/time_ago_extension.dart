@@ -14,6 +14,9 @@ extension TimeAgoExtension on DateTime {
     timeAgo = timeAgo.replaceAll('anhour', '1h');
     timeAgo = timeAgo.replaceAll('aday', '1d');
     timeAgo = timeAgo.replaceAll('nanoseconds', 's');
+    timeAgo = timeAgo.replaceAll('microsecondsSinceEpoch', 's');
+    // timeAgo = timeAgo.substring(0);
+   
 
     return timeAgo;
   }

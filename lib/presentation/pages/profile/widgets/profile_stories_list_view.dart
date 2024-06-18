@@ -33,7 +33,7 @@ class ProfileStoriesListView extends StatelessWidget {
           separatorBuilder: (context, index) => 16.verticalSpace,
           itemBuilder: (context, index) {
             final post = posts[index];
-            final Timestamp timestamp = post['time'] ?? '0s';
+            final Timestamp timestamp = post['time'] ?? '0';
 
             return GestureDetector(
               child: StreamBuilder(

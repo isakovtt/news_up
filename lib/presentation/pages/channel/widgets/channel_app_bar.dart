@@ -7,13 +7,14 @@ import 'package:newsup_app/utils/constants/app_text_styles.dart';
 import 'package:newsup_app/utils/helpers/navigate.dart';
 
 class ChannelAppBar extends StatelessWidget implements PreferredSizeWidget {
-  const ChannelAppBar({super.key});
+  const ChannelAppBar({super.key, required this.channelName});
+  final String channelName;
 
   @override
   Widget build(BuildContext context) {
     return AppBar(
       title: Text(
-        'Channel',
+        channelName,
         style: AppTextStyles.greyScale900s16W700,
       ),
       centerTitle: true,
