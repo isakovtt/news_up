@@ -25,7 +25,13 @@ class WriteNewsScreen extends StatelessWidget {
           ],
         ),
       ),
-      bottomNavigationBar: const WriteNewsFooter(),
+      bottomNavigationBar: Builder(builder: (context) {
+        final double keyboardHeight = MediaQuery.of(context).viewInsets.bottom;
+        return AnimatedContainer(
+            duration: const Duration(milliseconds: 0),
+            padding: EdgeInsets.only(bottom: keyboardHeight),
+            child: const WriteNewsFooter());
+      }),
     );
   }
 }
