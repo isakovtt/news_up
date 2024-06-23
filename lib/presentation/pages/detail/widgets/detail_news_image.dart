@@ -35,7 +35,10 @@ class _DetailNewsImageState extends State<DetailNewsImage> {
         stream: FirebaseFirestore.instance.collection('posts').snapshots(),
         builder: (context, snapshot) {
           if (!snapshot.hasData || _isLoading) {
-            return const GlobalShimmer();
+            return GlobalShimmer(
+              width: 327.w,
+              height: 208.h,
+            );
           }
           final postDatas = snapshot.data!;
           final post = postDatas.docs.firstWhere(
