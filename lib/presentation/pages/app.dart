@@ -43,7 +43,7 @@ class MyApp extends StatelessWidget {
             ),
             BlocProvider(
               create: (context) => CommentCubit(),
-            )
+            ),
           ],
           child: MaterialApp(
             debugShowCheckedModeBanner: false,

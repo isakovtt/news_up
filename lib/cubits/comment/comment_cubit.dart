@@ -4,6 +4,7 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:newsup_app/utils/constants/app_assets.dart';
 
 part 'comment_state.dart';
 
@@ -30,7 +31,7 @@ class CommentCubit extends Cubit<CommentState> {
           'postId': postId,
           'commenterId': auth.currentUser!.uid,
           'commenterName': userName,
-          'commenterPhoto': userPhoto,
+          'commenterPhoto': userPhoto ?? AppAssets.netwokProfileAvatar,
           'commentText': commentController.text,
           'likeCount': 0,
           'timestamp': DateTime.now(),

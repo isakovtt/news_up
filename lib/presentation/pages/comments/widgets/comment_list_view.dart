@@ -1,6 +1,7 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:newsup_app/utils/constants/app_assets.dart';
 
 import '../../../../utils/extensions/time_ago_extension.dart';
 import 'comment_description_text.dart';
@@ -39,7 +40,8 @@ class CommentListView extends StatelessWidget {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   CommentHeaderTile(
-                    profilePicture: com['commenterPhoto'],
+                    profilePicture: com['commenterPhoto'] ??
+                        const NetworkImage(AppAssets.netwokProfileAvatar),
                     username: com['commenterName'],
                     timeText: timestamp.toDate().toTimeAgo(),
                   ),
