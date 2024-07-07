@@ -3,6 +3,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:newsup_app/presentation/pages/channel/channel_screen.dart';
 import 'package:newsup_app/utils/helpers/navigate.dart';
+import 'package:rxdart/rxdart.dart';
+import 'package:shimmer/shimmer.dart';
 
 import '../../../../utils/constants/app_paddings.dart';
 import '../../../../utils/constants/app_text_styles.dart';
@@ -13,10 +15,13 @@ class HomeChannels extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return StreamBuilder(
-      stream: FirebaseFirestore.instance.collection('channels').snapshots(),
+      stream: FirebaseFirestore.instance
+          .collection('channels')
+          .snapshots()
+          .delay(const Duration(seconds: 3)),
       builder: (context, snapshot) {
         if (!snapshot.hasData) {
-          return const SizedBox.shrink();
+          return _buildShimmer();
         }
         final channels = snapshot.data!.docs;
         return SizedBox(
@@ -62,6 +67,36 @@ class HomeChannels extends StatelessWidget {
           ),
         );
       },
+    );
+  }
+
+  Widget _buildShimmer() {
+    return SizedBox(
+      height: 73.h,
+      child: Shimmer.fromColors(
+        period: const Duration(seconds: 2),
+        baseColor: Colors.grey[300]!,
+        highlightColor: Colors.grey[100]!,
+        child: ListView.builder(
+          padding: AppPaddings.h24,
+          scrollDirection: Axis.horizontal,
+          itemCount: 5,
+          itemBuilder: (_, __) => Padding(
+            padding: EdgeInsets.only(right: 16.w),
+            child: Column(
+              children: [
+                const CircleAvatar(radius: 28),
+                SizedBox(height: 6.h),
+                Container(
+                  height: 12.h,
+                  width: 54.w,
+                  color: Colors.white,
+                ),
+              ],
+            ),
+          ),
+        ),
+      ),
     );
   }
 }
