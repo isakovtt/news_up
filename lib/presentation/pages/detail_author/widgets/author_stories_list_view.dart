@@ -26,7 +26,7 @@ class AuthorStoriesListView extends StatelessWidget {
           cotegoryName: stories.categoryText,
           sourceIcon: stories.sourceIcon,
           sourceName: stories.sourceName,
-          commentText: stories.commentText,
+          commentCountText: stories.commentText,
           headlineText: stories.headlineText,
           timeText: stories.timeText,
         );

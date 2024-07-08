@@ -15,7 +15,7 @@ class AuthorAccountInfo extends StatelessWidget {
         hasUsername: true,
         name: 'Rayna Carder',
         username: '@rayna_carder',
-        bio:
+        about:
             'Design, Productivity, and Creation. Learn everything you need to improve your design skills.',
       ),
     );

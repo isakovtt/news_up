@@ -35,15 +35,18 @@ class TopAuthorListView extends StatelessWidget {
             separatorBuilder: (context, index) => 12.verticalSpace,
             itemBuilder: (context, index) {
               // final author = topAuthors[index];
-              final document = data!.docs[index].data();
+              final author = data!.docs[index].data();
               return AuthorTile(
                 hasVerifiedIcon: true,
                 // profileIcon: author.profileIcon,
-                profileIcon: document['profilePicture'],
+                profileIcon: '',
                 // name: author.name,
-                name: document['name'],
+                name: author['name'],
                 // username: author.username,
-                username: document['username'],
+                username: '@${author['name']
+                        .toString()
+                        .replaceAll(' ', '_')
+                        .toLowerCase()}',
               );
             },
           );

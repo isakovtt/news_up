@@ -37,7 +37,7 @@ class NewsItem extends StatelessWidget {
       onTap: onTap,
       child: SizedBox(
         child: Column(
-          crossAxisAlignment: CrossAxisAlignment.center,
+          crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             Container(
               height: 80.h,
@@ -64,12 +64,15 @@ class NewsItem extends StatelessWidget {
               ],
             ),
             6.verticalSpace,
-            Text(
-              headlineText,
-              style:
-                  AppTextStyles.greyScale900s14W500.copyWith(fontSize: 13.sp),
-              overflow: TextOverflow.ellipsis,
-              maxLines: 2,
+            SizedBox(
+              height: 34.h,
+              child: Text(
+                headlineText,
+                style:
+                    AppTextStyles.greyScale900s14W500.copyWith(fontSize: 13.sp),
+                overflow: TextOverflow.ellipsis,
+                maxLines: 2,
+              ),
             ),
             12.verticalSpace,
             NewsCotegoryAndSharedTime(

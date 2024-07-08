@@ -1,6 +1,7 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:newsup_app/utils/extensions/time_ago_extension.dart';
 
 import '../../../../utils/constants/app_paddings.dart';
 import '../../../../utils/constants/app_text_styles.dart';
@@ -25,8 +26,10 @@ class DetailNewsHeadline extends StatelessWidget {
               postDatas.docs.firstWhere((doc) => doc['postId'] == postId);
           final postTitle = post['newsTitle'];
           final postCategory = post['category'];
+          final Timestamp timestamp = post['time'];
 
           return Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               Padding(
                 padding: AppPaddings.lr24t16,
@@ -50,7 +53,7 @@ class DetailNewsHeadline extends StatelessWidget {
                     const GlobalDot.max(),
                     8.horizontalSpace,
                     Text(
-                    '10m ago',
+                      timestamp.toDate().toTimeAgo(),
                       style: AppTextStyles.greyScale400s14W400,
                     ),
                   ],

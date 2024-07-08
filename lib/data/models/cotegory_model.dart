@@ -9,8 +9,8 @@ class CotegoryModel {
 List<CotegoryModel> cotegory = [
   CotegoryModel(catogory: AppTexts.tranding),
   CotegoryModel(catogory: AppTexts.business),
+  CotegoryModel(catogory: AppTexts.technology),
   CotegoryModel(catogory: AppTexts.health),
-  CotegoryModel(catogory: AppTexts.politics),
-  CotegoryModel(catogory: AppTexts.international),
   CotegoryModel(catogory: AppTexts.finance),
+  CotegoryModel(catogory: AppTexts.design),
 ];

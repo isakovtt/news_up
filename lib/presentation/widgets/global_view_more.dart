@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:newsup_app/presentation/pages/view_more/view_more_screen.dart';
+import 'package:newsup_app/utils/helpers/navigate.dart';
 
 import '../../utils/constants/app_paddings.dart';
 import '../../utils/constants/app_text_styles.dart';
@@ -22,7 +24,12 @@ class GlobalViewMore extends StatelessWidget {
           ),
           const Spacer(),
           GestureDetector(
-            onTap: () {},
+            onTap: () {
+              Navigate.navigateReplacePush(
+                context,
+                const ViewMoreScreen(),
+              );
+            },
             child: Text(
               AppTexts.viewMore,
               style: AppTextStyles.primaryBaseS14W500,

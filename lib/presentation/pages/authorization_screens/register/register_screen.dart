@@ -27,6 +27,7 @@ class RegisterScreen extends StatelessWidget {
     return Scaffold(
         appBar: AppBar(
           centerTitle: true,
+          automaticallyImplyLeading: false,
           title: Text(
             AppTexts.getStarted,
             style: AppTextStyles.greyScale900s16W700,

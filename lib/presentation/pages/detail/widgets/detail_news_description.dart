@@ -12,26 +12,28 @@ class DetailNewsDescription extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return StreamBuilder(
-        stream: FirebaseFirestore.instance.collection('posts').snapshots(),
-        builder: (context, snapshot) {
-          if (!snapshot.hasData) {
-            return const SizedBox.shrink();
-          }
-          final postDatas = snapshot.data!;
-          final post =
-              postDatas.docs.firstWhere((doc) => doc['postId'] == postId);
-          final postSubtitle = post['newsSubtitle'];
-          return Column(
-            children: [
-              Padding(
-                padding: AppPaddings.lr24t16,
-                child: Text(
-                  postSubtitle,
-                  style: AppTextStyles.greyScale500s14W500,
-                ),
+      stream: FirebaseFirestore.instance.collection('posts').snapshots(),
+      builder: (context, snapshot) {
+        if (!snapshot.hasData) {
+          return const SizedBox.shrink();
+        }
+        final postDatas = snapshot.data!;
+        final post =
+            postDatas.docs.firstWhere((doc) => doc['postId'] == postId);
+        final postSubtitle = post['newsSubtitle'];
+        return Column(
+          crossAxisAlignment: CrossAxisAlignment.stretch,
+          children: [
+            Padding(
+              padding: AppPaddings.lr24t16,
+              child: Text(
+                postSubtitle,
+                style: AppTextStyles.greyScale500s14W500,
               ),
-            ],
-          );
-        });
+            ),
+          ],
+        );
+      },
+    );
   }
 }

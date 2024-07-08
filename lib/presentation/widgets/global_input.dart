@@ -22,20 +22,27 @@ class GlobalInput extends StatelessWidget {
     this.helperText,
     this.keyboardType,
     this.inputFormatters,
+    this.initialValue,
+    this.enabled,
+    this.hintStyle,
   });
 
   final String? hintText;
   final String? helperText;
   final TextEditingController? controller;
   final Widget? prefixIcon;
+  final bool? enabled;
   final Widget? suffixIcon;
   final Color? inputBorderColor;
   final Color focusedColor = AppColors.primaryBase;
   final bool? obscureText;
+  final String? initialValue;
   final Widget? prefix;
   final String? prefixText;
   final String? suffixText;
   final double? borderRadius;
+  final TextStyle? hintStyle;
+
   final TextInputType? keyboardType;
   final List<TextInputFormatter>? inputFormatters;
   final String? Function(String?)? validator;
@@ -45,7 +52,9 @@ class GlobalInput extends StatelessWidget {
   Widget build(BuildContext context) {
     return TextFormField(
       onSaved: onSaved,
+      enabled: enabled,
       validator: validator,
+      initialValue: initialValue,
       keyboardType: keyboardType,
       inputFormatters: inputFormatters,
       obscureText: obscureText ?? false,
@@ -64,7 +73,7 @@ class GlobalInput extends StatelessWidget {
           ),
           borderRadius: BorderRadius.circular(borderRadius ?? 12),
         ),
-        hintStyle: AppTextStyles.greyScale400s14W400,
+        hintStyle: hintStyle ?? AppTextStyles.greyScale400s14W400,
         fillColor: AppColors.greyScale_50,
         filled: true,
         helperText: helperText,

@@ -5,7 +5,7 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
-import 'global_shimmer.dart';
+import '../../../widgets/global_shimmer.dart';
 
 class DetailNewsImage extends StatefulWidget {
   const DetailNewsImage({super.key, required this.postId});
@@ -35,7 +35,10 @@ class _DetailNewsImageState extends State<DetailNewsImage> {
         stream: FirebaseFirestore.instance.collection('posts').snapshots(),
         builder: (context, snapshot) {
           if (!snapshot.hasData || _isLoading) {
-            return const GlobalShimmer();
+            return GlobalShimmer(
+              width: 327.w,
+              height: 208.h,
+            );
           }
           final postDatas = snapshot.data!;
           final post = postDatas.docs.firstWhere(

@@ -23,6 +23,7 @@ class RecomendedAuthorListView extends StatelessWidget {
           profileIcon: recomendAuthor.profileIcon,
           name: recomendAuthor.name,
           username: recomendAuthor.username,
+          hasAvatar: true,
         );
       },
     );
