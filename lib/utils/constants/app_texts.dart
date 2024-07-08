@@ -210,4 +210,11 @@ class AppTexts {
   static const String emailsfromPublications = ' Emails from Publications';
   static const String emailsfromWriters = ' Emails from Writers';
   static const String recomendedReading = 'Recomended Reading';
+
+  // Customize Interest screen
+
+  static const String customizeInterest = 'Customize Interest';
+  static const String people = 'People';
+  static const String sports = 'Sports';
+  static const String fashion = 'Fashion';
 }
