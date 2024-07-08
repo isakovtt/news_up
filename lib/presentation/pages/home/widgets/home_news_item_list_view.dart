@@ -1,6 +1,8 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:newsup_app/presentation/pages/home/widgets/home_shimmer.dart';
+import 'package:rxdart/rxdart.dart';
 
 import '../../../../utils/constants/app_paddings.dart';
 import '../../../../utils/extensions/time_ago_extension.dart';
@@ -24,15 +26,15 @@ class HomeNewsItemListView extends StatelessWidget {
           ? FirebaseFirestore.instance
               .collection('posts')
               .orderBy('time', descending: true)
-              .snapshots()
+              .snapshots().delay(const Duration(seconds: 5))
           : FirebaseFirestore.instance
               .collection('posts')
               .where('category', isEqualTo: selectedCategory)
               .orderBy('time', descending: true)
-              .snapshots(),
+              .snapshots().delay(const Duration(seconds: 5)),
       builder: (context, snapshot) {
         if (!snapshot.hasData) {
-          return const SizedBox.shrink();
+          return const HomeShimmer();
         }
         final posts = snapshot.data!.docs;
         return Padding(
