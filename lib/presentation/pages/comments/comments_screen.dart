@@ -19,13 +19,16 @@ class _CommentsScreenState extends State<CommentsScreen> {
     return Scaffold(
       appBar: const CommentAppBar(),
       body: CommentListView(postId: widget.postId),
-      bottomNavigationBar: Builder(builder: (context) {
-        final double keyboardHeight = MediaQuery.of(context).viewInsets.bottom;
-        return AnimatedContainer(
-            duration: const Duration(milliseconds: 0),
-            padding: EdgeInsets.only(bottom: keyboardHeight),
-            child: CommentFooter(postId: widget.postId));
-      }),
+      bottomNavigationBar: Builder(
+        builder: (context) {
+          final double keyboardHeight =
+              MediaQuery.of(context).viewInsets.bottom;
+          return AnimatedContainer(
+              duration: const Duration(milliseconds: 0),
+              padding: EdgeInsets.only(bottom: keyboardHeight),
+              child: CommentFooter(postId: widget.postId));
+        },
+      ),
     );
   }
 }
