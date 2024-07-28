@@ -26,15 +26,15 @@ class HomeNewsItemListView extends StatelessWidget {
           ? FirebaseFirestore.instance
               .collection('posts')
               .orderBy('time', descending: true)
-              .snapshots().delay(const Duration(seconds: 5))
+              .snapshots()
           : FirebaseFirestore.instance
               .collection('posts')
               .where('category', isEqualTo: selectedCategory)
               .orderBy('time', descending: true)
-              .snapshots().delay(const Duration(seconds: 5)),
+              .snapshots(),
       builder: (context, snapshot) {
         if (!snapshot.hasData) {
-          return const HomeShimmer();
+          return const SizedBox.shrink();
         }
         final posts = snapshot.data!.docs;
         return Padding(
@@ -53,48 +53,50 @@ class HomeNewsItemListView extends StatelessWidget {
                 stream: FirebaseFirestore.instance
                     .collection('channels')
                     .where('channel', isEqualTo: post['channel'])
-                    .snapshots(),
+                    .snapshots()
+                    .delay(const Duration(seconds: 2)),
                 builder: (context, snapshot) {
                   if (!snapshot.hasData) {
-                    return const SizedBox.shrink();
+                    return const HomeShimmer();
                   }
                   final channel = snapshot.data!.docs.first.data();
                   return StreamBuilder(
-                      stream: FirebaseFirestore.instance
-                          .collection('comments')
-                          .doc(post.id)
-                          .collection('postComments')
-                          .snapshots(),
-                      builder: (context, snapshot) {
-                        if (!snapshot.hasData) {
-                          return const SizedBox.shrink();
-                        }
-                        final commentCount = snapshot.data!.docs;
+                    stream: FirebaseFirestore.instance
+                        .collection('comments')
+                        .doc(post.id)
+                        .collection('postComments')
+                        .snapshots(),
+                    builder: (context, snapshot) {
+                      if (!snapshot.hasData) {
+                        return const SizedBox.shrink();
+                      }
+                      final commentCount = snapshot.data!.docs;
 
-                        return GlobalBasicListTile(
-                          image: post['newsPhoto'],
-                          categoryName: post['category'],
-                          title: post['newsTitle'],
-                          sourceIcon: channel['logo'],
-                          sourceName: post['channel'] + ' News',
-                          timeText: timestamp.toDate().toTimeAgo(),
-                          commentCount: commentCount.length.toString(),
-                          hasSource: true,
-                          commentOnTap: () {
-                            Navigate.navigatePush(
-                                context,
-                                CommentsScreen(
-                                  postId: post.id,
-                                ));
-                          },
-                          onTap: () {
-                            Navigate.navigatePush(
+                      return GlobalBasicListTile(
+                        image: post['newsPhoto'],
+                        categoryName: post['category'],
+                        title: post['newsTitle'],
+                        sourceIcon: channel['logo'],
+                        sourceName: post['channel'] + ' News',
+                        timeText: timestamp.toDate().toTimeAgo(),
+                        commentCount: commentCount.length.toString(),
+                        hasSource: true,
+                        commentOnTap: () {
+                          Navigate.navigatePush(
                               context,
-                              DetailNewsScreen(postId: post.id),
-                            );
-                          },
-                        );
-                      });
+                              CommentsScreen(
+                                postId: post.id,
+                              ));
+                        },
+                        onTap: () {
+                          Navigate.navigatePush(
+                            context,
+                            DetailNewsScreen(postId: post.id),
+                          );
+                        },
+                      );
+                    },
+                  );
                 },
               );
             },

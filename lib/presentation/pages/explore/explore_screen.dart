@@ -27,7 +27,7 @@ class ExploreScreen extends StatelessWidget {
         child: Column(
           children: [
             16.verticalSpace,
-            const ExploreChips(),
+             const ExploreChips(),
             24.verticalSpace,
             const GlobalViewMore(text: AppTexts.breakingNews),
             24.verticalSpace,

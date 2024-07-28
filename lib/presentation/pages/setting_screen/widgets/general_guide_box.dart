@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:newsup_app/presentation/pages/language_change/language_changing_screen.dart';
+import 'package:newsup_app/presentation/pages/statistic/statistic_screen.dart';
+import 'package:newsup_app/utils/helpers/navigate.dart';
 import '../../../../utils/constants/app_assets.dart';
 import '../../../../utils/constants/app_text_styles.dart';
 import '../../../../utils/constants/app_texts.dart';
@@ -28,9 +31,17 @@ class GeneralGuideBox extends StatelessWidget {
         12.verticalSpace,
         const GuideBox(text: AppTexts.myAccount),
         8.verticalSpace,
-        const GuideBox(text: AppTexts.statistic),
+        GestureDetector(
+            onTap: () {
+              Navigate.navigatePush(context, const StatisticScreen());
+            },
+            child: const GuideBox(text: AppTexts.statistic)),
         8.verticalSpace,
-        const GuideBox(text: AppTexts.language),
+        GestureDetector(
+            onTap: () {
+              Navigate.navigatePush(context, const LanguageChangingScreen());
+
+            }, child: const GuideBox(text: AppTexts.language)),
       ],
     );
   }

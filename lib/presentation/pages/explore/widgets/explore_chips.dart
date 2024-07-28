@@ -10,6 +10,7 @@ class ExploreChips extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return ChipList(
+      
       listOfChipNames: ExploreChipListModel.dogeNames,
       spacing: 10,
       runSpacing: 2,
