@@ -1,13 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
+import '../../../utils/constants/app_box_decorations.dart';
 import '../../../utils/constants/app_paddings.dart';
 import '../../widgets/global_divider.dart';
 import '../../widgets/horizontal_dots.dart';
 import '../../widgets/list_tile_cotegory_name.dart';
-import '../../widgets/list_tile_image.dart';
-import '../../widgets/time_and_comment.dart';
 import '../../widgets/list_tile_title.dart';
+import '../../widgets/time_and_comment.dart';
 
 class ListDetailItem extends StatelessWidget {
   const ListDetailItem(
@@ -34,7 +34,16 @@ class ListDetailItem extends StatelessWidget {
           minLeadingWidth: 0,
           title: Row(
             children: [
-              ListTileImage(image: image),
+              Container(
+                clipBehavior: Clip.antiAlias,
+                decoration: AppBoxDecorations.circular18,
+                child: Image.asset(
+                  image,
+                  width: 80.r,
+                  height: 80.r,
+                  fit: BoxFit.cover,
+                ),
+              ),
               16.horizontalSpace,
               Column(
                 crossAxisAlignment: CrossAxisAlignment.start,

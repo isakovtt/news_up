@@ -2,12 +2,13 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:shimmer/shimmer.dart';
 
-class HomeShimmer extends StatelessWidget {
-  const HomeShimmer({super.key});
+class ExploreShimmer extends StatelessWidget {
 
-  @override
-  Widget build(BuildContext context) {
-    return ClipRRect(borderRadius: BorderRadius.circular(18),
+  const ExploreShimmer({ super.key });
+
+   @override
+   Widget build(BuildContext context) {
+       return ClipRRect(borderRadius: BorderRadius.circular(18),
       child: SizedBox(
         height: 85.h,
         width: 335,

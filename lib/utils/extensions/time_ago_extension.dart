@@ -3,6 +3,9 @@ import 'package:get_time_ago/get_time_ago.dart';
 extension TimeAgoExtension on DateTime {
   String toTimeAgo({String? timestamp}) {
     String timeAgo = GetTimeAgo.parse(this, locale: 'az').replaceFirst(' ', '');
+    if (timeAgo.isEmpty) {
+      return '0s';
+    }
 
     timeAgo = timeAgo.replaceAll('hours', 'h');
 
@@ -16,7 +19,6 @@ extension TimeAgoExtension on DateTime {
     timeAgo = timeAgo.replaceAll('nanoseconds', 's');
     timeAgo = timeAgo.replaceAll('microsecondsSinceEpoch', 's');
     // timeAgo = timeAgo.substring(0);
-   
 
     return timeAgo;
   }

@@ -2,6 +2,8 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:newsup_app/presentation/pages/comments/comments_screen.dart';
+import 'package:newsup_app/presentation/pages/home/widgets/home_shimmer.dart';
+import 'package:rxdart/rxdart.dart';
 
 import '../../../../utils/constants/app_paddings.dart';
 import '../../../../utils/extensions/time_ago_extension.dart';
@@ -55,10 +57,10 @@ class ExploreListView extends StatelessWidget {
                         .collection('comments')
                         .doc(post.id)
                         .collection('postComments')
-                        .snapshots(),
+                        .snapshots().delay(const Duration(seconds: 2)),
                     builder: (context, snapshot) {
                       if (!snapshot.hasData) {
-                        return const SizedBox.shrink();
+                        return const HomeShimmer();
                       }
                       final commentCount = snapshot.data!.docs;
                       return GlobalBasicListTile(

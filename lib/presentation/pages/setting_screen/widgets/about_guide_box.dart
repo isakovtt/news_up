@@ -63,7 +63,7 @@ class AboutGuideBox extends StatelessWidget {
                   (route) => false,
                 );
               },
-              color: AppColors.primary_300,
+              color: AppColors.greyScale_800,
               height: 46,
               width: 80,
               text: 'Log out',

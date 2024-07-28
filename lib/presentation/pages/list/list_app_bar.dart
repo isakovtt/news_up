@@ -11,15 +11,9 @@ class ListAppBar extends StatelessWidget implements PreferredSizeWidget {
   @override
   Widget build(BuildContext context) {
     return AppBar(
+      automaticallyImplyLeading: false,
       centerTitle: true,
       leadingWidth: 76.w,
-      leading: Center(
-        child: SvgPicture.asset(
-          AppAssets.arrowNarrowLeft,
-          height: 32.h,
-          width: 32.w,
-        ),
-      ),
       title: Text(
         'Your List',
         style: AppTextStyles.greyScale900s16W700,

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:newsup_app/utils/constants/app_colors.dart';
 
 import 'statistic_chart.dart';
 import 'statistic_daily_visits_title.dart';
@@ -48,7 +49,13 @@ class StatisticTabBarView extends StatelessWidget {
                   )
                 ],
               ),
-              const Text('data')
+              const Center(
+                  child: Text(
+                'No data',
+                style: TextStyle(
+                  color: AppColors.greyScale_500,
+                ),
+              ))
             ],
           ),
         ),

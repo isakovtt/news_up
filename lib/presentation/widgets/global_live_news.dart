@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:flutter_svg/svg.dart';
+import 'package:newsup_app/utils/constants/app_assets.dart';
+import 'package:shimmer/shimmer.dart';
 import 'package:youtube_player_flutter/youtube_player_flutter.dart';
 
 import '../../utils/constants/app_box_decorations.dart';
@@ -14,12 +17,25 @@ class GlobalLiveNews extends StatefulWidget {
 
 class _GlobalLiveNewsState extends State<GlobalLiveNews> {
   final YoutubePlayerController _controller = YoutubePlayerController(
-    initialVideoId: 'gCNeDWCI0vo',
+    initialVideoId: 'HgS6tbGa4wA',
     flags: const YoutubePlayerFlags(
       isLive: true,
       autoPlay: false,
     ),
   );
+
+  bool _isLoading = true;
+
+  @override
+  void initState() {
+    super.initState();
+    // Simüle edilen yükleme süresi için Timer kullanabiliriz
+    Future.delayed(const Duration(seconds: 2), () {
+      setState(() {
+        _isLoading = false;
+      });
+    });
+  }
 
   @override
   void dispose() {
@@ -44,10 +60,18 @@ class _GlobalLiveNewsState extends State<GlobalLiveNews> {
             children: [
               ClipRRect(
                 borderRadius: BorderRadius.circular(16),
-                child: YoutubePlayer(
-                  controller: _controller,
-                  liveUIColor: Colors.amber,
-                ),
+                child: _isLoading
+                    ? Shimmer.fromColors(
+                        baseColor: Colors.grey[300]!,
+                        highlightColor: Colors.grey[100]!,
+                        child: Container(
+                          color: Colors.white,
+                        ),
+                      )
+                    : YoutubePlayer(
+                        controller: _controller,
+                        liveUIColor: Colors.amber,
+                      ),
               ),
               // Positioned(
               //   left: 24,
@@ -63,15 +87,15 @@ class _GlobalLiveNewsState extends State<GlobalLiveNews> {
               //     ),
               //   ),
               // ),
-              // Positioned(
-              //   left: 16,
-              //   top: 16,
-              //   width: 71.w,
-              //   height: 26.h,
-              //   child: SvgPicture.asset(
-              //     AppAssets.liveVector,
-              //   ),
-              // ),
+              Positioned(
+                right: 16,
+                top: 16,
+                width: 71.w,
+                height: 26.h,
+                child: SvgPicture.asset(
+                  AppAssets.liveVector,
+                ),
+              ),
 
               // Positioned(
               //   bottom: 12,

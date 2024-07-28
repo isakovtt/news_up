@@ -4,7 +4,6 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import '../../../../utils/constants/app_assets.dart';
 import '../../../../utils/constants/app_paddings.dart';
 import '../../../../utils/constants/app_text_styles.dart';
-import '../../../widgets/custom_circle_avatar.dart';
 import '../../../widgets/global_divider.dart';
 import 'notification_accept_button.dart';
 import 'notification_decline_button.dart';
@@ -18,9 +17,14 @@ class NotificationFollowedListTile extends StatelessWidget {
       children: [
         ListTile(
           isThreeLine: true,
-          leading: const CustomCircleAvatar(
-            image: AppAssets.authorImage_4,
-          ),
+          leading:  ClipOval(
+      child: Image.asset(
+        AppAssets.authorImage_4,
+        fit: BoxFit.cover,
+        height: 48.h,
+        width: 48.w,
+      ),
+    ),
           title: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [

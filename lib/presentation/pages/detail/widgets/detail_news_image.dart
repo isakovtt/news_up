@@ -32,32 +32,34 @@ class _DetailNewsImageState extends State<DetailNewsImage> {
   @override
   Widget build(BuildContext context) {
     return StreamBuilder(
-        stream: FirebaseFirestore.instance.collection('posts').snapshots(),
-        builder: (context, snapshot) {
-          if (!snapshot.hasData || _isLoading) {
-            return GlobalShimmer(
-              width: 327.w,
-              height: 208.h,
-            );
-          }
-          final postDatas = snapshot.data!;
-          final post = postDatas.docs.firstWhere(
-            (doc) => doc['postId'] == widget.postId,
+      stream: FirebaseFirestore.instance.collection('posts').snapshots(),
+      builder: (context, snapshot) {
+        if (!snapshot.hasData || _isLoading) {
+          return GlobalShimmer(
+            width: 327.w,
+            height: 208.h,
           );
-          final postImage = post['newsPhoto'];
-          return Container(
-              width: 327.w,
-              height: 208.h,
-              clipBehavior: Clip.antiAlias,
-              decoration: const BoxDecoration(
-                borderRadius: BorderRadius.all(
-                  Radius.circular(18),
-                ),
-              ),
-              child: Image.file(
-                File(postImage),
-                fit: BoxFit.cover,
-              ));
-        });
+        }
+        final postDatas = snapshot.data!;
+        final post = postDatas.docs.firstWhere(
+          (doc) => doc['postId'] == widget.postId,
+        );
+        final postImage = post['newsPhoto'];
+        return Container(
+          width: 327.w,
+          height: 208.h,
+          clipBehavior: Clip.antiAlias,
+          decoration: const BoxDecoration(
+            borderRadius: BorderRadius.all(
+              Radius.circular(18),
+            ),
+          ),
+          child: Image.file(
+            File(postImage),
+            fit: BoxFit.cover,
+          ),
+        );
+      },
+    );
   }
 }

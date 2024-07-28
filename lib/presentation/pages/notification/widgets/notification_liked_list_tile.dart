@@ -5,9 +5,7 @@ import '../../../../utils/constants/app_assets.dart';
 import '../../../../utils/constants/app_box_decorations.dart';
 import '../../../../utils/constants/app_paddings.dart';
 import '../../../../utils/constants/app_text_styles.dart';
-import '../../../widgets/custom_circle_avatar.dart';
 import '../../../widgets/global_divider.dart';
-import '../../../widgets/list_tile_image.dart';
 
 class NotificationLikedListTile extends StatelessWidget {
   const NotificationLikedListTile({super.key});
@@ -18,14 +16,19 @@ class NotificationLikedListTile extends StatelessWidget {
       children: [
         ListTile(
           isThreeLine: true,
-          leading: const CustomCircleAvatar(
-            image: AppAssets.authorImage_4,
-          ),
+          leading: ClipOval(
+      child: Image.asset(
+        AppAssets.authorImage_2,
+        fit: BoxFit.cover,
+        height: 48.h,
+        width: 48.w,
+      ),
+    ),
           title: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               Text(
-                '1 hour ago',
+                '2 hour ago',
                 style: AppTextStyles.greyScale400s12W500,
               ),
               4.verticalSpace,
@@ -51,12 +54,16 @@ class NotificationLikedListTile extends StatelessWidget {
             child: Row(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                ListTileImage(
-                  width: 40.w,
-                  height: 40.h,
-                  decoration: AppBoxDecorations.circular12,
-                  image: AppAssets.girdViewImage_1,
-                ),
+                Container(
+      clipBehavior: Clip.antiAlias,
+      decoration: AppBoxDecorations.circular12,
+      child: Image.asset(
+        AppAssets.draftImage_1,
+        width:  40.r,
+        height:  40.r,
+        fit: BoxFit.cover,
+      ),
+    ),
                 12.horizontalSpace,
                 SizedBox(
                   width: 220.w,

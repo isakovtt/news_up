@@ -1,16 +1,38 @@
 import 'package:flutter/material.dart';
-import 'package:newsup_app/presentation/widgets/global_view_more.dart';
-import 'package:newsup_app/utils/constants/app_paddings.dart';
-import 'package:newsup_app/utils/constants/app_texts.dart';
+
+import '../../../../utils/constants/app_paddings.dart';
+import '../../../../utils/constants/app_text_styles.dart';
+import '../../../../utils/helpers/navigate.dart';
+import '../../statistic/statistic_screen.dart';
 
 class ProfileViewMore extends StatelessWidget {
   const ProfileViewMore({super.key});
 
   @override
   Widget build(BuildContext context) {
-    return GlobalViewMore(
-      text: AppTexts.yourStories,
-      padding: AppPaddings.h24,
+    return Padding(
+      padding:  AppPaddings.h24,
+      child: Row(
+        children: [
+          Text(
+            'Your Stories',
+            style: AppTextStyles.greyScale900s16W700,
+          ),
+          const Spacer(),
+          GestureDetector(
+            onTap: () {
+              Navigate.navigateReplacePush(
+                context,
+                const StatisticScreen(),
+              );
+            },
+            child: Text(
+              'Statistics',
+              style: AppTextStyles.primaryBaseS14W500,
+            ),
+          ),
+        ],
+      ),
     );
   }
 }
