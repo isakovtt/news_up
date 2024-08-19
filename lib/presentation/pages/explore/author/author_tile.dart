@@ -43,18 +43,12 @@ class _AuthorTileState extends State<AuthorTile> {
       contentPadding: AppPaddings.h16,
       minVerticalPadding: 0,
       horizontalTitleGap: 11.w,
-      leading: widget.hasAvatar
-          ? CircleAvatar(
-              backgroundColor: AppColors.greyScale_100,
-              child: widget.hasProfileIcon
-                  ? Image.network(widget.profileIcon)
-                  : Image.asset(widget.profileIcon),
-            )
-          : const Icon(
-              Icons.account_circle_rounded,
-              size: 42,
-              color: AppColors.greyScale_400,
-            ),
+      leading: CircleAvatar(
+        backgroundColor: AppColors.greyScale_100,
+        child: widget.hasProfileIcon
+            ? Image.network(widget.profileIcon)
+            : Image.asset(widget.profileIcon),
+      ),
       title: Row(
         children: [
           Text(

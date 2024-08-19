@@ -1,15 +1,20 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/svg.dart';
-import 'package:newsup_app/presentation/pages/home/home_screen.dart';
-import 'package:newsup_app/utils/constants/app_assets.dart';
-import 'package:newsup_app/utils/constants/app_colors.dart';
-import 'package:newsup_app/utils/constants/app_paddings.dart';
-import 'package:newsup_app/utils/helpers/navigate.dart';
+import 'package:share_plus/share_plus.dart';
+
+import '../../../../utils/constants/app_assets.dart';
+import '../../../../utils/constants/app_colors.dart';
+import '../../../../utils/constants/app_paddings.dart';
+import '../../../../utils/helpers/navigate.dart';
+import '../../home/home_screen.dart';
+import '../../home/widgets/home_sheet.dart';
 
 class DetailAppBar extends StatelessWidget implements PreferredSizeWidget {
   const DetailAppBar({super.key});
 
+
+ final String shareContent = 'newsup.com/watch?v=e40WRDnKXjQ';
   @override
   Widget build(BuildContext context) {
     return AppBar(
@@ -31,11 +36,18 @@ class DetailAppBar extends StatelessWidget implements PreferredSizeWidget {
         ),
       ),
       actions: [
-        SvgPicture.asset(AppAssets.frame),
+        GestureDetector(
+          onTap: () {
+           HomeSheet.globalSheet(context);
+          },
+        child: SvgPicture.asset(AppAssets.frame)),
         16.horizontalSpace,
         Padding(
           padding: AppPaddings.r16,
-          child: SvgPicture.asset(AppAssets.share),
+          child: GestureDetector(onTap: () {
+           Share.share(shareContent);
+          } ,
+            child: SvgPicture.asset(AppAssets.share)),
         ),
       ],
       bottom: const PreferredSize(

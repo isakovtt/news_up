@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:newsup_app/utils/constants/app_assets.dart';
 import 'widgets/author_account_info.dart';
 import 'widgets/author_buttons.dart';
 import 'widgets/author_stories_list_view.dart';
@@ -10,7 +11,10 @@ import 'widgets/author_all_header_statistics.dart';
 import 'widgets/author_app_bar.dart';
 
 class DetailAuthorScreen extends StatelessWidget {
-  const DetailAuthorScreen({super.key});
+  const DetailAuthorScreen(
+      {super.key, required this.author});
+
+  final Map<String, dynamic> author;
 
   @override
   Widget build(BuildContext context) {
@@ -19,15 +23,20 @@ class DetailAuthorScreen extends StatelessWidget {
       body: GlobalView(
         children: [
           8.verticalSpace,
-          const AuthorAllHeaderStatistics(),
+          AuthorAllHeaderStatistics(image: author['profilePicture'] ?? AppAssets.netwokProfileAvatar),
           23.verticalSpace,
-          const AuthorAccountInfo(),
+          AuthorAccountInfo(
+            name: author['name'],
+            username:
+                '@${author['name'].toString().replaceAll(' ', '_').toLowerCase()}',
+            about: author['about'] ?? 'About is empty',
+          ),
           24.verticalSpace,
           const AuthorButtons(),
           24.verticalSpace,
           const AuthorViewMore(),
           16.verticalSpace,
-          const AuthorStoriesListView()
+           AuthorStoriesListView(author: author,)
         ],
       ),
     );
