@@ -83,7 +83,7 @@ class GlobalBasicListTile extends StatelessWidget {
                 12.verticalSpace,
                 TimeAndComment(
                   commentOnTap: commentOnTap,
-                  hasDot: hasDot,
+                  hasDot: hasDot,  
                   hasSource: hasSource,
                   sourceIcon: sourceIcon,
                   sourceName: sourceName,
@@ -113,25 +113,30 @@ void showPopupMenu(BuildContext context, Offset tapPosition) async {
     position.dy,
   );
 
+  
+
   await showMenu(
     context: context,
     position: positionRect,
-    color: AppColors.greyScale_50,
+    color: AppColors.white,
+
+    
     // shape: Border.fromBorderSide(
     //   BorderSide(width: 2, color: AppColors.primary_100),
     // ),
     items: [
-      const PopupMenuItem(
-        value: 'report',
-        child: Text('Report'),
-      ),
-       PopupMenuItem(
+      PopupMenuItem( 
         onTap: () {
           HomeSheet.globalSheet(context);
         },
         value: 'save list',
-        child: const Text('Save list'),
+        child: const Text('Save'),
       ),
+       const PopupMenuItem(
+        value: 'report',
+        child: Text('Report'),
+      ),
+       
     ],
     elevation: 8.0,
   );

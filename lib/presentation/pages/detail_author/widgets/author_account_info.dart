@@ -4,19 +4,26 @@ import 'package:newsup_app/utils/constants/app_paddings.dart';
 import '../../../widgets/account_information.dart';
 
 class AuthorAccountInfo extends StatelessWidget {
-  const AuthorAccountInfo({super.key});
+  const AuthorAccountInfo(
+      {super.key,
+      required this.name,
+      required this.username,
+      required this.about});
+
+  final String name;
+  final String username;
+  final String about;
 
   @override
   Widget build(BuildContext context) {
     return Padding(
       padding: AppPaddings.h24,
-      child: const AccountInformation(
+      child: AccountInformation(
         hasVerified: true,
         hasUsername: true,
-        name: 'Rayna Carder',
-        username: '@rayna_carder',
-        about:
-            'Design, Productivity, and Creation. Learn everything you need to improve your design skills.',
+        name: name,
+        username: username,
+        about: about,
       ),
     );
   }

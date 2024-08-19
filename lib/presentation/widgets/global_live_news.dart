@@ -17,7 +17,7 @@ class GlobalLiveNews extends StatefulWidget {
 
 class _GlobalLiveNewsState extends State<GlobalLiveNews> {
   final YoutubePlayerController _controller = YoutubePlayerController(
-    initialVideoId: 'HgS6tbGa4wA',
+    initialVideoId: '-mvUkiILTqI',
     flags: const YoutubePlayerFlags(
       isLive: true,
       autoPlay: false,
@@ -29,8 +29,8 @@ class _GlobalLiveNewsState extends State<GlobalLiveNews> {
   @override
   void initState() {
     super.initState();
-    // Simüle edilen yükleme süresi için Timer kullanabiliriz
-    Future.delayed(const Duration(seconds: 2), () {
+
+    Future.delayed(const Duration(seconds: 4), () {
       setState(() {
         _isLoading = false;
       });

@@ -14,6 +14,7 @@ class AuthorAppBar extends StatelessWidget implements PreferredSizeWidget {
   Widget build(BuildContext context) {
     return AppBar(
       scrolledUnderElevation: 0,
+      automaticallyImplyLeading: false,
       leadingWidth: 76.w,
       leading: Center(
         child: SvgPicture.asset(

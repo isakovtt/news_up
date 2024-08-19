@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:newsup_app/utils/constants/app_paddings.dart';
 
+import '../../../../utils/constants/app_paddings.dart';
 import '../../../widgets/global_vertical_divider.dart';
 import 'author_followers_statistic.dart';
 import 'author_following_statistic.dart';
@@ -9,7 +9,8 @@ import 'author_profile_image.dart';
 import 'author_stories_statistic.dart';
 
 class AuthorAllHeaderStatistics extends StatelessWidget {
-  const AuthorAllHeaderStatistics({super.key});
+  const AuthorAllHeaderStatistics({super.key,  this.image});
+final String? image;
 
   @override
   Widget build(BuildContext context) {
@@ -18,7 +19,7 @@ class AuthorAllHeaderStatistics extends StatelessWidget {
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
-          const AuthorProfileImage(),
+           AuthorProfileImage( image: image),
           54.horizontalSpace,
           const AuthorStoriesStatistic(),
           const GlobalVerticalDivider(),

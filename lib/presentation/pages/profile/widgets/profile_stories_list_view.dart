@@ -4,6 +4,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:newsup_app/presentation/pages/comments/comments_screen.dart';
+import 'package:newsup_app/presentation/pages/home/widgets/home_shimmer.dart';
+import 'package:rxdart/rxdart.dart';
 
 import '../../../../cubits/write_news/write_news_cubit.dart';
 import '../../../../utils/constants/app_paddings.dart';
@@ -47,16 +49,16 @@ class ProfileStoriesListView extends StatelessWidget {
                   }
                   final channels = snapshot.data!.docs.first.data();
 
-                  if (post['uid'] == FirebaseAuth.instance.currentUser!.uid) {
+                  if (post['uid'] == FirebaseAuth.instance.currentUser!.uid) {  
                     return StreamBuilder(
                       stream: FirebaseFirestore.instance
                           .collection('comments')
                           .doc(post.id)
                           .collection('postComments')
-                          .snapshots(),
+                          .snapshots().delay(const Duration(seconds: 2)),
                       builder: (context, snapshot) {
                         if (!snapshot.hasData) {
-                          return const SizedBox.shrink();
+                          return const HomeShimmer();
                         }
                         final commentCount = snapshot.data!.docs;
                         return StoriesListTile(

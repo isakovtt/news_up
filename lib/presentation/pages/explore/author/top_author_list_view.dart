@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:newsup_app/presentation/pages/detail_author/detail_author_screen.dart';
+import 'package:newsup_app/utils/constants/app_assets.dart';
+import 'package:newsup_app/utils/helpers/navigate.dart';
 
 import '../../../../cubits/users/users_cubit.dart';
 import '../../../../utils/constants/app_paddings.dart';
@@ -25,27 +28,35 @@ class TopAuthorListView extends StatelessWidget {
           );
         }
         final data = snapshot.data;
+
         return ListView.separated(
           padding: AppPaddings.h24,
-          // itemCount: topAuthors.length,
           itemCount: data?.docs.length ?? 0,
           scrollDirection: Axis.vertical,
           shrinkWrap: true,
           physics: const NeverScrollableScrollPhysics(),
           separatorBuilder: (context, index) => 12.verticalSpace,
           itemBuilder: (context, index) {
-            // final author = topAuthors[index];
             final author = data!.docs[index].data();
-            return AuthorTile(
-              hasVerifiedIcon: true,
-              // profileIcon: author.profileIcon,
-              profileIcon: author['profilePicture'],
-              hasProfileIcon: true,
-              // name: author.name,
-              name: author['name'],
-              // username: author.username,
-              username:
-                  '@${author['name'].toString().replaceAll(' ', '_').toLowerCase()}',
+
+            return GestureDetector(
+              child: AuthorTile(
+                hasVerifiedIcon: true,
+                profileIcon:
+                    author['profilePicture'] ?? AppAssets.netwokProfileAvatar,
+                hasProfileIcon: true,
+                name: author['name'],
+                username:
+                    '@${author['name'].toString().replaceAll(' ', '_').toLowerCase()}',
+              ),
+              onTap: () {
+                Navigate.navigateReplacePush(
+                  context,
+                  DetailAuthorScreen(
+                    author: author,
+                  ),
+                );
+              },
             );
           },
         );
