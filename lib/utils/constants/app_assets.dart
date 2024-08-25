@@ -195,4 +195,7 @@ class AppAssets {
 
   static const String netwokProfileAvatar =
       'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTmHkj6-Tndku8K2387sMaBf2DaiwfBtHQw951-fc9zzA&s';
+
+  static const String defaultListPicture =
+      'https://www.lookyweed.com/assets/images/no_image.png';
 }

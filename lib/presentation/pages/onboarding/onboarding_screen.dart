@@ -70,7 +70,8 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
                   },
                   child: boxLogin.isEmpty
                       ? const LoginScreen()
-                      : const NavigationScreen(),
+                      : const NavigationScreen(), 
+                    // :  const HomeScreen()
                 ),
               ),
               child: const InnerColorlessButton(),

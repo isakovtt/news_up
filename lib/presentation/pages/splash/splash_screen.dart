@@ -1,9 +1,11 @@
 import 'dart:async';
 
 import 'package:flutter/material.dart';
+import 'package:hive/hive.dart';
 
 import '../../../utils/helpers/navigate.dart';
 import '../../widgets/global_app_logo.dart';
+import '../bottom_navigation/navigation_screen.dart';
 import '../onboarding/onboarding_screen.dart';
 
 class SplashScreen extends StatefulWidget {
@@ -13,7 +15,7 @@ class SplashScreen extends StatefulWidget {
   State<SplashScreen> createState() => _SplashScreenState();
 }
 
-// final box = Hive.box('splash');
+final box = Hive.box('splash');
 
 class _SplashScreenState extends State<SplashScreen> {
   @override
@@ -23,10 +25,11 @@ class _SplashScreenState extends State<SplashScreen> {
       () {
         Navigate.navigateReplacePush(
           context,
-          // box.isEmpty ?
+          box.isEmpty ?
            const OnboardingScreen() 
-          //  : const NavigationScreen(),
+           : const NavigationScreen(),
         );
+        // context.pushReplacementNamed(RouteConstants.onboarding);
       },
     );
     super.initState();

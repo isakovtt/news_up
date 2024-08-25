@@ -6,13 +6,12 @@ import '../../../utils/constants/app_assets.dart';
 import '../../../utils/constants/app_paddings.dart';
 import '../../../utils/constants/app_text_styles.dart';
 
-class ListSavedItem extends StatelessWidget {
-  const ListSavedItem(
+class ListRecentItem extends StatelessWidget {
+  const ListRecentItem(
       {super.key,
       required this.image,
       required this.category,
-      required this.description,
-      this.onTap});
+      required this.description, this.onTap});
 
   final String image;
   final String category;
@@ -23,22 +22,18 @@ class ListSavedItem extends StatelessWidget {
   Widget build(BuildContext context) {
     return Padding(
       padding: const EdgeInsets.only(left: 24, right: 28),
-      child: GestureDetector(
-        onTap: onTap,
+      child: GestureDetector(onTap: onTap,
         child: GlobalShadowBox(
           child: Padding(
             padding: AppPaddings.lr16t20b20,
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                ClipRRect(
-                  borderRadius: BorderRadius.circular(16),
-                  child: Image.network(
-                    image,
-                    fit: BoxFit.cover,
-                    width: double.infinity,
-                    filterQuality: FilterQuality.high,
-                  ),
+                Image.asset(
+                  image,
+                  fit: BoxFit.cover,
+                  width: double.infinity,
+                  filterQuality: FilterQuality.high,
                 ),
                 12.verticalSpace,
                 Row(
@@ -58,8 +53,6 @@ class ListSavedItem extends StatelessWidget {
                 8.verticalSpace,
                 Text(
                   description,
-                  overflow: TextOverflow.ellipsis,
-                  maxLines: 3,
                   style: AppTextStyles.greyScale400s12W400,
                 ),
               ],

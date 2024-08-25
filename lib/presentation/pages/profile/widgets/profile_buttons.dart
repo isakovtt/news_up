@@ -42,7 +42,7 @@ class ProfileButtons extends StatelessWidget {
             ),
             height: 48.h,
             width: 159.w,
-            color: AppColors.primaryBase,
+            buttonColor: AppColors.primaryBase,
             text: AppTexts.addStory,
           )
         ],
