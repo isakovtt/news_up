@@ -9,10 +9,16 @@ import '../../../../utils/constants/app_texts.dart';
 import '../../../widgets/global_button.dart';
 import '../../../widgets/global_circle_box.dart';
 
-class ChannelListTile extends StatelessWidget {
+class ChannelListTile extends StatefulWidget {
   const ChannelListTile({super.key, required this.postId});
   final String postId;
 
+  @override
+  State<ChannelListTile> createState() => _ChannelListTileState();
+}
+
+class _ChannelListTileState extends State<ChannelListTile> {
+  bool isPressed = false;
   @override
   Widget build(BuildContext context) {
     return StreamBuilder(
@@ -23,7 +29,7 @@ class ChannelListTile extends StatelessWidget {
         }
         final postDatas = snapshot.data!;
         final post =
-            postDatas.docs.firstWhere((doc) => doc['postId'] == postId);
+            postDatas.docs.firstWhere((doc) => doc['postId'] == widget.postId);
         final postChannel = post['channel'];
         return ListTile(
           contentPadding: AppPaddings.lrb24t16,
@@ -76,14 +82,24 @@ class ChannelListTile extends StatelessWidget {
                 );
               }),
           trailing: GlobalButton(
-            onTap: () {},
+            onTap: () {
+              setState(() {
+                isPressed = !isPressed;
+              });
+            },
             height: 24.h,
             width: 64.w,
-            color: AppColors.primaryBase,
+            border: Border.all(
+              color: isPressed ? AppColors.primaryBase : AppColors.primaryBase,
+            ),
+            color: isPressed ? AppColors.white : AppColors.primaryBase,
             child: Center(
               child: Text(
-                AppTexts.follow,
-                style: AppTextStyles.whiteS10W500,
+                isPressed ? AppTexts.following : AppTexts.follow,
+                style: isPressed
+                    ? AppTextStyles.whiteS10W500
+                        .copyWith(color: AppColors.primaryBase)
+                    : AppTextStyles.whiteS10W500,
               ),
             ),
           ),

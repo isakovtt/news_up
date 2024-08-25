@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:newsup_app/presentation/pages/bottom_navigation/custom_navigation_bar.dart';
 
 import '../../widgets/global_view.dart';
 import 'widgets/profile_account_info.dart';
@@ -30,6 +31,7 @@ class ProfileScreen extends StatelessWidget {
           const ProfileStoriesListView(),
         ],
       ),
+      // bottomNavigationBar:  CustomNavigationBar(),
     );
   }
 }

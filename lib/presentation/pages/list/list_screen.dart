@@ -17,9 +17,9 @@ class ListScreen extends StatelessWidget {
           length: 3,
           child: Column(
             children: <Widget>[
-              18.verticalSpace,
+              16.verticalSpace,
               const ListPageSegmentedBar(),
-              24.verticalSpace,
+              23.verticalSpace,
               const ListSavedTabBarView(),
             ],
           ),

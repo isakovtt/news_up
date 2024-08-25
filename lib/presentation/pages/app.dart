@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:newsup_app/cubits/comment/comment_cubit.dart';
-import 'package:newsup_app/cubits/edit_profile/edit_profile_cubit.dart';
-import 'package:newsup_app/cubits/home/home_cubit.dart';
 
+import '../../cubits/comment/comment_cubit.dart';
+import '../../cubits/edit_profile/edit_profile_cubit.dart';
 import '../../cubits/google_auth/google_auth_cubit.dart';
+import '../../cubits/home/home_cubit.dart';
 import '../../cubits/login/login_cubit.dart';
 import '../../cubits/register/register_cubit.dart';
 import '../../cubits/users/users_cubit.dart';
@@ -46,9 +46,11 @@ class MyApp extends StatelessWidget {
             ),
           ],
           child: MaterialApp(
+            // routerConfig: router,
+
             debugShowCheckedModeBanner: false,
             title: Configs.appName,
-            
+
             theme: AppThemes.appTheme,
             home: const SplashScreen(),
           ),

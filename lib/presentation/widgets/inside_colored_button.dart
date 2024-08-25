@@ -12,29 +12,35 @@ class InsideColoredButton extends StatelessWidget {
     this.height,
     this.width,
     this.text,
-    this.color,
+    this.buttonColor,
+    this.border,
+    this.textColor,
   });
 
   final void Function()? onTap;
   final double? height;
   final double? width;
   final String? text;
-  final Color? color;
+  final Color? buttonColor;
+  final Color? textColor;
+  final BoxBorder? border;
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
       onTap: onTap,
       child: GlobalButton(
+        border: border,
         height: height ?? 56.h,
         width: width ?? 157.5.w,
-        color: color ?? AppColors.greyScale_900,
+        color: buttonColor ?? AppColors.greyScale_900,
         child: Center(
           child: Text(
             text ?? AppTexts.getStarted,
             style: TextStyle(
-                fontSize: 14.sp,
-                fontWeight: FontWeight.w700,
-                color: AppColors.white),
+              fontSize: 14.sp,
+              fontWeight: FontWeight.w700,
+              color: textColor ?? AppColors.white,
+            ),
           ),
         ),
       ),

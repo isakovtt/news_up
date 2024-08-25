@@ -14,7 +14,7 @@ class TopicButton extends StatelessWidget {
       padding: AppPaddings.h24,
       child: InsideColoredButton(
         height: 48,
-        color: AppColors.greyScale_900,
+        buttonColor: AppColors.greyScale_900,
         width: double.infinity,
         text: AppTexts.follow,
         onTap: () {},
