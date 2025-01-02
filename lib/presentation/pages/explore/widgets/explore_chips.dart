@@ -67,7 +67,7 @@ class ExploreChips extends StatelessWidget {
                 showCheckmark: false,
                 supportsMultiSelect: true,
                 scrollPhysics: const NeverScrollableScrollPhysics(),
-                listOfChipIndicesCurrentlySeclected: [],
+                listOfChipIndicesCurrentlySeclected: const [],
               ),
             ),
           );

@@ -26,7 +26,7 @@ class ListSavedTabBarView extends StatelessWidget {
 
                 final listDatas = snapshot.data!.docs;
                 return ListView.separated(
-                  physics: AlwaysScrollableScrollPhysics(),
+                  physics: const AlwaysScrollableScrollPhysics(),
                   itemCount: listDatas.length,
                   shrinkWrap: true,
                   separatorBuilder: (context, index) => 12.verticalSpace,
@@ -84,7 +84,7 @@ class ListSavedTabBarView extends StatelessWidget {
               },
             ),
           ),
-          SingleChildScrollView(child: Center(child: Text('data'))),
+          const SingleChildScrollView(child: Center(child: Text('data'))),
         ],
       ),
     );

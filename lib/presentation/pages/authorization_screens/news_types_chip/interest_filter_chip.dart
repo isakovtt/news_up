@@ -24,7 +24,7 @@ class InterestFilterChip extends StatelessWidget {
       inactiveBgColorList: const [AppColors.greyScale_50],
       activeTextColorList: const [AppColors.primaryBase],
       inactiveTextColorList: [Theme.of(context).primaryColor],
-      listOfChipIndicesCurrentlySeclected: [0, 4, 6],
+      listOfChipIndicesCurrentlySeclected: const [0, 4, 6],
       
     );
   }
