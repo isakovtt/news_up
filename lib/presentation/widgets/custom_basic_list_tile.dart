@@ -1,14 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:newsup_app/presentation/pages/home/widgets/home_sheet.dart';
-import 'package:newsup_app/utils/constants/app_colors.dart';
 
 import '../../utils/constants/app_paddings.dart';
 import 'horizontal_dots.dart';
 import 'list_tile_cotegory_name.dart';
 import 'list_tile_image.dart';
-import 'time_and_comment.dart';
 import 'list_tile_title.dart';
+import 'time_and_comment.dart';
 
 class GlobalBasicListTile extends StatelessWidget {
   const GlobalBasicListTile({
@@ -26,6 +24,7 @@ class GlobalBasicListTile extends StatelessWidget {
     this.style,
     this.titleStyle,
     this.commentOnTap,
+    this.dotsOnTap,
   });
 
   final String image;
@@ -36,6 +35,7 @@ class GlobalBasicListTile extends StatelessWidget {
   final String timeText;
   final String commentCount;
   final Function()? onTap;
+  final Function()? dotsOnTap;
   final Function()? commentOnTap;
   final TextStyle? style;
   final bool hasSource;
@@ -65,12 +65,7 @@ class GlobalBasicListTile extends StatelessWidget {
                     ),
                     20.horizontalSpace,
                     GestureDetector(
-                      onTap: () {
-                        final RenderBox box =
-                            context.findRenderObject() as RenderBox;
-                        final Offset position = box.localToGlobal(Offset.zero);
-                        showPopupMenu(context, position);
-                      },
+                      onTap: dotsOnTap,
                       child: const HorizontalDots(),
                     ),
                   ],
@@ -83,7 +78,7 @@ class GlobalBasicListTile extends StatelessWidget {
                 12.verticalSpace,
                 TimeAndComment(
                   commentOnTap: commentOnTap,
-                  hasDot: hasDot,  
+                  hasDot: hasDot,
                   hasSource: hasSource,
                   sourceIcon: sourceIcon,
                   sourceName: sourceName,
@@ -97,47 +92,4 @@ class GlobalBasicListTile extends StatelessWidget {
       ),
     );
   }
-}
-
-void showPopupMenu(BuildContext context, Offset tapPosition) async {
-  final RenderBox overlay =
-      Overlay.of(context).context.findRenderObject() as RenderBox;
-  final Offset position = overlay.globalToLocal(tapPosition);
-
-  final double right = MediaQuery.of(context).size.width - position.dx;
-
-  final RelativeRect positionRect = RelativeRect.fromLTRB(
-    right,
-    position.dy,
-    MediaQuery.of(context).size.width - right,
-    position.dy,
-  );
-
-  
-
-  await showMenu(
-    context: context,
-    position: positionRect,
-    color: AppColors.white,
-
-    
-    // shape: Border.fromBorderSide(
-    //   BorderSide(width: 2, color: AppColors.primary_100),
-    // ),
-    items: [
-      PopupMenuItem( 
-        onTap: () {
-          HomeSheet.globalSheet(context);
-        },
-        value: 'save list',
-        child: const Text('Save'),
-      ),
-       const PopupMenuItem(
-        value: 'report',
-        child: Text('Report'),
-      ),
-       
-    ],
-    elevation: 8.0,
-  );
 }

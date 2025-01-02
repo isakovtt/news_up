@@ -2,7 +2,6 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:newsup_app/presentation/pages/explore/widgets/explore_shimmer.dart';
-import 'package:newsup_app/presentation/pages/home/widgets/home_sheet.dart';
 import 'package:newsup_app/utils/constants/app_colors.dart';
 import 'package:rxdart/rxdart.dart';
 
@@ -110,7 +109,7 @@ void showPopupMenu(BuildContext context, Offset tapPosition) async {
       ),
       PopupMenuItem(
         onTap: () {
-          HomeSheet.globalSheet(context);
+          // HomeSheet.globalSheet(context);
         },
         value: 'save list',
         child: const Text('Save list'),

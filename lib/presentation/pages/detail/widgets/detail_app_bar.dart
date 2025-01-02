@@ -8,7 +8,6 @@ import '../../../../utils/constants/app_colors.dart';
 import '../../../../utils/constants/app_paddings.dart';
 import '../../../../utils/helpers/navigate.dart';
 import '../../home/home_screen.dart';
-import '../../home/widgets/home_sheet.dart';
 
 class DetailAppBar extends StatelessWidget implements PreferredSizeWidget {
   const DetailAppBar({super.key});
@@ -38,7 +37,7 @@ class DetailAppBar extends StatelessWidget implements PreferredSizeWidget {
       actions: [
         GestureDetector(
           onTap: () {
-           HomeSheet.globalSheet(context);
+          //  HomeSheet.globalSheet(context);
           },
         child: SvgPicture.asset(AppAssets.frame)),
         16.horizontalSpace,

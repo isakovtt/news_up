@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:newsup_app/cubits/home/home_cubit.dart';
-import 'package:newsup_app/presentation/pages/bottom_navigation/custom_navigation_bar.dart';
 import 'package:newsup_app/utils/enums/post_view_type.dart';
 
 import '../../../utils/constants/app_color_filters.dart';
