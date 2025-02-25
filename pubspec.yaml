@@ -43,8 +43,8 @@ dependencies:
   chip_list: ^2.4.4+8
   dropdown_button2: ^2.3.9
   animated_segmented_tab_control: ^1.2.1
-  syncfusion_flutter_charts: ^25.1.38
   animation_search_bar: ^0.0.10
+  # syncfusion_flutter_charts: ^28.2.5
   firebase_core: ^2.27.0
   cloud_firestore: ^4.15.8
   flutter_bloc: ^8.1.5
@@ -68,6 +68,7 @@ dependencies:
   share_plus: ^7.2.2
   go_router: ^14.2.3
   input_dialog: ^0.1.1
+  firebase_app_check: ^0.2.2+7
 
 
   

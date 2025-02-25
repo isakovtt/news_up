@@ -61,7 +61,7 @@ class _PreviewScreenState extends State<PreviewScreen> {
                 },
               ),
             ),
-            70.verticalSpace,
+            100.verticalSpace,
           ],
         ),
       ),

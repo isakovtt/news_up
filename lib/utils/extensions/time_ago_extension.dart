@@ -4,6 +4,7 @@ extension TimeAgoExtension on DateTime {
   String toTimeAgo({String? timestamp}) {
     String timeAgo = GetTimeAgo.parse(this, locale: 'az').replaceFirst(' ', '');
     if (timeAgo.isEmpty) {
+      
       return '0s';
     }
 

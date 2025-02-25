@@ -192,10 +192,11 @@ class AppAssets {
   static const String ratioImage = '$_png/ratio_image.png';
   static const String followImage = '$_png/follow_image.png';
   static const String analysisImage = '$_png/analysis_image.png';
+  static const String cryptoImagePng = '$_png/cryptoimagepng.png';
 
   static const String netwokProfileAvatar =
       'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTmHkj6-Tndku8K2387sMaBf2DaiwfBtHQw951-fc9zzA&s';
 
   static const String defaultListPicture =
-      'https://www.lookyweed.com/assets/images/no_image.png';
+      'https://c4.wallpaperflare.com/wallpaper/152/302/393/minimalism-gradient-wallpaper-thumb.jpg';
 }

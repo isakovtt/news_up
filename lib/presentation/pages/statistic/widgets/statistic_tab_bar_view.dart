@@ -25,10 +25,10 @@ class StatisticTabBarView extends StatelessWidget {
                 children: [
                   const StatisticDailyVisitsTitle(),
                   35.verticalSpace,
-                  SizedBox(
-                    height: 280.h,
-                    child: const StatisticChart(),
-                  ),
+                  // SizedBox(
+                  //   height: 280.h,
+                  //   child: const StatisticChart(),
+                  // ),
                   40.verticalSpace,
                   Row(
                     mainAxisAlignment: MainAxisAlignment.center,

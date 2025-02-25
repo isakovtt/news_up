@@ -1,11 +1,13 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:newsup_app/presentation/pages/list/list_recent_item.dart';
-import 'package:newsup_app/presentation/pages/list_detail/list_detail_screen.dart';
-import 'package:newsup_app/utils/helpers/navigate.dart';
 
-import '../../../data/models/list_saved_model.dart';
+import '../../../data/models/list_highlight_model.dart';
+import '../../../data/models/list_recent_model.dart';
+import '../../../utils/helpers/navigate.dart';
+import '../list_detail/list_detail_screen.dart';
+import 'list_highlight_item.dart';
+import 'list_recent_item.dart';
 import 'list_saved_item.dart';
 
 class ListSavedTabBarView extends StatelessWidget {
@@ -31,7 +33,6 @@ class ListSavedTabBarView extends StatelessWidget {
                   shrinkWrap: true,
                   separatorBuilder: (context, index) => 12.verticalSpace,
                   itemBuilder: (context, index) {
-                    // final list = listSaved[index];
                     final list = listDatas[index];
                     return StreamBuilder(
                       stream: FirebaseFirestore.instance
@@ -40,7 +41,7 @@ class ListSavedTabBarView extends StatelessWidget {
                           .snapshots(),
                       builder: (context, snapshot) {
                         if (!snapshot.hasData) {
-                          return const SizedBox.shrink();
+                          return   const SizedBox.shrink();
                         }
                         return Column(
                           children: [
@@ -61,30 +62,50 @@ class ListSavedTabBarView extends StatelessWidget {
                   },
                 );
               }),
-              
+
 //////////////////////////////////////////////////////
 
           /////////////////////////////////////////////////
-          SingleChildScrollView(
-            child: ListView.separated(
-              itemCount: listSaved.length,
-              shrinkWrap: true,
-              separatorBuilder: (context, index) => 24.verticalSpace,
-              itemBuilder: (context, index) {
-                final listy = listSaved[index];
-                return ListRecentItem(
-                  image: listy.image,
-                  category: listy.categoryTitle,
-                  description: listy.description,
-                  onTap: () => Navigate.navigatePush(
-                    context,
-                    const ListDetailScreen(),
-                  ),
-                );
-              },
-            ),
+          ListView.separated(
+            physics: const AlwaysScrollableScrollPhysics(),
+            itemCount: listRecent.length,
+            shrinkWrap: true,
+            separatorBuilder: (context, index) => 24.verticalSpace,
+            itemBuilder: (context, index) {
+              final listy = listRecent[index];
+              return ListRecentItem(
+                image: listy.image,
+                category: listy.categoryTitle,
+                description: listy.description,
+                onTap: () => Navigate.navigatePush(
+                  context,
+                  const ListDetailScreen(),
+                ),
+              );
+            },
           ),
-          const SingleChildScrollView(child: Center(child: Text('data'))),
+
+          // /////////////////////////////////////////////////////
+          // ////////////////////////////////////
+
+          ListView.separated(
+            physics: const AlwaysScrollableScrollPhysics(),
+            itemCount: listHighlight.length,
+            shrinkWrap: true,
+            separatorBuilder: (context, index) => 24.verticalSpace,
+            itemBuilder: (context, index) {
+              final listy = listHighlight[index];
+              return ListHighlightItem(
+                image: listy.image,
+                category: listy.categoryTitle,
+                description: listy.description,
+                onTap: () => Navigate.navigatePush(
+                  context,
+                  const ListDetailScreen(),
+                ),
+              );
+            },
+          ),
         ],
       ),
     );

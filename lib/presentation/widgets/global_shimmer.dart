@@ -12,6 +12,7 @@ class GlobalShimmer extends StatelessWidget {
     return SizedBox(
       width: width,
       height: height,
+      
       child: Shimmer.fromColors(
         baseColor: Colors.grey[300]!,
         highlightColor: Colors.grey[100]!,

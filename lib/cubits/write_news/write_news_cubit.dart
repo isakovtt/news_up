@@ -62,9 +62,9 @@ class WriteNewsCubit extends Cubit<WriteNewsState> {
       'newsPhoto': box.get('photo'),
       'newsTitle': box.get('title'),
       'newsSubtitle': box.get('subtitle'),
-      'tags': box.get('tags'),
-      'category': box.get('category'),
-      'channel': box.get('channel'),
+      'tags': box.get('tags') ?? 'today',
+      'category': box.get('category') ?? 'Trending',
+      'channel': box.get('channel') ?? 'Global',
       'commentsCount': 0,
       'time': FieldValue.serverTimestamp(),
     });
