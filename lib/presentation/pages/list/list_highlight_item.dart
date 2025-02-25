@@ -1,27 +1,25 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/svg.dart';
-import 'package:newsup_app/presentation/widgets/global_shimmer.dart';
 import 'package:newsup_app/utils/constants/app_colors.dart';
-import 'package:shimmer/shimmer.dart';
 import '../../widgets/global_shadow_box.dart';
 import '../../../utils/constants/app_assets.dart';
 import '../../../utils/constants/app_paddings.dart';
 import '../../../utils/constants/app_text_styles.dart';
 
-class ListRecentItem extends StatelessWidget {
-  const ListRecentItem(
+class ListHighlightItem extends StatelessWidget {
+  const ListHighlightItem(
       {super.key,
       required this.image,
       required this.category,
       required this.description,
-      this.onTap,  this.isLoading = false});
+      this.onTap});
 
   final String image;
   final String category;
   final String description;
   final Function()? onTap;
-  final bool isLoading;
+
   @override
   Widget build(BuildContext context) {
     return Padding(
@@ -34,11 +32,9 @@ class ListRecentItem extends StatelessWidget {
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                isLoading
-                    ? GlobalShimmer(width: 327, height: 208) :
                 ClipRRect(
                   borderRadius: BorderRadius.circular(16),
-                  child: Image.asset(
+                  child: Image.network(
                     image,
                     fit: BoxFit.cover,
                     width: double.infinity,

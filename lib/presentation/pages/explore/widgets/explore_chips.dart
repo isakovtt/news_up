@@ -10,7 +10,7 @@ class ExploreChips extends StatelessWidget {
 
   Future<List<String>> fetchChipData() async {
    
-    await Future.delayed(const Duration(seconds: 3));
+    await Future.delayed(const Duration(seconds: 2));
     return ExploreChipListModel
         .dogeNames; 
   }
@@ -67,7 +67,7 @@ class ExploreChips extends StatelessWidget {
                 showCheckmark: false,
                 supportsMultiSelect: true,
                 scrollPhysics: const NeverScrollableScrollPhysics(),
-                listOfChipIndicesCurrentlySeclected: const [],
+                listOfChipIndicesCurrentlySeclected:  [],
               ),
             ),
           );

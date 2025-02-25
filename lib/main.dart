@@ -1,3 +1,4 @@
+import 'package:firebase_app_check/firebase_app_check.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -16,6 +17,15 @@ void main() async {
   await Hive.openBox('splash');
 
   await Firebase.initializeApp();
+  // await FirebaseAppCheck.instance.activate(
+  //   webProvider: ReCaptchaV3Provider('newsup'),
+  //   androidProvider: AndroidProvider.debug,
+  //   appleProvider: AppleProvider.debug,
+  // );
+
+   FirebaseAppCheck firebaseAppCheck = FirebaseAppCheck.instance;
+  await firebaseAppCheck.activate(
+    androidProvider: AndroidProvider.debug);
 
   runApp(const MyApp());
 }

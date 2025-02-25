@@ -160,13 +160,11 @@ class HomeSheet {
                       12.horizontalSpace,
                       InsideColoredButton(
                         onTap: () {
-                          // Burada isTappedList'i kontrol et
                           if (isTappedList.any((tapped) => tapped)) {
-                            // En az bir eleman seçilmişse
-                            // İstediğiniz metodu çağırın
                             log('Selected items: ${isTappedList.where((tapped) => tapped).toList()}');
+                            Navigator.pop(context);
                           } else {
-                            log('Hiçbir eleman seçilmedi!');
+                            log('dont changed');
                           }
                         },
                         height: 50,
