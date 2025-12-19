@@ -10,7 +10,7 @@ class ProfileFollowingStatistic extends StatelessWidget {
     return GestureDetector(
       onTap: () {},
       child: const ProfileHeaderStatistics(
-        count: '134',
+        count: '7',
         text: AppTexts.following,
       ),
     );

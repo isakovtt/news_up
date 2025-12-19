@@ -56,7 +56,7 @@ class HomeNewsItemListView extends StatelessWidget {
                     .collection('channels')
                     .where('channel', isEqualTo: post['channel'])
                     .snapshots()
-                    .delay(const Duration(seconds: 2)),
+                    .delay(const Duration(seconds: 1)),
                 builder: (context, snapshot) {
                   if (!snapshot.hasData) {
                     return const HomeShimmer();

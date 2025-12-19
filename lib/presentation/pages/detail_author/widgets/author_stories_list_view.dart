@@ -33,7 +33,7 @@ class AuthorStoriesListView extends StatelessWidget {
           padding: AppPaddings.h24,
           shrinkWrap: true,
           itemCount: posts.length,
-          physics: const NeverScrollableScrollPhysics(),
+          physics: const BouncingScrollPhysics(),
           separatorBuilder: (context, index) => 16.verticalSpace,
           itemBuilder: (context, index) {
             final post = posts[index];

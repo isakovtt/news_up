@@ -193,6 +193,14 @@ class AppAssets {
   static const String followImage = '$_png/follow_image.png';
   static const String analysisImage = '$_png/analysis_image.png';
   static const String cryptoImagePng = '$_png/cryptoimagepng.png';
+  static const String artImage = '$_png/artimage.png';
+  static const String business_1 = '$_png/busines_1.png';
+  static const String business_2 = '$_png/business_2.png';
+  static const String business_3 = '$_png/business_3.png';
+  static const String business_4 = '$_png/business_4.png';
+  static const String business_5 = '$_png/business_5.png';
+  static const String business_6 = '$_png/business_6.png';
+  static const String business_7 = '$_png/business_7.png';
 
   static const String netwokProfileAvatar =
       'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTmHkj6-Tndku8K2387sMaBf2DaiwfBtHQw951-fc9zzA&s';

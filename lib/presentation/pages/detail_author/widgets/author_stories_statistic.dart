@@ -11,7 +11,7 @@ class AuthorStoriesStatistic extends StatelessWidget {
     return GestureDetector(
       onTap: () {},
       child: const ProfileHeaderStatistics(
-        count: '22',
+        count: '7',
         text: AppTexts.stories,
       ),
     );

@@ -32,21 +32,10 @@ List<ListRecentModel> listRecent = [
         'Leader in cryptocurrency, Bitcoin, Ethereum, XRP, blockchain, DeFi, digital finance and Web 3.0.',
   ),
    ListRecentModel(
-    image: AppAssets.savedListImage_2,
-    categoryTitle: 'Productivity',
+    image: AppAssets.artImage,
+    categoryTitle: 'Art',
     description:
-        'Purus viverra aliquet facilisi purus. Ac vitae accumsan, vulputate et in faucibus orci consectetur.',
+        'Bringing creativity to life through art that inspires and evokes emotion.',
   ),
-   ListRecentModel(
-    image: AppAssets.savedListImage_2,
-    categoryTitle: 'Productivity',
-    description:
-        'Purus viverra aliquet facilisi purus. Ac vitae accumsan, vulputate et in faucibus orci consectetur.',
-  ),
-   ListRecentModel(
-    image: AppAssets.savedListImage_2,
-    categoryTitle: 'Productivity',
-    description:
-        'Purus viverra aliquet facilisi purus. Ac vitae accumsan, vulputate et in faucibus orci consectetur.',
-  ),
+   
 ];

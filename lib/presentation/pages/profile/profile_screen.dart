@@ -26,7 +26,7 @@ class ProfileScreen extends StatelessWidget {
           const ProfileButtons(),
           24.verticalSpace,
           const ProfileViewMore(),
-          16.verticalSpace,
+          // 16.verticalSpace,
           const ProfileStoriesListView(),
         ],
       ),

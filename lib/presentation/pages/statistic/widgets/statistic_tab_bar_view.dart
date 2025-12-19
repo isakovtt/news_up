@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:newsup_app/utils/constants/app_colors.dart';
 
-import 'statistic_chart.dart';
 import 'statistic_daily_visits_title.dart';
 import 'statistic_followers_info.dart';
 import 'statistic_ratio_info.dart';
