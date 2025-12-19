@@ -14,13 +14,13 @@ class OnboardSecondScreen extends StatelessWidget {
     return Scaffold(
       body: Column(
         children: [
-          24.verticalSpace,
+          34.verticalSpace,
           Image.asset(
             AppAssets.onboardPicture_3,
             fit: BoxFit.cover,
             filterQuality: FilterQuality.high,
           ),
-          46.verticalSpace,
+          84.verticalSpace,
           Padding(
             padding: AppPaddings.h24,
             child: RichText(

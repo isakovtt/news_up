@@ -1,13 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/svg.dart';
-import 'package:newsup_app/presentation/widgets/global_shimmer.dart';
-import 'package:newsup_app/utils/constants/app_colors.dart';
-import 'package:shimmer/shimmer.dart';
-import '../../widgets/global_shadow_box.dart';
+
 import '../../../utils/constants/app_assets.dart';
+import '../../../utils/constants/app_colors.dart';
 import '../../../utils/constants/app_paddings.dart';
 import '../../../utils/constants/app_text_styles.dart';
+import '../../widgets/global_shadow_box.dart';
+import '../../widgets/global_shimmer.dart';
 
 class ListRecentItem extends StatelessWidget {
   const ListRecentItem(
@@ -35,7 +35,7 @@ class ListRecentItem extends StatelessWidget {
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 isLoading
-                    ? GlobalShimmer(width: 327, height: 208) :
+                    ? const GlobalShimmer(width: 327, height: 208) :
                 ClipRRect(
                   borderRadius: BorderRadius.circular(16),
                   child: Image.asset(

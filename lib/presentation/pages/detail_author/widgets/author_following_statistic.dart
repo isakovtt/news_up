@@ -10,7 +10,7 @@ class AuthorFollowingStatistic extends StatelessWidget {
     return GestureDetector(
       onTap: () {},
       child: const ProfileHeaderStatistics(
-        count: '321',
+        count: '3',
         text: AppTexts.following,
       ),
     );

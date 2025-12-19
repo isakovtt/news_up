@@ -34,7 +34,7 @@ class _ListSavedItemState extends State<ListSavedItem> {
   @override
   void initState() {
     super.initState();
-    Timer(const Duration(seconds: 2), () {
+    Timer(const Duration(seconds: 1), () {
       setState(() {
         _isLoading = false;
       });
@@ -55,7 +55,7 @@ class _ListSavedItemState extends State<ListSavedItem> {
                 ClipRRect(
                   borderRadius: BorderRadius.circular(16),
                   child: _isLoading ?
-                GlobalShimmer(width: 327, height: 208)
+                const GlobalShimmer(width: 327, height: 208)
                   
                   : Image.network(
                     widget.image,

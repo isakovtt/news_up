@@ -1,6 +1,7 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:newsup_app/presentation/pages/list_detail/list_business.dart';
 
 import '../../../data/models/list_highlight_model.dart';
 import '../../../data/models/list_recent_model.dart';
@@ -51,7 +52,7 @@ class ListSavedTabBarView extends StatelessWidget {
                               description: list['listDescription'],
                               onTap: () => Navigate.navigatePush(
                                 context,
-                                const ListDetailScreen(),
+                                const ListBusiness(),
                               ),
                             ),
                             14.verticalSpace

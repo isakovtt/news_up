@@ -57,10 +57,11 @@ class EditProfileInputs extends StatelessWidget {
                 ],
               ),
               12.verticalSpace,
-              GlobalInput(
+              GlobalInput(enabled: false,
                 initialValue: user['password'],
                 suffixIcon: const Icon(
                   Icons.visibility_off_outlined,
+
                   color: AppColors.greyScale_400,
                 ),
                 obscureText: true,

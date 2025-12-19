@@ -10,7 +10,7 @@ class GlobalSwitch extends StatelessWidget {
     return Switch(
       value: isSwitched,
       onChanged: (value) {},
-      activeColor: AppColors.successLight,
+      activeThumbColor: AppColors.successLight,
       inactiveThumbColor: AppColors.white,
       inactiveTrackColor: AppColors.greyScale_200,
     );

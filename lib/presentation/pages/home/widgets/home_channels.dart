@@ -18,7 +18,7 @@ class HomeChannels extends StatelessWidget {
       stream: FirebaseFirestore.instance
           .collection('channels')
           .snapshots()
-          .delay(const Duration(seconds: 3)),
+          .delay(const Duration(seconds: 2)),
       builder: (context, snapshot) {
         if (!snapshot.hasData) {
           return _buildShimmer();

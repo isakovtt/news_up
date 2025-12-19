@@ -1,3 +1,5 @@
+import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 
 import '../../../../utils/constants/app_texts.dart';
@@ -10,10 +12,27 @@ class ProfileStoriesStatistic extends StatelessWidget {
   Widget build(BuildContext context) {
     return GestureDetector(
       onTap: () {},
-      child: const ProfileHeaderStatistics(
-        count: '42',
-        text: AppTexts.stories,
-      ),
+      child: StreamBuilder(
+          stream: FirebaseFirestore.instance
+            .collection('posts')
+            .where('uid', isEqualTo: FirebaseAuth.instance.currentUser?.uid)
+            .snapshots(),
+          builder: (context, snapshot) {
+       if (!snapshot.hasData) {
+            return  const ProfileHeaderStatistics(
+              count: '0',
+              text: AppTexts.stories,
+            );
+          }
+
+          final postsCount = snapshot.data!.docs.length;
+
+
+            return  ProfileHeaderStatistics(
+              count: postsCount.toString(),
+              text: AppTexts.stories,
+            );
+          }),
     );
   }
 }

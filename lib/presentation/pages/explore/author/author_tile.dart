@@ -46,8 +46,20 @@ class _AuthorTileState extends State<AuthorTile> {
       leading: CircleAvatar(
         backgroundColor: AppColors.greyScale_100,
         child: widget.hasProfileIcon
-            ? Image.network(widget.profileIcon)
-            : Image.asset(widget.profileIcon),
+            ? ClipOval(
+                clipBehavior: Clip.antiAlias,
+                child: Image.network(height: 56,
+                  widget.profileIcon,
+                  fit: BoxFit.cover,
+                  filterQuality: FilterQuality.high,
+                ))
+            : ClipOval(
+                child: Image.asset(
+                widget.profileIcon,
+                fit: BoxFit.cover,
+                alignment: Alignment.center,
+                filterQuality: FilterQuality.high,
+              )),
       ),
       title: Row(
         children: [
